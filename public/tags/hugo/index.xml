@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Hugo Bootstrap v4 Blog</title>
+    <title>Hugo on Shiny クックブック</title>
     <link>/tags/hugo/</link>
-    <description>Recent content in Hugo on Hugo Bootstrap v4 Blog</description>
+    <description>Recent content in Hugo on Shiny クックブック</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>jp</language>
     <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +13,10 @@
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>/2014/04/getting-started-with-hugo/</link>
+      <link>/getting-started-with-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/04/getting-started-with-hugo/</guid>
+      <guid>/getting-started-with-hugo/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo

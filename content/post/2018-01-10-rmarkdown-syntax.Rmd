@@ -1,0 +1,42 @@
+---
+title: "R Markdown 記法"
+author: "qhmqk"
+date: 2018-01-10
+categories: ["Ｒ"]
+tags: ["R Markdown"]
+---
+
+### 見出し
+
+```
+# Header 1
+## Header 2
+```
+
+# Header 1
+## Header 2
+
+
+### 図
+
+```
+image:
+![caption](img/shiny-400x464.png)
+```
+
+markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。
+
+```
+<img src='../../../../../../../img/shiny-400x464.png' align='center'>
+```
+
+<img src='../../../../../../../img/shiny-400x464.png' align='center'>
+
+
+### リンク
+
+```
+上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。
+```
+
+上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。

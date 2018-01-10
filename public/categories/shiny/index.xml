@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shiny on Shiny クックブック</title>
+    <link>/categories/shiny/</link>
+    <description>Recent content in Shiny on Shiny クックブック</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/shiny/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>actionButton</title>
+      <link>/actionbutton/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/actionbutton/</guid>
+      <description>actionButton(inputId, label, icon = NULL, width = NULL, ...)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。icon(オプションで)ボタン上に現れるアイコンwidth’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照...ボタンに適用する名前付きの属性説明初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。
+使用例labelに画像を指定
+iconを使用
+inputIdに応じてlabelを変更
+参照RStudioのReference
+http://shiny.rstudio.com/articles/action-buttons.html
+https://shiny.rstudio.com/reference/shiny/latest/actionButton.html
+</description>
+    </item>
+    
+  </channel>
+</rss>

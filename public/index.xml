@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Bootstrap v4 Blog</title>
+    <title>Shiny クックブック</title>
     <link>/</link>
-    <description>Recent content on Hugo Bootstrap v4 Blog</description>
+    <description>Recent content on Shiny クックブック</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>jp</language>
     <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -13,31 +13,58 @@
     
     <item>
       <title>Creating a New Theme</title>
-      <link>/2014/09/creating-a-new-theme/</link>
+      <link>/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/09/creating-a-new-theme/</guid>
+      <guid>/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>/2014/03/migrate-to-hugo-from-jekyll/</link>
+      <link>/migrate-to-hugo-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/03/migrate-to-hugo-from-jekyll/</guid>
+      <guid>/migrate-to-hugo-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
     <item>
+      <title>R Markdown 記法</title>
+      <link>/r-markdown-%E8%A8%98%E6%B3%95/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/r-markdown-%E8%A8%98%E6%B3%95/</guid>
+      <description>見出し# Header 1## Header 2Header 1Header 2図image:![caption](img/shiny-400x464.png)markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。
+&amp;lt;img src=&amp;#39;../../../../../../../img/shiny-400x464.png&amp;#39; align=&amp;#39;center&amp;#39;&amp;gt;リンク上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。上記の、Shinyのロゴは、RStudioのロゴで、リンク先のガイドラインに従って利用できます。
+</description>
+    </item>
+    
+    <item>
+      <title>actionButton</title>
+      <link>/actionbutton/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/actionbutton/</guid>
+      <description>actionButton(inputId, label, icon = NULL, width = NULL, ...)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。icon(オプションで)ボタン上に現れるアイコンwidth’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照...ボタンに適用する名前付きの属性説明初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。
+使用例labelに画像を指定
+iconを使用
+inputIdに応じてlabelを変更
+参照RStudioのReference
+http://shiny.rstudio.com/articles/action-buttons.html
+https://shiny.rstudio.com/reference/shiny/latest/actionButton.html
+</description>
+    </item>
+    
+    <item>
       <title>Hello R Markdown</title>
-      <link>/2015/07/hello-r-markdown/</link>
+      <link>/hello-r-markdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/2015/07/hello-r-markdown/</guid>
+      <guid>/hello-r-markdown/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
@@ -45,20 +72,20 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>/2014/04/hugo-template-primer/</link>
+      <link>/hugo-template-primer/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/04/hugo-template-primer/</guid>
+      <guid>/hugo-template-primer/</guid>
       <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>/2014/04/getting-started-with-hugo/</link>
+      <link>/getting-started-with-hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/2014/04/getting-started-with-hugo/</guid>
+      <guid>/getting-started-with-hugo/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo

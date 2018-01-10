@@ -1,8 +1,8 @@
 # Hugo variables
 #
 baseurl = "/"
-languageCode = "en-us"
-title = "Hugo Bootstrap v4 Blog"
+languageCode = "jp"
+title = "Shiny クックブック"
 theme = "hugo-theme-bootstrap4-blog"
 # number of posts to show on home/category/tag pages (Default: 10)
 paginate = 5
@@ -10,9 +10,10 @@ paginate = 5
 # copyright = "Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/)."
 #googleAnalytics = "UA-123-45"
 #disqusShortname = "XYW"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
-  post = "/:year/:month/:title/"
+  post = ":title/"
   page = "/:slug/"
 
 [[menu.sidebar]]
@@ -35,10 +36,10 @@ paginate = 5
 #
 [params]
   # Site author
-  author = "Your Name"
+  author = "qhmqk"
 
   # Description/subtitle for homepage (can be Markdown)
-  description = "A simple Hugo theme based on the Bootstrap v4 blog example."
+  description = "Shiny app 開発のための日本語リファレンス"
 
   # Format dates with Go's time formatting
   date_format = "Mon Jan 02, 2006"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Hugo Bootstrap v4 Blog</title>
+    <title>Categories on Shiny クックブック</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Hugo Bootstrap v4 Blog</description>
+    <description>Recent content in Categories on Shiny クックブック</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>jp</language>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -34,6 +34,24 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny</title>
+      <link>/categories/shiny/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/shiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ｒ</title>
+      <link>/categories/%EF%BD%92/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/%EF%BD%92/</guid>
       <description></description>
     </item>
     
