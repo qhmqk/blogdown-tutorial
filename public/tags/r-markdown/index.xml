@@ -6,6 +6,7 @@
     <description>Recent content in R Markdown on Shiny クックブック</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
+    <copyright>© 2018 qhmqk</copyright>
     <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>R Markdown 記法</title>
-      <link>/r-markdown-%E8%A8%98%E6%B3%95/</link>
+      <link>/rmarkdown-syntax/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/r-markdown-%E8%A8%98%E6%B3%95/</guid>
+      <guid>/rmarkdown-syntax/</guid>
       <description>見出し# Header 1## Header 2Header 1Header 2図image:![caption](img/shiny-400x464.png)markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。
 &amp;lt;img src=&amp;#39;../../../../../../../img/shiny-400x464.png&amp;#39; align=&amp;#39;center&amp;#39;&amp;gt;リンク上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。上記の、Shinyのロゴは、RStudioのロゴで、リンク先のガイドラインに従って利用できます。
 </description>
@@ -24,10 +25,10 @@
     
     <item>
       <title>Hello R Markdown</title>
-      <link>/hello-r-markdown/</link>
+      <link>/rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/hello-r-markdown/</guid>
+      <guid>/rmarkdown/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>

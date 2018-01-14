@@ -1,0 +1,111 @@
+---
+title: "checkboxGroupInput"
+author: "qhmqk"
+date: 2018-01-10
+categories: ["Shiny"]
+tags: ["control widgets"]
+weight: 3
+slug: "checkboxgroupinput"
+---
+
+
+
+<pre class="r"><code>checkboxGroupInput(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL)</code></pre>
+<div class="section level3">
+<h3>引数</h3>
+<table style="width:11%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">inputId</td>
+<td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
+</tr>
+<tr class="even">
+<td align="left">label</td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無し</td>
+</tr>
+<tr class="odd">
+<td align="left">choices</td>
+<td align="left">チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、<code>choiceNames</code>と<code>choiceValues</code>は指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。</td>
+</tr>
+<tr class="even">
+<td align="left">selected</td>
+<td align="left">初期状態で選択されている値</td>
+</tr>
+<tr class="odd">
+<td align="left">inline</td>
+<td align="left"><code>TRUE</code>なら、選択したものがインラインで表示されます。</td>
+</tr>
+<tr class="even">
+<td align="left">width</td>
+<td align="left">’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
+</tr>
+<tr class="odd">
+<td align="left">choiceNames, choiceValues</td>
+<td align="left">名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、<code>choiceNames</code>と<code>choiceValues</code>は同じ長さである必要があります。この引数を指定すると、<code>choices</code>は指定できません。単純なテキストになる<code>choices</code>ではなく、これら両引数を用いる利点は、<code>choiceNames</code>には任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level3">
+<h3>値</h3>
+<p>UI定義に追加されるHTML要素のリスト</p>
+</div>
+<div class="section level3">
+<h3>説明</h3>
+<p>それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成します。選択された値の文字列ベクトルが、入力としてサーバに渡されます。</p>
+</div>
+<div class="section level3">
+<h3>使用例</h3>
+<ul>
+<li><p><code>choices</code></p></li>
+<li><p><code>inline</code>を<code>TRUE</code></p></li>
+</ul>
+<pre class="r"><code>## Only run examples in interactive R sessions
+if (interactive()) {
+ui &lt;- fluidPage(
+  checkboxGroupInput(&quot;variable&quot;, &quot;Variables to show:&quot;,
+                     c(&quot;Cylinders&quot; = &quot;cyl&quot;,
+                       &quot;Transmission&quot; = &quot;am&quot;,
+                       &quot;Gears&quot; = &quot;gear&quot;)),
+  tableOutput(&quot;data&quot;)
+)
+server &lt;- function(input, output, session) {
+  output$data &lt;- renderTable({
+    mtcars[, c(&quot;mpg&quot;, input$variable), drop = FALSE]
+  }, rownames = TRUE)
+}
+shinyApp(ui, server)
+ui &lt;- fluidPage(
+  checkboxGroupInput(&quot;icons&quot;, &quot;Choose icons:&quot;,
+    choiceNames =
+      list(icon(&quot;calendar&quot;), icon(&quot;bed&quot;),
+           icon(&quot;cog&quot;), icon(&quot;bug&quot;)),
+    choiceValues =
+      list(&quot;calendar&quot;, &quot;bed&quot;, &quot;cog&quot;, &quot;bug&quot;)
+  ),
+  textOutput(&quot;txt&quot;)
+)
+server &lt;- function(input, output, session) {
+  output$txt &lt;- renderText({
+    icons &lt;- paste(input$icons, collapse = &quot;, &quot;)
+    paste(&quot;You chose&quot;, icons)
+  })
+}
+shinyApp(ui, server)
+}</code></pre>
+</div>
+<div class="section level3">
+<h3>参照</h3>
+<p>RStudioのReference</p>
+<p><a href="https://shiny.rstudio.com/reference/shiny/latest/checkboxGroupInput.html" class="uri">https://shiny.rstudio.com/reference/shiny/latest/checkboxGroupInput.html</a></p>
+</div>

@@ -6,6 +6,7 @@
     <description>Recent content in Ｒ on Shiny クックブック</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
+    <copyright>© 2018 qhmqk</copyright>
     <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/%EF%BD%92/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>R Markdown 記法</title>
-      <link>/r-markdown-%E8%A8%98%E6%B3%95/</link>
+      <link>/rmarkdown-syntax/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/r-markdown-%E8%A8%98%E6%B3%95/</guid>
+      <guid>/rmarkdown-syntax/</guid>
       <description>見出し# Header 1## Header 2Header 1Header 2図image:![caption](img/shiny-400x464.png)markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。
 &amp;lt;img src=&amp;#39;../../../../../../../img/shiny-400x464.png&amp;#39; align=&amp;#39;center&amp;#39;&amp;gt;リンク上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。上記の、Shinyのロゴは、RStudioのロゴで、リンク先のガイドラインに従って利用できます。
 </description>

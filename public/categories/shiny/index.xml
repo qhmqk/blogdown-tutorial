@@ -6,6 +6,7 @@
     <description>Recent content in Shiny on Shiny クックブック</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
+    <copyright>© 2018 qhmqk</copyright>
     <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/shiny/index.xml" rel="self" type="application/rss+xml" />
@@ -25,6 +26,30 @@
 http://shiny.rstudio.com/articles/action-buttons.html
 https://shiny.rstudio.com/reference/shiny/latest/actionButton.html
 </description>
+    </item>
+    
+    <item>
+      <title>checkboxGroupInput</title>
+      <link>/checkboxgroupinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/checkboxgroupinput/</guid>
+      <description>checkboxGroupInput(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelコントロールに表示するラベル。NULLならラベル無しchoicesチェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。selected初期状態で選択されている値inlineTRUEなら、選択したものがインラインで表示されます。width’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照choiceNames, choiceValues名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、choiceNamesとchoiceValuesは同じ長さである必要があります。この引数を指定すると、choicesは指定できません。単純なテキストになるchoicesではなく、これら両引数を用いる利点は、choiceNamesには任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照値UI定義に追加されるHTML要素のリスト
+説明それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成します。選択された値の文字列ベクトルが、入力としてサーバに渡されます。
+使用例choices
+inlineをTRUE
+## Only run examples in interactive R sessionsif (interactive()) {ui &amp;lt;- fluidPage(checkboxGroupInput(&amp;quot;variable&amp;quot;, &amp;quot;Variables to show:&amp;quot;,c(&amp;quot;Cylinders&amp;quot; = &amp;quot;cyl&amp;quot;,&amp;quot;Transmission&amp;quot; = &amp;quot;am&amp;quot;,&amp;quot;Gears&amp;quot; = &amp;quot;gear&amp;quot;)),tableOutput(&amp;quot;data&amp;quot;))server &amp;lt;- function(input, output, session) {output$data &amp;lt;- renderTable({mtcars[, c(&amp;quot;mpg&amp;quot;, input$variable), drop = FALSE]}, rownames = TRUE)}shinyApp(ui, server)ui &amp;lt;- fluidPage(checkboxGroupInput(&amp;quot;icons&amp;quot;, &amp;quot;Choose icons:&amp;quot;,choiceNames =list(icon(&amp;quot;calendar&amp;quot;), icon(&amp;quot;bed&amp;quot;),icon(&amp;quot;cog&amp;quot;), icon(&amp;quot;bug&amp;quot;)),choiceValues =list(&amp;quot;calendar&amp;quot;, &amp;quot;bed&amp;quot;, &amp;quot;cog&amp;quot;, &amp;quot;bug&amp;quot;)),textOutput(&amp;quot;txt&amp;quot;))server &amp;lt;- function(input, output, session) {output$txt &amp;lt;- renderText({icons &amp;lt;- paste(input$icons, collapse = &amp;quot;, &amp;quot;)paste(&amp;quot;You chose&amp;quot;, icons)})}shinyApp(ui, server)}参照RStudioのReference</description>
+    </item>
+    
+    <item>
+      <title>checkboxInput</title>
+      <link>/checkboxinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/checkboxinput/</guid>
+      <description>checkboxInput(inputId, label, value = FALSE, width = NULL)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelコントロールに表示するラベル。NULLならラベル無しvalue初期値(論理値でTRUEまたはFALSE)width’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照値UI定義に追加されるチェックボックスのコントロール。
+説明論理値を指定するために使用するチェックボックスを生成。
+使用例## Only run examples in interactive R sessionsif (interactive()) {ui &amp;lt;- fluidPage(checkboxInput(&amp;quot;somevalue&amp;quot;, &amp;quot;Some value&amp;quot;, FALSE),verbatimTextOutput(&amp;quot;value&amp;quot;))server &amp;lt;- function(input, output) {output$value &amp;lt;- renderText({ input$somevalue })}shinyApp(ui, server)}参照RStudioのReference</description>
     </item>
     
   </channel>

@@ -6,17 +6,43 @@
     <description>Recent content in R on Shiny クックブック</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <copyright>© 2018 qhmqk</copyright>
+    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>トップページ</title>
+      <link>/top-page/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/top-page/</guid>
+      <description>今すぐ始めるShiny
+Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。
+Shinyを開発しているのはRStudio Inc.で、メインの開発者はRStudioのCTOであるJoe Cheng氏です。
+Rでの分析結果を動的にwebアプリケーションにしたい、webアプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境がShinyです。Shinyのインストールから、アプリケーションの作成までを紹介します。
+すぐに始められるShinyShinyでwebアプリケーション開発を始める人の大半はすでにRのユーザかもしれませんが、Shinyが気になって開発環境を整えたい人もいるかもしれません。Rはダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタからShinyの動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。
+Rをインストール
+RStudioをインストール
+Shinyパッケージをインストール
+RをインストールCRAN(The Comprehensive R Archive Network)からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。
+ダウンロードしたR-***.exeを実行し、ウィザードを進めていけば、インストールが完了します。
+RStudioをインストールRStudioの公式サイトからインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。
+ShinyパッケージをインストールRStudioを起動し、パッケージをインストールします。console枠で、
+install.packages(&amp;quot;shiny&amp;quot;)を実行すると、Shinyパッケージのインストールが始まります。パッケージをインストール後、Shinyを実行するために以下のコマンドでパッケージをロードします。
+library(shiny)Shinyのシンプルな設計Shinyを構成する要素は大きく２つだけ、ユーザーインターフェース(ui)とサーバ(server)です。ユーザーインターフェースにはレイアウトやコントロールの配置を記述し、サーバにはユーザーインターフェースに表示する数値やグラフを計算する処理を記述します。
+ディレクトリを作り、ディレクトリの中にapp.Rというファイルを置いて、runApp()を実行するだけでShinyアプリケーションが実行されます。最もシンプルなapp.Rは以下のコードとなります。
+library(shiny)ui &amp;lt;- fluidPage()server &amp;lt;- function(input, output){}shinyApp(ui = ui, server = server)このままでは、空のアプリケーションなので、数値入力とヒストグラム表示を追加すると、以下のコードとなります。
+library(shiny)ui &amp;lt;- fluidPage(numericInput(inputId = &amp;quot;n&amp;quot;,&amp;quot;Sample size&amp;quot;, value = 25),plotOutput(outputId = &amp;quot;hist&amp;quot;))server &amp;lt;- function(input, output){output$hist &amp;lt;- renderPlot({hist(rnorm(input$n))})}shinyApp(ui = ui, server = server)一つのファイルにまとめて記述するだけでなく、ui.</description>
+    </item>
+    
+    <item>
       <title>Hello R Markdown</title>
-      <link>/hello-r-markdown/</link>
+      <link>/rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/hello-r-markdown/</guid>
+      <guid>/rmarkdown/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>

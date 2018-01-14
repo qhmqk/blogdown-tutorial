@@ -7,22 +7,24 @@ theme = "hugo-theme-bootstrap4-blog"
 # number of posts to show on home/category/tag pages (Default: 10)
 paginate = 5
 # optionally override the site's footer with custom copyright text
-# copyright = "Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/)."
+copyright = "© 2018 qhmqk"
 #googleAnalytics = "UA-123-45"
 #disqusShortname = "XYW"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
-  post = ":title/"
+  post = ":slug/"
   page = "/:slug/"
 
 [[menu.sidebar]]
-  name = "Link 1"
-  url = "https://example.com"
+  name = "The R Project for Statistical Computing"
+  url = "https://www.r-project.org/"
+  weight = 1
 
 [[menu.sidebar]]
-  name = "Link 2"
-  url = "https://example.org"
+  name = "RStudio"
+  url = "https://www.rstudio.com/"
+  weight = 2
 
 # custom navbar menu entry.   See the custom_navbar parameter below for
 # details.
@@ -81,7 +83,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   [params.sidebar]
     # Optional about block for sidebar (can be Markdown)
-    about = "A simple Hugo theme based on the [Bootstrap v4 blog example](http://v4-alpha.getbootstrap.com/examples/blog/)."
+    about = "R user"
 
     # How many posts to show on the sidebar (Default: 5)
     #num_recent_posts = 2

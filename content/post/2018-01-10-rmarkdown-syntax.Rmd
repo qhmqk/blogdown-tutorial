@@ -4,6 +4,7 @@ author: "qhmqk"
 date: 2018-01-10
 categories: ["Ｒ"]
 tags: ["R Markdown"]
+slug: "rmarkdown-syntax"
 ---
 
 ### 見出し

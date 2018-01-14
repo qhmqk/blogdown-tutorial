@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="トップページ" />
+<meta property="og:description" content="今すぐ始めるShiny
+Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。
+Shinyを開発しているのはRStudio Inc.で、メインの開発者はRStudioのCTOであるJoe Cheng氏です。
+Rでの分析結果を動的にwebアプリケーションにしたい、webアプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境がShinyです。Shinyのインストールから、アプリケーションの作成までを紹介します。
+すぐに始められるShinyShinyでwebアプリケーション開発を始める人の大半はすでにRのユーザかもしれませんが、Shinyが気になって開発環境を整えたい人もいるかもしれません。Rはダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタからShinyの動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。
+Rをインストール
+RStudioをインストール
+Shinyパッケージをインストール
+RをインストールCRAN(The Comprehensive R Archive Network)からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。
+ダウンロードしたR-***.exeを実行し、ウィザードを進めていけば、インストールが完了します。
+RStudioをインストールRStudioの公式サイトからインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。
+ShinyパッケージをインストールRStudioを起動し、パッケージをインストールします。console枠で、
+install.packages(&quot;shiny&quot;)を実行すると、Shinyパッケージのインストールが始まります。パッケージをインストール後、Shinyを実行するために以下のコマンドでパッケージをロードします。
+library(shiny)Shinyのシンプルな設計Shinyを構成する要素は大きく２つだけ、ユーザーインターフェース(ui)とサーバ(server)です。ユーザーインターフェースにはレイアウトやコントロールの配置を記述し、サーバにはユーザーインターフェースに表示する数値やグラフを計算する処理を記述します。
+ディレクトリを作り、ディレクトリの中にapp.Rというファイルを置いて、runApp()を実行するだけでShinyアプリケーションが実行されます。最もシンプルなapp.Rは以下のコードとなります。
+library(shiny)ui &lt;- fluidPage()server &lt;- function(input, output){}shinyApp(ui = ui, server = server)このままでは、空のアプリケーションなので、数値入力とヒストグラム表示を追加すると、以下のコードとなります。
+library(shiny)ui &lt;- fluidPage(numericInput(inputId = &quot;n&quot;,&quot;Sample size&quot;, value = 25),plotOutput(outputId = &quot;hist&quot;))server &lt;- function(input, output){output$hist &lt;- renderPlot({hist(rnorm(input$n))})}shinyApp(ui = ui, server = server)一つのファイルにまとめて記述するだけでなく、ui." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/top-page/" />
+
+
+
+<meta property="article:published_time" content="2018-01-10T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-01-10T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="トップページ"/>
+<meta name="twitter:description" content="今すぐ始めるShiny
+Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。
+Shinyを開発しているのはRStudio Inc.で、メインの開発者はRStudioのCTOであるJoe Cheng氏です。
+Rでの分析結果を動的にwebアプリケーションにしたい、webアプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境がShinyです。Shinyのインストールから、アプリケーションの作成までを紹介します。
+すぐに始められるShinyShinyでwebアプリケーション開発を始める人の大半はすでにRのユーザかもしれませんが、Shinyが気になって開発環境を整えたい人もいるかもしれません。Rはダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタからShinyの動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。
+Rをインストール
+RStudioをインストール
+Shinyパッケージをインストール
+RをインストールCRAN(The Comprehensive R Archive Network)からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。
+ダウンロードしたR-***.exeを実行し、ウィザードを進めていけば、インストールが完了します。
+RStudioをインストールRStudioの公式サイトからインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。
+ShinyパッケージをインストールRStudioを起動し、パッケージをインストールします。console枠で、
+install.packages(&quot;shiny&quot;)を実行すると、Shinyパッケージのインストールが始まります。パッケージをインストール後、Shinyを実行するために以下のコマンドでパッケージをロードします。
+library(shiny)Shinyのシンプルな設計Shinyを構成する要素は大きく２つだけ、ユーザーインターフェース(ui)とサーバ(server)です。ユーザーインターフェースにはレイアウトやコントロールの配置を記述し、サーバにはユーザーインターフェースに表示する数値やグラフを計算する処理を記述します。
+ディレクトリを作り、ディレクトリの中にapp.Rというファイルを置いて、runApp()を実行するだけでShinyアプリケーションが実行されます。最もシンプルなapp.Rは以下のコードとなります。
+library(shiny)ui &lt;- fluidPage()server &lt;- function(input, output){}shinyApp(ui = ui, server = server)このままでは、空のアプリケーションなので、数値入力とヒストグラム表示を追加すると、以下のコードとなります。
+library(shiny)ui &lt;- fluidPage(numericInput(inputId = &quot;n&quot;,&quot;Sample size&quot;, value = 25),plotOutput(outputId = &quot;hist&quot;))server &lt;- function(input, output){output$hist &lt;- renderPlot({hist(rnorm(input$n))})}shinyApp(ui = ui, server = server)一つのファイルにまとめて記述するだけでなく、ui."/>
+<meta name="twitter:site" content="@username"/>
+<meta name="generator" content="Hugo 0.31.1" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "トップページ",
+  "url": "/top-page/",
+  "wordCount": "92",
+  "datePublished": "2018-01-10T00:00:00&#43;00:00",
+  "dateModified": "2018-01-10T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "qhmqk"
+  },
+  "keywords": "R, Shiny"
+}
+</script>
+
+
+
+    <link rel="canonical" href="/top-page/">
+
+    <title>トップページ | Shiny クックブック</title>
+
+    <!-- combined, minified CSS -->
+    <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
+
+    
+
+    
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link " href="/">Home</a>
+          
+          
+        </nav>
+      </div>
+    </div>
+
+    <header class="blog-header">
+      <div class="container">
+        <h1 class="blog-title"><a href="/" rel="home">Shiny クックブック</a></h1>
+        <p class="lead blog-description">Shiny app 開発のための日本語リファレンス</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/top-page/">トップページ</a></h2>
+    <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/r" rel="category tag">R</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/shiny" rel="tag">Shiny</a>
+
+</p>
+  </header>
+  <p>今すぐ始めるShiny</p>
+<p>Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。</p>
+<p>Shinyを開発しているのはRStudio Inc.で、メインの開発者はRStudioのCTOである<a href="https://github.com/jcheng5">Joe Cheng氏</a>です。</p>
+<p>Rでの分析結果を動的にwebアプリケーションにしたい、webアプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境がShinyです。Shinyのインストールから、アプリケーションの作成までを紹介します。</p>
+<div id="shiny" class="section level3">
+<h3>すぐに始められるShiny</h3>
+<p>Shinyでwebアプリケーション開発を始める人の大半はすでにRのユーザかもしれませんが、Shinyが気になって開発環境を整えたい人もいるかもしれません。Rはダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタからShinyの動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。</p>
+<ol style="list-style-type: decimal">
+<li><p>Rをインストール</p></li>
+<li><p>RStudioをインストール</p></li>
+<li><p>Shinyパッケージをインストール</p></li>
+</ol>
+<div id="r" class="section level4">
+<h4>Rをインストール</h4>
+<p><a href="https://cran.r-project.org/">CRAN(The Comprehensive R Archive Network)</a>からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。</p>
+<p>ダウンロードしたR-***.exeを実行し、ウィザードを進めていけば、インストールが完了します。</p>
+</div>
+<div id="rstudio" class="section level4">
+<h4>RStudioをインストール</h4>
+<p><a href="https://www.rstudio.com/products/rstudio/download/">RStudioの公式サイト</a>からインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。</p>
+</div>
+<div id="shiny" class="section level4">
+<h4>Shinyパッケージをインストール</h4>
+<p>RStudioを起動し、パッケージをインストールします。console枠で、</p>
+<pre class="r"><code>install.packages(&quot;shiny&quot;)</code></pre>
+<p>を実行すると、Shinyパッケージのインストールが始まります。パッケージをインストール後、Shinyを実行するために以下のコマンドでパッケージをロードします。</p>
+<pre class="r"><code>library(shiny)</code></pre>
+</div>
+</div>
+<div id="shiny" class="section level3">
+<h3>Shinyのシンプルな設計</h3>
+<p>Shinyを構成する要素は大きく２つだけ、ユーザーインターフェース(ui)とサーバ(server)です。ユーザーインターフェースにはレイアウトやコントロールの配置を記述し、サーバにはユーザーインターフェースに表示する数値やグラフを計算する処理を記述します。</p>
+<p>ディレクトリを作り、ディレクトリの中にapp.Rというファイルを置いて、<code>runApp()</code>を実行するだけでShinyアプリケーションが実行されます。最もシンプルなapp.Rは以下のコードとなります。</p>
+<pre class="r"><code>library(shiny)
+ui &lt;- fluidPage()
+server &lt;- function(input, output){}
+shinyApp(ui = ui, server = server)</code></pre>
+<p>このままでは、空のアプリケーションなので、数値入力とヒストグラム表示を追加すると、以下のコードとなります。</p>
+<pre class="r"><code>library(shiny)
+ui &lt;- fluidPage(
+    numericInput(inputId = &quot;n&quot;,
+        &quot;Sample size&quot;, value = 25),
+    plotOutput(outputId = &quot;hist&quot;)
+)
+server &lt;- function(input, output){
+    output$hist &lt;- renderPlot({
+        hist(rnorm(input$n))
+    })
+}
+shinyApp(ui = ui, server = server)</code></pre>
+<p>一つのファイルにまとめて記述するだけでなく、ui.Rとserver.Rという2つのファイルの分けて記述することもできます。その場合も、同様に<code>runApp()</code>でShinyアプリケーションが実行されます。((最初は、ui.Rとserver.Rの２つのファイルを別々に記述するよう設計されていましたが、version 0.10.2からapp.Rにまとめて記述して実行できるようになりました。説明の順序とは逆です。))</p>
+<p>2つのファイルに分割した場合は、<code>shinyApp()</code>が不要です。</p>
+<p>ここから、必要に応じてコードを追加していきます。</p>
+<ul>
+<li><p>ユーザーインターフェースにHTMLのタグやJavaScriptを追加</p></li>
+<li><p>サーバに統計解析処理と、グラフ描画を追加</p></li>
+</ul>
+<p>などの処理を記述することができます。</p>
+</div>
+<div class="section level3">
+<h3>最後に</h3>
+<p>Shinyの始め方と、そのシンプルな設計について紹介しました。Rのコーディングだけで、ブラウザ上で動く動的なwebアプリケーションが作れるということで、データを分析するRユーザがShinyを覚えることになるケースが大半だと思います。しかし、それだけでは母集団がRに習熟した人たちだけになってしまい、すそ野が広がっていきません。</p>
+<p>HTMLやCSS、JavaScriptを使える人たちが、さらに一歩進んだ分析をwebアプリケーション上に実装したいと思ったときの選択肢として、Shinyが入ってくればいいですね。</p>
+</div>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+    <section>
+    <h4>Share</h4>
+    <nav class="nav sharing-icons">
+      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=%2ftop-page%2f" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://plus.google.com/share?url=%2ftop-page%2f" title="Share on Google+"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2ftop-page%2f" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://twitter.com/home?status=%2ftop-page%2f" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+    </nav>
+  </section>
+
+  
+
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-3 ml-auto blog-sidebar">
+  
+  <section class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p>R user</p>
+  </section>
+  
+
+  
+        <section class="sidebar-module">
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+
+
+<li><a href="/top-page/">トップページ</a></li>
+
+<li><a href="/actionbutton/">actionButton</a></li>
+
+<li><a href="/checkboxgroupinput/">checkboxGroupInput</a></li>
+
+<li><a href="/checkboxinput/">checkboxInput</a></li>
+
+<li><a href="/creating-a-new-theme/">Creating a New Theme</a></li>
+
+    </ol>
+  </section>
+
+  
+
+  
+  <section class="sidebar-module">
+    <h4>Links</h4>
+    <ol class="list-unstyled">
+      
+      <li><a href="https://www.r-project.org/">The R Project for Statistical Computing</a></li>
+      
+      <li><a href="https://www.rstudio.com/">RStudio</a></li>
+      
+    </ol>
+  </section>
+  
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>
+      
+      © 2018 qhmqk
+      
+      </p>
+      <p>
+      <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+  </body>
+
+</html>

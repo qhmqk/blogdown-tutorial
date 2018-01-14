@@ -12,7 +12,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-09-28T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-01-10T00:00:00&#43;00:00"/>
 
 
 
@@ -40,8 +40,8 @@
     "@type": "Person",
     "name": "qhmqk"
   },
-  "dateModified": "2014-09-28T00:00:00&#43;00:00",
-  "keywords": "development,golang,r,shiny,ｒ,control-widgets,development,go,golang,hugo,plot,r-markdown,regression,templates,themes,",
+  "dateModified": "2018-01-10T00:00:00&#43;00:00",
+  "keywords": "development,golang,r,shiny,ｒ,control-widgets,development,go,golang,hugo,plot,r-markdown,regression,shiny,templates,themes,",
   "description": "Shiny app 開発のための日本語リファレンス"
 }
 </script>
@@ -100,50 +100,33 @@
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/creating-a-new-theme/">Creating a New Theme</a></h2>
-    <p class="blog-post-meta"><time datetime="2014-09-28T00:00:00Z">Sun Sep 28, 2014</time> by Michael Henderson</p>
-  </header>
-  Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
-We&rsquo;ll start with creating a new site with a very basic template.
-  <a href='/creating-a-new-theme/'>Read more →</a>
-</article> 
-
-
-
-
-
-
-<article class="blog-post">
-  <header>
-    <h2 class="blog-post-title"><a href="/migrate-to-hugo-from-jekyll/">Migrate to Hugo from Jekyll</a></h2>
-    <p class="blog-post-meta"><time datetime="2014-03-10T00:00:00Z">Mon Mar 10, 2014</time> by qhmqk</p>
-  </header>
-  Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &lt;root&gt;/ ▾ images/ logo.png  should become
-▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.
-  <a href='/migrate-to-hugo-from-jekyll/'>Read more →</a>
-</article> 
-
-
-
-
-
-
-<article class="blog-post">
-  <header>
-    <h2 class="blog-post-title"><a href="/r-markdown-%E8%A8%98%E6%B3%95/">R Markdown 記法</a></h2>
+    <h2 class="blog-post-title"><a href="/top-page/">トップページ</a></h2>
     <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/%EF%BD%92" rel="category tag">Ｒ</a>
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/r" rel="category tag">R</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/r-markdown" rel="tag">R Markdown</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/shiny" rel="tag">Shiny</a>
 
 </p>
   </header>
-  見出し# Header 1## Header 2Header 1Header 2図image:![caption](img/shiny-400x464.png)markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。
-&lt;img src=&#39;../../../../../../../img/shiny-400x464.png&#39; align=&#39;center&#39;&gt;リンク上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。上記の、Shinyのロゴは、RStudioのロゴで、リンク先のガイドラインに従って利用できます。
-
-  <a href='/r-markdown-%E8%A8%98%E6%B3%95/'>Read more →</a>
+  今すぐ始めるShiny
+Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。
+Shinyを開発しているのはRStudio Inc.で、メインの開発者はRStudioのCTOであるJoe Cheng氏です。
+Rでの分析結果を動的にwebアプリケーションにしたい、webアプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境がShinyです。Shinyのインストールから、アプリケーションの作成までを紹介します。
+すぐに始められるShinyShinyでwebアプリケーション開発を始める人の大半はすでにRのユーザかもしれませんが、Shinyが気になって開発環境を整えたい人もいるかもしれません。Rはダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタからShinyの動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。
+Rをインストール
+RStudioをインストール
+Shinyパッケージをインストール
+RをインストールCRAN(The Comprehensive R Archive Network)からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。
+ダウンロードしたR-***.exeを実行し、ウィザードを進めていけば、インストールが完了します。
+RStudioをインストールRStudioの公式サイトからインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。
+ShinyパッケージをインストールRStudioを起動し、パッケージをインストールします。console枠で、
+install.packages(&quot;shiny&quot;)を実行すると、Shinyパッケージのインストールが始まります。パッケージをインストール後、Shinyを実行するために以下のコマンドでパッケージをロードします。
+library(shiny)Shinyのシンプルな設計Shinyを構成する要素は大きく２つだけ、ユーザーインターフェース(ui)とサーバ(server)です。ユーザーインターフェースにはレイアウトやコントロールの配置を記述し、サーバにはユーザーインターフェースに表示する数値やグラフを計算する処理を記述します。
+ディレクトリを作り、ディレクトリの中にapp.Rというファイルを置いて、runApp()を実行するだけでShinyアプリケーションが実行されます。最もシンプルなapp.Rは以下のコードとなります。
+library(shiny)ui &lt;- fluidPage()server &lt;- function(input, output){}shinyApp(ui = ui, server = server)このままでは、空のアプリケーションなので、数値入力とヒストグラム表示を追加すると、以下のコードとなります。
+library(shiny)ui &lt;- fluidPage(numericInput(inputId = &quot;n&quot;,&quot;Sample size&quot;, value = 25),plotOutput(outputId = &quot;hist&quot;))server &lt;- function(input, output){output$hist &lt;- renderPlot({hist(rnorm(input$n))})}shinyApp(ui = ui, server = server)一つのファイルにまとめて記述するだけでなく、ui.
+  <a href='/top-page/'>Read more →</a>
 </article> 
 
 
@@ -180,19 +163,58 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/hello-r-markdown/">Hello R Markdown</a></h2>
-    <p class="blog-post-meta"><time datetime="2015-07-23T21:13:14-05:00">Thu Jul 23, 2015</time> by Frida Gomam in 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/r" rel="category tag">R</a>
+    <h2 class="blog-post-title"><a href="/checkboxgroupinput/">checkboxGroupInput</a></h2>
+    <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/r-markdown" rel="tag">R Markdown</a>, <a href="/tags/plot" rel="tag">plot</a>, <a href="/tags/regression" rel="tag">regression</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/control-widgets" rel="tag">control widgets</a>
 
 </p>
   </header>
-  R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.
-  <a href='/hello-r-markdown/'>Read more →</a>
+  checkboxGroupInput(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelコントロールに表示するラベル。NULLならラベル無しchoicesチェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。selected初期状態で選択されている値inlineTRUEなら、選択したものがインラインで表示されます。width’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照choiceNames, choiceValues名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、choiceNamesとchoiceValuesは同じ長さである必要があります。この引数を指定すると、choicesは指定できません。単純なテキストになるchoicesではなく、これら両引数を用いる利点は、choiceNamesには任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照値UI定義に追加されるHTML要素のリスト
+説明それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成します。選択された値の文字列ベクトルが、入力としてサーバに渡されます。
+使用例choices
+inlineをTRUE
+## Only run examples in interactive R sessionsif (interactive()) {ui &lt;- fluidPage(checkboxGroupInput(&quot;variable&quot;, &quot;Variables to show:&quot;,c(&quot;Cylinders&quot; = &quot;cyl&quot;,&quot;Transmission&quot; = &quot;am&quot;,&quot;Gears&quot; = &quot;gear&quot;)),tableOutput(&quot;data&quot;))server &lt;- function(input, output, session) {output$data &lt;- renderTable({mtcars[, c(&quot;mpg&quot;, input$variable), drop = FALSE]}, rownames = TRUE)}shinyApp(ui, server)ui &lt;- fluidPage(checkboxGroupInput(&quot;icons&quot;, &quot;Choose icons:&quot;,choiceNames =list(icon(&quot;calendar&quot;), icon(&quot;bed&quot;),icon(&quot;cog&quot;), icon(&quot;bug&quot;)),choiceValues =list(&quot;calendar&quot;, &quot;bed&quot;, &quot;cog&quot;, &quot;bug&quot;)),textOutput(&quot;txt&quot;))server &lt;- function(input, output, session) {output$txt &lt;- renderText({icons &lt;- paste(input$icons, collapse = &quot;, &quot;)paste(&quot;You chose&quot;, icons)})}shinyApp(ui, server)}参照RStudioのReference
+  <a href='/checkboxgroupinput/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/checkboxinput/">checkboxInput</a></h2>
+    <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/control-widgets" rel="tag">control widgets</a>
+
+</p>
+  </header>
+  checkboxInput(inputId, label, value = FALSE, width = NULL)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelコントロールに表示するラベル。NULLならラベル無しvalue初期値(論理値でTRUEまたはFALSE)width’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照値UI定義に追加されるチェックボックスのコントロール。
+説明論理値を指定するために使用するチェックボックスを生成。
+使用例## Only run examples in interactive R sessionsif (interactive()) {ui &lt;- fluidPage(checkboxInput(&quot;somevalue&quot;, &quot;Some value&quot;, FALSE),verbatimTextOutput(&quot;value&quot;))server &lt;- function(input, output) {output$value &lt;- renderText({ input$somevalue })}shinyApp(ui, server)}参照RStudioのReference
+  <a href='/checkboxinput/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/creating-a-new-theme/">Creating a New Theme</a></h2>
+    <p class="blog-post-meta"><time datetime="2014-09-28T00:00:00Z">Sun Sep 28, 2014</time> by Michael Henderson</p>
+  </header>
+  Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
+We&rsquo;ll start with creating a new site with a very basic template.
+  <a href='/creating-a-new-theme/'>Read more →</a>
 </article> 
 
 
@@ -217,7 +239,7 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
   
   <section class="sidebar-module sidebar-module-inset">
     <h4>About</h4>
-    <p>A simple Hugo theme based on the <a href="http://v4-alpha.getbootstrap.com/examples/blog/">Bootstrap v4 blog example</a>.</p>
+    <p>R user</p>
   </section>
   
 
@@ -227,15 +249,15 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     <ol class="list-unstyled">
 
 
-<li><a href="/creating-a-new-theme/">Creating a New Theme</a></li>
-
-<li><a href="/migrate-to-hugo-from-jekyll/">Migrate to Hugo from Jekyll</a></li>
-
-<li><a href="/r-markdown-%E8%A8%98%E6%B3%95/">R Markdown 記法</a></li>
+<li><a href="/top-page/">トップページ</a></li>
 
 <li><a href="/actionbutton/">actionButton</a></li>
 
-<li><a href="/hello-r-markdown/">Hello R Markdown</a></li>
+<li><a href="/checkboxgroupinput/">checkboxGroupInput</a></li>
+
+<li><a href="/checkboxinput/">checkboxInput</a></li>
+
+<li><a href="/creating-a-new-theme/">Creating a New Theme</a></li>
 
     </ol>
   </section>
@@ -247,9 +269,9 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     <h4>Links</h4>
     <ol class="list-unstyled">
       
-      <li><a href="https://example.com">Link 1</a></li>
+      <li><a href="https://www.r-project.org/">The R Project for Statistical Computing</a></li>
       
-      <li><a href="https://example.org">Link 2</a></li>
+      <li><a href="https://www.rstudio.com/">RStudio</a></li>
       
     </ol>
   </section>
@@ -263,7 +285,7 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     <footer class="blog-footer">
       <p>
       
-      Blog template created by <a href="https://twitter.com/mdo">@mdo</a>, ported to Hugo by <a href='https://twitter.com/mralanorth'>@mralanorth</a>.
+      © 2018 qhmqk
       
       </p>
       <p>
