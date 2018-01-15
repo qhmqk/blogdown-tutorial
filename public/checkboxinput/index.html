@@ -6,9 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="checkboxInput" />
-<meta property="og:description" content="checkboxInput(inputId, label, value = FALSE, width = NULL)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelコントロールに表示するラベル。NULLならラベル無しvalue初期値(論理値でTRUEまたはFALSE)width’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照値UI定義に追加されるチェックボックスのコントロール。
-説明論理値を指定するために使用するチェックボックスを生成。
-使用例## Only run examples in interactive R sessionsif (interactive()) {ui &lt;- fluidPage(checkboxInput(&quot;somevalue&quot;, &quot;Some value&quot;, FALSE),verbatimTextOutput(&quot;value&quot;))server &lt;- function(input, output) {output$value &lt;- renderText({ input$somevalue })}shinyApp(ui, server)}参照RStudioのReference" />
+<meta property="og:description" content="論理値を指定するために使用するチェックボックスを生成" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/checkboxinput/" />
 
@@ -29,9 +27,7 @@
 
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="checkboxInput"/>
-<meta name="twitter:description" content="checkboxInput(inputId, label, value = FALSE, width = NULL)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelコントロールに表示するラベル。NULLならラベル無しvalue初期値(論理値でTRUEまたはFALSE)width’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照値UI定義に追加されるチェックボックスのコントロール。
-説明論理値を指定するために使用するチェックボックスを生成。
-使用例## Only run examples in interactive R sessionsif (interactive()) {ui &lt;- fluidPage(checkboxInput(&quot;somevalue&quot;, &quot;Some value&quot;, FALSE),verbatimTextOutput(&quot;value&quot;))server &lt;- function(input, output) {output$value &lt;- renderText({ input$somevalue })}shinyApp(ui, server)}参照RStudioのReference"/>
+<meta name="twitter:description" content="論理値を指定するために使用するチェックボックスを生成"/>
 <meta name="twitter:site" content="@username"/>
 <meta name="generator" content="Hugo 0.31.1" />
 
@@ -50,7 +46,8 @@
     "@type": "Person",
     "name": "qhmqk"
   },
-  "keywords": "Shiny, control widgets"
+  "keywords": "Shiny, control widgets",
+  "description": "論理値を指定するために使用するチェックボックスを生成"
 }
 </script>
 
@@ -110,47 +107,55 @@
 
 </p>
   </header>
-  <pre class="r"><code>checkboxInput(inputId, label, value = FALSE, width = NULL)</code></pre>
-<div class="section level3">
-<h3>引数</h3>
+  
+
+<pre><code class="language-r">checkboxInput(inputId, label, value = FALSE, width = NULL)
+</code></pre>
+
+<h3 id="引数">引数</h3>
+
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">名前</th>
 <th align="left">説明</th>
 </tr>
 </thead>
+
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">inputId</td>
 <td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
 </tr>
-<tr class="even">
+
+<tr>
 <td align="left">label</td>
 <td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無し</td>
 </tr>
-<tr class="odd">
+
+<tr>
 <td align="left">value</td>
 <td align="left">初期値(論理値で<code>TRUE</code>または<code>FALSE</code>)</td>
 </tr>
-<tr class="even">
+
+<tr>
 <td align="left">width</td>
-<td align="left">’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
+<td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section level3">
-<h3>値</h3>
+
+<h3 id="値">値</h3>
+
 <p>UI定義に追加されるチェックボックスのコントロール。</p>
-</div>
-<div class="section level3">
-<h3>説明</h3>
+
+<h3 id="説明">説明</h3>
+
 <p>論理値を指定するために使用するチェックボックスを生成。</p>
-</div>
-<div class="section level3">
-<h3>使用例</h3>
-<pre class="r"><code>## Only run examples in interactive R sessions
+
+<h3 id="使用例">使用例</h3>
+
+<pre><code class="language-r eval = FALSE">## Only run examples in interactive R sessions
 if (interactive()) {
 ui &lt;- fluidPage(
   checkboxInput(&quot;somevalue&quot;, &quot;Some value&quot;, FALSE),
@@ -160,13 +165,14 @@ server &lt;- function(input, output) {
   output$value &lt;- renderText({ input$somevalue })
 }
 shinyApp(ui, server)
-}</code></pre>
-</div>
-<div class="section level3">
-<h3>参照</h3>
+}
+</code></pre>
+
+<h3 id="参照">参照</h3>
+
 <p>RStudioのReference</p>
-<p><a href="https://shiny.rstudio.com/reference/shiny/latest/checkboxInput.html" class="uri">https://shiny.rstudio.com/reference/shiny/latest/checkboxInput.html</a></p>
-</div>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/latest/checkboxInput.html">https://shiny.rstudio.com/reference/shiny/latest/checkboxInput.html</a></p>
 
 
   

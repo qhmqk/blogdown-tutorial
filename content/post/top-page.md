@@ -6,11 +6,17 @@ categories: ["R"]
 tags: ["Shiny"]
 weight: 1
 slug: "top-page"
+description: "今すぐ始めるShiny2"
 ---
 
 今すぐ始めるShiny
 
-Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。
+Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。
+
+
+[test link]({{< ref "migrate-from-jekyll.md" >}})
+
+RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。
 
 Shinyを開発しているのはRStudio Inc.で、メインの開発者はRStudioのCTOである[Joe Cheng氏](https://github.com/jcheng5)です。
 

@@ -109,14 +109,9 @@
 
 </p>
   </header>
-  actionButton(inputId, label, icon = NULL, width = NULL, ...)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。icon(オプションで)ボタン上に現れるアイコンwidth’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照...ボタンに適用する名前付きの属性説明初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。
-使用例labelに画像を指定
-iconを使用
-inputIdに応じてlabelを変更
-参照RStudioのReference
-http://shiny.rstudio.com/articles/action-buttons.html
-https://shiny.rstudio.com/reference/shiny/latest/actionButton.html
-
+  
+    初期値がゼロのアクションボタンを生成
+  
   <a href='/actionbutton/'>Read more →</a>
 </article> 
 
@@ -136,11 +131,9 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html
 
 </p>
   </header>
-  checkboxGroupInput(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelコントロールに表示するラベル。NULLならラベル無しchoicesチェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。selected初期状態で選択されている値inlineTRUEなら、選択したものがインラインで表示されます。width’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照choiceNames, choiceValues名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、choiceNamesとchoiceValuesは同じ長さである必要があります。この引数を指定すると、choicesは指定できません。単純なテキストになるchoicesではなく、これら両引数を用いる利点は、choiceNamesには任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照値UI定義に追加されるHTML要素のリスト
-説明それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成します。選択された値の文字列ベクトルが、入力としてサーバに渡されます。
-使用例choices
-inlineをTRUE
-## Only run examples in interactive R sessionsif (interactive()) {ui &lt;- fluidPage(checkboxGroupInput(&quot;variable&quot;, &quot;Variables to show:&quot;,c(&quot;Cylinders&quot; = &quot;cyl&quot;,&quot;Transmission&quot; = &quot;am&quot;,&quot;Gears&quot; = &quot;gear&quot;)),tableOutput(&quot;data&quot;))server &lt;- function(input, output, session) {output$data &lt;- renderTable({mtcars[, c(&quot;mpg&quot;, input$variable), drop = FALSE]}, rownames = TRUE)}shinyApp(ui, server)ui &lt;- fluidPage(checkboxGroupInput(&quot;icons&quot;, &quot;Choose icons:&quot;,choiceNames =list(icon(&quot;calendar&quot;), icon(&quot;bed&quot;),icon(&quot;cog&quot;), icon(&quot;bug&quot;)),choiceValues =list(&quot;calendar&quot;, &quot;bed&quot;, &quot;cog&quot;, &quot;bug&quot;)),textOutput(&quot;txt&quot;))server &lt;- function(input, output, session) {output$txt &lt;- renderText({icons &lt;- paste(input$icons, collapse = &quot;, &quot;)paste(&quot;You chose&quot;, icons)})}shinyApp(ui, server)}参照RStudioのReference
+  
+    それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成
+  
   <a href='/checkboxgroupinput/'>Read more →</a>
 </article> 
 
@@ -160,9 +153,9 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html
 
 </p>
   </header>
-  checkboxInput(inputId, label, value = FALSE, width = NULL)引数名前説明inputId値にアクセスするために使用するinputのスロットlabelコントロールに表示するラベル。NULLならラベル無しvalue初期値(論理値でTRUEまたはFALSE)width’400px’や’100%’などの形式で幅を指定。詳細はvalidateCssUnitを参照値UI定義に追加されるチェックボックスのコントロール。
-説明論理値を指定するために使用するチェックボックスを生成。
-使用例## Only run examples in interactive R sessionsif (interactive()) {ui &lt;- fluidPage(checkboxInput(&quot;somevalue&quot;, &quot;Some value&quot;, FALSE),verbatimTextOutput(&quot;value&quot;))server &lt;- function(input, output) {output$value &lt;- renderText({ input$somevalue })}shinyApp(ui, server)}参照RStudioのReference
+  
+    論理値を指定するために使用するチェックボックスを生成
+  
   <a href='/checkboxinput/'>Read more →</a>
 </article> 
 

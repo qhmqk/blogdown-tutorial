@@ -6,6 +6,7 @@ categories: ["Shiny"]
 tags: ["control widgets"]
 weight: 3
 slug: "checkboxgroupinput"
+description: "それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成"
 ---
 
 ```r

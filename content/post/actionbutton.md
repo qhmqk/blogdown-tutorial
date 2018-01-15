@@ -6,6 +6,7 @@ categories: ["Shiny"]
 tags: ["control widgets"]
 slug: "actionbutton"
 weight: 3
+description: "初期値がゼロのアクションボタンを生成"
 ---
 
 ```{r eval = FALSE}

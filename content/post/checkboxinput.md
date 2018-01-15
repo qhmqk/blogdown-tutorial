@@ -6,6 +6,7 @@ categories: ["Shiny"]
 tags: ["control widgets"]
 slug: "checkboxinput"
 weight: 3
+description: "論理値を指定するために使用するチェックボックスを生成"
 ---
 
 ```r
