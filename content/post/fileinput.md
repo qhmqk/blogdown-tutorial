@@ -17,13 +17,13 @@ fileInput(inputId, label, multiple = FALSE, accept = NULL, width = NULL, buttonL
 
 |名前|説明|
 |:--|:--|
-|inputId|値にアクセスするために使用する`input`のスロット|
-|label|コントロールに表示するラベル。`NULL`ならラベル無し|
-|multiple|ユーザが複数のファイルを同時にアップロードできるかどうかを論理値で指定します。IE9よりも古いブラウザでは動作しません。|
-|accept|サーバが受け付けるファイルの種類をヒントとして与えるために、MIME型の文字ベクトル|
-|width|'400px'や'100%'などの形式で幅を指定。詳細はvalidateCssUnitを参照|
-|buttonLabel|テキストまたはHTMLタグで指定するボタンのラベル|
-|placeholder|ファイルをアップロードする前に表示するテキスト|
+|`inputId`|値にアクセスするために使用する`input`のスロット|
+|`label`|コントロールに表示するラベル。`NULL`ならラベル無し|
+|`multiple`|ユーザが複数のファイルを同時にアップロードできるかどうかを論理値で指定します。IE9よりも古いブラウザでは動作しません。|
+|`accept`|サーバが受け付けるファイルの種類をヒントとして与えるために、MIME型の文字ベクトル|
+|`width`|'400px'や'100%'などの形式で幅を指定。詳細はvalidateCssUnitを参照|
+|`buttonLabel`|テキストまたはHTMLタグで指定するボタンのラベル|
+|`placeholder`|ファイルをアップロードする前に表示するテキスト|
 
 ### 説明
 

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="checkboxGroupInput" />
-<meta property="og:description" content="それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成" />
+<meta property="og:description" content="トグルスイッチ形式の複数のチェックボックスをUIに配置します。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/checkboxgroupinput/" />
 
@@ -27,7 +27,7 @@
 
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="checkboxGroupInput"/>
-<meta name="twitter:description" content="それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成"/>
+<meta name="twitter:description" content="トグルスイッチ形式の複数のチェックボックスをUIに配置します。"/>
 <meta name="twitter:site" content="@username"/>
 <meta name="generator" content="Hugo 0.31.1" />
 
@@ -47,7 +47,7 @@
     "name": "qhmqk"
   },
   "keywords": "Shiny, UI Inputs",
-  "description": "それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成"
+  "description": "トグルスイッチ形式の複数のチェックボックスをUIに配置します。"
 }
 </script>
 
@@ -123,37 +123,37 @@
 
 <tbody>
 <tr>
-<td align="left">inputId</td>
+<td align="left"><code>inputId</code></td>
 <td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
 </tr>
 
 <tr>
-<td align="left">label</td>
+<td align="left"><code>label</code></td>
 <td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無し</td>
 </tr>
 
 <tr>
-<td align="left">choices</td>
+<td align="left"><code>choices</code></td>
 <td align="left">チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、<code>choiceNames</code>と<code>choiceValues</code>は指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。</td>
 </tr>
 
 <tr>
-<td align="left">selected</td>
+<td align="left"><code>selected</code></td>
 <td align="left">初期状態で選択されている値</td>
 </tr>
 
 <tr>
-<td align="left">inline</td>
+<td align="left"><code>inline</code></td>
 <td align="left"><code>TRUE</code>なら、選択したものがインラインで表示されます。</td>
 </tr>
 
 <tr>
-<td align="left">width</td>
+<td align="left"><code>width</code></td>
 <td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
 </tr>
 
 <tr>
-<td align="left">choiceNames, choiceValues</td>
+<td align="left"><code>choiceNames</code>, <code>choiceValues</code></td>
 <td align="left">名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、<code>choiceNames</code>と<code>choiceValues</code>は同じ長さである必要があります。この引数を指定すると、<code>choices</code>は指定できません。単純なテキストになる<code>choices</code>ではなく、これら両引数を用いる利点は、<code>choiceNames</code>には任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照</td>
 </tr>
 </tbody>
@@ -261,7 +261,7 @@ shinyApp(ui, server)
 
 <li><a href="/top-page/">トップページ</a></li>
 
-<li><a href="/function-index/">索引(アルファベット)</a></li>
+<li><a href="/function-index/">索引(アルファベット順)</a></li>
 
 <li><a href="/reference/">索引(機能別)</a></li>
 

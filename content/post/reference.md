@@ -6,7 +6,7 @@ categories: ["R"]
 tags: ["Shiny"]
 weight: 2
 slug: "reference"
-description: "reference"
+description: "機能ごとのShiny関数の索引"
 ---
 
 ### UI Inputs
@@ -20,6 +20,8 @@ description: "reference"
 * [dateInput]({{< ref "dateinput.md" >}})
 
 * [dateRangeInput]({{< ref "daterangeinput.md" >}})
+
+* [fileInput]({{< ref "fileinput.md" >}})
 
 ### UI Outputs
 

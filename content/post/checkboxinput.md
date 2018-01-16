@@ -6,21 +6,21 @@ categories: ["Shiny"]
 tags: ["UI Inputs"]
 slug: "checkboxinput"
 weight: 3
-description: "論理値を指定するために使用するチェックボックスを生成"
+description: "トグルスイッチ形式のチェックボックスをUIに配置します。"
 ---
 
-```r
+{{< highlight r >}}
 checkboxInput(inputId, label, value = FALSE, width = NULL)
-```
+{{< /highlight >}}
 
 ### 引数
 
 |名前|説明|
 |:--|:--|
-|inputId|値にアクセスするために使用する`input`のスロット|
-|label|コントロールに表示するラベル。`NULL`ならラベル無し|
-|value|初期値(論理値で`TRUE`または`FALSE`)|
-|width|'400px'や'100%'などの形式で幅を指定。詳細はvalidateCssUnitを参照|
+|`inputId`|値にアクセスするために使用する`input`のスロット|
+|`label`|コントロールに表示するラベル。`NULL`ならラベル無し|
+|`value`|初期値(論理値で`TRUE`または`FALSE`)|
+|`width`|'400px'や'100%'などの形式で幅を指定。詳細はvalidateCssUnitを参照|
 
 ### 値
 
@@ -32,7 +32,7 @@ UI定義に追加されるチェックボックスのコントロール。
 
 ### 使用例
 
-```{r eval = FALSE}
+{{< highlight r >}}
 ## Only run examples in interactive R sessions
 if (interactive()) {
 ui <- fluidPage(
@@ -44,7 +44,7 @@ server <- function(input, output) {
 }
 shinyApp(ui, server)
 }
-```
+{{< /highlight >}}
 
 ### 参照
 

@@ -6,12 +6,12 @@ categories: ["Shiny"]
 tags: ["UI Inputs"]
 slug: "actionbutton"
 weight: 3
-description: "初期値がゼロのアクションボタンを生成"
+description: "入力として UI にアクションボタンを配置します。"
 ---
 
-```{r eval = FALSE}
+{{< highlight r >}}
 actionButton(inputId, label, icon = NULL, width = NULL, ...)
-```
+{{< /highlight >}}
 
 ### 引数
 
@@ -20,7 +20,7 @@ actionButton(inputId, label, icon = NULL, width = NULL, ...)
 |`inputId`|値にアクセスするために使用する`input`のスロット|
 |`label`|ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。|
 |`icon`|(オプションで)ボタン上に現れるアイコン|
-|`width`|'400px'や'100%'などの形式で幅を指定。詳細はvalidateCssUnitを参照|
+|`width`|'400px'や'100%'などの形式で幅を指定。詳細は`validateCssUnit`を参照|
 |`...`|ボタンに適用する名前付きの属性|
 
 ### 説明

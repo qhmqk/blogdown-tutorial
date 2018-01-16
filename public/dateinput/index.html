@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "dateInput",
   "url": "/dateinput/",
-  "wordCount": "256",
+  "wordCount": "250",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -109,8 +109,7 @@
   </header>
   
 
-<pre><code class="language-r">dateInput(inputId, label, value = NULL, min = NULL, max = NULL, format = &quot;yyyy-mm-dd&quot;, startview = &quot;month&quot;, weekstart = 0, language = &quot;en&quot;, width = NULL)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dateInput(inputId, label, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, min <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, max <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yyyy-mm-dd&#34;</span>, startview <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;month&#34;</span>, weekstart <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;en&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
 
 <h3 id="引数">引数</h3>
 
@@ -124,62 +123,62 @@
 
 <tbody>
 <tr>
-<td align="left">inputId</td>
+<td align="left"><code>inputId</code></td>
 <td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
 </tr>
 
 <tr>
-<td align="left">label</td>
+<td align="left"><code>label</code></td>
 <td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無し</td>
 </tr>
 
 <tr>
-<td align="left">value</td>
+<td align="left"><code>value</code></td>
 <td align="left">開始日。データオブジェクト、または<code>yyyy-mm-dd</code>というフォーマットの文字列。デフォルトは<code>NULL</code>で、<code>NULL</code>ならクライアントのタイムゾーンの現在の日付となります。</td>
 </tr>
 
 <tr>
-<td align="left">min</td>
+<td align="left"><code>min</code></td>
 <td align="left">最も昔の日付。データオブジェクト、または<code>yyyy-mm-dd</code>というフォーマットの文字列。</td>
 </tr>
 
 <tr>
-<td align="left">max</td>
+<td align="left"><code>max</code></td>
 <td align="left">最も後の日付。データオブジェクト、または<code>yyyy-mm-dd</code>というフォーマットの文字列。</td>
 </tr>
 
 <tr>
-<td align="left">format</td>
+<td align="left"><code>format</code></td>
 <td align="left">ブラウザに表示する日付のフォーマット。デフォルトは<code>yyyy-mm-dd</code>。</td>
 </tr>
 
 <tr>
-<td align="left">startview</td>
+<td align="left"><code>startview</code></td>
 <td align="left">最初の入力オブジェクトがクリックされたときに表示される日付の範囲。&rdquo;month&rdquo;, &ldquo;year&rdquo;, &ldquo;decade&rdquo;を指定します。デフォルトは&rdquo;month&rdquo;。</td>
 </tr>
 
 <tr>
-<td align="left">weekstart</td>
+<td align="left"><code>weekstart</code></td>
 <td align="left">週の最初の日を0(日曜日)～6(土曜日)の整数で指定します。</td>
 </tr>
 
 <tr>
-<td align="left">language</td>
+<td align="left"><code>language</code></td>
 <td align="left">月と日の名前に使用する言語を指定します。デフォルトは&rdquo;en&rdquo;で英語。他に指定可能な値は、&rdquo;ar&rdquo;, &ldquo;az&rdquo;, &ldquo;bg&rdquo;, &ldquo;bs&rdquo;, &ldquo;ca&rdquo;, &ldquo;cs&rdquo;, &ldquo;cy&rdquo;, &ldquo;da&rdquo;, &ldquo;de&rdquo;, &ldquo;el&rdquo;, &ldquo;en-AU&rdquo;, &ldquo;en-GB&rdquo;, &ldquo;eo&rdquo;, &ldquo;es&rdquo;, &ldquo;et&rdquo;, &ldquo;eu&rdquo;, &ldquo;fa&rdquo;, &ldquo;fi&rdquo;, &ldquo;fo&rdquo;, &ldquo;fr-CH&rdquo;, &ldquo;fr&rdquo;, &ldquo;gl&rdquo;, &ldquo;he&rdquo;, &ldquo;hr&rdquo;, &ldquo;hu&rdquo;, &ldquo;hy&rdquo;, &ldquo;id&rdquo;, &ldquo;is&rdquo;, &ldquo;it-CH&rdquo;, &ldquo;it&rdquo;, &ldquo;ja&rdquo;, &ldquo;ka&rdquo;, &ldquo;kh&rdquo;, &ldquo;kk&rdquo;, &ldquo;ko&rdquo;, &ldquo;kr&rdquo;, &ldquo;lt&rdquo;, &ldquo;lv&rdquo;, &ldquo;me&rdquo;, &ldquo;mk&rdquo;, &ldquo;mn&rdquo;, &ldquo;ms&rdquo;, &ldquo;nb&rdquo;, &ldquo;nl-BE&rdquo;, &ldquo;nl&rdquo;, &ldquo;no&rdquo;, &ldquo;pl&rdquo;, &ldquo;pt-BR&rdquo;, &ldquo;pt&rdquo;, &ldquo;ro&rdquo;, &ldquo;rs-latin&rdquo;, &ldquo;rs&rdquo;, &ldquo;ru&rdquo;, &ldquo;sk&rdquo;, &ldquo;sl&rdquo;, &ldquo;sq&rdquo;, &ldquo;sr-latin&rdquo;, &ldquo;sr&rdquo;, &ldquo;sv&rdquo;, &ldquo;sw&rdquo;, &ldquo;th&rdquo;, &ldquo;tr&rdquo;, &ldquo;uk&rdquo;, &ldquo;vi&rdquo;, &ldquo;zh-CN&rdquo;, &ldquo;zh-TW&rdquo;。</td>
 </tr>
 
 <tr>
-<td align="left">width</td>
-<td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
+<td align="left"><code>width</code></td>
+<td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細は<code>validateCssUnit</code>を参照</td>
 </tr>
 </tbody>
 </table>
 
-<h4 id="説明">説明</h4>
+<h3 id="説明">説明</h3>
 
 <p>クリックすると日付選択できるカレンダーが表示されるテキスト入力を生成。</p>
 
-<h4 id="詳細">詳細</h4>
+<h3 id="詳細">詳細</h3>
 
 <p>日付の<code>format</code>文字列のデフォルトは<code>yyyy-mm-dd</code>ですが、以下の表の値が使用可能です。</p>
 
@@ -193,80 +192,79 @@
 
 <tbody>
 <tr>
-<td align="left">yy</td>
+<td align="left"><code>yy</code></td>
 <td align="left">世紀の部分がない西暦。2018年なら18となります。</td>
 </tr>
 
 <tr>
-<td align="left">yyyy</td>
+<td align="left"><code>yyyy</code></td>
 <td align="left">世紀ありの西暦。2018年ならそのまま2018となります。</td>
 </tr>
 
 <tr>
-<td align="left">mm</td>
+<td align="left"><code>mm</code></td>
 <td align="left">01から12までの2桁の月の数字を表示します。</td>
 </tr>
 
 <tr>
-<td align="left">m</td>
+<td align="left"><code>m</code></td>
 <td align="left">1桁の場合の0なしの1から12までの2桁の月の数字を表示します。</td>
 </tr>
 
 <tr>
-<td align="left">M</td>
+<td align="left"><code>M</code></td>
 <td align="left">月の名前の短縮を表示します。</td>
 </tr>
 
 <tr>
-<td align="left">MM</td>
+<td align="left"><code>MM</code></td>
 <td align="left">月の名前を短縮せずに表示します。</td>
 </tr>
 
 <tr>
-<td align="left">dd</td>
-<td align="left">2桁目のゼロを付けた日 Day of month with leading zero</td>
+<td align="left"><code>dd</code></td>
+<td align="left">2桁目のゼロを付けた日</td>
 </tr>
 
 <tr>
-<td align="left">d</td>
+<td align="left"><code>d</code></td>
 <td align="left">2桁目のゼロなしの日</td>
 </tr>
 
 <tr>
-<td align="left">D</td>
+<td align="left"><code>D</code></td>
 <td align="left">省略した曜日の名前</td>
 </tr>
 
 <tr>
-<td align="left">DD</td>
+<td align="left"><code>DD</code></td>
 <td align="left">曜日のフルネーム</td>
 </tr>
 </tbody>
 </table>
 
-<h4 id="使用例">使用例</h4>
+<h3 id="使用例">使用例</h3>
 
-<pre><code class="language-r">## Only run examples in interactive R sessions
-if (interactive()) {
-ui &lt;- fluidPage(
-  dateInput(&quot;date1&quot;, &quot;Date:&quot;, value = &quot;2012-02-29&quot;),
-  # Default value is the date in client's time zone
-  dateInput(&quot;date2&quot;, &quot;Date:&quot;),
-  # value is always yyyy-mm-dd, even if the display format is different
-  dateInput(&quot;date3&quot;, &quot;Date:&quot;, value = &quot;2012-02-29&quot;, format = &quot;mm/dd/yy&quot;),
-  # Pass in a Date object
-  dateInput(&quot;date4&quot;, &quot;Date:&quot;, value = Sys.Date()-10),
-  # Use different language and different first day of week
-  dateInput(&quot;date5&quot;, &quot;Date:&quot;,
-          language = &quot;ru&quot;,
-          weekstart = 1),
-  # Start with decade view instead of default month view
-  dateInput(&quot;date6&quot;, &quot;Date:&quot;,
-            startview = &quot;decade&quot;)
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  dateInput(<span style="color:#e6db74">&#34;date1&#34;</span>, <span style="color:#e6db74">&#34;Date:&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2012-02-29&#34;</span>),
+  <span style="color:#75715e"># Default value is the date in client&#39;s time zone</span>
+  dateInput(<span style="color:#e6db74">&#34;date2&#34;</span>, <span style="color:#e6db74">&#34;Date:&#34;</span>),
+  <span style="color:#75715e"># value is always yyyy-mm-dd, even if the display format is different</span>
+  dateInput(<span style="color:#e6db74">&#34;date3&#34;</span>, <span style="color:#e6db74">&#34;Date:&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2012-02-29&#34;</span>, format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mm/dd/yy&#34;</span>),
+  <span style="color:#75715e"># Pass in a Date object</span>
+  dateInput(<span style="color:#e6db74">&#34;date4&#34;</span>, <span style="color:#e6db74">&#34;Date:&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">Sys.Date</span>()<span style="color:#ae81ff">-10</span>),
+  <span style="color:#75715e"># Use different language and different first day of week</span>
+  dateInput(<span style="color:#e6db74">&#34;date5&#34;</span>, <span style="color:#e6db74">&#34;Date:&#34;</span>,
+          language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ru&#34;</span>,
+          weekstart <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>),
+  <span style="color:#75715e"># Start with decade view instead of default month view</span>
+  dateInput(<span style="color:#e6db74">&#34;date6&#34;</span>, <span style="color:#e6db74">&#34;Date:&#34;</span>,
+            startview <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;decade&#34;</span>)
 )
-shinyApp(ui, server = function(input, output) { })
-}
-</code></pre>
+shinyApp(ui, server <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(input, output) { })
+}</code></pre></div></p>
 
 <h3 id="参照">参照</h3>
 
@@ -320,7 +318,7 @@ shinyApp(ui, server = function(input, output) { })
 
 <li><a href="/top-page/">トップページ</a></li>
 
-<li><a href="/function-index/">索引(アルファベット)</a></li>
+<li><a href="/function-index/">索引(アルファベット順)</a></li>
 
 <li><a href="/reference/">索引(機能別)</a></li>
 

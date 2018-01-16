@@ -1,12 +1,12 @@
 ---
-title: "索引(アルファベット)"
+title: "索引(アルファベット順)"
 author: "qhmqk"
 date: 2018-01-10
 categories: ["R"]
 tags: ["Shiny"]
 weight: 2
 slug: "function-index"
-description: "index"
+description: "アルファベット順のShiny関数の索引"
 ---
 ### A
 * [actionButton]({{< ref "actionbutton.md" >}})
@@ -19,6 +19,7 @@ description: "index"
 * [dateRangeInput]({{< ref "daterangeinput.md" >}})
 ### E
 ### F
+* [fileInput]({{< ref "fileinput.md" >}})
 ### G
 ### H
 ### I

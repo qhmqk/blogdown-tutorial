@@ -40,7 +40,7 @@ library(shiny) ui &amp;lt;- fluidPage( numericInput(inputId = &amp;quot;n&amp;qu
     </item>
     
     <item>
-      <title>索引(アルファベット)</title>
+      <title>索引(アルファベット順)</title>
       <link>/function-index/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
@@ -50,7 +50,8 @@ B C checkboxGroupInput
  checkboxInput
 D dateInput
  dateRangeInput
-E F G H I J K L M N O P Q R S T U V W X Y Z  </description>
+E F fileInput
+G H I J K L M N O P Q R S T U V W X Y Z  </description>
     </item>
     
     <item>
@@ -64,6 +65,7 @@ E F G H I J K L M N O P Q R S T U V W X Y Z  </description>
  checkboxInput
  dateInput
  dateRangeInput
+ fileInput
   UI Outputs UI Layout Rendering functions Reactive programming https://shiny.rstudio.com/reference/shiny/1.0.5/</description>
     </item>
     
