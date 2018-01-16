@@ -46,7 +46,7 @@
     "@type": "Person",
     "name": "qhmqk"
   },
-  "keywords": "Shiny, control widgets",
+  "keywords": "Shiny, UI Inputs",
   "description": "それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成"
 }
 </script>
@@ -103,14 +103,13 @@
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/control-widgets" rel="tag">control widgets</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
 
 </p>
   </header>
   
 
-<pre><code class="language-r">checkboxGroupInput(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">checkboxGroupInput(inputId, label, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
 
 <h3 id="引数">引数</h3>
 
@@ -176,40 +175,39 @@
 <li><p><code>inline</code>を<code>TRUE</code></p></li>
 </ul>
 
-<pre><code class="language-r eval = FALSE">## Only run examples in interactive R sessions
-if (interactive()) {
-ui &lt;- fluidPage(
-  checkboxGroupInput(&quot;variable&quot;, &quot;Variables to show:&quot;,
-                     c(&quot;Cylinders&quot; = &quot;cyl&quot;,
-                       &quot;Transmission&quot; = &quot;am&quot;,
-                       &quot;Gears&quot; = &quot;gear&quot;)),
-  tableOutput(&quot;data&quot;)
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  checkboxGroupInput(<span style="color:#e6db74">&#34;variable&#34;</span>, <span style="color:#e6db74">&#34;Variables to show:&#34;</span>,
+                     <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Cylinders&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cyl&#34;</span>,
+                       <span style="color:#e6db74">&#34;Transmission&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;am&#34;</span>,
+                       <span style="color:#e6db74">&#34;Gears&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;gear&#34;</span>)),
+  tableOutput(<span style="color:#e6db74">&#34;data&#34;</span>)
 )
-server &lt;- function(input, output, session) {
-  output$data &lt;- renderTable({
-    mtcars[, c(&quot;mpg&quot;, input$variable), drop = FALSE]
-  }, rownames = TRUE)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>data <span style="color:#f92672">&lt;-</span> renderTable({
+    mtcars[, <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;mpg&#34;</span>, input<span style="color:#f92672">$</span>variable), drop <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>]
+  }, rownames <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 }
 shinyApp(ui, server)
-ui &lt;- fluidPage(
-  checkboxGroupInput(&quot;icons&quot;, &quot;Choose icons:&quot;,
-    choiceNames =
-      list(icon(&quot;calendar&quot;), icon(&quot;bed&quot;),
-           icon(&quot;cog&quot;), icon(&quot;bug&quot;)),
-    choiceValues =
-      list(&quot;calendar&quot;, &quot;bed&quot;, &quot;cog&quot;, &quot;bug&quot;)
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  checkboxGroupInput(<span style="color:#e6db74">&#34;icons&#34;</span>, <span style="color:#e6db74">&#34;Choose icons:&#34;</span>,
+    choiceNames <span style="color:#f92672">=</span>
+      <span style="color:#66d9ef">list</span>(icon(<span style="color:#e6db74">&#34;calendar&#34;</span>), icon(<span style="color:#e6db74">&#34;bed&#34;</span>),
+           icon(<span style="color:#e6db74">&#34;cog&#34;</span>), icon(<span style="color:#e6db74">&#34;bug&#34;</span>)),
+    choiceValues <span style="color:#f92672">=</span>
+      <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">&#34;calendar&#34;</span>, <span style="color:#e6db74">&#34;bed&#34;</span>, <span style="color:#e6db74">&#34;cog&#34;</span>, <span style="color:#e6db74">&#34;bug&#34;</span>)
   ),
-  textOutput(&quot;txt&quot;)
+  textOutput(<span style="color:#e6db74">&#34;txt&#34;</span>)
 )
-server &lt;- function(input, output, session) {
-  output$txt &lt;- renderText({
-    icons &lt;- paste(input$icons, collapse = &quot;, &quot;)
-    paste(&quot;You chose&quot;, icons)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>txt <span style="color:#f92672">&lt;-</span> renderText({
+    icons <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">paste</span>(input<span style="color:#f92672">$</span>icons, collapse <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;, &#34;</span>)
+    <span style="color:#66d9ef">paste</span>(<span style="color:#e6db74">&#34;You chose&#34;</span>, icons)
   })
 }
 shinyApp(ui, server)
-}
-</code></pre>
+}</code></pre></div></p>
 
 <h3 id="参照">参照</h3>
 
@@ -263,13 +261,13 @@ shinyApp(ui, server)
 
 <li><a href="/top-page/">トップページ</a></li>
 
+<li><a href="/function-index/">索引(アルファベット)</a></li>
+
+<li><a href="/reference/">索引(機能別)</a></li>
+
 <li><a href="/actionbutton/">actionButton</a></li>
 
 <li><a href="/checkboxgroupinput/">checkboxGroupInput</a></li>
-
-<li><a href="/checkboxinput/">checkboxInput</a></li>
-
-<li><a href="/creating-a-new-theme/">Creating a New Theme</a></li>
 
     </ol>
   </section>

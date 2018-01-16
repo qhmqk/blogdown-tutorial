@@ -39,5 +39,33 @@ library(shiny) ui &amp;lt;- fluidPage() server &amp;lt;- function(input, output)
 library(shiny) ui &amp;lt;- fluidPage( numericInput(inputId = &amp;quot;n&amp;quot;, &amp;quot;Sample size&amp;quot;, value = 25), plotOutput(outputId = &amp;quot;hist&amp;quot;) ) server &amp;lt;- function(input, output){ output$hist &amp;lt;- renderPlot({ hist(rnorm(input$n)) }) } shinyApp(ui = ui, server = server)  一つのファイルにまとめて記述するだけでなく、ui.</description>
     </item>
     
+    <item>
+      <title>索引(アルファベット)</title>
+      <link>/function-index/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/function-index/</guid>
+      <description> A  actionButton
+B C checkboxGroupInput
+ checkboxInput
+D dateInput
+ dateRangeInput
+E F G H I J K L M N O P Q R S T U V W X Y Z  </description>
+    </item>
+    
+    <item>
+      <title>索引(機能別)</title>
+      <link>/reference/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/reference/</guid>
+      <description>UI Inputs  actionButton
+ checkboxGroupInput
+ checkboxInput
+ dateInput
+ dateRangeInput
+  UI Outputs UI Layout Rendering functions Reactive programming https://shiny.rstudio.com/reference/shiny/1.0.5/</description>
+    </item>
+    
   </channel>
 </rss>

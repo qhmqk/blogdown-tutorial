@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="dateRangeInput" />
+<meta property="og:description" content="クリックすると日付選択できるカレンダーで、日付の文字列ペアを生成" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/daterangeinput/" />
+
+
+
+<meta property="article:published_time" content="2018-01-10T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-01-10T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="dateRangeInput"/>
+<meta name="twitter:description" content="クリックすると日付選択できるカレンダーで、日付の文字列ペアを生成"/>
+<meta name="twitter:site" content="@username"/>
+<meta name="generator" content="Hugo 0.31.1" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "dateRangeInput",
+  "url": "/daterangeinput/",
+  "wordCount": "302",
+  "datePublished": "2018-01-10T00:00:00&#43;00:00",
+  "dateModified": "2018-01-10T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "qhmqk"
+  },
+  "keywords": "Shiny, UI Inputs",
+  "description": "クリックすると日付選択できるカレンダーで、日付の文字列ペアを生成"
+}
+</script>
+
+
+
+    <link rel="canonical" href="/daterangeinput/">
+
+    <title>dateRangeInput | Shiny クックブック</title>
+
+    <!-- combined, minified CSS -->
+    <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
+
+    
+
+    
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link " href="/">Home</a>
+          
+          
+        </nav>
+      </div>
+    </div>
+
+    <header class="blog-header">
+      <div class="container">
+        <h1 class="blog-title"><a href="/" rel="home">Shiny クックブック</a></h1>
+        <p class="lead blog-description">Shiny app 開発のための日本語リファレンス</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/daterangeinput/">dateRangeInput</a></h2>
+    <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
+
+</p>
+  </header>
+  
+
+<pre><code class="language-r">dateRangeInput(inputId, label, start = NULL, end = NULL, min = NULL, max = NULL, format = &quot;yyyy-mm-dd&quot;, startview = &quot;month&quot;, weekstart = 0, language = &quot;en&quot;, separator = &quot; to &quot;, width = NULL)
+</code></pre>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">inputId</td>
+<td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
+</tr>
+
+<tr>
+<td align="left">label</td>
+<td align="left">ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。</td>
+</tr>
+
+<tr>
+<td align="left">start</td>
+<td align="left">開始日の初期値。データオブジェクト、または<code>yyyy-mm-dd</code>というフォーマットの文字列。デフォルトはNULLで、現在のタイムゾーンの値が入ります。</td>
+</tr>
+
+<tr>
+<td align="left">end</td>
+<td align="left">終了日の初期値。データオブジェクト、または<code>yyyy-mm-dd</code>というフォーマットの文字列。デフォルトはNULLで、現在のタイムゾーンの値が入ります。</td>
+</tr>
+
+<tr>
+<td align="left">min</td>
+<td align="left">最も昔の日付。データオブジェクト、または<code>yyyy-mm-dd</code>というフォーマットの文字列。</td>
+</tr>
+
+<tr>
+<td align="left">max</td>
+<td align="left">最も後の日付。データオブジェクト、または<code>yyyy-mm-dd</code>というフォーマットの文字列。</td>
+</tr>
+
+<tr>
+<td align="left">format</td>
+<td align="left">ブラウザに表示する日付のフォーマット。デフォルトは<code>yyyy-mm-dd</code>。</td>
+</tr>
+
+<tr>
+<td align="left">startview</td>
+<td align="left">最初の入力オブジェクトがクリックされたときに表示される日付の範囲。&rdquo;month&rdquo;, &ldquo;year&rdquo;, &ldquo;decade&rdquo;を指定します。デフォルトは&rdquo;month&rdquo;。</td>
+</tr>
+
+<tr>
+<td align="left">weekstart</td>
+<td align="left">週の最初の日を0(日曜日)～6(土曜日)の整数で指定します。</td>
+</tr>
+
+<tr>
+<td align="left">language</td>
+<td align="left">月と日の名前に使用する言語を指定します。デフォルトは&rdquo;en&rdquo;で英語。他に指定可能な値は、&rdquo;ar&rdquo;, &ldquo;az&rdquo;, &ldquo;bg&rdquo;, &ldquo;bs&rdquo;, &ldquo;ca&rdquo;, &ldquo;cs&rdquo;, &ldquo;cy&rdquo;, &ldquo;da&rdquo;, &ldquo;de&rdquo;, &ldquo;el&rdquo;, &ldquo;en-AU&rdquo;, &ldquo;en-GB&rdquo;, &ldquo;eo&rdquo;, &ldquo;es&rdquo;, &ldquo;et&rdquo;, &ldquo;eu&rdquo;, &ldquo;fa&rdquo;, &ldquo;fi&rdquo;, &ldquo;fo&rdquo;, &ldquo;fr-CH&rdquo;, &ldquo;fr&rdquo;, &ldquo;gl&rdquo;, &ldquo;he&rdquo;, &ldquo;hr&rdquo;, &ldquo;hu&rdquo;, &ldquo;hy&rdquo;, &ldquo;id&rdquo;, &ldquo;is&rdquo;, &ldquo;it-CH&rdquo;, &ldquo;it&rdquo;, &ldquo;ja&rdquo;, &ldquo;ka&rdquo;, &ldquo;kh&rdquo;, &ldquo;kk&rdquo;, &ldquo;ko&rdquo;, &ldquo;kr&rdquo;, &ldquo;lt&rdquo;, &ldquo;lv&rdquo;, &ldquo;me&rdquo;, &ldquo;mk&rdquo;, &ldquo;mn&rdquo;, &ldquo;ms&rdquo;, &ldquo;nb&rdquo;, &ldquo;nl-BE&rdquo;, &ldquo;nl&rdquo;, &ldquo;no&rdquo;, &ldquo;pl&rdquo;, &ldquo;pt-BR&rdquo;, &ldquo;pt&rdquo;, &ldquo;ro&rdquo;, &ldquo;rs-latin&rdquo;, &ldquo;rs&rdquo;, &ldquo;ru&rdquo;, &ldquo;sk&rdquo;, &ldquo;sl&rdquo;, &ldquo;sq&rdquo;, &ldquo;sr-latin&rdquo;, &ldquo;sr&rdquo;, &ldquo;sv&rdquo;, &ldquo;sw&rdquo;, &ldquo;th&rdquo;, &ldquo;tr&rdquo;, &ldquo;uk&rdquo;, &ldquo;vi&rdquo;, &ldquo;zh-CN&rdquo;, &ldquo;zh-TW&rdquo;。</td>
+</tr>
+
+<tr>
+<td align="left">separator</td>
+<td align="left">startとendの入力の間に表示する文字列</td>
+</tr>
+
+<tr>
+<td align="left">width</td>
+<td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="説明">説明</h3>
+
+<p>クリックすると日付選択できるカレンダーで、日付の文字列ペアを生成。</p>
+
+<h4 id="詳細">詳細</h4>
+
+<p>日付の<code>format</code>文字列のデフォルトは<code>yyyy-mm-dd</code>ですが、以下の表の値が使用可能です。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">値(文字列)</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">yy</td>
+<td align="left">世紀の部分がない西暦。2018年なら18となります。</td>
+</tr>
+
+<tr>
+<td align="left">yyyy</td>
+<td align="left">世紀ありの西暦。2018年ならそのまま2018となります。</td>
+</tr>
+
+<tr>
+<td align="left">mm</td>
+<td align="left">01から12までの2桁の月の数字を表示します。</td>
+</tr>
+
+<tr>
+<td align="left">m</td>
+<td align="left">1桁の場合の0なしの1から12までの2桁の月の数字を表示します。</td>
+</tr>
+
+<tr>
+<td align="left">M</td>
+<td align="left">月の名前の短縮を表示します。</td>
+</tr>
+
+<tr>
+<td align="left">MM</td>
+<td align="left">月の名前を短縮せずに表示します。</td>
+</tr>
+
+<tr>
+<td align="left">dd</td>
+<td align="left">2桁目のゼロを付けた日 Day of month with leading zero</td>
+</tr>
+
+<tr>
+<td align="left">d</td>
+<td align="left">2桁目のゼロなしの日</td>
+</tr>
+
+<tr>
+<td align="left">D</td>
+<td align="left">省略した曜日の名前</td>
+</tr>
+
+<tr>
+<td align="left">DD</td>
+<td align="left">曜日のフルネーム</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="使用例">使用例</h3>
+
+<pre><code class="language-r">## Only run examples in interactive R sessions
+if (interactive()) {
+
+ui &lt;- fluidPage(
+  dateRangeInput(&quot;daterange1&quot;, &quot;Date range:&quot;,
+                 start = &quot;2001-01-01&quot;,
+                 end   = &quot;2010-12-31&quot;),
+
+  # Default start and end is the current date in the client's time zone
+  dateRangeInput(&quot;daterange2&quot;, &quot;Date range:&quot;),
+
+  # start and end are always specified in yyyy-mm-dd, even if the display
+  # format is different
+  dateRangeInput(&quot;daterange3&quot;, &quot;Date range:&quot;,
+                 start  = &quot;2001-01-01&quot;,
+                 end    = &quot;2010-12-31&quot;,
+                 min    = &quot;2001-01-01&quot;,
+                 max    = &quot;2012-12-21&quot;,
+                 format = &quot;mm/dd/yy&quot;,
+                 separator = &quot; - &quot;),
+
+  # Pass in Date objects
+  dateRangeInput(&quot;daterange4&quot;, &quot;Date range:&quot;,
+                 start = Sys.Date()-10,
+                 end = Sys.Date()+10),
+
+  # Use different language and different first day of week
+  dateRangeInput(&quot;daterange5&quot;, &quot;Date range:&quot;,
+                 language = &quot;de&quot;,
+                 weekstart = 1),
+
+  # Start with decade view instead of default month view
+  dateRangeInput(&quot;daterange6&quot;, &quot;Date range:&quot;,
+                 startview = &quot;decade&quot;)
+)
+
+shinyApp(ui, server = function(input, output) { })
+}
+</code></pre>
+
+<h4 id="参照">参照</h4>
+
+<p>RStudioのReference</p>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/latest/dateRangeInput.html">https://shiny.rstudio.com/reference/shiny/latest/dateRangeInput.html</a></p>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+    <section>
+    <h4>Share</h4>
+    <nav class="nav sharing-icons">
+      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=%2fdaterangeinput%2f" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://plus.google.com/share?url=%2fdaterangeinput%2f" title="Share on Google+"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fdaterangeinput%2f" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://twitter.com/home?status=%2fdaterangeinput%2f" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+    </nav>
+  </section>
+
+  
+
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-3 ml-auto blog-sidebar">
+  
+  <section class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p>R user</p>
+  </section>
+  
+
+  
+        <section class="sidebar-module">
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+
+
+<li><a href="/top-page/">トップページ</a></li>
+
+<li><a href="/function-index/">索引(アルファベット)</a></li>
+
+<li><a href="/reference/">索引(機能別)</a></li>
+
+<li><a href="/actionbutton/">actionButton</a></li>
+
+<li><a href="/checkboxgroupinput/">checkboxGroupInput</a></li>
+
+    </ol>
+  </section>
+
+  
+
+  
+  <section class="sidebar-module">
+    <h4>Links</h4>
+    <ol class="list-unstyled">
+      
+      <li><a href="https://www.r-project.org/">The R Project for Statistical Computing</a></li>
+      
+      <li><a href="https://www.rstudio.com/">RStudio</a></li>
+      
+    </ol>
+  </section>
+  
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>
+      
+      © 2018 qhmqk
+      
+      </p>
+      <p>
+      <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+  </body>
+
+</html>

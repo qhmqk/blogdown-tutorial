@@ -3,7 +3,7 @@ title: "actionButton"
 author: "qhmqk"
 date: 2018-01-10
 categories: ["Shiny"]
-tags: ["control widgets"]
+tags: ["UI Inputs"]
 slug: "actionbutton"
 weight: 3
 description: "初期値がゼロのアクションボタンを生成"

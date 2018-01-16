@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ui Inputs on Shiny クックブック</title>
+    <link>/tags/ui-inputs/</link>
+    <description>Recent content in Ui Inputs on Shiny クックブック</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>© 2018 qhmqk</copyright>
+    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ui-inputs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>actionButton</title>
+      <link>/actionbutton/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/actionbutton/</guid>
+      <description>actionButton(inputId, label, icon = NULL, width = NULL, ...)  引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。   icon (オプションで)ボタン上に現れるアイコン   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   ... ボタンに適用する名前付きの属性    説明 初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。
+使用例  labelに画像を指定
+ iconを使用
+ inputIdに応じてlabelを変更
+  参照 RStudioのReference
+http://shiny.rstudio.com/articles/action-buttons.html
+https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
+    </item>
+    
+    <item>
+      <title>checkboxGroupInput</title>
+      <link>/checkboxgroupinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/checkboxgroupinput/</guid>
+      <description>checkboxGroupInput(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   choices チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。   selected 初期状態で選択されている値   inline TRUEなら、選択したものがインラインで表示されます。   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   choiceNames, choiceValues 名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、choiceNamesとchoiceValuesは同じ長さである必要があります。この引数を指定すると、choicesは指定できません。単純なテキストになるchoicesではなく、これら両引数を用いる利点は、choiceNamesには任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照    値 UI定義に追加されるHTML要素のリスト
+説明 それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成します。選択された値の文字列ベクトルが、入力としてサーバに渡されます。
+使用例  choices
+ inlineをTRUE</description>
+    </item>
+    
+    <item>
+      <title>checkboxInput</title>
+      <link>/checkboxinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/checkboxinput/</guid>
+      <description>checkboxInput(inputId, label, value = FALSE, width = NULL)  引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値(論理値でTRUEまたはFALSE)   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    値 UI定義に追加されるチェックボックスのコントロール。
+説明 論理値を指定するために使用するチェックボックスを生成。
+使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( checkboxInput(&amp;quot;somevalue&amp;quot;, &amp;quot;Some value&amp;quot;, FALSE), verbatimTextOutput(&amp;quot;value&amp;quot;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$somevalue }) } shinyApp(ui, server) }  参照 RStudioのReference</description>
+    </item>
+    
+    <item>
+      <title>dateInput</title>
+      <link>/dateinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/dateinput/</guid>
+      <description>dateInput(inputId, label, value = NULL, min = NULL, max = NULL, format = &amp;quot;yyyy-mm-dd&amp;quot;, startview = &amp;quot;month&amp;quot;, weekstart = 0, language = &amp;quot;en&amp;quot;, width = NULL)  引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 開始日。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。デフォルトはNULLで、NULLならクライアントのタイムゾーンの現在の日付となります。   min 最も昔の日付。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。   max 最も後の日付。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。   format ブラウザに表示する日付のフォーマット。デフォルトはyyyy-mm-dd。   startview 最初の入力オブジェクトがクリックされたときに表示される日付の範囲。&amp;rdquo;month&amp;rdquo;, &amp;ldquo;year&amp;rdquo;, &amp;ldquo;decade&amp;rdquo;を指定します。デフォルトは&amp;rdquo;month&amp;rdquo;。   weekstart 週の最初の日を0(日曜日)～6(土曜日)の整数で指定します。   language 月と日の名前に使用する言語を指定します。デフォルトは&amp;rdquo;en&amp;rdquo;で英語。他に指定可能な値は、&amp;rdquo;ar&amp;rdquo;, &amp;ldquo;az&amp;rdquo;, &amp;ldquo;bg&amp;rdquo;, &amp;ldquo;bs&amp;rdquo;, &amp;ldquo;ca&amp;rdquo;, &amp;ldquo;cs&amp;rdquo;, &amp;ldquo;cy&amp;rdquo;, &amp;ldquo;da&amp;rdquo;, &amp;ldquo;de&amp;rdquo;, &amp;ldquo;el&amp;rdquo;, &amp;ldquo;en-AU&amp;rdquo;, &amp;ldquo;en-GB&amp;rdquo;, &amp;ldquo;eo&amp;rdquo;, &amp;ldquo;es&amp;rdquo;, &amp;ldquo;et&amp;rdquo;, &amp;ldquo;eu&amp;rdquo;, &amp;ldquo;fa&amp;rdquo;, &amp;ldquo;fi&amp;rdquo;, &amp;ldquo;fo&amp;rdquo;, &amp;ldquo;fr-CH&amp;rdquo;, &amp;ldquo;fr&amp;rdquo;, &amp;ldquo;gl&amp;rdquo;, &amp;ldquo;he&amp;rdquo;, &amp;ldquo;hr&amp;rdquo;, &amp;ldquo;hu&amp;rdquo;, &amp;ldquo;hy&amp;rdquo;, &amp;ldquo;id&amp;rdquo;, &amp;ldquo;is&amp;rdquo;, &amp;ldquo;it-CH&amp;rdquo;, &amp;ldquo;it&amp;rdquo;, &amp;ldquo;ja&amp;rdquo;, &amp;ldquo;ka&amp;rdquo;, &amp;ldquo;kh&amp;rdquo;, &amp;ldquo;kk&amp;rdquo;, &amp;ldquo;ko&amp;rdquo;, &amp;ldquo;kr&amp;rdquo;, &amp;ldquo;lt&amp;rdquo;, &amp;ldquo;lv&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, &amp;ldquo;mk&amp;rdquo;, &amp;ldquo;mn&amp;rdquo;, &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;nb&amp;rdquo;, &amp;ldquo;nl-BE&amp;rdquo;, &amp;ldquo;nl&amp;rdquo;, &amp;ldquo;no&amp;rdquo;, &amp;ldquo;pl&amp;rdquo;, &amp;ldquo;pt-BR&amp;rdquo;, &amp;ldquo;pt&amp;rdquo;, &amp;ldquo;ro&amp;rdquo;, &amp;ldquo;rs-latin&amp;rdquo;, &amp;ldquo;rs&amp;rdquo;, &amp;ldquo;ru&amp;rdquo;, &amp;ldquo;sk&amp;rdquo;, &amp;ldquo;sl&amp;rdquo;, &amp;ldquo;sq&amp;rdquo;, &amp;ldquo;sr-latin&amp;rdquo;, &amp;ldquo;sr&amp;rdquo;, &amp;ldquo;sv&amp;rdquo;, &amp;ldquo;sw&amp;rdquo;, &amp;ldquo;th&amp;rdquo;, &amp;ldquo;tr&amp;rdquo;, &amp;ldquo;uk&amp;rdquo;, &amp;ldquo;vi&amp;rdquo;, &amp;ldquo;zh-CN&amp;rdquo;, &amp;ldquo;zh-TW&amp;rdquo;。   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    説明 クリックすると日付選択できるカレンダーが表示されるテキスト入力を生成。</description>
+    </item>
+    
+    <item>
+      <title>dateRangeInput</title>
+      <link>/daterangeinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/daterangeinput/</guid>
+      <description>dateRangeInput(inputId, label, start = NULL, end = NULL, min = NULL, max = NULL, format = &amp;quot;yyyy-mm-dd&amp;quot;, startview = &amp;quot;month&amp;quot;, weekstart = 0, language = &amp;quot;en&amp;quot;, separator = &amp;quot; to &amp;quot;, width = NULL)  引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。   start 開始日の初期値。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。デフォルトはNULLで、現在のタイムゾーンの値が入ります。   end 終了日の初期値。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。デフォルトはNULLで、現在のタイムゾーンの値が入ります。   min 最も昔の日付。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。   max 最も後の日付。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。   format ブラウザに表示する日付のフォーマット。デフォルトはyyyy-mm-dd。   startview 最初の入力オブジェクトがクリックされたときに表示される日付の範囲。&amp;rdquo;month&amp;rdquo;, &amp;ldquo;year&amp;rdquo;, &amp;ldquo;decade&amp;rdquo;を指定します。デフォルトは&amp;rdquo;month&amp;rdquo;。   weekstart 週の最初の日を0(日曜日)～6(土曜日)の整数で指定します。   language 月と日の名前に使用する言語を指定します。デフォルトは&amp;rdquo;en&amp;rdquo;で英語。他に指定可能な値は、&amp;rdquo;ar&amp;rdquo;, &amp;ldquo;az&amp;rdquo;, &amp;ldquo;bg&amp;rdquo;, &amp;ldquo;bs&amp;rdquo;, &amp;ldquo;ca&amp;rdquo;, &amp;ldquo;cs&amp;rdquo;, &amp;ldquo;cy&amp;rdquo;, &amp;ldquo;da&amp;rdquo;, &amp;ldquo;de&amp;rdquo;, &amp;ldquo;el&amp;rdquo;, &amp;ldquo;en-AU&amp;rdquo;, &amp;ldquo;en-GB&amp;rdquo;, &amp;ldquo;eo&amp;rdquo;, &amp;ldquo;es&amp;rdquo;, &amp;ldquo;et&amp;rdquo;, &amp;ldquo;eu&amp;rdquo;, &amp;ldquo;fa&amp;rdquo;, &amp;ldquo;fi&amp;rdquo;, &amp;ldquo;fo&amp;rdquo;, &amp;ldquo;fr-CH&amp;rdquo;, &amp;ldquo;fr&amp;rdquo;, &amp;ldquo;gl&amp;rdquo;, &amp;ldquo;he&amp;rdquo;, &amp;ldquo;hr&amp;rdquo;, &amp;ldquo;hu&amp;rdquo;, &amp;ldquo;hy&amp;rdquo;, &amp;ldquo;id&amp;rdquo;, &amp;ldquo;is&amp;rdquo;, &amp;ldquo;it-CH&amp;rdquo;, &amp;ldquo;it&amp;rdquo;, &amp;ldquo;ja&amp;rdquo;, &amp;ldquo;ka&amp;rdquo;, &amp;ldquo;kh&amp;rdquo;, &amp;ldquo;kk&amp;rdquo;, &amp;ldquo;ko&amp;rdquo;, &amp;ldquo;kr&amp;rdquo;, &amp;ldquo;lt&amp;rdquo;, &amp;ldquo;lv&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, &amp;ldquo;mk&amp;rdquo;, &amp;ldquo;mn&amp;rdquo;, &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;nb&amp;rdquo;, &amp;ldquo;nl-BE&amp;rdquo;, &amp;ldquo;nl&amp;rdquo;, &amp;ldquo;no&amp;rdquo;, &amp;ldquo;pl&amp;rdquo;, &amp;ldquo;pt-BR&amp;rdquo;, &amp;ldquo;pt&amp;rdquo;, &amp;ldquo;ro&amp;rdquo;, &amp;ldquo;rs-latin&amp;rdquo;, &amp;ldquo;rs&amp;rdquo;, &amp;ldquo;ru&amp;rdquo;, &amp;ldquo;sk&amp;rdquo;, &amp;ldquo;sl&amp;rdquo;, &amp;ldquo;sq&amp;rdquo;, &amp;ldquo;sr-latin&amp;rdquo;, &amp;ldquo;sr&amp;rdquo;, &amp;ldquo;sv&amp;rdquo;, &amp;ldquo;sw&amp;rdquo;, &amp;ldquo;th&amp;rdquo;, &amp;ldquo;tr&amp;rdquo;, &amp;ldquo;uk&amp;rdquo;, &amp;ldquo;vi&amp;rdquo;, &amp;ldquo;zh-CN&amp;rdquo;, &amp;ldquo;zh-TW&amp;rdquo;。   separator startとendの入力の間に表示する文字列   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    説明 クリックすると日付選択できるカレンダーで、日付の文字列ペアを生成。</description>
+    </item>
+    
+    <item>
+      <title>fileInput</title>
+      <link>/fileinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/fileinput/</guid>
+      <description>fileInput(inputId, label, multiple = FALSE, accept = NULL, width = NULL, buttonLabel = &amp;#34;Browse...&amp;#34;, placeholder = &amp;#34;No file selected&amp;#34;) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   multiple ユーザが複数のファイルを同時にアップロードできるかどうかを論理値で指定します。IE9よりも古いブラウザでは動作しません。   accept サーバが受け付けるファイルの種類をヒントとして与えるために、MIME型の文字ベクトル   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   buttonLabel テキストまたはHTMLタグで指定するボタンのラベル   placeholder ファイルをアップロードする前に表示するテキスト    説明 1つ以上のファイルをアップロードするコントロールを生成。
+詳細 使用例 ## Only run examples in interactive R sessions if (interactive()) {ui &amp;lt;- fluidPage(sidebarLayout(sidebarPanel(fileInput(&amp;#34;file1&amp;#34;, &amp;#34;Choose CSV File&amp;#34;,accept = c(&amp;#34;text/csv&amp;#34;,&amp;#34;text/comma-separated-values,text/plain&amp;#34;,&amp;#34;.</description>
+    </item>
+    
+  </channel>
+</rss>

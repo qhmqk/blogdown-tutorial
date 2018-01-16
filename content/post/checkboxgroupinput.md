@@ -3,15 +3,15 @@ title: "checkboxGroupInput"
 author: "qhmqk"
 date: 2018-01-10
 categories: ["Shiny"]
-tags: ["control widgets"]
+tags: ["UI Inputs"]
 weight: 3
 slug: "checkboxgroupinput"
 description: "それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成"
 ---
 
-```r
+{{< highlight r >}}
 checkboxGroupInput(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL)
-```
+{{< /highlight >}}
 
 ### 引数
 
@@ -39,7 +39,7 @@ UI定義に追加されるHTML要素のリスト
 
 * `inline`を`TRUE`
 
-```{r eval = FALSE}
+{{< highlight r >}}
 ## Only run examples in interactive R sessions
 if (interactive()) {
 ui <- fluidPage(
@@ -73,7 +73,7 @@ server <- function(input, output, session) {
 }
 shinyApp(ui, server)
 }
-```
+{{< /highlight >}}
 
 ### 参照
 

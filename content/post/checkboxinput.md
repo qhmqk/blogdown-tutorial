@@ -3,7 +3,7 @@ title: "checkboxInput"
 author: "qhmqk"
 date: 2018-01-10
 categories: ["Shiny"]
-tags: ["control widgets"]
+tags: ["UI Inputs"]
 slug: "checkboxinput"
 weight: 3
 description: "論理値を指定するために使用するチェックボックスを生成"

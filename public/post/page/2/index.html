@@ -12,7 +12,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-03-10T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-01-10T00:00:00&#43;00:00"/>
 
 
 
@@ -40,8 +40,8 @@
     "@type": "Person",
     "name": "qhmqk"
   },
-  "dateModified": "2014-03-10T00:00:00&#43;00:00",
-  "keywords": "development,golang,r,shiny,ｒ,control-widgets,development,go,golang,hugo,plot,r-markdown,regression,shiny,templates,themes,",
+  "dateModified": "2018-01-10T00:00:00&#43;00:00",
+  "keywords": "development,golang,r,shiny,ｒ,development,go,golang,hugo,plot,r-markdown,reactive-programming,regression,shiny,templates,themes,ui-inputs,",
   "description": "Shiny app 開発のための日本語リファレンス"
 }
 </script>
@@ -100,39 +100,19 @@
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/migrate-to-hugo-from-jekyll/">Migrate to Hugo from Jekyll</a></h2>
-    <p class="blog-post-meta"><time datetime="2014-03-10T00:00:00Z">Mon Mar 10, 2014</time> by qhmqk</p>
-  </header>
-  
-    Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &lt;root&gt;/ ▾ images/ logo.png  should become
-▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.
-  
-  <a href='/migrate-to-hugo-from-jekyll/'>Read more →</a>
-</article> 
-
-
-
-
-
-
-<article class="blog-post">
-  <header>
-    <h2 class="blog-post-title"><a href="/rmarkdown-syntax/">R Markdown 記法</a></h2>
+    <h2 class="blog-post-title"><a href="/checkboxinput/">checkboxInput</a></h2>
     <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/%EF%BD%92" rel="category tag">Ｒ</a>
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/r-markdown" rel="tag">R Markdown</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
 
 </p>
   </header>
   
-    見出し# Header 1## Header 2Header 1Header 2図image:![caption](img/shiny-400x464.png)markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。
-&lt;img src=&#39;../../../../../../../img/shiny-400x464.png&#39; align=&#39;center&#39;&gt;リンク上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。上記の、Shinyのロゴは、RStudioのロゴで、リンク先のガイドラインに従って利用できます。
-
+    論理値を指定するために使用するチェックボックスを生成
   
-  <a href='/rmarkdown-syntax/'>Read more →</a>
+  <a href='/checkboxinput/'>Read more →</a>
 </article> 
 
 
@@ -142,21 +122,19 @@
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/rmarkdown/">Hello R Markdown</a></h2>
-    <p class="blog-post-meta"><time datetime="2015-07-23T21:13:14-05:00">Thu Jul 23, 2015</time> by Frida Gomam in 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/r" rel="category tag">R</a>
+    <h2 class="blog-post-title"><a href="/dateinput/">dateInput</a></h2>
+    <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/r-markdown" rel="tag">R Markdown</a>, <a href="/tags/plot" rel="tag">plot</a>, <a href="/tags/regression" rel="tag">regression</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
 
 </p>
   </header>
   
-    R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.
+    クリックすると日付選択できるカレンダーが表示されるテキスト入力を生成
   
-  <a href='/rmarkdown/'>Read more →</a>
+  <a href='/dateinput/'>Read more →</a>
 </article> 
 
 
@@ -166,20 +144,19 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/hugo-template-primer/">(Hu)go Template Primer</a></h2>
-    <p class="blog-post-meta"><time datetime="2014-04-02T00:00:00Z">Wed Apr 02, 2014</time> by qhmqk in 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/development" rel="category tag">Development</a>, <a href="/categories/golang" rel="category tag">golang</a>
+    <h2 class="blog-post-title"><a href="/daterangeinput/">dateRangeInput</a></h2>
+    <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/go" rel="tag">go</a>, <a href="/tags/golang" rel="tag">golang</a>, <a href="/tags/templates" rel="tag">templates</a>, <a href="/tags/themes" rel="tag">themes</a>, <a href="/tags/development" rel="tag">development</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
 
 </p>
   </header>
   
-    Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.
+    クリックすると日付選択できるカレンダーで、日付の文字列ペアを生成
   
-  <a href='/hugo-template-primer/'>Read more →</a>
+  <a href='/daterangeinput/'>Read more →</a>
 </article> 
 
 
@@ -189,24 +166,41 @@ This document is a brief primer on using go templates.
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/getting-started-with-hugo/">Getting Started with Hugo</a></h2>
-    <p class="blog-post-meta"><time datetime="2014-04-02T00:00:00Z">Wed Apr 02, 2014</time> by qhmqk in 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/development" rel="category tag">Development</a>, <a href="/categories/golang" rel="category tag">golang</a>
+    <h2 class="blog-post-title"><a href="/fileinput/">fileInput</a></h2>
+    <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/go" rel="tag">go</a>, <a href="/tags/golang" rel="tag">golang</a>, <a href="/tags/hugo" rel="tag">hugo</a>, <a href="/tags/development" rel="tag">development</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
 
 </p>
   </header>
   
-    Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:
+    a
   
-  <a href='/getting-started-with-hugo/'>Read more →</a>
+  <a href='/fileinput/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/reactive/">reactive</a></h2>
+    <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/reactive-programming" rel="tag">Reactive programming</a>
+
+</p>
+  </header>
+  
+    a
+  
+  <a href='/reactive/'>Read more →</a>
 </article> 
 
 
@@ -215,9 +209,9 @@ Follow the following steps:
 
 <nav class="blog-pagination">
   
-  
   <a class="btn btn-outline-primary" href="/post/" rel="prev" role="button">Previous page</a>
-  <a class="btn btn-outline-primary disabled" href="#" role="button" aria-disabled="true">Next page</a>
+  <a class="btn btn-outline-primary" href="/post/page/3/" rel="next" role="button">Next page</a>
+  
   
   
 </nav>
@@ -243,13 +237,13 @@ Follow the following steps:
 
 <li><a href="/top-page/">トップページ</a></li>
 
+<li><a href="/function-index/">索引(アルファベット)</a></li>
+
+<li><a href="/reference/">索引(機能別)</a></li>
+
 <li><a href="/actionbutton/">actionButton</a></li>
 
 <li><a href="/checkboxgroupinput/">checkboxGroupInput</a></li>
-
-<li><a href="/checkboxinput/">checkboxInput</a></li>
-
-<li><a href="/creating-a-new-theme/">Creating a New Theme</a></li>
 
     </ol>
   </section>
