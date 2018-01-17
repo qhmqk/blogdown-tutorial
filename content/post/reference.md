@@ -23,7 +23,25 @@ description: "機能ごとのShiny関数の索引"
 
 * [fileInput]({{< ref "fileinput.md" >}})
 
+* [numericInput]({{< ref "numericinput.md" >}})
+
+* [passwordInput]({{< ref "passwordinput.md" >}})
+
+* [radioButtons]({{< ref "radiobuttons.md" >}})
+
+* [selectInput]({{< ref "selectinput.md" >}})
+
+* [sliderInput]({{< ref "sliderinput.md" >}})
+
+* [textInput]({{< ref "textinput.md" >}})
+
 ### UI Outputs
+
+
+
+
+
+
 
 ### UI Layout
 

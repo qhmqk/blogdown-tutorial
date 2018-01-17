@@ -5,8 +5,8 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="トップページ" />
-<meta property="og:description" content="今すぐ始めるShiny2" />
+<meta property="og:title" content="Shiny app 開発をスタート" />
+<meta property="og:description" content="最短経路で Shiny の概要を理解してデプロイ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/top-page/" />
 
@@ -26,8 +26,8 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="トップページ"/>
-<meta name="twitter:description" content="今すぐ始めるShiny2"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Shiny app 開発をスタート"/>
+<meta name="twitter:description" content="最短経路で Shiny の概要を理解してデプロイ"/>
 <meta name="twitter:site" content="@username"/>
 <meta name="generator" content="Hugo 0.31.1" />
 
@@ -37,9 +37,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "トップページ",
+  "headline": "Shiny app 開発をスタート",
   "url": "/top-page/",
-  "wordCount": "95",
+  "wordCount": "435",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -47,7 +47,7 @@
     "name": "qhmqk"
   },
   "keywords": "R, Shiny",
-  "description": "今すぐ始めるShiny2"
+  "description": "最短経路で Shiny の概要を理解してデプロイ"
 }
 </script>
 
@@ -55,7 +55,7 @@
 
     <link rel="canonical" href="/top-page/">
 
-    <title>トップページ | Shiny クックブック</title>
+    <title>Shiny app 開発をスタート | Shiny クックブック</title>
 
     <!-- combined, minified CSS -->
     <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
@@ -98,7 +98,7 @@
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/top-page/">トップページ</a></h2>
+    <h2 class="blog-post-title"><a href="/top-page/">Shiny app 開発をスタート</a></h2>
     <p class="blog-post-meta"><time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time> by qhmqk in 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/r" rel="category tag">R</a>
 
@@ -109,79 +109,73 @@
   </header>
   
 
-<p>今すぐ始めるShiny</p>
+<h3 id="shiny-って何-読み飛ばしてオーケー">Shiny って何？(読み飛ばしてオーケー)</h3>
 
-<p>Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。</p>
+<p>R は世界中で広く使用されているプログラミング言語です。Shiny は R のパッケージの一つで、R による分析結果を動的な web アプリケーションとして公開することができます。</p>
 
-<p><a href="/migrate-to-hugo-from-jekyll/">test link</a></p>
+<p>R も Shiny もフリーかつオープンソースのソフトウェアとして、開発が進められています。 Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shiny による web アプリケーション開発もプラットフォームは問いません。</p>
 
-<p>RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。</p>
+<p>Shiny を開発しているのは <a href="https://www.rstudio.com/">RStudio Inc.</a> で、メインの開発者は RStudio の CTO である<a href="https://github.com/jcheng5">Joe Cheng氏</a>です。</p>
 
-<p>Shinyを開発しているのはRStudio Inc.で、メインの開発者はRStudioのCTOである<a href="https://github.com/jcheng5">Joe Cheng氏</a>です。</p>
+<p>R での分析結果を動的に web アプリケーションにしたい、web アプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境が Shiny です。Shiny のインストールから、アプリケーションの作成までを紹介します。</p>
 
-<p>Rでの分析結果を動的にwebアプリケーションにしたい、webアプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境がShinyです。Shinyのインストールから、アプリケーションの作成までを紹介します。</p>
+<h3 id="shiny-を始める前のインストール作業">Shiny を始める前のインストール作業</h3>
 
-<h3 id="すぐに始められるshiny">すぐに始められるShiny</h3>
-
-<p>Shinyでwebアプリケーション開発を始める人の大半はすでにRのユーザかもしれませんが、Shinyが気になって開発環境を整えたい人もいるかもしれません。Rはダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタからShinyの動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。</p>
+<p>Shiny で web アプリケーション開発を始める人の大半はすでに R のユーザかもしれませんが、Shiny が気になって開発環境を整えたい人もいるかもしれません。R はダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタから Shiny の動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。</p>
 
 <ol>
-<li><p>Rをインストール</p></li>
+<li><p>R をインストール</p></li>
 
-<li><p>RStudioをインストール</p></li>
+<li><p>RStudio をインストール</p></li>
 
-<li><p>Shinyパッケージをインストール</p></li>
+<li><p>Shiny パッケージをインストール</p></li>
 </ol>
 
-<h4 id="rをインストール">Rをインストール</h4>
+<h4 id="r-をインストール">R をインストール</h4>
 
 <p><a href="https://cran.r-project.org/">CRAN(The Comprehensive R Archive Network)</a>からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。</p>
 
 <p>ダウンロードしたR-***.exeを実行し、ウィザードを進めていけば、インストールが完了します。</p>
 
-<h4 id="rstudioをインストール">RStudioをインストール</h4>
+<h4 id="rstudio-をインストール">RStudio をインストール</h4>
 
 <p><a href="https://www.rstudio.com/products/rstudio/download/">RStudioの公式サイト</a>からインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。</p>
 
-<h4 id="shinyパッケージをインストール">Shinyパッケージをインストール</h4>
+<h4 id="shiny-パッケージをインストール">Shiny パッケージをインストール</h4>
 
 <p>RStudioを起動し、パッケージをインストールします。console枠で、</p>
 
-<pre><code class="language-r">install.packages(&quot;shiny&quot;)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">install.packages(<span style="color:#e6db74">&#34;shiny&#34;</span>)</code></pre></div>
 
-<p>を実行すると、Shinyパッケージのインストールが始まります。パッケージをインストール後、Shinyを実行するために以下のコマンドでパッケージをロードします。</p>
+<p>を実行すると、Shiny パッケージのインストールが始まります。パッケージをインストール後、Shiny を実行するために以下のコマンドでパッケージをロードします。</p>
 
-<pre><code class="language-r">library(shiny)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)</code></pre></div>
 
-<h3 id="shinyのシンプルな設計">Shinyのシンプルな設計</h3>
+<h3 id="shiny-の基本構造とビルド">Shiny の基本構造とビルド</h3>
 
-<p>Shinyを構成する要素は大きく２つだけ、ユーザーインターフェース(ui)とサーバ(server)です。ユーザーインターフェースにはレイアウトやコントロールの配置を記述し、サーバにはユーザーインターフェースに表示する数値やグラフを計算する処理を記述します。</p>
+<p>Shiny を構成する要素は大きく２つだけ、ユーザーインターフェース(ui)とサーバ(server)です。ユーザーインターフェースにはレイアウトやコントロールの配置を記述し、サーバにはユーザーインターフェースに表示する数値やグラフを計算する処理を記述します。</p>
 
-<p>ディレクトリを作り、ディレクトリの中にapp.Rというファイルを置いて、<code>runApp()</code>を実行するだけでShinyアプリケーションが実行されます。最もシンプルなapp.Rは以下のコードとなります。</p>
+<p>ディレクトリを作り、ディレクトリの中に app.R というファイルを置いて、<code>runApp()</code>を実行するだけでShinyアプリケーションが実行されます。最もシンプルなapp.R は以下のコードとなります。</p>
 
-<pre><code class="language-r">library(shiny)
-ui &lt;- fluidPage()
-server &lt;- function(input, output){}
-shinyApp(ui = ui, server = server)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
+ui <span style="color:#f92672">&lt;-</span> fluidPage()
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output){}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
 
 <p>このままでは、空のアプリケーションなので、数値入力とヒストグラム表示を追加すると、以下のコードとなります。</p>
 
-<pre><code class="language-r">library(shiny)
-ui &lt;- fluidPage(
-    numericInput(inputId = &quot;n&quot;,
-        &quot;Sample size&quot;, value = 25),
-    plotOutput(outputId = &quot;hist&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    numericInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>,
+        <span style="color:#e6db74">&#34;Sample size&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>),
+    plotOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hist&#34;</span>)
 )
-server &lt;- function(input, output){
-    output$hist &lt;- renderPlot({
-        hist(rnorm(input$n))
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output){
+    output<span style="color:#f92672">$</span>hist <span style="color:#f92672">&lt;-</span> renderPlot({
+        hist(rnorm(input<span style="color:#f92672">$</span>n))
     })
 }
-shinyApp(ui = ui, server = server)
-</code></pre>
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
 
 <p>一つのファイルにまとめて記述するだけでなく、ui.Rとserver.Rという2つのファイルの分けて記述することもできます。その場合も、同様に<code>runApp()</code>でShinyアプリケーションが実行されます。((最初は、ui.Rとserver.Rの２つのファイルを別々に記述するよう設計されていましたが、version 0.10.2からapp.Rにまとめて記述して実行できるようになりました。説明の順序とは逆です。))</p>
 
@@ -197,11 +191,270 @@ shinyApp(ui = ui, server = server)
 
 <p>などの処理を記述することができます。</p>
 
+<h3 id="入力ウィジェットを配置">入力ウィジェットを配置</h3>
+
+<p>ui.R または app.R で <code>shinyApp</code> に与える <code>ui</code> に、入力コントロールに示す関数を記述します。ユーザからの入力には、<code>input$&lt;inputId&gt;</code>でアクセスします。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">入力ウィジェット(図)</th>
+<th align="left">関数</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/actionbutton/"><code>actionButton(inputId, label, icon, ...)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">[<code>actionLink(inputId, label, icon, ...)</code>]()</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/checkboxinput/"><code>checkboxInput(inputId, label, value)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/checkboxgroupinput/"><code>checkboxGroupInput(inputId, label, choices, selected, inline)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/dateinput/"><code>dateInput(inputId, label, value, min, max, format, startview, weekstart, language)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/daterangeinput/"><code>dateRangeInput(inputId, label, start, end, min, max, format, startview, weekstart, language, separator)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/fileinput/"><code>fileInput(inputId, label, multiple, accept)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/numericinput/"><code>numericInput(inputId, label, )</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/passwordinput/"><code>passwordInput(inputId, label, value)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/radiobuttons/"><code>radioButtons(inputId, label, choices, selected, inline)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/selectinput/"><code>selectInput(inputId, label, choices, selected, multiple, selectize, width, size)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/sliderinput/"><code>sliderInput(inputId, label, min, max, value, step, round, format, locate, ticks, animate, width, sep, pre, post)</code></a></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left">[<code>submitButton(text, icon)</code>]()</td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"><a href="/textinput/"><code>textInput(inputId, label, value)</code></a></td>
+</tr>
+</tbody>
+</table>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
+ui <span style="color:#f92672">&lt;-</span> fixedPage(
+  p(actionButton(<span style="color:#e6db74">&#34;actionButton&#34;</span>, <span style="color:#e6db74">&#34;Action!&#34;</span>)),
+  p(actionLink(<span style="color:#e6db74">&#34;actionLink&#34;</span>, <span style="color:#e6db74">&#34;Link&#34;</span>)),
+  p(checkboxInput(<span style="color:#e6db74">&#34;checkboxInput&#34;</span>, <span style="color:#e6db74">&#34;Check&#34;</span>)),
+  p(checkboxGroupInput(<span style="color:#e6db74">&#34;checkboxGroupInput&#34;</span>, <span style="color:#e6db74">&#34;Choice:&#34;</span>,
+                              <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;choice 1&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c1&#34;</span>,
+                                <span style="color:#e6db74">&#34;choice 2&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c2&#34;</span>,
+                                <span style="color:#e6db74">&#34;choice 3&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c3&#34;</span>))),
+  p(dateInput(<span style="color:#e6db74">&#34;dateInput&#34;</span>, <span style="color:#e6db74">&#34;Date:&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2012-02-29&#34;</span>)),
+  p(dateRangeInput(<span style="color:#e6db74">&#34;dateRangeInput&#34;</span>, <span style="color:#e6db74">&#34;Date range:&#34;</span>,
+                 start <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2001-01-01&#34;</span>,
+                 end   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2010-12-31&#34;</span>)),
+  p(fileInput(<span style="color:#e6db74">&#34;fileInput&#34;</span>, <span style="color:#e6db74">&#34;Choose file:&#34;</span>,
+            accept <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(
+              <span style="color:#e6db74">&#34;text/csv&#34;</span>,
+              <span style="color:#e6db74">&#34;text/comma-separated-values,text/plain&#34;</span>,
+              <span style="color:#e6db74">&#34;.csv&#34;</span>))),
+  p(numericInput(<span style="color:#e6db74">&#34;numericInput&#34;</span>, <span style="color:#e6db74">&#34;Numeric&#34;</span>, <span style="color:#ae81ff">10</span>, min <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>)),
+  p(passwordInput(<span style="color:#e6db74">&#34;passwordInput&#34;</span>, <span style="color:#e6db74">&#34;Password:&#34;</span>)),
+  p(radioButtons(<span style="color:#e6db74">&#34;radioButtons&#34;</span>, <span style="color:#e6db74">&#34;Choice:&#34;</span>,
+                 <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;choice 1&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c1&#34;</span>,
+                   <span style="color:#e6db74">&#34;choice 2&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c2&#34;</span>,
+                   <span style="color:#e6db74">&#34;choice 3&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c3&#34;</span>))),
+  p(selectInput(<span style="color:#e6db74">&#34;selectInput&#34;</span>, <span style="color:#e6db74">&#34;Choice:&#34;</span>,
+                 <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;choice 1&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c1&#34;</span>,
+                   <span style="color:#e6db74">&#34;choice 2&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c2&#34;</span>,
+                   <span style="color:#e6db74">&#34;choice 3&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c3&#34;</span>))),
+  p(sliderInput(<span style="color:#e6db74">&#34;sliderInput&#34;</span>, <span style="color:#e6db74">&#34;Slide:&#34;</span>, min <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>)),
+  p(submitButton(text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Submit&#34;</span>, icon <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)),
+  p(textInput(<span style="color:#e6db74">&#34;textInput&#34;</span>, <span style="color:#e6db74">&#34;Text:&#34;</span>, <span style="color:#e6db74">&#34;input text&#34;</span>))
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output){
+  
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h4 id="actionbutton">actionButton</h4>
+
+<p>押すことで何らかのアクションを起こすボタンです。<code>inputId</code>で指定した値は、ボタンが押される前はNULLで、押された後に0になります。押されるたびに、値が1ずつ増加します。ボタンの押下に対応するコードは、serverで<code>observeEvent</code>や<code>eventReactive</code>内に記述します。</p>
+
+<h4 id="actionlink">actionLink</h4>
+
+<p>機能はactionButtonと同じで、表示がHTML上のリンク形式になっています。ボタンとは、幅などの見た目の指定がない点などが異なっています。</p>
+
+<h4 id="checkboxinput">checkboxInput</h4>
+
+<p>クリックでチェックの有無を切り替えるチェックボックスです。値はTRUEとFALSEの論理値になっています。</p>
+
+<h4 id="checkboxgroupinput">checkboxGroupInput</h4>
+
+<p>チェックボックスのグループです。それぞれのチェックボックスは独立していますが、uiでコードを記述するときに、ベクトル指定によってまとめて定義できます。</p>
+
+<h4 id="dateinput">dateInput</h4>
+
+<p>クリックするとカレンダーのウィジェットが開いて、さらにクリックで特定の日付を選択できます。formatで日付の指定ができるようになっています。<code>yyyy-mm-dd</code>で2012年2月29日を選ぶと、<code>2012-02-29</code>となります。ハイフン区切りで、年(y)・月(m)・日(d)を指定します。以下のような、記述が可能です。</p>
+
+<ul>
+<li><p><code>yy</code> 世紀の部分がない年(12)</p></li>
+
+<li><p><code>yyyy</code> 世紀もついた年(2012)</p></li>
+
+<li><p><code>mm</code> 前に0を挿入した2桁の月(02)</p></li>
+
+<li><p><code>m</code> 0の挿入がない月(2)</p></li>
+
+<li><p><code>M</code> 月の名前の略記(Feb.)</p></li>
+
+<li><p><code>MM</code> 月の名前(February)</p></li>
+
+<li><p><code>dd</code> 前に0を挿入した2桁の日</p></li>
+
+<li><p><code>d</code> 0の挿入がない日</p></li>
+
+<li><p><code>D</code> 曜日の名前の略記</p></li>
+
+<li><p><code>DD</code> 曜日の名前</p></li>
+</ul>
+
+<h4 id="daterangeinput">dateRangeInput</h4>
+
+<p>dateInputが左右に2つ並んでおり、2つの日付から期間を指定します。</p>
+
+<h4 id="fileinput">fileInput</h4>
+
+<p>ファイル選択ダイアログボックスを開きます。ファイルを選択すると、serverにはファイルのpathではなくdataframeが渡されます。dataframeは1行になっており、nameにファイル名、datapathにファイルへのpathが格納されます。</p>
+
+<h4 id="numericinput">numericInput</h4>
+
+<p>数値を入力するテキストボックスで、右側に現時点の数値の大きくしたり小さくしたりするボタンがついています。</p>
+
+<h4 id="passwordinput">passwordInput</h4>
+
+<p>入力した文字列が見えなくなるテキストボックスです。</p>
+
+<h4 id="radiobuttons">radioButtons</h4>
+
+<p>クリックして選択した項目を切り替えるラジオボタンです。</p>
+
+<h4 id="selectinput">selectInput</h4>
+
+<p>プルダウンリストやプルダウンメニュー、ドロップダウンメニューなどの名前で呼ばれるクリックすることで、下側に選択肢が広がり、その中から1つを選択します。英語では、select list controlです。</p>
+
+<h4 id="sliderinput">sliderInput</h4>
+
+<p>ドラッグでバーを左右に動かして数値を指定します。</p>
+
+<h4 id="submitbutton">submitButton</h4>
+
+<p>押すことで、Shinyアプリケーションの状態が更新されるボタンです。actionButtonと見た目は同じですが、submitButtonを配置すると、ボタン押下のタイミングでのみ表示を更新するアプリケーションを作成できます。<strong>actionButtonを使って、submitButtonと全く同じ機能のプログラムを作成することも可能で、より汎用性のあるactionButtonを使うことが推奨されています</strong>。</p>
+
+<h4 id="textinput">textInput</h4>
+
+<p>文字列を入力するテキストボックスです。</p>
+
+<h3 id="サーバでレンダリングして-出力ウィジェットで表示">サーバでレンダリングして、出力ウィジェットで表示</h3>
+
+<p>サーバでレンダリングしたオブジェクトを、出力ウィジェットとしてUIに配置して表示します。レンダリング関数をserverに、出力ウィジェット</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">レンダリング関数</th>
+<th align="left">出力ウィジェット</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>renderPlot(expr, width, height, res, ...)</code></td>
+<td align="left"><code>plotOutput(outputId, width, height, )</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>renderPrint</code></td>
+<td align="left"><code>verbatimTextOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>renderText</code></td>
+<td align="left"><code>textOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>renderUI</code></td>
+<td align="left"><code>uiOutput</code>, <code>htmlOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>renderImage</code></td>
+<td align="left"><code>imageOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>renderTable</code></td>
+<td align="left"><code>tableOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"><code>DT::renderDataTable</code></td>
+<td align="left"><code>dataTableOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="レイアウト">レイアウト</h3>
+
+<h3 id="まとめ">まとめ</h3>
+
 <h3 id="最後に">最後に</h3>
 
 <p>Shinyの始め方と、そのシンプルな設計について紹介しました。Rのコーディングだけで、ブラウザ上で動く動的なwebアプリケーションが作れるということで、データを分析するRユーザがShinyを覚えることになるケースが大半だと思います。しかし、それだけでは母集団がRに習熟した人たちだけになってしまい、すそ野が広がっていきません。</p>
 
-<p>HTMLやCSS、JavaScriptを使える人たちが、さらに一歩進んだ分析をwebアプリケーション上に実装したいと思ったときの選択肢として、Shinyが入ってくればいいですね。</p>
+<p>HTMLやCSS、JavaScriptを使える人たちが、さらに一歩進んだ分析をwebアプリケーション上に実装したいと思ったときの選択肢として、Shinyが入ってくることを願っています。</p>
 
 
   
@@ -247,7 +500,7 @@ shinyApp(ui = ui, server = server)
     <ol class="list-unstyled">
 
 
-<li><a href="/top-page/">トップページ</a></li>
+<li><a href="/top-page/">Shiny app 開発をスタート</a></li>
 
 <li><a href="/function-index/">索引(アルファベット順)</a></li>
 

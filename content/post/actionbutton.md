@@ -6,7 +6,7 @@ categories: ["Shiny"]
 tags: ["UI Inputs"]
 slug: "actionbutton"
 weight: 3
-description: "入力として UI にアクションボタンを配置します。"
+description: "押すことで何らかのアクションを起こすボタンです。`inputId`で指定した値は、ボタンが押される前はNULLで、押された後に0になります。押されるたびに、値が1ずつ増加します。ボタンの押下に対応するコードは、serverで`observeEvent`や`eventReactive`内に記述します。"
 ---
 
 {{< highlight r >}}

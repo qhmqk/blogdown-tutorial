@@ -13,30 +13,22 @@
     
     
     <item>
-      <title>トップページ</title>
+      <title>Shiny app 開発をスタート</title>
       <link>/top-page/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/top-page/</guid>
-      <description>今すぐ始めるShiny
-Rは世界中で広く使用されているプログラミング言語です。ShinyはRのパッケージの一つで、Rによる分析結果を動的なwebアプリケーションとして公開することができます。
-test link
-RもShinyもフリーかつオープンソースのソフトウェアとして、開発が進められています。Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shinyによるwebアプリケーション開発もプラットフォームは問いません。
-Shinyを開発しているのはRStudio Inc.で、メインの開発者はRStudioのCTOであるJoe Cheng氏です。
-Rでの分析結果を動的にwebアプリケーションにしたい、webアプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境がShinyです。Shinyのインストールから、アプリケーションの作成までを紹介します。
-すぐに始められるShiny Shinyでwebアプリケーション開発を始める人の大半はすでにRのユーザかもしれませんが、Shinyが気になって開発環境を整えたい人もいるかもしれません。Rはダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタからShinyの動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。
- Rをインストール
- RStudioをインストール
- Shinyパッケージをインストール
-  Rをインストール CRAN(The Comprehensive R Archive Network)からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。
+      <description>Shiny って何？(読み飛ばしてオーケー) R は世界中で広く使用されているプログラミング言語です。Shiny は R のパッケージの一つで、R による分析結果を動的な web アプリケーションとして公開することができます。
+R も Shiny もフリーかつオープンソースのソフトウェアとして、開発が進められています。 Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shiny による web アプリケーション開発もプラットフォームは問いません。
+Shiny を開発しているのは RStudio Inc. で、メインの開発者は RStudio の CTO であるJoe Cheng氏です。
+R での分析結果を動的に web アプリケーションにしたい、web アプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境が Shiny です。Shiny のインストールから、アプリケーションの作成までを紹介します。
+Shiny を始める前のインストール作業 Shiny で web アプリケーション開発を始める人の大半はすでに R のユーザかもしれませんが、Shiny が気になって開発環境を整えたい人もいるかもしれません。R はダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタから Shiny の動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。
+ R をインストール
+ RStudio をインストール
+ Shiny パッケージをインストール
+  R をインストール CRAN(The Comprehensive R Archive Network)からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。
 ダウンロードしたR-***.exeを実行し、ウィザードを進めていけば、インストールが完了します。
-RStudioをインストール RStudioの公式サイトからインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。
-Shinyパッケージをインストール RStudioを起動し、パッケージをインストールします。console枠で、
-install.packages(&amp;quot;shiny&amp;quot;)  を実行すると、Shinyパッケージのインストールが始まります。パッケージをインストール後、Shinyを実行するために以下のコマンドでパッケージをロードします。
-library(shiny)  Shinyのシンプルな設計 Shinyを構成する要素は大きく２つだけ、ユーザーインターフェース(ui)とサーバ(server)です。ユーザーインターフェースにはレイアウトやコントロールの配置を記述し、サーバにはユーザーインターフェースに表示する数値やグラフを計算する処理を記述します。
-ディレクトリを作り、ディレクトリの中にapp.Rというファイルを置いて、runApp()を実行するだけでShinyアプリケーションが実行されます。最もシンプルなapp.Rは以下のコードとなります。
-library(shiny) ui &amp;lt;- fluidPage() server &amp;lt;- function(input, output){} shinyApp(ui = ui, server = server)  このままでは、空のアプリケーションなので、数値入力とヒストグラム表示を追加すると、以下のコードとなります。
-library(shiny) ui &amp;lt;- fluidPage( numericInput(inputId = &amp;quot;n&amp;quot;, &amp;quot;Sample size&amp;quot;, value = 25), plotOutput(outputId = &amp;quot;hist&amp;quot;) ) server &amp;lt;- function(input, output){ output$hist &amp;lt;- renderPlot({ hist(rnorm(input$n)) }) } shinyApp(ui = ui, server = server)  一つのファイルにまとめて記述するだけでなく、ui.</description>
+RStudio をインストール RStudioの公式サイトからインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。</description>
     </item>
     
     <item>
@@ -45,13 +37,13 @@ library(shiny) ui &amp;lt;- fluidPage( numericInput(inputId = &amp;quot;n&amp;qu
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/function-index/</guid>
-      <description> A  actionButton
-B C checkboxGroupInput
+      <description> A  actionButton  B C  checkboxGroupInput
  checkboxInput
-D dateInput
+  D  dateInput
  dateRangeInput
-E F fileInput
-G H I J K L M N O P Q R S T U V W X Y Z  </description>
+  E F  fileInput  G H I J K L M N  numericInput  O P  passwordInput  Q R  radioButtons  S  selectInput
+ sliderInput
+  T  textInput  U V W X Y Z </description>
     </item>
     
     <item>
@@ -66,6 +58,12 @@ G H I J K L M N O P Q R S T U V W X Y Z  </description>
  dateInput
  dateRangeInput
  fileInput
+ numericInput
+ passwordInput
+ radioButtons
+ selectInput
+ sliderInput
+ textInput
   UI Outputs UI Layout Rendering functions Reactive programming https://shiny.rstudio.com/reference/shiny/1.0.5/</description>
     </item>
     
@@ -132,7 +130,34 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       
       <guid>/fileinput/</guid>
       <description>fileInput(inputId, label, multiple = FALSE, accept = NULL, width = NULL, buttonLabel = &amp;#34;Browse...&amp;#34;, placeholder = &amp;#34;No file selected&amp;#34;) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   multiple ユーザが複数のファイルを同時にアップロードできるかどうかを論理値で指定します。IE9よりも古いブラウザでは動作しません。   accept サーバが受け付けるファイルの種類をヒントとして与えるために、MIME型の文字ベクトル   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   buttonLabel テキストまたはHTMLタグで指定するボタンのラベル   placeholder ファイルをアップロードする前に表示するテキスト    説明 1つ以上のファイルをアップロードするコントロールを生成。
-詳細 使用例 ## Only run examples in interactive R sessions if (interactive()) {ui &amp;lt;- fluidPage(sidebarLayout(sidebarPanel(fileInput(&amp;#34;file1&amp;#34;, &amp;#34;Choose CSV File&amp;#34;,accept = c(&amp;#34;text/csv&amp;#34;,&amp;#34;text/comma-separated-values,text/plain&amp;#34;,&amp;#34;.</description>
+詳細 使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( sidebarLayout( sidebarPanel( fileInput(&amp;#34;file1&amp;#34;, &amp;#34;Choose CSV File&amp;#34;, accept = c( &amp;#34;text/csv&amp;#34;, &amp;#34;text/comma-separated-values,text/plain&amp;#34;, &amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>numericInput</title>
+      <link>/numericinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/numericinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>passwordInput</title>
+      <link>/passwordinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/passwordinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>radioButtons</title>
+      <link>/radiobuttons/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/radiobuttons/</guid>
+      <description>作成中</description>
     </item>
     
     <item>
@@ -143,6 +168,33 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <guid>/reactive/</guid>
       <description>https://shiny.rstudio.com/reference/shiny/latest/reactive.html
 https://shiny.rstudio.com/reference/shiny/latest/reactive.html</description>
+    </item>
+    
+    <item>
+      <title>selectInput</title>
+      <link>/selectinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/selectinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>sliderInput</title>
+      <link>/sliderinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/sliderinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>textInput</title>
+      <link>/textinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/textinput/</guid>
+      <description>作成中</description>
     </item>
     
     <item>

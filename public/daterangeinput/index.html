@@ -255,7 +255,7 @@
 
 <h3 id="使用例">使用例</h3>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
 <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
 
 ui <span style="color:#f92672">&lt;-</span> fluidPage(
@@ -263,11 +263,11 @@ ui <span style="color:#f92672">&lt;-</span> fluidPage(
                  start <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2001-01-01&#34;</span>,
                  end   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2010-12-31&#34;</span>),
 
-  <span style="color:#75715e"># Default start and end is the current date in the client&#39;s time zone</span>
+  <span style="color:#75715e"># Default start and end is the current date in the client&#39;s time zone</span>
   dateRangeInput(<span style="color:#e6db74">&#34;daterange2&#34;</span>, <span style="color:#e6db74">&#34;Date range:&#34;</span>),
 
-  <span style="color:#75715e"># start and end are always specified in yyyy-mm-dd, even if the display</span>
-  <span style="color:#75715e"># format is different</span>
+  <span style="color:#75715e"># start and end are always specified in yyyy-mm-dd, even if the display</span>
+  <span style="color:#75715e"># format is different</span>
   dateRangeInput(<span style="color:#e6db74">&#34;daterange3&#34;</span>, <span style="color:#e6db74">&#34;Date range:&#34;</span>,
                  start  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2001-01-01&#34;</span>,
                  end    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2010-12-31&#34;</span>,
@@ -276,17 +276,17 @@ ui <span style="color:#f92672">&lt;-</span> fluidPage(
                  format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mm/dd/yy&#34;</span>,
                  separator <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; - &#34;</span>),
 
-  <span style="color:#75715e"># Pass in Date objects</span>
+  <span style="color:#75715e"># Pass in Date objects</span>
   dateRangeInput(<span style="color:#e6db74">&#34;daterange4&#34;</span>, <span style="color:#e6db74">&#34;Date range:&#34;</span>,
                  start <span style="color:#f92672">=</span> <span style="color:#66d9ef">Sys.Date</span>()<span style="color:#ae81ff">-10</span>,
                  end <span style="color:#f92672">=</span> <span style="color:#66d9ef">Sys.Date</span>()<span style="color:#ae81ff">+10</span>),
 
-  <span style="color:#75715e"># Use different language and different first day of week</span>
+  <span style="color:#75715e"># Use different language and different first day of week</span>
   dateRangeInput(<span style="color:#e6db74">&#34;daterange5&#34;</span>, <span style="color:#e6db74">&#34;Date range:&#34;</span>,
                  language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;de&#34;</span>,
                  weekstart <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>),
 
-  <span style="color:#75715e"># Start with decade view instead of default month view</span>
+  <span style="color:#75715e"># Start with decade view instead of default month view</span>
   dateRangeInput(<span style="color:#e6db74">&#34;daterange6&#34;</span>, <span style="color:#e6db74">&#34;Date range:&#34;</span>,
                  startview <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;decade&#34;</span>)
 )
@@ -344,7 +344,7 @@ shinyApp(ui, server <span style="color:#f92672">=</span> <span style="color:#66d
     <ol class="list-unstyled">
 
 
-<li><a href="/top-page/">トップページ</a></li>
+<li><a href="/top-page/">Shiny app 開発をスタート</a></li>
 
 <li><a href="/function-index/">索引(アルファベット順)</a></li>
 

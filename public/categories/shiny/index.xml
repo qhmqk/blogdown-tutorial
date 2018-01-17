@@ -75,7 +75,34 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       
       <guid>/fileinput/</guid>
       <description>fileInput(inputId, label, multiple = FALSE, accept = NULL, width = NULL, buttonLabel = &amp;#34;Browse...&amp;#34;, placeholder = &amp;#34;No file selected&amp;#34;) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   multiple ユーザが複数のファイルを同時にアップロードできるかどうかを論理値で指定します。IE9よりも古いブラウザでは動作しません。   accept サーバが受け付けるファイルの種類をヒントとして与えるために、MIME型の文字ベクトル   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   buttonLabel テキストまたはHTMLタグで指定するボタンのラベル   placeholder ファイルをアップロードする前に表示するテキスト    説明 1つ以上のファイルをアップロードするコントロールを生成。
-詳細 使用例 ## Only run examples in interactive R sessions if (interactive()) {ui &amp;lt;- fluidPage(sidebarLayout(sidebarPanel(fileInput(&amp;#34;file1&amp;#34;, &amp;#34;Choose CSV File&amp;#34;,accept = c(&amp;#34;text/csv&amp;#34;,&amp;#34;text/comma-separated-values,text/plain&amp;#34;,&amp;#34;.</description>
+詳細 使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( sidebarLayout( sidebarPanel( fileInput(&amp;#34;file1&amp;#34;, &amp;#34;Choose CSV File&amp;#34;, accept = c( &amp;#34;text/csv&amp;#34;, &amp;#34;text/comma-separated-values,text/plain&amp;#34;, &amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>numericInput</title>
+      <link>/numericinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/numericinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>passwordInput</title>
+      <link>/passwordinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/passwordinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>radioButtons</title>
+      <link>/radiobuttons/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/radiobuttons/</guid>
+      <description>作成中</description>
     </item>
     
     <item>
@@ -86,6 +113,33 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <guid>/reactive/</guid>
       <description>https://shiny.rstudio.com/reference/shiny/latest/reactive.html
 https://shiny.rstudio.com/reference/shiny/latest/reactive.html</description>
+    </item>
+    
+    <item>
+      <title>selectInput</title>
+      <link>/selectinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/selectinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>sliderInput</title>
+      <link>/sliderinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/sliderinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>textInput</title>
+      <link>/textinput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/textinput/</guid>
+      <description>作成中</description>
     </item>
     
   </channel>
