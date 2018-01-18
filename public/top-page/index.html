@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "Shiny app 開発をスタート",
   "url": "/top-page/",
-  "wordCount": "435",
+  "wordCount": "440",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -400,7 +400,7 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
 
 <h3 id="サーバでレンダリングして-出力ウィジェットで表示">サーバでレンダリングして、出力ウィジェットで表示</h3>
 
-<p>サーバでレンダリングしたオブジェクトを、出力ウィジェットとしてUIに配置して表示します。レンダリング関数をserverに、出力ウィジェット</p>
+<p>サーバでレンダリングしたオブジェクトを、出力ウィジェットとしてUIに配置して表示します。レンダリング関数をserverに、出力ウィジェットをuiで定義します。</p>
 
 <table>
 <thead>
@@ -412,33 +412,33 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
 
 <tbody>
 <tr>
-<td align="left"><code>renderPlot(expr, width, height, res, ...)</code></td>
-<td align="left"><code>plotOutput(outputId, width, height, )</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>renderPrint</code></td>
-<td align="left"><code>verbatimTextOutput</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>renderText</code></td>
-<td align="left"><code>textOutput</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>renderUI</code></td>
-<td align="left"><code>uiOutput</code>, <code>htmlOutput</code></td>
-</tr>
-
-<tr>
-<td align="left"><code>renderImage</code></td>
+<td align="left"><a href="/renderimage/"><code>renderImage</code></a></td>
 <td align="left"><code>imageOutput</code></td>
 </tr>
 
 <tr>
-<td align="left"><code>renderTable</code></td>
+<td align="left"><a href="/renderplot/"><code>renderPlot(expr, width, height, res, ...)</code></a></td>
+<td align="left"><code>plotOutput(outputId, width, height, )</code></td>
+</tr>
+
+<tr>
+<td align="left"><a href="/renderprint/"><code>renderPrint</code></a></td>
+<td align="left"><code>verbatimTextOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"><a href="/rendertable/"><code>renderTable</code></a></td>
 <td align="left"><code>tableOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"><a href="/rendertext/"><code>renderText</code></a></td>
+<td align="left"><code>textOutput</code></td>
+</tr>
+
+<tr>
+<td align="left"><a href="/renderui/"><code>renderUI</code></a></td>
+<td align="left"><code>uiOutput</code>, <code>htmlOutput</code></td>
 </tr>
 
 <tr>
@@ -452,6 +452,10 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
 </tr>
 </tbody>
 </table>
+
+<h3 id="リアクティブ関数で-reactivity-を定義">リアクティブ関数で Reactivity を定義</h3>
+
+<p>入力ウィジェットでユーザが何らかの操作を行い、サーバでレンダリングして出力ウィジェットで表示するまでの処理の部分を、Shiny ではリアクティブ関数で実現します。</p>
 
 <h3 id="レイアウト">レイアウト</h3>
 

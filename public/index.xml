@@ -41,7 +41,14 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
  checkboxInput
   D  dateInput
  dateRangeInput
-  E F  fileInput  G H I J K L M N  numericInput  O P  passwordInput  Q R  radioButtons  S  selectInput
+  E F  fileInput  G H I J K L M N  numericInput  O P  passwordInput  Q R  radioButtons
+ renderImage
+ renderPlot
+ renderPrint
+ renderTable
+ renderText
+ renderUI
+  S  selectInput
  sliderInput
   T  textInput  U V W X Y Z </description>
     </item>
@@ -64,7 +71,13 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
  selectInput
  sliderInput
  textInput
-  UI Outputs UI Layout Rendering functions Reactive programming https://shiny.rstudio.com/reference/shiny/1.0.5/</description>
+  UI Outputs UI Layout Rendering functions  renderImage
+ renderPlot
+ renderPrint
+ renderTable
+ renderText
+ renderUI
+  Reactive programming https://shiny.rstudio.com/reference/shiny/1.0.5/</description>
     </item>
     
     <item>
@@ -168,6 +181,64 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <guid>/reactive/</guid>
       <description>https://shiny.rstudio.com/reference/shiny/latest/reactive.html
 https://shiny.rstudio.com/reference/shiny/latest/reactive.html</description>
+    </item>
+    
+    <item>
+      <title>renderImage</title>
+      <link>/renderimage/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/renderimage/</guid>
+      <description>renderImage(expr, env = parent.frame(), quoted = FALSE, deleteFile = TRUE, outputArgs = list()) 引数    名前 説明     expr リストを返す式   env 中でexprを評価するための環境   quoted    deleteFile    outputArgs     説明 outputスロットに割り当てる適切な画像を描画します。
+詳細 式exprは、webページ上のimgオブジェクト属性を持つリストを必ず返します。画像を正しく表示するために、リストsrcに画像ファイルへのパスとなるエントリが少なくとも1つは必要となります。contextTypeで、画像のMIME型を指定するエントリを持つのが有用です。指定がない場合には、renderImageでファイルの拡張子に基づいて型を自動的に検出します。
+widthやheight, class, altなどの他の要素も、リストに加えられます。追加の要素は、imgオブジェクトの属性として使用されます。
+対応するHTML出力のタグは、divまたはimgで、CSSのクラス名はshiny-image-outputとなります。
+使用例 ## Only run examples in interactive R sessions if (interactive()) {options(device.ask.default = FALSE)ui &amp;lt;- fluidPage(sliderInput(&amp;#34;n&amp;#34;, &amp;#34;Number of observations&amp;#34;, 2, 1000, 500),plotOutput(&amp;#34;plot1&amp;#34;),plotOutput(&amp;#34;plot2&amp;#34;),plotOutput(&amp;#34;plot3&amp;#34;))server &amp;lt;- function(input, output, session) {# A plot of fixed size output$plot1 &amp;lt;- renderImage({# A temp file to save the output.</description>
+    </item>
+    
+    <item>
+      <title>renderPlot</title>
+      <link>/renderplot/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/renderplot/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>renderPrint</title>
+      <link>/renderprint/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/renderprint/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>renderTable</title>
+      <link>/rendertable/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/rendertable/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>renderText</title>
+      <link>/rendertext/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/rendertext/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>renderUI</title>
+      <link>/renderui/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/renderui/</guid>
+      <description>作成中</description>
     </item>
     
     <item>
