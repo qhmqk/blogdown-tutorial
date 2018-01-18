@@ -234,18 +234,27 @@ dateInputが左右に2つ並んでおり、2つの日付から期間を指定し
 
 ### サーバでレンダリングして、出力ウィジェットで表示
 
-サーバでレンダリングしたオブジェクトを、出力ウィジェットとしてUIに配置して表示します。レンダリング関数をserverに、出力ウィジェット
+サーバでレンダリングしたオブジェクトを、出力ウィジェットとしてUIに配置して表示します。レンダリング関数をserverに、出力ウィジェットをuiで定義します。
 
 |レンダリング関数|出力ウィジェット|
 |:--|:--|
-|`renderPlot(expr, width, height, res, ...)`|`plotOutput(outputId, width, height, )`|
-|`renderPrint`|`verbatimTextOutput`|
-|`renderText`|`textOutput`|
-|`renderUI`|`uiOutput`, `htmlOutput`|
-|`renderImage`|`imageOutput`|
-|`renderTable`|`tableOutput`|
+|[`renderImage`]({{< ref "renderimage.md" >}})|`imageOutput`|
+|[`renderPlot(expr, width, height, res, ...)`]({{< ref "renderplot.md" >}})|`plotOutput(outputId, width, height, )`|
+|[`renderPrint`]({{< ref "renderprint.md" >}})|`verbatimTextOutput`|
+|[`renderTable`]({{< ref "rendertable.md" >}})|`tableOutput`|
+|[`renderText`]({{< ref "rendertext.md" >}})|`textOutput`|
+|[`renderUI`]({{< ref "renderui.md" >}})|`uiOutput`, `htmlOutput`|
 |`DT::renderDataTable`|`dataTableOutput`|
 |||
+
+### リアクティブ関数で Reactivity を定義
+
+入力ウィジェットでユーザが何らかの操作を行い、サーバでレンダリングして出力ウィジェットで表示するまでの処理の部分を、Shiny ではリアクティブ関数で実現します。
+
+
+
+
+
 
 ### レイアウト
 

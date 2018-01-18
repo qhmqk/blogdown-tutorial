@@ -52,6 +52,18 @@ description: "アルファベット順のShiny関数の索引"
 
 * [radioButtons]({{< ref "radiobuttons.md" >}})
 
+* [`renderImage`]({{< ref "renderimage.md" >}})
+
+* [`renderPlot`]({{< ref "renderplot.md" >}})
+
+* [`renderPrint`]({{< ref "renderprint.md" >}})
+
+* [`renderTable`]({{< ref "rendertable.md" >}})
+
+* [`renderText`]({{< ref "rendertext.md" >}})
+
+* [`renderUI`]({{< ref "renderui.md" >}})
+
 ### S
 
 * [selectInput]({{< ref "selectinput.md" >}})

@@ -50,6 +50,17 @@ description: "機能ごとのShiny関数の索引"
 
 ### Rendering functions
 
+* [`renderImage`]({{< ref "renderimage.md" >}})
+
+* [`renderPlot`]({{< ref "renderplot.md" >}})
+
+* [`renderPrint`]({{< ref "renderprint.md" >}})
+
+* [`renderTable`]({{< ref "rendertable.md" >}})
+
+* [`renderText`]({{< ref "rendertext.md" >}})
+
+* [`renderUI`]({{< ref "renderui.md" >}})
 
 ### Reactive programming
 
