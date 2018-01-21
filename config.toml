@@ -83,7 +83,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   [params.sidebar]
     # Optional about block for sidebar (can be Markdown)
-    about = "R user, native Japanese speaker, traveller and also gambler"
+    about = "*qhmqk*, R user, native Japanese speaker, traveller and also gambler<br><br>[Read more →](/about)"
 
     # How many posts to show on the sidebar (Default: 5)
     #num_recent_posts = 2

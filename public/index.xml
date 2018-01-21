@@ -290,6 +290,26 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
     </item>
     
     <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>作成中。
+You can contact me.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>/contact/</link>
+      <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>質問、反論、脅迫などはフォームからお願いします。
+Email  Message   送信</description>
+    </item>
+    
+    <item>
       <title>R Markdown 記法</title>
       <link>/rmarkdown-syntax/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
