@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "renderPlot",
   "url": "/renderplot/",
-  "wordCount": "1",
+  "wordCount": "53",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -85,10 +85,10 @@ ga('send', 'pageview');
           <a class="nav-link " href="/">Home</a>
           
           
-          <a class="nav-link" href="/about/">About</a>
-          
-          
           <a class="nav-link" href="/contact/">Contact</a>
+          
+          
+          <a class="nav-link" href="/about/">About</a>
           
           
         </nav>
@@ -120,7 +120,80 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">renderPlot(expr, width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;auto&#34;</span>, height <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;auto&#34;</span>, res <span style="color:#f92672">=</span> <span style="color:#ae81ff">72</span>, <span style="color:#66d9ef">...</span>, env <span style="color:#f92672">=</span> <span style="color:#66d9ef">parent.frame</span>(), quoted <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, execOnResize <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, outputArgs <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>())</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>expr</code></td>
+<td align="left">プロットを生成する式</td>
+</tr>
+
+<tr>
+<td align="left"><code>width</code>, <code>height</code></td>
+<td align="left">描画するプロットの高さと幅をピクセルで指定します。<code>auto</code>を指定して、HTMLの<code>offsetWidth</code>と<code>offsetHeight</code>を用いることもできます。インラインでプロットするときには、数値で<code>width</code>と<code>height</code>を必ず指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><code>res</code></td>
+<td align="left">インチ単位のピクセル解像度を指定します。この値は、<code>png</code>に渡されます。Rで描画するPNGの解像度を変えるのであって、ブラウザの実際のppiを変えるわけではないことに注意してください。</td>
+</tr>
+
+<tr>
+<td align="left">&hellip;</td>
+<td align="left">幅、高さや背景色などの<code>png</code>に渡す引数</td>
+</tr>
+
+<tr>
+<td align="left"><code>env</code></td>
+<td align="left">中で<code>expr</code>を評価するための環境</td>
+</tr>
+
+<tr>
+<td align="left"><code>quoted</code></td>
+<td align="left"><code>expr</code>に引用符が付いている(<code>quoted()</code>がある)かどうかを指定します。変数内の式を保存したいときに有用です。</td>
+</tr>
+
+<tr>
+<td align="left"><code>execOnResize</code></td>
+<td align="left">(デフォルトの)<code>FALSE</code>なら、プロットのサイズ決定が繰り返され、Shinyは<code>expr</code>の再実行の代わりに、<code>replayPlot()</code>コマンドでプロットの描画を繰り返します。これにより、高速な再描画が可能となります。まれに望ましくない場合もあります。プロットのサイズ決定やり直しに問題がある場合に、<code>TRUE</code>を設定してShinyのコードを再実行することができます。</td>
+</tr>
+
+<tr>
+<td align="left"><code>outputArgs</code></td>
+<td align="left"><code>renderImage</code>を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない<code>imageOutput</code>の呼び出しに渡される引数のリストです。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="説明">説明</h3>
+
+<p>出力スロットに割り当てるのに適したリアクティブなプロットを描画します。</p>
+
+<h3 id="詳細">詳細</h3>
+
+<p>出力に対応するHTMLのタグは<code>div</code>または<code>img</code>で、<code>shiny-plot-output</code>という名前のCSSクラスを持ちます。</p>
+
+<h3 id="インタラクティブなプロット">インタラクティブなプロット</h3>
+
+<p>ggplot2による作図の場合、<code>renderPlot</code>はggplotのオブジェクトを返すべきです。一方で、もしコードが<code>print(p)</code>のようにggplot2オブジェクトを出力するなら、インタラクティブな作図の座標は、データの空間に適切に縮小・拡大されないでしょう。</p>
+
+<p>インタラクティブなプロットについて、詳細な情報が欲しい場合は、<code>plotOutput</code>を確認してください。</p>
+
+<h3 id="参照">参照</h3>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPlot.html">https://shiny.rstudio.com/reference/shiny/latest/renderPlot.html</a></p>
 
 
   

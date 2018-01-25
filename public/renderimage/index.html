@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "renderImage",
   "url": "/renderimage/",
-  "wordCount": "264",
+  "wordCount": "268",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -85,10 +85,10 @@ ga('send', 'pageview');
           <a class="nav-link " href="/">Home</a>
           
           
-          <a class="nav-link" href="/about/">About</a>
-          
-          
           <a class="nav-link" href="/contact/">Contact</a>
+          
+          
+          <a class="nav-link" href="/about/">About</a>
           
           
         </nav>
@@ -147,17 +147,17 @@ ga('send', 'pageview');
 
 <tr>
 <td align="left"><code>quoted</code></td>
-<td align="left"></td>
+<td align="left"><code>expr</code>に引用符が付いている(<code>quoted()</code>がある)かどうかを指定します。変数内の式を保存したいときに有用です。</td>
 </tr>
 
 <tr>
 <td align="left"><code>deleteFile</code></td>
-<td align="left"></td>
+<td align="left">クライアントのブラウザに送られた<code>func()$src</code>中のファイルを削除するかどうかを指定します。一般的に、画像が$func$内で生成された一時ファイルの場合は<code>TRUE</code>、一時ファイルでないなら<code>FALSE</code>とします。</td>
 </tr>
 
 <tr>
 <td align="left"><code>outputArgs</code></td>
-<td align="left"></td>
+<td align="left"><code>renderImage</code>を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない<code>imageOutput</code>の呼び出しに渡される引数のリストです。</td>
 </tr>
 </tbody>
 </table>

@@ -18,7 +18,7 @@
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/renderimage/</guid>
-      <description>renderImage(expr, env = parent.frame(), quoted = FALSE, deleteFile = TRUE, outputArgs = list()) 引数    名前 説明     expr リストを返す式   env 中でexprを評価するための環境   quoted    deleteFile    outputArgs     説明 outputスロットに割り当てる適切な画像を描画します。
+      <description>renderImage(expr, env = parent.frame(), quoted = FALSE, deleteFile = TRUE, outputArgs = list()) 引数    名前 説明     expr リストを返す式   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   deleteFile クライアントのブラウザに送られたfunc()$src中のファイルを削除するかどうかを指定します。一般的に、画像が$func$内で生成された一時ファイルの場合はTRUE、一時ファイルでないならFALSEとします。   outputArgs renderImageを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないimageOutputの呼び出しに渡される引数のリストです。    説明 outputスロットに割り当てる適切な画像を描画します。
 詳細 式exprは、webページ上のimgオブジェクト属性を持つリストを必ず返します。画像を正しく表示するために、リストsrcに画像ファイルへのパスとなるエントリが少なくとも1つは必要となります。contextTypeで、画像のMIME型を指定するエントリを持つのが有用です。指定がない場合には、renderImageでファイルの拡張子に基づいて型を自動的に検出します。
 widthやheight, class, altなどの他の要素も、リストに加えられます。追加の要素は、imgオブジェクトの属性として使用されます。
 対応するHTML出力のタグは、divまたはimgで、CSSのクラス名はshiny-image-outputとなります。
@@ -31,7 +31,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/renderplot/</guid>
-      <description>作成中</description>
+      <description>renderPlot(expr, width = &amp;#34;auto&amp;#34;, height = &amp;#34;auto&amp;#34;, res = 72, ..., env = parent.frame(), quoted = FALSE, execOnResize = FALSE, outputArgs = list()) 引数    名前 説明     expr プロットを生成する式   width, height 描画するプロットの高さと幅をピクセルで指定します。autoを指定して、HTMLのoffsetWidthとoffsetHeightを用いることもできます。インラインでプロットするときには、数値でwidthとheightを必ず指定します。   res インチ単位のピクセル解像度を指定します。この値は、pngに渡されます。Rで描画するPNGの解像度を変えるのであって、ブラウザの実際のppiを変えるわけではないことに注意してください。   &amp;hellip; 幅、高さや背景色などのpngに渡す引数   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   execOnResize (デフォルトの)FALSEなら、プロットのサイズ決定が繰り返され、Shinyはexprの再実行の代わりに、replayPlot()コマンドでプロットの描画を繰り返します。これにより、高速な再描画が可能となります。まれに望ましくない場合もあります。プロットのサイズ決定やり直しに問題がある場合に、TRUEを設定してShinyのコードを再実行することができます。   outputArgs renderImageを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないimageOutputの呼び出しに渡される引数のリストです。    説明 出力スロットに割り当てるのに適したリアクティブなプロットを描画します。</description>
     </item>
     
     <item>
@@ -40,7 +40,12 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/renderprint/</guid>
-      <description>作成中</description>
+      <description>作成中 renderPrint(expr, env = parent.frame(), quoted = FALSE, width = getOption(&amp;#34;width&amp;#34;), outputArgs = list())
+引数    名前 説明     expr 出力を印字、または印字可能なRオブジェクトを返す式   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   width options(&#39;width&#39;)の値   outputArgs renderPrintを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないverbatimTextOutputの呼び出しに渡される引数のリスト    説明 印字する出力をキャプチャする関数のリアクティブなバージョンを生成します。また、印字可能な出力を(見えなかったとしても)キャプチャし、文字列にします。結果の関数は、出力スロットへの割当に適しています。
+詳細 対応するHTML出力タグは、任意で何にでも成り(monospaceフォントとwhitespaceをpreserveしたいなら、preが推奨されます)、CSSのクラス名はshiny-text-outputを持ちます。
+関数の実行結果は、capture.output呼び出しの内部で印字されます。
+大半のShinyの出力関数と違い、NULLもNULLであることが見えるように出力されます。NULLで何も表示しないためには、関数がinvisible()を返すようにしなければならないことにちゅうしてください。
+使用例 isolate({# renderPrint captures any print output, converts it to a string, and # returns it visFun &amp;lt;- renderPrint({ &amp;#34;foo&amp;#34; })visFun()# &amp;#39;[1] &amp;#34;foo&amp;#34;&amp;#39; invisFun &amp;lt;- renderPrint({ invisible(&amp;#34;foo&amp;#34;) })invisFun()# &amp;#39;&amp;#39; multiprintFun &amp;lt;- renderPrint({print(&amp;#34;foo&amp;#34;);&amp;#34;bar&amp;#34;})multiprintFun()# &amp;#39;[1] &amp;#34;foo&amp;#34;\n[1] &amp;#34;bar&amp;#34;&amp;#39; nullFun &amp;lt;- renderPrint({ NULL })nullFun()# &amp;#39;NULL&amp;#39; invisNullFun &amp;lt;- renderPrint({ invisible(NULL) })invisNullFun()# &amp;#39;&amp;#39; vecFun &amp;lt;- renderPrint({ 1:5 })vecFun()# &amp;#39;[1] 1 2 3 4 5&amp;#39; # Contrast with renderText, which takes the value returned from the function # and uses cat() to convert it to a string visFun &amp;lt;- renderText({ &amp;#34;foo&amp;#34; })visFun()# &amp;#39;foo&amp;#39; invisFun &amp;lt;- renderText({ invisible(&amp;#34;foo&amp;#34;) })invisFun()# &amp;#39;foo&amp;#39; multiprintFun &amp;lt;- renderText({print(&amp;#34;foo&amp;#34;);&amp;#34;bar&amp;#34;})multiprintFun()# &amp;#39;bar&amp;#39; nullFun &amp;lt;- renderText({ NULL })nullFun()# &amp;#39;&amp;#39; invisNullFun &amp;lt;- renderText({ invisible(NULL) })invisNullFun()# &amp;#39;&amp;#39; vecFun &amp;lt;- renderText({ 1:5 })vecFun()# &amp;#39;1 2 3 4 5&amp;#39; })[1] &amp;#34;foo&amp;#34;[1] &amp;#34;1 2 3 4 5&amp;#34;</description>
     </item>
     
     <item>

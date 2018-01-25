@@ -2,6 +2,7 @@
 date = "2018-01-14"
 title = "Contact"
 sharingicons = false
+weight = 3
 +++
 
 質問、反論、脅迫などはフォームからお願いします。
