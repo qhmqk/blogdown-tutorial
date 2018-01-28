@@ -37,10 +37,19 @@ description: "機能ごとのShiny関数の索引"
 
 ### UI Outputs
 
+* [`imageOutput`]({{< ref "imageoutput.md" >}})
 
+* [`htmlOutput`]({{< ref "htmloutput.md" >}})
 
+* [`plotOutput`]({{< ref "plotoutput.md" >}})
 
+* [`tableOutput`]({{< ref "tableoutput.md" >}})
 
+* [`textOutput`]({{< ref "textoutput.md" >}})
+
+* [`uiOutput`]({{< ref "uioutput.md" >}})
+
+* [`verbatimTextOutput`]({{< ref "verbatimtextoutput.md" >}})
 
 
 ### UI Layout

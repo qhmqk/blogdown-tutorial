@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ui Outputs on Shiny クックブック</title>
+    <link>/tags/ui-outputs/</link>
+    <description>Recent content in Ui Outputs on Shiny クックブック</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>© 2018 qhmqk</copyright>
+    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ui-outputs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>htmlOutput</title>
+      <link>/htmloutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/htmloutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>imageOutput</title>
+      <link>/imageoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/imageoutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>plotOutput</title>
+      <link>/plotoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/plotoutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>tableOutput</title>
+      <link>/tableoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tableoutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>textOutput</title>
+      <link>/textoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/textoutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>uiOutput</title>
+      <link>/uioutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/uioutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>verbatimTextOutput</title>
+      <link>/verbatimtextoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/verbatimtextoutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+  </channel>
+</rss>

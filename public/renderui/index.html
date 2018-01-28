@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "renderUI",
   "url": "/renderui/",
-  "wordCount": "1",
+  "wordCount": "67",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -120,7 +120,74 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">renderUI(expr, env <span style="color:#f92672">=</span> <span style="color:#66d9ef">parent.frame</span>(), quoted <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, outputArgs <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>())</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>expr</code></td>
+<td align="left">Shinyのタグオブジェクト、HTML、またはそれらのリストを返す式</td>
+</tr>
+
+<tr>
+<td align="left"><code>env</code></td>
+<td align="left">中で<code>expr</code>を評価するための環境</td>
+</tr>
+
+<tr>
+<td align="left"><code>quoted</code></td>
+<td align="left"><code>expr</code>に引用符が付いている(<code>quoted()</code>がある)かどうかを指定します。変数内の式を保存したいときに有用です。</td>
+</tr>
+
+<tr>
+<td align="left"><code>outputArgs</code></td>
+<td align="left"><code>renderUI</code>を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない<code>uiOutput</code>の呼び出しに渡される引数のリスト</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="説明">説明</h3>
+
+<p>実験的な機能です。ShinyのUIライブラリを用いてHTMLを生成する関数のリアクティブなバージョンを生成します。</p>
+
+<h3 id="詳細">詳細</h3>
+
+<p>出力するHTMLの出力タグは<code>div</code>で、CSSのクラス名に<code>shiny-html-output</code>を持ちます(または<code>uiOutput</code>を使用します)。</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  uiOutput(<span style="color:#e6db74">&#34;moreControls&#34;</span>)
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>moreControls <span style="color:#f92672">&lt;-</span> renderUI({
+    tagList(
+      sliderInput(<span style="color:#e6db74">&#34;n&#34;</span>, <span style="color:#e6db74">&#34;N&#34;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">500</span>),
+      textInput(<span style="color:#e6db74">&#34;label&#34;</span>, <span style="color:#e6db74">&#34;Label&#34;</span>)
+    )
+  })
+}
+shinyApp(ui, server)
+}</code></pre></div></p>
+
+<h3 id="参照">参照</h3>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/renderUI.html">https://shiny.rstudio.com/reference/shiny/1.0.5/renderUI.html</a></p>
 
 
   

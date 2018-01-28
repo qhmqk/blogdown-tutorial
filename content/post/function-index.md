@@ -33,7 +33,13 @@ description: "アルファベット順のShiny関数の索引"
 
 ### G
 ### H
+
+* [`htmlOutput`]({{< ref "htmloutput.md" >}})
+
 ### I
+
+* [`imageOutput`]({{< ref "imageoutput.md" >}})
+
 ### J
 ### K
 ### L
@@ -46,6 +52,8 @@ description: "アルファベット順のShiny関数の索引"
 ### P
 
 * [passwordInput]({{< ref "passwordinput.md" >}})
+
+* [`plotOutput`]({{< ref "plotoutput.md" >}})
 
 ### Q
 ### R
@@ -72,10 +80,20 @@ description: "アルファベット順のShiny関数の索引"
 
 ### T
 
+* [`tableOutput`]({{< ref "tableoutput.md" >}})
+
 * [textInput]({{< ref "textinput.md" >}})
 
+* [`textOutput`]({{< ref "textoutput.md" >}})
+
 ### U
+
+* [`uiOutput`]({{< ref "uioutput.md" >}})
+
 ### V
+
+* [`verbatimTextOutput`]({{< ref "verbatimtextoutput.md" >}})
+
 ### W
 ### X
 ### Y

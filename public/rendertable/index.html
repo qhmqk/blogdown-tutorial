@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "renderTable",
   "url": "/rendertable/",
-  "wordCount": "1",
+  "wordCount": "88",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -120,7 +120,100 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">renderTable(expr, striped <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, hover <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, bordered <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, spacing <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;s&#34;</span>, <span style="color:#e6db74">&#34;xs&#34;</span>, <span style="color:#e6db74">&#34;m&#34;</span>, <span style="color:#e6db74">&#34;l&#34;</span>), width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;auto&#34;</span>, align <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>,
+  rownames <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, colnames <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, digits <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, na <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NA&#34;</span>, <span style="color:#66d9ef">...</span>, env <span style="color:#f92672">=</span> <span style="color:#66d9ef">parent.frame</span>(), quoted <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, outputArgs <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>())</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>expr</code></td>
+<td align="left">xtableで使用可能なRのオブジェクトを返す式</td>
+</tr>
+
+<tr>
+<td align="left"><code>striped</code>, <code>hover</code>, <code>bordered</code></td>
+<td align="left">論理値で、<code>TRUE</code>なら出力する表に対応するBootstrapの表フォーマットを適用します。</td>
+</tr>
+
+<tr>
+<td align="left"><code>spacing</code></td>
+<td align="left">表の行間のスペースを指定します。<code>xs</code>は「extra small」の略で、<code>s</code>は「small」、<code>m</code>は「medum」で、<code>l</code>は「large」です。</td>
+</tr>
+
+<tr>
+<td align="left"><code>width</code></td>
+<td align="left">表の幅。CSSの単位(100やauto)、またはpxを単位にした長さを指定する文字列</td>
+</tr>
+
+<tr>
+<td align="left"><code>align</code></td>
+<td align="left">列のアラインメントを文字列で指定します。<code>l</code>, <code>c</code>, <code>r</code>でそれぞれ列の左、中央右にアラインメントされます。文字列の長さは、表と同じになります(<code>rawnames = TRUE</code>なら、<code>ncol()+1</code>)。i番目の文字が、i番目の列に対応します。<code>?</code>を指定することも可能で、デフォルトのアラインメントを指定することになります。<code>NULL</code>なら、数値の列はすべて右に、その他はすべて左になります(<code>?</code>を指定した場合も同様です)。</td>
+</tr>
+
+<tr>
+<td align="left"><code>rownames</code>, <code>colnames</code></td>
+<td align="left">論理値で行名や列名を含めるかどうかを指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><code>digits</code></td>
+<td align="left">数値の列の桁数を整数で指定します(整数クラスの列には適用されません)。負の数を指定すると、数値の列が絶対値で<code>digits</code>で指定した少数の精度で表示されます。</td>
+</tr>
+
+<tr>
+<td align="left"><code>na</code></td>
+<td align="left">欠損値となっている表のセルに用いる文字列を指定します。NAまたは、NaNとして評価されます。</td>
+</tr>
+
+<tr>
+<td align="left"><code>...</code></td>
+<td align="left"><code>xtable</code>と<code>print.xtable</code>に渡される引数</td>
+</tr>
+
+<tr>
+<td align="left"><code>env</code></td>
+<td align="left">中で<code>expr</code>を評価するための環境</td>
+</tr>
+
+<tr>
+<td align="left"><code>quoted</code></td>
+<td align="left"><code>expr</code>に引用符が付いている(<code>quoted()</code>がある)かどうかを指定します。変数内の式を保存したいときに有用です。</td>
+</tr>
+
+<tr>
+<td align="left"><code>width</code></td>
+<td align="left"><code>options('width')</code>の値</td>
+</tr>
+
+<tr>
+<td align="left"><code>outputArgs</code></td>
+<td align="left"><code>renderTable</code>を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない<code>tableOutput</code>の呼び出しに渡される引数のリスト</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="説明">説明</h3>
+
+<p>出力スロットに割り当てるのに適したリアクティブな表を生成</p>
+
+<h3 id="詳細">詳細</h3>
+
+<p><code>div</code>に対応するHTMLの出力タグで、CSSのクラス名は<code>shiny-html-output</code>です。</p>
+
+<h3 id="参照">参照</h3>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/renderTable.html">https://shiny.rstudio.com/reference/shiny/1.0.5/renderTable.html</a></p>
 
 
   

@@ -7,7 +7,7 @@ weight = 3
 
 質問、反論、脅迫などはフォームからお願いします。
 
-<form method="POST" action="shiny.guide@gmail.com">
+<form method="POST" action="https://formspree.io/shiny.guide@gmail.com">
     <div class="form-group">
         <label for="emailAddress">Email</label>
         <input type="email" class="form-control" name="email" id="emailAddress" placeholder="Your email">

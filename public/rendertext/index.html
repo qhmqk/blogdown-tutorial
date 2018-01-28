@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "renderText",
   "url": "/rendertext/",
-  "wordCount": "1",
+  "wordCount": "187",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -120,7 +120,125 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">renderText(expr, env <span style="color:#f92672">=</span> <span style="color:#66d9ef">parent.frame</span>(), quoted <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, outputArgs <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>())</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>expr</code></td>
+<td align="left">xtableで使用可能なRのオブジェクトを返す式</td>
+</tr>
+
+<tr>
+<td align="left"><code>env</code></td>
+<td align="left">中で<code>expr</code>を評価するための環境</td>
+</tr>
+
+<tr>
+<td align="left"><code>quoted</code></td>
+<td align="left"><code>expr</code>に引用符が付いている(<code>quoted()</code>がある)かどうかを指定します。変数内の式を保存したいときに有用です。</td>
+</tr>
+
+<tr>
+<td align="left"><code>outputArgs</code></td>
+<td align="left"><code>renderText</code>を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない<code>textOutput</code>の呼び出しに渡される引数のリスト</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="説明">説明</h3>
+
+<p><code>cat</code>で結果を単独要素の文字ベクトルに変える関数のリアクティブなバージョンを生成します。</p>
+
+<h3 id="詳細">詳細</h3>
+
+<p>対応するHTMLの出力タグは、何にでもなります(monospaceフォントとwhitespaceを保存するなら、<code>pre</code>が推奨されます)。そして、CSSのクラス名として<code>shiny-text-output</code>を持ちます。</p>
+
+<p>関数の実行結果は、<code>capture.output</code>呼び出しの内部で<code>cat</code>に渡されます。</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">isolate({
+
+<span style="color:#75715e"># renderPrint captures any print output, converts it to a string, and</span>
+<span style="color:#75715e"># returns it</span>
+visFun <span style="color:#f92672">&lt;-</span> renderPrint({ <span style="color:#e6db74">&#34;foo&#34;</span> })
+visFun()
+<span style="color:#75715e"># &#39;[1] &#34;foo&#34;&#39;</span>
+
+invisFun <span style="color:#f92672">&lt;-</span> renderPrint({ <span style="color:#66d9ef">invisible</span>(<span style="color:#e6db74">&#34;foo&#34;</span>) })
+invisFun()
+<span style="color:#75715e"># &#39;&#39;</span>
+
+multiprintFun <span style="color:#f92672">&lt;-</span> renderPrint({
+  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;foo&#34;</span>);
+  <span style="color:#e6db74">&#34;bar&#34;</span>
+})
+multiprintFun()
+<span style="color:#75715e"># &#39;[1] &#34;foo&#34;\n[1] &#34;bar&#34;&#39;</span>
+
+nullFun <span style="color:#f92672">&lt;-</span> renderPrint({ <span style="color:#66d9ef">NULL</span> })
+nullFun()
+<span style="color:#75715e"># &#39;NULL&#39;</span>
+
+invisNullFun <span style="color:#f92672">&lt;-</span> renderPrint({ <span style="color:#66d9ef">invisible</span>(<span style="color:#66d9ef">NULL</span>) })
+invisNullFun()
+<span style="color:#75715e"># &#39;&#39;</span>
+
+vecFun <span style="color:#f92672">&lt;-</span> renderPrint({ <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span> })
+vecFun()
+<span style="color:#75715e"># &#39;[1] 1 2 3 4 5&#39;</span>
+
+
+<span style="color:#75715e"># Contrast with renderText, which takes the value returned from the function</span>
+<span style="color:#75715e"># and uses cat() to convert it to a string</span>
+visFun <span style="color:#f92672">&lt;-</span> renderText({ <span style="color:#e6db74">&#34;foo&#34;</span> })
+visFun()
+<span style="color:#75715e"># &#39;foo&#39;</span>
+
+invisFun <span style="color:#f92672">&lt;-</span> renderText({ <span style="color:#66d9ef">invisible</span>(<span style="color:#e6db74">&#34;foo&#34;</span>) })
+invisFun()
+<span style="color:#75715e"># &#39;foo&#39;</span>
+
+multiprintFun <span style="color:#f92672">&lt;-</span> renderText({
+  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;foo&#34;</span>);
+  <span style="color:#e6db74">&#34;bar&#34;</span>
+})
+multiprintFun()
+<span style="color:#75715e"># &#39;bar&#39;</span>
+
+nullFun <span style="color:#f92672">&lt;-</span> renderText({ <span style="color:#66d9ef">NULL</span> })
+nullFun()
+<span style="color:#75715e"># &#39;&#39;</span>
+
+invisNullFun <span style="color:#f92672">&lt;-</span> renderText({ <span style="color:#66d9ef">invisible</span>(<span style="color:#66d9ef">NULL</span>) })
+invisNullFun()
+<span style="color:#75715e"># &#39;&#39;</span>
+
+vecFun <span style="color:#f92672">&lt;-</span> renderText({ <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span> })
+vecFun()
+<span style="color:#75715e"># &#39;1 2 3 4 5&#39;</span>
+
+})
+
+[<span style="color:#ae81ff">1</span>] <span style="color:#e6db74">&#34;foo&#34;</span>
+
+[<span style="color:#ae81ff">1</span>] <span style="color:#e6db74">&#34;1 2 3 4 5&#34;</span></code></pre></div></p>
+
+<h3 id="参照">参照</h3>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/renderText.html">https://shiny.rstudio.com/reference/shiny/1.0.5/renderText.html</a></p>
 
 
   

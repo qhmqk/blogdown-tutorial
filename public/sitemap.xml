@@ -53,12 +53,27 @@
   </url>
   
   <url>
+    <loc>/htmloutput/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/imageoutput/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/numericinput/</loc>
     <lastmod>2018-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/passwordinput/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/plotoutput/</loc>
     <lastmod>2018-01-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -113,7 +128,27 @@
   </url>
   
   <url>
+    <loc>/tableoutput/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/textinput/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/textoutput/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/uioutput/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/verbatimtextoutput/</loc>
     <lastmod>2018-01-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -273,6 +308,12 @@
   
   <url>
     <loc>/tags/ui-inputs/</loc>
+    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ui-outputs/</loc>
     <lastmod>2018-01-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

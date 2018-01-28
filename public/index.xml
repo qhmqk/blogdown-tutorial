@@ -37,20 +37,20 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/function-index/</guid>
-      <description> A  actionButton  B C  checkboxGroupInput
+      <description>A  actionButton  B C  checkboxGroupInput
  checkboxInput
   D  dateInput
  dateRangeInput
-  E F  fileInput  G H I J K L M N  numericInput  O P  passwordInput  Q R  radioButtons
+  E F  fileInput  G H  htmlOutput  I  imageOutput  J K L M N  numericInput  O P  passwordInput
+ plotOutput
+  Q R  radioButtons
  renderImage
  renderPlot
  renderPrint
  renderTable
  renderText
  renderUI
-  S  selectInput
- sliderInput
-  T  textInput  U V W X Y Z </description>
+  S  selectInput</description>
     </item>
     
     <item>
@@ -71,7 +71,14 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
  selectInput
  sliderInput
  textInput
-  UI Outputs UI Layout Rendering functions  renderImage
+  UI Outputs  imageOutput
+ htmlOutput
+ plotOutput
+ tableOutput
+ textOutput
+ uiOutput
+ verbatimTextOutput
+  UI Layout Rendering functions  renderImage
  renderPlot
  renderPrint
  renderTable
@@ -157,6 +164,24 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
     </item>
     
     <item>
+      <title>htmlOutput</title>
+      <link>/htmloutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/htmloutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>imageOutput</title>
+      <link>/imageoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/imageoutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
       <title>numericInput</title>
       <link>/numericinput/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
@@ -171,6 +196,15 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/passwordinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>plotOutput</title>
+      <link>/plotoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/plotoutput/</guid>
       <description>作成中</description>
     </item>
     
@@ -235,7 +269,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/rendertable/</guid>
-      <description>作成中</description>
+      <description>renderTable(expr, striped = FALSE, hover = FALSE, bordered = FALSE, spacing = c(&amp;#34;s&amp;#34;, &amp;#34;xs&amp;#34;, &amp;#34;m&amp;#34;, &amp;#34;l&amp;#34;), width = &amp;#34;auto&amp;#34;, align = NULL,rownames = FALSE, colnames = TRUE, digits = NULL, na = &amp;#34;NA&amp;#34;, ..., env = parent.frame(), quoted = FALSE, outputArgs = list()) 引数    名前 説明     expr xtableで使用可能なRのオブジェクトを返す式   striped, hover, bordered 論理値で、TRUEなら出力する表に対応するBootstrapの表フォーマットを適用します。   spacing 表の行間のスペースを指定します。xsは「extra small」の略で、sは「small」、mは「medum」で、lは「large」です。   width 表の幅。CSSの単位(100やauto)、またはpxを単位にした長さを指定する文字列   align 列のアラインメントを文字列で指定します。l, c, rでそれぞれ列の左、中央右にアラインメントされます。文字列の長さは、表と同じになります(rawnames = TRUEなら、ncol()+1)。i番目の文字が、i番目の列に対応します。?</description>
     </item>
     
     <item>
@@ -244,7 +278,10 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/rendertext/</guid>
-      <description>作成中</description>
+      <description>renderText(expr, env = parent.frame(), quoted = FALSE, outputArgs = list()) 引数    名前 説明     expr xtableで使用可能なRのオブジェクトを返す式   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   outputArgs renderTextを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないtextOutputの呼び出しに渡される引数のリスト    説明 catで結果を単独要素の文字ベクトルに変える関数のリアクティブなバージョンを生成します。
+詳細 対応するHTMLの出力タグは、何にでもなります(monospaceフォントとwhitespaceを保存するなら、preが推奨されます)。そして、CSSのクラス名としてshiny-text-outputを持ちます。
+関数の実行結果は、capture.output呼び出しの内部でcatに渡されます。
+使用例 isolate({# renderPrint captures any print output, converts it to a string, and # returns it visFun &amp;lt;- renderPrint({ &amp;#34;foo&amp;#34; })visFun()# &amp;#39;[1] &amp;#34;foo&amp;#34;&amp;#39; invisFun &amp;lt;- renderPrint({ invisible(&amp;#34;foo&amp;#34;) })invisFun()# &amp;#39;&amp;#39; multiprintFun &amp;lt;- renderPrint({print(&amp;#34;foo&amp;#34;);&amp;#34;bar&amp;#34;})multiprintFun()# &amp;#39;[1] &amp;#34;foo&amp;#34;\n[1] &amp;#34;bar&amp;#34;&amp;#39; nullFun &amp;lt;- renderPrint({ NULL })nullFun()# &amp;#39;NULL&amp;#39; invisNullFun &amp;lt;- renderPrint({ invisible(NULL) })invisNullFun()# &amp;#39;&amp;#39; vecFun &amp;lt;- renderPrint({ 1:5 })vecFun()# &amp;#39;[1] 1 2 3 4 5&amp;#39; # Contrast with renderText, which takes the value returned from the function # and uses cat() to convert it to a string visFun &amp;lt;- renderText({ &amp;#34;foo&amp;#34; })visFun()# &amp;#39;foo&amp;#39; invisFun &amp;lt;- renderText({ invisible(&amp;#34;foo&amp;#34;) })invisFun()# &amp;#39;foo&amp;#39; multiprintFun &amp;lt;- renderText({print(&amp;#34;foo&amp;#34;);&amp;#34;bar&amp;#34;})multiprintFun()# &amp;#39;bar&amp;#39; nullFun &amp;lt;- renderText({ NULL })nullFun()# &amp;#39;&amp;#39; invisNullFun &amp;lt;- renderText({ invisible(NULL) })invisNullFun()# &amp;#39;&amp;#39; vecFun &amp;lt;- renderText({ 1:5 })vecFun()# &amp;#39;1 2 3 4 5&amp;#39; })[1] &amp;#34;foo&amp;#34;[1] &amp;#34;1 2 3 4 5&amp;#34;</description>
     </item>
     
     <item>
@@ -253,7 +290,9 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/renderui/</guid>
-      <description>作成中</description>
+      <description>renderUI(expr, env = parent.frame(), quoted = FALSE, outputArgs = list()) 引数    名前 説明     expr Shinyのタグオブジェクト、HTML、またはそれらのリストを返す式   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   outputArgs renderUIを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないuiOutputの呼び出しに渡される引数のリスト    説明 実験的な機能です。ShinyのUIライブラリを用いてHTMLを生成する関数のリアクティブなバージョンを生成します。
+詳細 出力するHTMLの出力タグはdivで、CSSのクラス名にshiny-html-outputを持ちます(またはuiOutputを使用します)。
+使用例 ## Only run examples in interactive R sessions if (interactive()) {ui &amp;lt;- fluidPage(uiOutput(&amp;#34;moreControls&amp;#34;))server &amp;lt;- function(input, output) {output$moreControls &amp;lt;- renderUI({tagList(sliderInput(&amp;#34;n&amp;#34;, &amp;#34;N&amp;#34;, 1, 1000, 500),textInput(&amp;#34;label&amp;#34;, &amp;#34;Label&amp;#34;))})}shinyApp(ui, server)}</description>
     </item>
     
     <item>
@@ -275,11 +314,47 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
     </item>
     
     <item>
+      <title>tableOutput</title>
+      <link>/tableoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tableoutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
       <title>textInput</title>
       <link>/textinput/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/textinput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>textOutput</title>
+      <link>/textoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/textoutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>uiOutput</title>
+      <link>/uioutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/uioutput/</guid>
+      <description>作成中</description>
+    </item>
+    
+    <item>
+      <title>verbatimTextOutput</title>
+      <link>/verbatimtextoutput/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/verbatimtextoutput/</guid>
       <description>作成中</description>
     </item>
     
