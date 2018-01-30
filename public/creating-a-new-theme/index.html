@@ -60,6 +60,8 @@ We&rsquo;ll start with creating a new site with a very basic template."/>
     <!-- combined, minified CSS -->
     <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
 
+    <link href="/css/dark.css" rel="stylesheet">
+
     
 
     
@@ -112,7 +114,7 @@ ga('send', 'pageview');
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title"><a href="/creating-a-new-theme/">Creating a New Theme</a></h2>
-    <p class="blog-post-meta"><time datetime="2014-09-28T00:00:00Z">Sun Sep 28, 2014</time> by Michael Henderson</p>
+    <p class="blog-post-meta">Michael Henderson</p>
   </header>
   
 
@@ -1295,6 +1297,9 @@ $ vi themes/zafta/layouts/_default/single.html
       <a href="#">Back to top</a>
       </p>
     </footer>
+
+    <script async type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script async type="text/javascript" src="/js/clip.js"></script>
 
   </body>
 
