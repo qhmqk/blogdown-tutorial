@@ -34,11 +34,11 @@ description: "アルファベット順のShiny関数の索引"
 ### G
 ### H
 
-* [`htmlOutput`]({{< ref "htmloutput.md" >}})
+* [htmlOutput]({{< ref "htmloutput.md" >}})
 
 ### I
 
-* [`imageOutput`]({{< ref "imageoutput.md" >}})
+* [imageOutput]({{< ref "imageoutput.md" >}})
 
 ### J
 ### K
@@ -53,24 +53,24 @@ description: "アルファベット順のShiny関数の索引"
 
 * [passwordInput]({{< ref "passwordinput.md" >}})
 
-* [`plotOutput`]({{< ref "plotoutput.md" >}})
+* [plotOutput]({{< ref "plotoutput.md" >}})
 
 ### Q
 ### R
 
 * [radioButtons]({{< ref "radiobuttons.md" >}})
 
-* [`renderImage`]({{< ref "renderimage.md" >}})
+* [renderImage]({{< ref "renderimage.md" >}})
 
-* [`renderPlot`]({{< ref "renderplot.md" >}})
+* [renderPlot]({{< ref "renderplot.md" >}})
 
-* [`renderPrint`]({{< ref "renderprint.md" >}})
+* [renderPrint]({{< ref "renderprint.md" >}})
 
-* [`renderTable`]({{< ref "rendertable.md" >}})
+* [renderTable]({{< ref "rendertable.md" >}})
 
-* [`renderText`]({{< ref "rendertext.md" >}})
+* [renderText]({{< ref "rendertext.md" >}})
 
-* [`renderUI`]({{< ref "renderui.md" >}})
+* [renderUI]({{< ref "renderui.md" >}})
 
 ### S
 
@@ -80,19 +80,19 @@ description: "アルファベット順のShiny関数の索引"
 
 ### T
 
-* [`tableOutput`]({{< ref "tableoutput.md" >}})
+* [tableOutput]({{< ref "tableoutput.md" >}})
 
 * [textInput]({{< ref "textinput.md" >}})
 
-* [`textOutput`]({{< ref "textoutput.md" >}})
+* [textOutput]({{< ref "textoutput.md" >}})
 
 ### U
 
-* [`uiOutput`]({{< ref "uioutput.md" >}})
+* [uiOutput]({{< ref "uioutput.md" >}})
 
 ### V
 
-* [`verbatimTextOutput`]({{< ref "verbatimtextoutput.md" >}})
+* [verbatimTextOutput]({{< ref "verbatimtextoutput.md" >}})
 
 ### W
 ### X

@@ -37,19 +37,19 @@ description: "機能ごとのShiny関数の索引"
 
 ### UI Outputs
 
-* [`imageOutput`]({{< ref "imageoutput.md" >}})
+* [imageOutput]({{< ref "imageoutput.md" >}})
 
-* [`htmlOutput`]({{< ref "htmloutput.md" >}})
+* [htmlOutput]({{< ref "htmloutput.md" >}})
 
-* [`plotOutput`]({{< ref "plotoutput.md" >}})
+* [plotOutput]({{< ref "plotoutput.md" >}})
 
-* [`tableOutput`]({{< ref "tableoutput.md" >}})
+* [tableOutput]({{< ref "tableoutput.md" >}})
 
-* [`textOutput`]({{< ref "textoutput.md" >}})
+* [textOutput]({{< ref "textoutput.md" >}})
 
-* [`uiOutput`]({{< ref "uioutput.md" >}})
+* [uiOutput]({{< ref "uioutput.md" >}})
 
-* [`verbatimTextOutput`]({{< ref "verbatimtextoutput.md" >}})
+* [verbatimTextOutput]({{< ref "verbatimtextoutput.md" >}})
 
 
 ### UI Layout
@@ -57,19 +57,21 @@ description: "機能ごとのShiny関数の索引"
 
 
 
+
+
 ### Rendering functions
 
-* [`renderImage`]({{< ref "renderimage.md" >}})
+* [renderImage]({{< ref "renderimage.md" >}})
 
-* [`renderPlot`]({{< ref "renderplot.md" >}})
+* [renderPlot]({{< ref "renderplot.md" >}})
 
-* [`renderPrint`]({{< ref "renderprint.md" >}})
+* [renderPrint]({{< ref "renderprint.md" >}})
 
-* [`renderTable`]({{< ref "rendertable.md" >}})
+* [renderTable]({{< ref "rendertable.md" >}})
 
-* [`renderText`]({{< ref "rendertext.md" >}})
+* [renderText]({{< ref "rendertext.md" >}})
 
-* [`renderUI`]({{< ref "renderui.md" >}})
+* [renderUI]({{< ref "renderui.md" >}})
 
 ### Reactive programming
 

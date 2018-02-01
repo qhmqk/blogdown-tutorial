@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "verbatimTextOutput",
   "url": "/verbatimtextoutput/",
-  "wordCount": "1",
+  "wordCount": "67",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -61,6 +61,7 @@
     <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
 
     <link href="/css/dark.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 
     
 
@@ -114,7 +115,8 @@ ga('send', 'pageview');
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title"><a href="/verbatimtextoutput/">verbatimTextOutput</a></h2>
-    <p class="blog-post-meta">qhmqk 
+    <p class="blog-post-meta"> Last updated: <time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time></p>
+    <p> By: qhmqk in 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
@@ -122,7 +124,64 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">verbatimTextOutput(outputId, placeholder <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>outputId</code></td>
+<td align="left">値を読み込む出力変数</td>
+</tr>
+
+<tr>
+<td align="left"><code>placeholder</code></td>
+<td align="left">出力が空または<code>NULL</code>の場合に、空の長方形が表示されるかどうかを指定します。(出力が空でないときの動作には影響しません)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="値">値</h3>
+
+<p>パネル内に含まれる文字通りのテキスト出力要素</p>
+
+<h3 id="説明">説明</h3>
+
+<p>アプリケーションのページ内で文字通りのテキストとしてリアクティブな出力変数をレンダリングします。テキストには、HTMLのタグが含まれます。</p>
+
+<h3 id="詳細">詳細</h3>
+
+<p>テキストは、レンダリングよりも優先してHTMLをエスケープします。この要素は、固定幅でフォーマットされたプリントオブジェクトを保存するために<code>renderPrint</code>関数で使用されます。</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">Examples
+<span style="color:#75715e">## Only run this example in interactive R sessions</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+  shinyApp(
+    ui <span style="color:#f92672">=</span> basicPage(
+      textInput(<span style="color:#e6db74">&#34;txt&#34;</span>, <span style="color:#e6db74">&#34;Enter the text to display below:&#34;</span>),
+      verbatimTextOutput(<span style="color:#e6db74">&#34;default&#34;</span>),
+      verbatimTextOutput(<span style="color:#e6db74">&#34;placeholder&#34;</span>, placeholder <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+    ),
+    server <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(input, output) {
+      output<span style="color:#f92672">$</span>default <span style="color:#f92672">&lt;-</span> renderText({ input<span style="color:#f92672">$</span>txt })
+      output<span style="color:#f92672">$</span>placeholder <span style="color:#f92672">&lt;-</span> renderText({ input<span style="color:#f92672">$</span>txt })
+    }
+  )
+}</code></pre></div></p>
+
+<h3 id="参照">参照</h3>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/verbatimTextOutput.html">https://shiny.rstudio.com/reference/shiny/1.0.5/verbatimTextOutput.html</a></p>
 
 
   
@@ -174,9 +233,9 @@ ga('send', 'pageview');
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/actionbutton/">actionButton</a></li>
+<li><a href="/htmloutput/">htmlOutput</a></li>
 
-<li><a href="/checkboxgroupinput/">checkboxGroupInput</a></li>
+<li><a href="/imageoutput/">imageOutput</a></li>
 
     </ol>
   </section>

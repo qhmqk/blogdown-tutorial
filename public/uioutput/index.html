@@ -12,9 +12,9 @@
 
 
 
-<meta property="article:published_time" content="2018-01-10T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-02-01T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-01-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-02-01T00:00:00&#43;00:00"/>
 
 
 
@@ -39,9 +39,9 @@
   "@type": "BlogPosting",
   "headline": "uiOutput",
   "url": "/uioutput/",
-  "wordCount": "1",
-  "datePublished": "2018-01-10T00:00:00&#43;00:00",
-  "dateModified": "2018-01-10T00:00:00&#43;00:00",
+  "wordCount": "56",
+  "datePublished": "2018-02-01T00:00:00&#43;00:00",
+  "dateModified": "2018-02-01T00:00:00&#43;00:00",
   "author": {
     "@type": "Person",
     "name": "qhmqk"
@@ -61,6 +61,7 @@
     <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
 
     <link href="/css/dark.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 
     
 
@@ -114,7 +115,8 @@ ga('send', 'pageview');
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title"><a href="/uioutput/">uiOutput</a></h2>
-    <p class="blog-post-meta">qhmqk 
+    <p class="blog-post-meta"> Last updated: <time datetime="2018-02-01T00:00:00Z">Thu Feb 01, 2018</time></p>
+    <p> By: qhmqk in 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
@@ -122,7 +124,70 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">uiOutput(outputId, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, container <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> (inline) span <span style="color:#66d9ef">else</span> div, <span style="color:#66d9ef">...</span>)</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>outputId</code></strong></td>
+<td align="left">値を読み込む出力変数</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>container</code></strong></td>
+<td align="left">テキストを含むHTML要素を生成するための関数</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left">インライン(<code>span()</code>)またはブロックコンテナ(<code>div()</code>)を出力で使用するかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>...</code></strong></td>
+<td align="left"><code>container</code>のタグ関数に渡す引数。タグで追加のクラスを使うときに有用です。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="値">値</h3>
+
+<p>パネル内に含まれるHTML出力要素</p>
+
+<h3 id="説明">説明</h3>
+
+<p>アプリケーションのページ内に、HTMLとしてリアクティブな出力変数をレンダリングします。テキストは、HTMLのdivタグ内に含まれ、エスケープされないHTMLコンテンツを含むことを仮定しています。</p>
+
+<h3 id="詳細">詳細</h3>
+
+<p><code>uiOutput</code>はサーバ側の<code>renderUI</code>での使用を目的としています。現在は<code>htmlOutput</code>のエイリアスです。</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">htmlOutput(<span style="color:#e6db74">&#34;summary&#34;</span>)
+
+<span style="color:#f92672">&lt;</span>div id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;summary&#34;</span> class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shiny-html-output&#34;</span><span style="color:#f92672">&gt;&lt;/</span>div<span style="color:#f92672">&gt;</span>
+
+
+<span style="color:#75715e"># Using a custom container and class</span>
+tags<span style="color:#f92672">$</span>ul(
+  htmlOutput(<span style="color:#e6db74">&#34;summary&#34;</span>, container <span style="color:#f92672">=</span> tags<span style="color:#f92672">$</span>li, class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;custom-li-output&#34;</span>)
+)
+
+<span style="color:#f92672">&lt;</span>ul<span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span>li class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;shiny-html-output custom-li-output&#34;</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;summary&#34;</span><span style="color:#f92672">&gt;&lt;/</span>li<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span>ul<span style="color:#f92672">&gt;</span></code></pre></div></p>
 
 
   
@@ -174,9 +239,9 @@ ga('send', 'pageview');
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/actionbutton/">actionButton</a></li>
+<li><a href="/htmloutput/">htmlOutput</a></li>
 
-<li><a href="/checkboxgroupinput/">checkboxGroupInput</a></li>
+<li><a href="/imageoutput/">imageOutput</a></li>
 
     </ol>
   </section>

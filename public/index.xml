@@ -88,6 +88,61 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
     </item>
     
     <item>
+      <title>htmlOutput</title>
+      <link>/htmloutput/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/htmloutput/</guid>
+      <description>htmlOutput(outputId, inline = FALSE, container = if (inline) span else div, ...) 引数    名前 説明     outputId 値を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定   ... containerのタグ関数に渡す引数。タグで追加のクラスを使うときに有用です。    値 パネル内に含まれるHTML出力要素
+説明 アプリケーションのページ内に、HTMLとしてリアクティブな出力変数をレンダリングします。テキストは、HTMLのdivタグ内に含まれ、エスケープされないHTMLコンテンツを含むことを仮定しています。
+詳細 uiOutputはサーバ側のrenderUIでの使用を目的としています。現在はhtmlOutputのエイリアスです。
+使用例 htmlOutput(&amp;#34;summary&amp;#34;)&amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;# Using a custom container and class tags$ul(htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;))&amp;lt;ul&amp;gt;&amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>imageOutput</title>
+      <link>/imageoutput/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/imageoutput/</guid>
+      <description>imageOutput(outputId, width = &amp;#34;100%&amp;#34;, height = &amp;#34;400px&amp;#34;, click = NULL, dblclick = NULL, hover = NULL, hoverDelay = NULL, hoverDelayType = NULL, brush = NULL, clickId = NULL, hoverId = NULL, inline = FALSE) 引数    名前 説明     outputId プロット/画像を読み込む出力変数   width, height 画像の幅と高さ。適切なCSSの単位(&amp;ldquo;100%&amp;ldquo;や&amp;rdquo;400px&amp;rdquo;、&amp;rdquo;auto&amp;rdquo;)を付けて指定します。数値は強制的に&amp;rdquo;px&amp;rdquo;が付けられた値となります。inline = TRUEのとき、2つの引数は無視されて、プロットの幅と高さはrenderPlot()の中で指定されます。HTML/CSSで記述された通りに高さが計算されるため、heightに&amp;rdquo;auto&amp;rdquo;や&amp;rdquo;100%&amp;ldquo;を指定すると期待通りに動かないであろうことに注意して下さい。   click NULL(デフォルト)、文字列、またはclickOpts関数で生成されるオブジェクトを指定します。&amp;rdquo;plot_click&amp;rdquo;(または、等価なclickOpts(id = &amp;quot;plot_click&amp;quot;))のような値を用いると、クリックするたびにプロットが座標をサーバに送信します。値は、input$plot_clickでアクセス可能で、マウスの場所を指すxとyの名前付きのリストです。   dbclick ダブルクリックのイベントに対応する変数で、clickと同様です。   hover clickと同様に、NULL(デフォルト)、文字列、またはhoverOpts関数で生成されるオブジェクトを指定します。&amp;rdquo;plot_hover&amp;rdquo;(または、等価なhoverOpts(id = &amp;quot;plot_hover&amp;quot;))のような値を用いると、プロット上でとどまっている座標をサーバに送信します。値は、input$plot_hoverでアクセス可能で、マウスの場所を指すxとyの名前付きのリストです。hoverの時間と遅延時間を制御するためには、hoverOptsを使う必要があります。   hoverDelay 非推奨で、代わりにhoverを使うことが推奨されます。hoverOpts関数を参照してください。   hoverDelayType 非推奨で、代わりにhoverを使うことが推奨されます。hoverOpts関数を参照してください。   brush clickと同様に、NULL(デフォルト)、文字列、またはbrushOpts関数で生成されるオブジェクトを指定します。&amp;rdquo;plot_brush&amp;rdquo;(または、等価なbrushOpts(id = &amp;quot;plot_brush&amp;quot;))のような値を用いると、プロット領域内でユーザにブラシさせることができます。ブラシされた領域の情報はサーバに送られ、その値はinput$plot_brushでアクセス可能です。ブラシはユーザがプロット領域で矩形を描いてそれをドラッグすることを意味します。値はブラシ領域を指す名前付きリストで要素にxminとxmax, ymin, ymaxがあります。ブラシの動きを制御するために、brushOptsを使用します。複数のimageOutput/plotOutput呼び出しが、同じid値を共有します。すなわち、ある画像またはプロットをブラシすると、他のブラシも同じidを持つので消えます。   clickId 非推奨で、代わりにclickを使うことが推奨されます。clickOpts関数を参照してください。   hoverId 非推奨で、代わりにhoverを使うことが推奨されます。hoverOpts関数を参照してください。   inline 出力にインライン(span())、またはブロックコンテナ(div())を使用します。    値 パネル内に含まれるプロットまたは画像出力要素</description>
+    </item>
+    
+    <item>
+      <title>plotOutput</title>
+      <link>/plotoutput/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/plotoutput/</guid>
+      <description>plotOutput(outputId, width = &amp;#34;100%&amp;#34;, height = &amp;#34;400px&amp;#34;, click = NULL, dblclick = NULL, hover = NULL, hoverDelay = NULL, hoverDelayType = NULL, brush = NULL, clickId = NULL, w1hoverId = NULL, inline = FALSE) 引数    名前 説明     outputId プロット/画像を読み込む出力変数   width, height 画像の幅と高さ。適切なCSSの単位(&amp;ldquo;100%&amp;ldquo;や&amp;rdquo;400px&amp;rdquo;、&amp;rdquo;auto&amp;rdquo;)を付けて指定します。数値は強制的に&amp;rdquo;px&amp;rdquo;が付けられた値となります。inline = TRUEのとき、2つの引数は無視されて、プロットの幅と高さはrenderPlot()の中で指定されます。HTML/CSSで記述された通りに高さが計算されるため、heightに&amp;rdquo;auto&amp;rdquo;や&amp;rdquo;100%&amp;ldquo;を指定すると期待通りに動かないであろうことに注意して下さい。   click NULL(デフォルト)、文字列、またはclickOpts関数で生成されるオブジェクトを指定します。&amp;rdquo;plot_click&amp;rdquo;(または、等価なclickOpts(id = &amp;quot;plot_click&amp;quot;))のような値を用いると、クリックするたびにプロットが座標をサーバに送信します。値は、input$plot_clickでアクセス可能で、マウスの場所を指すxとyの名前付きのリストです。   dbclick ダブルクリックのイベントに対応する変数で、clickと同様です。   hover clickと同様に、NULL(デフォルト)、文字列、またはhoverOpts関数で生成されるオブジェクトを指定します。&amp;rdquo;plot_hover&amp;rdquo;(または、等価なhoverOpts(id = &amp;quot;plot_hover&amp;quot;))のような値を用いると、プロット上でとどまっている座標をサーバに送信します。値は、input$plot_hoverでアクセス可能で、マウスの場所を指すxとyの名前付きのリストです。hoverの時間と遅延時間を制御するためには、hoverOptsを使う必要があります。   hoverDelay 非推奨で、代わりにhoverを使うことが推奨されます。hoverOpts関数を参照してください。   hoverDelayType 非推奨で、代わりにhoverを使うことが推奨されます。hoverOpts関数を参照してください。   brush clickと同様に、NULL(デフォルト)、文字列、またはbrushOpts関数で生成されるオブジェクトを指定します。&amp;rdquo;plot_brush&amp;rdquo;(または、等価なbrushOpts(id = &amp;quot;plot_brush&amp;quot;))のような値を用いると、プロット領域内でユーザにブラシさせることができます。ブラシされた領域の情報はサーバに送られ、その値はinput$plot_brushでアクセス可能です。ブラシはユーザがプロット領域で矩形を描いてそれをドラッグすることを意味します。値はブラシ領域を指す名前付きリストで要素にxminとxmax, ymin, ymaxがあります。ブラシの動きを制御するために、brushOptsを使用します。複数のimageOutput/plotOutput呼び出しが、同じid値を共有します。すなわち、ある画像またはプロットをブラシすると、他のブラシも同じidを持つので消えます。   clickId 非推奨で、代わりにclickを使うことが推奨されます。clickOpts関数を参照してください。   hoverId 非推奨で、代わりにhoverを使うことが推奨されます。hoverOpts関数を参照してください。   inline 出力にインライン(span())、またはブロックコンテナ(div())を使用します。    値 パネル内に含まれるプロットまたは画像出力要素</description>
+    </item>
+    
+    <item>
+      <title>textOutput</title>
+      <link>/textoutput/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/textoutput/</guid>
+      <description>textOutput(outputId, container = if (inline) span else div, inline = FALSE) 引数    名前 説明     outputId 表を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定    値 パネル内に含まれるテキスト出力要素
+説明 アプリケーション内でテキストとしてリアクティブな出力変数をレンダリングします。テキストは、デフォルトで、HTMLのdivタグ内に含まれます。
+詳細 テキストは、レンダリングに優先してHTMLをエスケープします。この要素はrenderText出力変数で使用されます。
+使用例 h3(textOutput(&amp;#34;caption&amp;#34;))&amp;lt;h3&amp;gt;&amp;lt;div id=&amp;#34;caption&amp;#34; class=&amp;#34;shiny-text-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/h3&amp;gt;
+参照 https://shiny.rstudio.com/reference/shiny/1.0.5/textOutput.html</description>
+    </item>
+    
+    <item>
+      <title>uiOutput</title>
+      <link>/uioutput/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/uioutput/</guid>
+      <description>uiOutput(outputId, inline = FALSE, container = if (inline) span else div, ...) 引数    名前 説明     outputId 値を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定   ... containerのタグ関数に渡す引数。タグで追加のクラスを使うときに有用です。    値 パネル内に含まれるHTML出力要素
+説明 アプリケーションのページ内に、HTMLとしてリアクティブな出力変数をレンダリングします。テキストは、HTMLのdivタグ内に含まれ、エスケープされないHTMLコンテンツを含むことを仮定しています。
+詳細 uiOutputはサーバ側のrenderUIでの使用を目的としています。現在はhtmlOutputのエイリアスです。
+使用例 htmlOutput(&amp;#34;summary&amp;#34;)&amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;# Using a custom container and class tags$ul(htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;))&amp;lt;ul&amp;gt;&amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;</description>
+    </item>
+    
+    <item>
       <title>Contact</title>
       <link>/contact/</link>
       <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
@@ -164,24 +219,6 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
     </item>
     
     <item>
-      <title>htmlOutput</title>
-      <link>/htmloutput/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/htmloutput/</guid>
-      <description>作成中</description>
-    </item>
-    
-    <item>
-      <title>imageOutput</title>
-      <link>/imageoutput/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/imageoutput/</guid>
-      <description>作成中</description>
-    </item>
-    
-    <item>
       <title>numericInput</title>
       <link>/numericinput/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
@@ -196,15 +233,6 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/passwordinput/</guid>
-      <description>作成中</description>
-    </item>
-    
-    <item>
-      <title>plotOutput</title>
-      <link>/plotoutput/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/plotoutput/</guid>
       <description>作成中</description>
     </item>
     
@@ -319,7 +347,9 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tableoutput/</guid>
-      <description>作成中</description>
+      <description>tableOutput(outputId) 引数    名前 説明     outputId 表を読み込む出力変数    値 パネル内に含まれる表出力要素
+説明 アプリケーションページ内で、renderTableまたはrenderDataTableをレンダリングします。renderTableは標準的なHTMLの表を使用します。renderDataTableは、JavascriptライブラリのDataTablesをインタラクティブでさらに機能を持つ表を生成するために使用します。
+使用例 ## Only run this example in interactive R sessions if (interactive()) {# table example shinyApp(ui = fluidPage(fluidRow(column(12,tableOutput(&amp;#39;table&amp;#39;)))),server = function(input, output) {output$table &amp;lt;- renderTable(iris)})# DataTables example shinyApp(ui = fluidPage(fluidRow(column(12,dataTableOutput(&amp;#39;table&amp;#39;)))),server = function(input, output) {output$table &amp;lt;- renderDataTable(iris)})} 参照 https://shiny.</description>
     </item>
     
     <item>
@@ -332,30 +362,15 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
     </item>
     
     <item>
-      <title>textOutput</title>
-      <link>/textoutput/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/textoutput/</guid>
-      <description>作成中</description>
-    </item>
-    
-    <item>
-      <title>uiOutput</title>
-      <link>/uioutput/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/uioutput/</guid>
-      <description>作成中</description>
-    </item>
-    
-    <item>
       <title>verbatimTextOutput</title>
       <link>/verbatimtextoutput/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/verbatimtextoutput/</guid>
-      <description>作成中</description>
+      <description>verbatimTextOutput(outputId, placeholder = FALSE) 引数    名前 説明     outputId 値を読み込む出力変数   placeholder 出力が空またはNULLの場合に、空の長方形が表示されるかどうかを指定します。(出力が空でないときの動作には影響しません)    値 パネル内に含まれる文字通りのテキスト出力要素
+説明 アプリケーションのページ内で文字通りのテキストとしてリアクティブな出力変数をレンダリングします。テキストには、HTMLのタグが含まれます。
+詳細 テキストは、レンダリングよりも優先してHTMLをエスケープします。この要素は、固定幅でフォーマットされたプリントオブジェクトを保存するためにrenderPrint関数で使用されます。
+Examples## Only run this example in interactive R sessions if (interactive()) {shinyApp(ui = basicPage(textInput(&amp;#34;txt&amp;#34;, &amp;#34;Enter the text to display below:&amp;#34;),verbatimTextOutput(&amp;#34;default&amp;#34;),verbatimTextOutput(&amp;#34;placeholder&amp;#34;, placeholder = TRUE)),server = function(input, output) {output$default &amp;lt;- renderText({ input$txt })output$placeholder &amp;lt;- renderText({ input$txt })})}</description>
     </item>
     
     <item>
