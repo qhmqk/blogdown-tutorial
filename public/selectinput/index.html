@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "selectInput",
   "url": "/selectinput/",
-  "wordCount": "1",
+  "wordCount": "561",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -124,7 +124,133 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">selectInput(inputId, label, choices, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, selectize <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, size <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無し</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、<code>choiceNames</code>と<code>choiceValues</code>は指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期状態で選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>なら、選択したものがインラインで表示されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code></strong>, <strong><code>choiceValues</code></strong></td>
+<td align="left">名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、<code>choiceNames</code>と<code>choiceValues</code>は同じ長さである必要があります。この引数を指定すると、<code>choices</code>は指定できません。単純なテキストになる<code>choices</code>ではなく、これら両引数を用いる利点は、<code>choiceNames</code>には任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照</td>
+</tr>
+</tbody>
+</table>
+
+<p>inputId The input slot that will be used to access the value.
+label   Display label for the control, or NULL for no label.
+choices List of values to select from. If elements of the list are named, then that name rather than the value is displayed to the user. This can also be a named list whose elements are (either named or unnamed) lists or vectors. If this is the case, the outermost names will be used as the &ldquo;optgroup&rdquo; label for the elements in the respective sublist. This allows you to group and label similar choices. See the example section for a small demo of this feature.
+selected    The initially selected value (or multiple values if multiple = TRUE). If not specified then defaults to the first value for single-select lists and no values for multiple select lists.
+multiple    Is selection of multiple items allowed?
+selectize   Whether to use selectize.js or not.
+width   The width of the input, e.g. &lsquo;400px&rsquo;, or &lsquo;100%&rsquo;; see validateCssUnit.
+size    Number of items to show in the selection box; a larger number will result in a taller box. Not compatible with selectize=TRUE. Normally, when multiple=FALSE, a select input will be a drop-down list, but when size is set, it will be a box instead.
+&hellip; Arguments passed to selectInput().
+options A list of options. See the documentation of selectize.js for possible options (character option values inside I() will be treated as literal JavaScript code; see renderDataTable() for details).</p>
+
+<h3 id="値">値</h3>
+
+<p>UI定義に追加されるHTML要素のリスト</p>
+
+<h3 id="説明">説明</h3>
+
+<p>それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成します。選択された値の文字列ベクトルが、入力としてサーバに渡されます。</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p>Value
+A select list control that can be added to a UI definition.
+Description
+Create a select list that can be used to choose a single or multiple items from a list of values.</p>
+
+<p>Details
+By default, selectInput() and selectizeInput() use the JavaScript library selectize.js (<a href="https://github.com/selectize/selectize.js">https://github.com/selectize/selectize.js</a>) to instead of the basic select input element. To use the standard HTML select input element, use selectInput() with selectize=FALSE.</p>
+
+<p>In selectize mode, if the first element in choices has a value of &ldquo;&rdquo;, its name will be treated as a placeholder prompt. For example: selectInput(&ldquo;letter&rdquo;, &ldquo;Letter&rdquo;, c(&ldquo;Choose one&rdquo; = &ldquo;&rdquo;, LETTERS))</p>
+
+<p>Note
+The selectize input created from selectizeInput() allows deletion of the selected option even in a single select input, which will return an empty string as its value. This is the default behavior of selectize.js. However, the selectize input created from selectInput(&hellip;, selectize = TRUE) will ignore the empty string value when it is a single choice input and the empty string is not in the choices argument. This is to keep compatibility with selectInput(&hellip;, selectize = FALSE).</p>
+
+<p>Examples</p>
+
+<h2 id="only-run-examples-in-interactive-r-sessions">Only run examples in interactive R sessions</h2>
+
+<p>if (interactive()) {</p>
+
+<h1 id="basic-example">basic example</h1>
+
+<p>shinyApp(
+  ui = fluidPage(
+    selectInput(&ldquo;variable&rdquo;, &ldquo;Variable:&ldquo;,
+                c(&ldquo;Cylinders&rdquo; = &ldquo;cyl&rdquo;,
+                  &ldquo;Transmission&rdquo; = &ldquo;am&rdquo;,
+                  &ldquo;Gears&rdquo; = &ldquo;gear&rdquo;)),
+    tableOutput(&ldquo;data&rdquo;)
+  ),
+  server = function(input, output) {
+    output$data &lt;- renderTable({
+      mtcars[, c(&ldquo;mpg&rdquo;, input$variable), drop = FALSE]
+    }, rownames = TRUE)
+  }
+)</p>
+
+<h1 id="demoing-optgroup-support-in-the-choices-arg">demoing optgroup support in the <code>choices</code> arg</h1>
+
+<p>shinyApp(
+  ui = fluidPage(
+    selectInput(&ldquo;state&rdquo;, &ldquo;Choose a state:&ldquo;,
+      list(<code>East Coast</code> = c(&ldquo;NY&rdquo;, &ldquo;NJ&rdquo;, &ldquo;CT&rdquo;),
+           <code>West Coast</code> = c(&ldquo;WA&rdquo;, &ldquo;OR&rdquo;, &ldquo;CA&rdquo;),
+           <code>Midwest</code> = c(&ldquo;MN&rdquo;, &ldquo;WI&rdquo;, &ldquo;IA&rdquo;))
+    ),
+    textOutput(&ldquo;result&rdquo;)
+  ),
+  server = function(input, output) {
+    output$result &lt;- renderText({
+      paste(&ldquo;You chose&rdquo;, input$state)
+    })
+  }
+)
+}</p>
 
 
   

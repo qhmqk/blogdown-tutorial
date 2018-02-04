@@ -21,7 +21,7 @@
       <description>htmlOutput(outputId, inline = FALSE, container = if (inline) span else div, ...) 引数    名前 説明     outputId 値を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定   ... containerのタグ関数に渡す引数。タグで追加のクラスを使うときに有用です。    値 パネル内に含まれるHTML出力要素
 説明 アプリケーションのページ内に、HTMLとしてリアクティブな出力変数をレンダリングします。テキストは、HTMLのdivタグ内に含まれ、エスケープされないHTMLコンテンツを含むことを仮定しています。
 詳細 uiOutputはサーバ側のrenderUIでの使用を目的としています。現在はhtmlOutputのエイリアスです。
-使用例 htmlOutput(&amp;#34;summary&amp;#34;)&amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;# Using a custom container and class tags$ul(htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;))&amp;lt;ul&amp;gt;&amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;</description>
+使用例 htmlOutput(&amp;#34;summary&amp;#34;) &amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; # Using a custom container and class tags$ul( htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;) ) &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@
       <description>textOutput(outputId, container = if (inline) span else div, inline = FALSE) 引数    名前 説明     outputId 表を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定    値 パネル内に含まれるテキスト出力要素
 説明 アプリケーション内でテキストとしてリアクティブな出力変数をレンダリングします。テキストは、デフォルトで、HTMLのdivタグ内に含まれます。
 詳細 テキストは、レンダリングに優先してHTMLをエスケープします。この要素はrenderText出力変数で使用されます。
-使用例 h3(textOutput(&amp;#34;caption&amp;#34;))&amp;lt;h3&amp;gt;&amp;lt;div id=&amp;#34;caption&amp;#34; class=&amp;#34;shiny-text-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/h3&amp;gt;
+使用例 h3(textOutput(&amp;#34;caption&amp;#34;)) &amp;lt;h3&amp;gt; &amp;lt;div id=&amp;#34;caption&amp;#34; class=&amp;#34;shiny-text-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/h3&amp;gt;
 参照 https://shiny.rstudio.com/reference/shiny/1.0.5/textOutput.html</description>
     </item>
     
@@ -64,7 +64,7 @@
       <description>uiOutput(outputId, inline = FALSE, container = if (inline) span else div, ...) 引数    名前 説明     outputId 値を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定   ... containerのタグ関数に渡す引数。タグで追加のクラスを使うときに有用です。    値 パネル内に含まれるHTML出力要素
 説明 アプリケーションのページ内に、HTMLとしてリアクティブな出力変数をレンダリングします。テキストは、HTMLのdivタグ内に含まれ、エスケープされないHTMLコンテンツを含むことを仮定しています。
 詳細 uiOutputはサーバ側のrenderUIでの使用を目的としています。現在はhtmlOutputのエイリアスです。
-使用例 htmlOutput(&amp;#34;summary&amp;#34;)&amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;# Using a custom container and class tags$ul(htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;))&amp;lt;ul&amp;gt;&amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;</description>
+使用例 htmlOutput(&amp;#34;summary&amp;#34;) &amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; # Using a custom container and class tags$ul( htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;) ) &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;</description>
     </item>
     
     <item>
@@ -75,7 +75,7 @@
       <guid>/tableoutput/</guid>
       <description>tableOutput(outputId) 引数    名前 説明     outputId 表を読み込む出力変数    値 パネル内に含まれる表出力要素
 説明 アプリケーションページ内で、renderTableまたはrenderDataTableをレンダリングします。renderTableは標準的なHTMLの表を使用します。renderDataTableは、JavascriptライブラリのDataTablesをインタラクティブでさらに機能を持つ表を生成するために使用します。
-使用例 ## Only run this example in interactive R sessions if (interactive()) {# table example shinyApp(ui = fluidPage(fluidRow(column(12,tableOutput(&amp;#39;table&amp;#39;)))),server = function(input, output) {output$table &amp;lt;- renderTable(iris)})# DataTables example shinyApp(ui = fluidPage(fluidRow(column(12,dataTableOutput(&amp;#39;table&amp;#39;)))),server = function(input, output) {output$table &amp;lt;- renderDataTable(iris)})} 参照 https://shiny.</description>
+使用例 ## Only run this example in interactive R sessions if (interactive()) { # table example shinyApp( ui = fluidPage( fluidRow( column(12, tableOutput(&amp;#39;table&amp;#39;) ) ) ), server = function(input, output) { output$table &amp;lt;- renderTable(iris) } ) # DataTables example shinyApp( ui = fluidPage( fluidRow( column(12, dataTableOutput(&amp;#39;table&amp;#39;) ) ) ), server = function(input, output) { output$table &amp;lt;- renderDataTable(iris) } ) } 参照 https://shiny.</description>
     </item>
     
     <item>
@@ -87,7 +87,7 @@
       <description>verbatimTextOutput(outputId, placeholder = FALSE) 引数    名前 説明     outputId 値を読み込む出力変数   placeholder 出力が空またはNULLの場合に、空の長方形が表示されるかどうかを指定します。(出力が空でないときの動作には影響しません)    値 パネル内に含まれる文字通りのテキスト出力要素
 説明 アプリケーションのページ内で文字通りのテキストとしてリアクティブな出力変数をレンダリングします。テキストには、HTMLのタグが含まれます。
 詳細 テキストは、レンダリングよりも優先してHTMLをエスケープします。この要素は、固定幅でフォーマットされたプリントオブジェクトを保存するためにrenderPrint関数で使用されます。
-Examples## Only run this example in interactive R sessions if (interactive()) {shinyApp(ui = basicPage(textInput(&amp;#34;txt&amp;#34;, &amp;#34;Enter the text to display below:&amp;#34;),verbatimTextOutput(&amp;#34;default&amp;#34;),verbatimTextOutput(&amp;#34;placeholder&amp;#34;, placeholder = TRUE)),server = function(input, output) {output$default &amp;lt;- renderText({ input$txt })output$placeholder &amp;lt;- renderText({ input$txt })})}</description>
+Examples ## Only run this example in interactive R sessions if (interactive()) { shinyApp( ui = basicPage( textInput(&amp;#34;txt&amp;#34;, &amp;#34;Enter the text to display below:&amp;#34;), verbatimTextOutput(&amp;#34;default&amp;#34;), verbatimTextOutput(&amp;#34;placeholder&amp;#34;, placeholder = TRUE) ), server = function(input, output) { output$default &amp;lt;- renderText({ input$txt }) output$placeholder &amp;lt;- renderText({ input$txt }) } ) }</description>
     </item>
     
   </channel>

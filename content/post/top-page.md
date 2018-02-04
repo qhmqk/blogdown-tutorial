@@ -71,8 +71,7 @@ shinyApp(ui = ui, server = server)
 {{< highlight r >}}
 library(shiny)
 ui <- fluidPage(
-    numericInput(inputId = "n",
-        "Sample size", value = 25),
+    numericInput(inputId = "n", "Sample size", value = 25),
     plotOutput(outputId = "hist")
 )
 server <- function(input, output){
@@ -247,16 +246,102 @@ dateInputが左右に2つ並んでおり、2つの日付から期間を指定し
 |`DT::renderDataTable`|`dataTableOutput`|
 |||
 
-### リアクティブ関数で Reactivity を定義
+### リアクティビティ(Reactivity) を定義
 
-入力ウィジェットでユーザが何らかの操作を行い、サーバでレンダリングして出力ウィジェットで表示するまでの処理の部分を、Shiny ではリアクティブ関数で実現します。
+入力ウィジェットでユーザが何らかの操作を行い、サーバでレンダリングして出力ウィジェットで表示するまでの処理の部分を、Shiny ではリアクティブプログラミングで実現します。R を用いたデータ解析ではあまり馴染みのない言葉ですが、基本的な考え方は難しくありません。
 
+#### もっとも単純な実装
 
+入力と出力を直接 server で定義した関数で結ぶ構造がもっとも単純です。最初に示した数値入力とヒストグラムは、この構造になっています。
 
+{{< highlight r >}}
+numericInput(inputId = "n", "Sample size", value = 25),
+plotOutput(outputId = "hist")
+{{< /highlight >}}
 
+ユーザが数値を入力するたびに、server では`input$n`の値が更新されます。`output$hist`の値が更新されるたびに、`plotOutput`でプロットを再描画します。
 
+{{< highlight r >}}
+output$hist <- renderPlot({
+    hist(rnorm(input$n))
+})
+{{< /highlight >}}
+
+server では`renderPlot`により、`input$n`を引数として直接`output$hist`の値を変化させる構造になっています。入力と出力の間が関数のみなので、この形がもっとも単純な実装です。
+
+#### 単純な実装を拡張して、複数入力、複数出力、reactive 関数による計算過程のカプセル化
+
+入力をサンプルサイズと、幅の2つにします。出力は、先ほどと同様のヒストグラムです。
+
+{{< highlight r >}}
+# ui
+numericInput(inputId = "n", "Sample size", value = 25),
+numericInput(inputId = "b", "Breaks", value = 5),
+plotOutput(outputId = "hist")
+{{< /highlight >}}
+
+サーバでは、`input$n`と`input$b`の値から、ヒストグラムを作成し、`renderPlot`で出力オブジェクトを生成します。
+
+{{< highlight r >}}
+# server
+output$hist <- renderPlot({
+    hist(rnorm(input$n), breaks = input$b)
+})
+{{< /highlight >}}
+
+`renderPlot`は、`input$n`または`input$b`のどちらかの値が変わるたびに再度実行されて、表示が更新されます。
+
+次に、一つの入力に対して、複数の出力を実現します。
+
+{{< highlight r >}}
+# ui
+numericInput(inputId = "n", "Factorial of", value = 1, min = 1, max = 100)
+textOutput("factorial_n")
+textOutput("factorial_n_inv")
+{{< /highlight >}}
+
+`numericInput`で入力した値の階乗、階乗の逆数の2つの値を計算して出力します。
+
+{{< highlight r >}}
+# server
+output$factorial_n <- renderText({gamma(input$n)})
+output$factorial_n_inv <- renderText({ 1 / gamma(input$n)})
+{{< /highlight >}}
+
+入力 n の値が更新されるたびに、2つの出力が更新される単純なリアクティビティを定義しました。見ると明らかなように、`renderText`内で`gamma()`を実行しており、入力が変化するたびに`gamma()`を2回実行することになります。入力から計算した値を、複数の出力で使う、あるいは中間変数とする場合に使用するのが`reactive`関数です。
+
+Shiny のリアクティビティを定義するときに必要となるリアクティブプログラミングでは、中間変数そのものをサーバでは定義しません(できません)。そのため、`reactive`で、`gamma()`の計算を、入力変化のたびに毎回再計算される関数として定義します。
+
+{{< highlight r >}}
+# server
+current_fact <- reactive({gamma(input$n)})
+
+output$factorial_n <- renderText(current_fact())
+output$factorial_n_inv = renderText({ 1 / current_fact()})
+{{< /highlight >}}
+
+`current_fact`は、入力が変化するたびに実行する計算をカプセル化したものになります。このカプセル化により、`gamma()`の実行は1回で済むようになります。
 
 ### レイアウト
+
+Shiny のレイアウトは、3段階に分けて考えます。
+
+1. パネルによる要素の結合
+
+2. ページの設計
+
+3. タブメニューとナビゲーションバー
+
+#### パネルによる要素の結合
+
+入力や出力UIを一つの要素にまとめる場合に、パネルを使用します。
+
+
+
+#### ページの設計
+
+
+#### タブメニューとナビゲーションバー
 
 
 

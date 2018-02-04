@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "passwordInput",
   "url": "/passwordinput/",
-  "wordCount": "1",
+  "wordCount": "68",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -124,7 +124,80 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">passwordInput(inputId, label, value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, placeholder <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無し</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">初期値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細は<code>validateCssUnit</code>を参照</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>placeholder</code></strong></td>
+<td align="left">コントロールに何を入力するのかをユーザにヒントとして表示する文字列。Internet Explorerの8と9はこのオプションをサポートしません</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="値">値</h3>
+
+<p>UI定義に追加するテキスト入力コントロール</p>
+
+<h3 id="説明">説明</h3>
+
+<p>パスワードを入力するためのコントロールを生成</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  passwordInput(<span style="color:#e6db74">&#34;password&#34;</span>, <span style="color:#e6db74">&#34;Password:&#34;</span>),
+  actionButton(<span style="color:#e6db74">&#34;go&#34;</span>, <span style="color:#e6db74">&#34;Go&#34;</span>),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderText({
+    req(input<span style="color:#f92672">$</span>go)
+    isolate(input<span style="color:#f92672">$</span>password)
+  })
+}
+shinyApp(ui, server)
+}</code></pre></div></p>
+
+<h3 id="参照">参照</h3>
+
+<p>RStudioのReference</p>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/passwordInput.html">https://shiny.rstudio.com/reference/shiny/1.0.5/passwordInput.html</a></p>
 
 
   

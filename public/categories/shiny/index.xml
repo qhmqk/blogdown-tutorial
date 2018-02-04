@@ -21,7 +21,7 @@
       <description>htmlOutput(outputId, inline = FALSE, container = if (inline) span else div, ...) 引数    名前 説明     outputId 値を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定   ... containerのタグ関数に渡す引数。タグで追加のクラスを使うときに有用です。    値 パネル内に含まれるHTML出力要素
 説明 アプリケーションのページ内に、HTMLとしてリアクティブな出力変数をレンダリングします。テキストは、HTMLのdivタグ内に含まれ、エスケープされないHTMLコンテンツを含むことを仮定しています。
 詳細 uiOutputはサーバ側のrenderUIでの使用を目的としています。現在はhtmlOutputのエイリアスです。
-使用例 htmlOutput(&amp;#34;summary&amp;#34;)&amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;# Using a custom container and class tags$ul(htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;))&amp;lt;ul&amp;gt;&amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;</description>
+使用例 htmlOutput(&amp;#34;summary&amp;#34;) &amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; # Using a custom container and class tags$ul( htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;) ) &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@
       <description>textOutput(outputId, container = if (inline) span else div, inline = FALSE) 引数    名前 説明     outputId 表を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定    値 パネル内に含まれるテキスト出力要素
 説明 アプリケーション内でテキストとしてリアクティブな出力変数をレンダリングします。テキストは、デフォルトで、HTMLのdivタグ内に含まれます。
 詳細 テキストは、レンダリングに優先してHTMLをエスケープします。この要素はrenderText出力変数で使用されます。
-使用例 h3(textOutput(&amp;#34;caption&amp;#34;))&amp;lt;h3&amp;gt;&amp;lt;div id=&amp;#34;caption&amp;#34; class=&amp;#34;shiny-text-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/h3&amp;gt;
+使用例 h3(textOutput(&amp;#34;caption&amp;#34;)) &amp;lt;h3&amp;gt; &amp;lt;div id=&amp;#34;caption&amp;#34; class=&amp;#34;shiny-text-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/h3&amp;gt;
 参照 https://shiny.rstudio.com/reference/shiny/1.0.5/textOutput.html</description>
     </item>
     
@@ -64,7 +64,7 @@
       <description>uiOutput(outputId, inline = FALSE, container = if (inline) span else div, ...) 引数    名前 説明     outputId 値を読み込む出力変数   container テキストを含むHTML要素を生成するための関数   inline インライン(span())またはブロックコンテナ(div())を出力で使用するかどうかを論理値で指定   ... containerのタグ関数に渡す引数。タグで追加のクラスを使うときに有用です。    値 パネル内に含まれるHTML出力要素
 説明 アプリケーションのページ内に、HTMLとしてリアクティブな出力変数をレンダリングします。テキストは、HTMLのdivタグ内に含まれ、エスケープされないHTMLコンテンツを含むことを仮定しています。
 詳細 uiOutputはサーバ側のrenderUIでの使用を目的としています。現在はhtmlOutputのエイリアスです。
-使用例 htmlOutput(&amp;#34;summary&amp;#34;)&amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;# Using a custom container and class tags$ul(htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;))&amp;lt;ul&amp;gt;&amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;</description>
+使用例 htmlOutput(&amp;#34;summary&amp;#34;) &amp;lt;div id=&amp;#34;summary&amp;#34; class=&amp;#34;shiny-html-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; # Using a custom container and class tags$ul( htmlOutput(&amp;#34;summary&amp;#34;, container = tags$li, class = &amp;#34;custom-li-output&amp;#34;) ) &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;shiny-html-output custom-li-output&amp;#34; id=&amp;#34;summary&amp;#34;&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;</description>
     </item>
     
     <item>
@@ -74,12 +74,7 @@
       
       <guid>/actionbutton/</guid>
       <description>actionButton(inputId, label, icon = NULL, width = NULL, ...) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。   icon (オプションで)ボタン上に現れるアイコン   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   ... ボタンに適用する名前付きの属性    説明 初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。
-使用例  labelに画像を指定
- iconを使用
- inputIdに応じてlabelを変更
-  参照 RStudioのReference
-http://shiny.rstudio.com/articles/action-buttons.html
-https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
+使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( sliderInput(&amp;#34;obs&amp;#34;, &amp;#34;Number of observations&amp;#34;, 0, 1000, 500), actionButton(&amp;#34;goButton&amp;#34;, &amp;#34;Go!&amp;#34;), plotOutput(&amp;#34;distPlot&amp;#34;) ) server &amp;lt;- function(input, output) { output$distPlot &amp;lt;- renderPlot({ # Take a dependency on input$goButton.</description>
     </item>
     
     <item>
@@ -90,8 +85,7 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <guid>/checkboxgroupinput/</guid>
       <description>checkboxGroupInput(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   choices チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。   selected 初期状態で選択されている値   inline TRUEなら、選択したものがインラインで表示されます。   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   choiceNames, choiceValues 名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、choiceNamesとchoiceValuesは同じ長さである必要があります。この引数を指定すると、choicesは指定できません。単純なテキストになるchoicesではなく、これら両引数を用いる利点は、choiceNamesには任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照    値 UI定義に追加されるHTML要素のリスト
 説明 それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成します。選択された値の文字列ベクトルが、入力としてサーバに渡されます。
-使用例  choices
- inlineをTRUE</description>
+使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( checkboxGroupInput(&amp;#34;variable&amp;#34;, &amp;#34;Variables to show:&amp;#34;, c(&amp;#34;Cylinders&amp;#34; = &amp;#34;cyl&amp;#34;, &amp;#34;Transmission&amp;#34; = &amp;#34;am&amp;#34;, &amp;#34;Gears&amp;#34; = &amp;#34;gear&amp;#34;)), tableOutput(&amp;#34;data&amp;#34;) ) server &amp;lt;- function(input, output, session) { output$data &amp;lt;- renderTable({ mtcars[, c(&amp;#34;mpg&amp;#34;, input$variable), drop = FALSE] }, rownames = TRUE) } shinyApp(ui, server) ui &amp;lt;- fluidPage( checkboxGroupInput(&amp;#34;icons&amp;#34;, &amp;#34;Choose icons:&amp;#34;, choiceNames = list(icon(&amp;#34;calendar&amp;#34;), icon(&amp;#34;bed&amp;#34;), icon(&amp;#34;cog&amp;#34;), icon(&amp;#34;bug&amp;#34;)), choiceValues = list(&amp;#34;calendar&amp;#34;, &amp;#34;bed&amp;#34;, &amp;#34;cog&amp;#34;, &amp;#34;bug&amp;#34;) ), textOutput(&amp;#34;txt&amp;#34;) ) server &amp;lt;- function(input, output, session) { output$txt &amp;lt;- renderText({ icons &amp;lt;- paste(input$icons, collapse = &amp;#34;, &amp;#34;) paste(&amp;#34;You chose&amp;#34;, icons) }) } shinyApp(ui, server) }</description>
     </item>
     
     <item>
@@ -139,7 +133,9 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/numericinput/</guid>
-      <description>作成中</description>
+      <description>numericInput(inputId, label, value, min = NA, max = NA, step = NA, width = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値   min 入力可能な最小値   max 入力可能な最大値   step 最小値と最大値の間のステップ幅   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    値 UI定義に追加する数値入力コントロール
+説明 数値を入力するためのコントロールを生成
+使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( numericInput(&amp;#34;obs&amp;#34;, &amp;#34;Observations:&amp;#34;, 10, min = 1, max = 100), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$obs }) } shinyApp(ui, server) }</description>
     </item>
     
     <item>
@@ -148,7 +144,9 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/passwordinput/</guid>
-      <description>作成中</description>
+      <description>passwordInput(inputId, label, value = &amp;#34;&amp;#34;, width = NULL, placeholder = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   placeholder コントロールに何を入力するのかをユーザにヒントとして表示する文字列。Internet Explorerの8と9はこのオプションをサポートしません    値 UI定義に追加するテキスト入力コントロール
+説明 パスワードを入力するためのコントロールを生成
+使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( passwordInput(&amp;#34;password&amp;#34;, &amp;#34;Password:&amp;#34;), actionButton(&amp;#34;go&amp;#34;, &amp;#34;Go&amp;#34;), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ req(input$go) isolate(input$password) }) } shinyApp(ui, server) }</description>
     </item>
     
     <item>
@@ -157,7 +155,9 @@ https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</description>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/radiobuttons/</guid>
-      <description>作成中</description>
+      <description>radioButtons(inputId, label, choices = NULL, selected = NULL, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   choices チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。   selected 初期状態で選択されている値。指定がない場合は、最初の値となります。   inline TRUEなら、選択したものがインラインで(すなわち横に)表示されます。   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   choiceNames, choiceValues 名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、choiceNamesとchoiceValuesは同じ長さである必要があります。この引数を指定すると、choicesは指定できません。単純なテキストになるchoicesではなく、これら両引数を用いる利点は、choiceNamesには任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照    値 UI定義に追加されるラジオボタンの集合
+説明 リストから1つの項目を選択するラジオボタンの集合を生成
+詳細 「何も選択していない」状態を表示したい場合、オプションなしを選択したselected = character(0)を用いたデフォルトのラジオボタンにすることが可能です。しかし、これは推奨されません。ユーザが一度選択したその状態を返す方法がユーザにないからです。代わりに、最初の選択をc(&amp;quot;None selected&amp;quot; = &amp;quot;&amp;quot;)とすることが考えられます。</description>
     </item>
     
     <item>
@@ -180,7 +180,7 @@ https://shiny.rstudio.com/reference/shiny/latest/reactive.html</description>
 詳細 式exprは、webページ上のimgオブジェクト属性を持つリストを必ず返します。画像を正しく表示するために、リストsrcに画像ファイルへのパスとなるエントリが少なくとも1つは必要となります。contextTypeで、画像のMIME型を指定するエントリを持つのが有用です。指定がない場合には、renderImageでファイルの拡張子に基づいて型を自動的に検出します。
 widthやheight, class, altなどの他の要素も、リストに加えられます。追加の要素は、imgオブジェクトの属性として使用されます。
 対応するHTML出力のタグは、divまたはimgで、CSSのクラス名はshiny-image-outputとなります。
-使用例 ## Only run examples in interactive R sessions if (interactive()) {options(device.ask.default = FALSE)ui &amp;lt;- fluidPage(sliderInput(&amp;#34;n&amp;#34;, &amp;#34;Number of observations&amp;#34;, 2, 1000, 500),plotOutput(&amp;#34;plot1&amp;#34;),plotOutput(&amp;#34;plot2&amp;#34;),plotOutput(&amp;#34;plot3&amp;#34;))server &amp;lt;- function(input, output, session) {# A plot of fixed size output$plot1 &amp;lt;- renderImage({# A temp file to save the output.</description>
+使用例 ## Only run examples in interactive R sessions if (interactive()) { options(device.ask.default = FALSE) ui &amp;lt;- fluidPage( sliderInput(&amp;#34;n&amp;#34;, &amp;#34;Number of observations&amp;#34;, 2, 1000, 500), plotOutput(&amp;#34;plot1&amp;#34;), plotOutput(&amp;#34;plot2&amp;#34;), plotOutput(&amp;#34;plot3&amp;#34;) ) server &amp;lt;- function(input, output, session) { # A plot of fixed size output$plot1 &amp;lt;- renderImage({ # A temp file to save the output.</description>
     </item>
     
     <item>
@@ -189,7 +189,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/renderplot/</guid>
-      <description>renderPlot(expr, width = &amp;#34;auto&amp;#34;, height = &amp;#34;auto&amp;#34;, res = 72, ..., env = parent.frame(), quoted = FALSE, execOnResize = FALSE, outputArgs = list()) 引数    名前 説明     expr プロットを生成する式   width, height 描画するプロットの高さと幅をピクセルで指定します。autoを指定して、HTMLのoffsetWidthとoffsetHeightを用いることもできます。インラインでプロットするときには、数値でwidthとheightを必ず指定します。   res インチ単位のピクセル解像度を指定します。この値は、pngに渡されます。Rで描画するPNGの解像度を変えるのであって、ブラウザの実際のppiを変えるわけではないことに注意してください。   &amp;hellip; 幅、高さや背景色などのpngに渡す引数   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   execOnResize (デフォルトの)FALSEなら、プロットのサイズ決定が繰り返され、Shinyはexprの再実行の代わりに、replayPlot()コマンドでプロットの描画を繰り返します。これにより、高速な再描画が可能となります。まれに望ましくない場合もあります。プロットのサイズ決定やり直しに問題がある場合に、TRUEを設定してShinyのコードを再実行することができます。   outputArgs renderImageを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないimageOutputの呼び出しに渡される引数のリストです。    説明 出力スロットに割り当てるのに適したリアクティブなプロットを描画します。</description>
+      <description>renderPlot(expr, width = &amp;#34;auto&amp;#34;, height = &amp;#34;auto&amp;#34;, res = 72, ..., env = parent.frame(), quoted = FALSE, execOnResize = FALSE, outputArgs = list()) 引数    名前 説明     expr プロットを生成する式   width, height 描画するプロットの高さと幅をピクセルで指定します。autoを指定して、HTMLのoffsetWidthとoffsetHeightを用いることもできます。インラインでプロットするときには、数値でwidthとheightを必ず指定します。   res インチ単位のピクセル解像度を指定します。この値は、pngに渡されます。Rで描画するPNGの解像度を変えるのであって、ブラウザの実際のppiを変えるわけではないことに注意してください。   ... 幅、高さや背景色などのpngに渡す引数   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   execOnResize (デフォルトの)FALSEなら、プロットのサイズ決定が繰り返され、Shinyはexprの再実行の代わりに、replayPlot()コマンドでプロットの描画を繰り返します。これにより、高速な再描画が可能となります。まれに望ましくない場合もあります。プロットのサイズ決定やり直しに問題がある場合に、TRUEを設定してShinyのコードを再実行することができます。   outputArgs renderImageを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないimageOutputの呼び出しに渡される引数のリストです。    説明 出力スロットに割り当てるのに適したリアクティブなプロットを描画します。</description>
     </item>
     
     <item>
@@ -198,12 +198,11 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/renderprint/</guid>
-      <description>作成中 renderPrint(expr, env = parent.frame(), quoted = FALSE, width = getOption(&amp;#34;width&amp;#34;), outputArgs = list())
-引数    名前 説明     expr 出力を印字、または印字可能なRオブジェクトを返す式   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   width options(&#39;width&#39;)の値   outputArgs renderPrintを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないverbatimTextOutputの呼び出しに渡される引数のリスト    説明 印字する出力をキャプチャする関数のリアクティブなバージョンを生成します。また、印字可能な出力を(見えなかったとしても)キャプチャし、文字列にします。結果の関数は、出力スロットへの割当に適しています。
+      <description>renderPrint(expr, env = parent.frame(), quoted = FALSE, width = getOption(&amp;#34;width&amp;#34;), outputArgs = list()) 引数    名前 説明     expr 出力を印字、または印字可能なRオブジェクトを返す式   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   width options(&#39;width&#39;)の値   outputArgs renderPrintを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないverbatimTextOutputの呼び出しに渡される引数のリスト    説明 印字する出力をキャプチャする関数のリアクティブなバージョンを生成します。また、印字可能な出力を(見えなかったとしても)キャプチャし、文字列にします。結果の関数は、出力スロットへの割当に適しています。
 詳細 対応するHTML出力タグは、任意で何にでも成り(monospaceフォントとwhitespaceをpreserveしたいなら、preが推奨されます)、CSSのクラス名はshiny-text-outputを持ちます。
 関数の実行結果は、capture.output呼び出しの内部で印字されます。
 大半のShinyの出力関数と違い、NULLもNULLであることが見えるように出力されます。NULLで何も表示しないためには、関数がinvisible()を返すようにしなければならないことにちゅうしてください。
-使用例 isolate({# renderPrint captures any print output, converts it to a string, and # returns it visFun &amp;lt;- renderPrint({ &amp;#34;foo&amp;#34; })visFun()# &amp;#39;[1] &amp;#34;foo&amp;#34;&amp;#39; invisFun &amp;lt;- renderPrint({ invisible(&amp;#34;foo&amp;#34;) })invisFun()# &amp;#39;&amp;#39; multiprintFun &amp;lt;- renderPrint({print(&amp;#34;foo&amp;#34;);&amp;#34;bar&amp;#34;})multiprintFun()# &amp;#39;[1] &amp;#34;foo&amp;#34;\n[1] &amp;#34;bar&amp;#34;&amp;#39; nullFun &amp;lt;- renderPrint({ NULL })nullFun()# &amp;#39;NULL&amp;#39; invisNullFun &amp;lt;- renderPrint({ invisible(NULL) })invisNullFun()# &amp;#39;&amp;#39; vecFun &amp;lt;- renderPrint({ 1:5 })vecFun()# &amp;#39;[1] 1 2 3 4 5&amp;#39; # Contrast with renderText, which takes the value returned from the function # and uses cat() to convert it to a string visFun &amp;lt;- renderText({ &amp;#34;foo&amp;#34; })visFun()# &amp;#39;foo&amp;#39; invisFun &amp;lt;- renderText({ invisible(&amp;#34;foo&amp;#34;) })invisFun()# &amp;#39;foo&amp;#39; multiprintFun &amp;lt;- renderText({print(&amp;#34;foo&amp;#34;);&amp;#34;bar&amp;#34;})multiprintFun()# &amp;#39;bar&amp;#39; nullFun &amp;lt;- renderText({ NULL })nullFun()# &amp;#39;&amp;#39; invisNullFun &amp;lt;- renderText({ invisible(NULL) })invisNullFun()# &amp;#39;&amp;#39; vecFun &amp;lt;- renderText({ 1:5 })vecFun()# &amp;#39;1 2 3 4 5&amp;#39; })[1] &amp;#34;foo&amp;#34;[1] &amp;#34;1 2 3 4 5&amp;#34;</description>
+使用例 isolate({ # renderPrint captures any print output, converts it to a string, and # returns it visFun &amp;lt;- renderPrint({ &amp;#34;foo&amp;#34; }) visFun() # &amp;#39;[1] &amp;#34;foo&amp;#34;&amp;#39; invisFun &amp;lt;- renderPrint({ invisible(&amp;#34;foo&amp;#34;) }) invisFun() # &amp;#39;&amp;#39; multiprintFun &amp;lt;- renderPrint({ print(&amp;#34;foo&amp;#34;); &amp;#34;bar&amp;#34; }) multiprintFun() # &amp;#39;[1] &amp;#34;foo&amp;#34;\n[1] &amp;#34;bar&amp;#34;&amp;#39; nullFun &amp;lt;- renderPrint({ NULL }) nullFun() # &amp;#39;NULL&amp;#39; invisNullFun &amp;lt;- renderPrint({ invisible(NULL) }) invisNullFun() # &amp;#39;&amp;#39; vecFun &amp;lt;- renderPrint({ 1:5 }) vecFun() # &amp;#39;[1] 1 2 3 4 5&amp;#39; # Contrast with renderText, which takes the value returned from the function # and uses cat() to convert it to a string visFun &amp;lt;- renderText({ &amp;#34;foo&amp;#34; }) visFun() # &amp;#39;foo&amp;#39; invisFun &amp;lt;- renderText({ invisible(&amp;#34;foo&amp;#34;) }) invisFun() # &amp;#39;foo&amp;#39; multiprintFun &amp;lt;- renderText({ print(&amp;#34;foo&amp;#34;); &amp;#34;bar&amp;#34; }) multiprintFun() # &amp;#39;bar&amp;#39; nullFun &amp;lt;- renderText({ NULL }) nullFun() # &amp;#39;&amp;#39; invisNullFun &amp;lt;- renderText({ invisible(NULL) }) invisNullFun() # &amp;#39;&amp;#39; vecFun &amp;lt;- renderText({ 1:5 }) vecFun() # &amp;#39;1 2 3 4 5&amp;#39; }) [1] &amp;#34;foo&amp;#34; [1] &amp;#34;1 2 3 4 5&amp;#34;</description>
     </item>
     
     <item>
@@ -212,7 +211,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/rendertable/</guid>
-      <description>renderTable(expr, striped = FALSE, hover = FALSE, bordered = FALSE, spacing = c(&amp;#34;s&amp;#34;, &amp;#34;xs&amp;#34;, &amp;#34;m&amp;#34;, &amp;#34;l&amp;#34;), width = &amp;#34;auto&amp;#34;, align = NULL,rownames = FALSE, colnames = TRUE, digits = NULL, na = &amp;#34;NA&amp;#34;, ..., env = parent.frame(), quoted = FALSE, outputArgs = list()) 引数    名前 説明     expr xtableで使用可能なRのオブジェクトを返す式   striped, hover, bordered 論理値で、TRUEなら出力する表に対応するBootstrapの表フォーマットを適用します。   spacing 表の行間のスペースを指定します。xsは「extra small」の略で、sは「small」、mは「medum」で、lは「large」です。   width 表の幅。CSSの単位(100やauto)、またはpxを単位にした長さを指定する文字列   align 列のアラインメントを文字列で指定します。l, c, rでそれぞれ列の左、中央右にアラインメントされます。文字列の長さは、表と同じになります(rawnames = TRUEなら、ncol()+1)。i番目の文字が、i番目の列に対応します。?</description>
+      <description>renderTable(expr, striped = FALSE, hover = FALSE, bordered = FALSE, spacing = c(&amp;#34;s&amp;#34;, &amp;#34;xs&amp;#34;, &amp;#34;m&amp;#34;, &amp;#34;l&amp;#34;), width = &amp;#34;auto&amp;#34;, align = NULL, rownames = FALSE, colnames = TRUE, digits = NULL, na = &amp;#34;NA&amp;#34;, ..., env = parent.frame(), quoted = FALSE, outputArgs = list()) 引数    名前 説明     expr xtableで使用可能なRのオブジェクトを返す式   striped, hover, bordered 論理値で、TRUEなら出力する表に対応するBootstrapの表フォーマットを適用します。   spacing 表の行間のスペースを指定します。xsは「extra small」の略で、sは「small」、mは「medum」で、lは「large」です。   width 表の幅。CSSの単位(100やauto)、またはpxを単位にした長さを指定する文字列   align 列のアラインメントを文字列で指定します。l, c, rでそれぞれ列の左、中央右にアラインメントされます。文字列の長さは、表と同じになります(rawnames = TRUEなら、ncol()+1)。i番目の文字が、i番目の列に対応します。?</description>
     </item>
     
     <item>
@@ -224,7 +223,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <description>renderText(expr, env = parent.frame(), quoted = FALSE, outputArgs = list()) 引数    名前 説明     expr xtableで使用可能なRのオブジェクトを返す式   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   outputArgs renderTextを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないtextOutputの呼び出しに渡される引数のリスト    説明 catで結果を単独要素の文字ベクトルに変える関数のリアクティブなバージョンを生成します。
 詳細 対応するHTMLの出力タグは、何にでもなります(monospaceフォントとwhitespaceを保存するなら、preが推奨されます)。そして、CSSのクラス名としてshiny-text-outputを持ちます。
 関数の実行結果は、capture.output呼び出しの内部でcatに渡されます。
-使用例 isolate({# renderPrint captures any print output, converts it to a string, and # returns it visFun &amp;lt;- renderPrint({ &amp;#34;foo&amp;#34; })visFun()# &amp;#39;[1] &amp;#34;foo&amp;#34;&amp;#39; invisFun &amp;lt;- renderPrint({ invisible(&amp;#34;foo&amp;#34;) })invisFun()# &amp;#39;&amp;#39; multiprintFun &amp;lt;- renderPrint({print(&amp;#34;foo&amp;#34;);&amp;#34;bar&amp;#34;})multiprintFun()# &amp;#39;[1] &amp;#34;foo&amp;#34;\n[1] &amp;#34;bar&amp;#34;&amp;#39; nullFun &amp;lt;- renderPrint({ NULL })nullFun()# &amp;#39;NULL&amp;#39; invisNullFun &amp;lt;- renderPrint({ invisible(NULL) })invisNullFun()# &amp;#39;&amp;#39; vecFun &amp;lt;- renderPrint({ 1:5 })vecFun()# &amp;#39;[1] 1 2 3 4 5&amp;#39; # Contrast with renderText, which takes the value returned from the function # and uses cat() to convert it to a string visFun &amp;lt;- renderText({ &amp;#34;foo&amp;#34; })visFun()# &amp;#39;foo&amp;#39; invisFun &amp;lt;- renderText({ invisible(&amp;#34;foo&amp;#34;) })invisFun()# &amp;#39;foo&amp;#39; multiprintFun &amp;lt;- renderText({print(&amp;#34;foo&amp;#34;);&amp;#34;bar&amp;#34;})multiprintFun()# &amp;#39;bar&amp;#39; nullFun &amp;lt;- renderText({ NULL })nullFun()# &amp;#39;&amp;#39; invisNullFun &amp;lt;- renderText({ invisible(NULL) })invisNullFun()# &amp;#39;&amp;#39; vecFun &amp;lt;- renderText({ 1:5 })vecFun()# &amp;#39;1 2 3 4 5&amp;#39; })[1] &amp;#34;foo&amp;#34;[1] &amp;#34;1 2 3 4 5&amp;#34;</description>
+使用例 isolate({ # renderPrint captures any print output, converts it to a string, and # returns it visFun &amp;lt;- renderPrint({ &amp;#34;foo&amp;#34; }) visFun() # &amp;#39;[1] &amp;#34;foo&amp;#34;&amp;#39; invisFun &amp;lt;- renderPrint({ invisible(&amp;#34;foo&amp;#34;) }) invisFun() # &amp;#39;&amp;#39; multiprintFun &amp;lt;- renderPrint({ print(&amp;#34;foo&amp;#34;); &amp;#34;bar&amp;#34; }) multiprintFun() # &amp;#39;[1] &amp;#34;foo&amp;#34;\n[1] &amp;#34;bar&amp;#34;&amp;#39; nullFun &amp;lt;- renderPrint({ NULL }) nullFun() # &amp;#39;NULL&amp;#39; invisNullFun &amp;lt;- renderPrint({ invisible(NULL) }) invisNullFun() # &amp;#39;&amp;#39; vecFun &amp;lt;- renderPrint({ 1:5 }) vecFun() # &amp;#39;[1] 1 2 3 4 5&amp;#39; # Contrast with renderText, which takes the value returned from the function # and uses cat() to convert it to a string visFun &amp;lt;- renderText({ &amp;#34;foo&amp;#34; }) visFun() # &amp;#39;foo&amp;#39; invisFun &amp;lt;- renderText({ invisible(&amp;#34;foo&amp;#34;) }) invisFun() # &amp;#39;foo&amp;#39; multiprintFun &amp;lt;- renderText({ print(&amp;#34;foo&amp;#34;); &amp;#34;bar&amp;#34; }) multiprintFun() # &amp;#39;bar&amp;#39; nullFun &amp;lt;- renderText({ NULL }) nullFun() # &amp;#39;&amp;#39; invisNullFun &amp;lt;- renderText({ invisible(NULL) }) invisNullFun() # &amp;#39;&amp;#39; vecFun &amp;lt;- renderText({ 1:5 }) vecFun() # &amp;#39;1 2 3 4 5&amp;#39; }) [1] &amp;#34;foo&amp;#34; [1] &amp;#34;1 2 3 4 5&amp;#34;</description>
     </item>
     
     <item>
@@ -235,7 +234,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <guid>/renderui/</guid>
       <description>renderUI(expr, env = parent.frame(), quoted = FALSE, outputArgs = list()) 引数    名前 説明     expr Shinyのタグオブジェクト、HTML、またはそれらのリストを返す式   env 中でexprを評価するための環境   quoted exprに引用符が付いている(quoted()がある)かどうかを指定します。変数内の式を保存したいときに有用です。   outputArgs renderUIを、インタラクティブなR Markdownドキュメントで使用する時に、明示しないuiOutputの呼び出しに渡される引数のリスト    説明 実験的な機能です。ShinyのUIライブラリを用いてHTMLを生成する関数のリアクティブなバージョンを生成します。
 詳細 出力するHTMLの出力タグはdivで、CSSのクラス名にshiny-html-outputを持ちます(またはuiOutputを使用します)。
-使用例 ## Only run examples in interactive R sessions if (interactive()) {ui &amp;lt;- fluidPage(uiOutput(&amp;#34;moreControls&amp;#34;))server &amp;lt;- function(input, output) {output$moreControls &amp;lt;- renderUI({tagList(sliderInput(&amp;#34;n&amp;#34;, &amp;#34;N&amp;#34;, 1, 1000, 500),textInput(&amp;#34;label&amp;#34;, &amp;#34;Label&amp;#34;))})}shinyApp(ui, server)}</description>
+使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( uiOutput(&amp;#34;moreControls&amp;#34;) ) server &amp;lt;- function(input, output) { output$moreControls &amp;lt;- renderUI({ tagList( sliderInput(&amp;#34;n&amp;#34;, &amp;#34;N&amp;#34;, 1, 1000, 500), textInput(&amp;#34;label&amp;#34;, &amp;#34;Label&amp;#34;) ) }) } shinyApp(ui, server) }</description>
     </item>
     
     <item>
@@ -244,7 +243,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/selectinput/</guid>
-      <description>作成中</description>
+      <description>selectInput(inputId, label, choices, selected = NULL, multiple = FALSE, selectize = TRUE, width = NULL, size = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   choices チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。   selected 初期状態で選択されている値   inline TRUEなら、選択したものがインラインで表示されます。   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   choiceNames, choiceValues 名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、choiceNamesとchoiceValuesは同じ長さである必要があります。この引数を指定すると、choicesは指定できません。単純なテキストになるchoicesではなく、これら両引数を用いる利点は、choiceNamesには任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照    inputId The input slot that will be used to access the value.</description>
     </item>
     
     <item>
@@ -264,7 +263,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <guid>/tableoutput/</guid>
       <description>tableOutput(outputId) 引数    名前 説明     outputId 表を読み込む出力変数    値 パネル内に含まれる表出力要素
 説明 アプリケーションページ内で、renderTableまたはrenderDataTableをレンダリングします。renderTableは標準的なHTMLの表を使用します。renderDataTableは、JavascriptライブラリのDataTablesをインタラクティブでさらに機能を持つ表を生成するために使用します。
-使用例 ## Only run this example in interactive R sessions if (interactive()) {# table example shinyApp(ui = fluidPage(fluidRow(column(12,tableOutput(&amp;#39;table&amp;#39;)))),server = function(input, output) {output$table &amp;lt;- renderTable(iris)})# DataTables example shinyApp(ui = fluidPage(fluidRow(column(12,dataTableOutput(&amp;#39;table&amp;#39;)))),server = function(input, output) {output$table &amp;lt;- renderDataTable(iris)})} 参照 https://shiny.</description>
+使用例 ## Only run this example in interactive R sessions if (interactive()) { # table example shinyApp( ui = fluidPage( fluidRow( column(12, tableOutput(&amp;#39;table&amp;#39;) ) ) ), server = function(input, output) { output$table &amp;lt;- renderTable(iris) } ) # DataTables example shinyApp( ui = fluidPage( fluidRow( column(12, dataTableOutput(&amp;#39;table&amp;#39;) ) ) ), server = function(input, output) { output$table &amp;lt;- renderDataTable(iris) } ) } 参照 https://shiny.</description>
     </item>
     
     <item>
@@ -273,7 +272,9 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/textinput/</guid>
-      <description>作成中</description>
+      <description>textInput(inputId, label, value = &amp;#34;&amp;#34;, width = NULL, placeholder = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   placeholder コントロールに何を入力するのかをユーザにヒントとして表示する文字列。Internet Explorerの8と9はこのオプションをサポートしません    値 UI定義に追加するテキスト入力コントロール
+説明 構造化されていないテキストの値を入力するためのコントロールを生成
+使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( textInput(&amp;#34;caption&amp;#34;, &amp;#34;Caption&amp;#34;, &amp;#34;Data Summary&amp;#34;), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$caption }) } shinyApp(ui, server) }</description>
     </item>
     
     <item>
@@ -285,7 +286,7 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
       <description>verbatimTextOutput(outputId, placeholder = FALSE) 引数    名前 説明     outputId 値を読み込む出力変数   placeholder 出力が空またはNULLの場合に、空の長方形が表示されるかどうかを指定します。(出力が空でないときの動作には影響しません)    値 パネル内に含まれる文字通りのテキスト出力要素
 説明 アプリケーションのページ内で文字通りのテキストとしてリアクティブな出力変数をレンダリングします。テキストには、HTMLのタグが含まれます。
 詳細 テキストは、レンダリングよりも優先してHTMLをエスケープします。この要素は、固定幅でフォーマットされたプリントオブジェクトを保存するためにrenderPrint関数で使用されます。
-Examples## Only run this example in interactive R sessions if (interactive()) {shinyApp(ui = basicPage(textInput(&amp;#34;txt&amp;#34;, &amp;#34;Enter the text to display below:&amp;#34;),verbatimTextOutput(&amp;#34;default&amp;#34;),verbatimTextOutput(&amp;#34;placeholder&amp;#34;, placeholder = TRUE)),server = function(input, output) {output$default &amp;lt;- renderText({ input$txt })output$placeholder &amp;lt;- renderText({ input$txt })})}</description>
+Examples ## Only run this example in interactive R sessions if (interactive()) { shinyApp( ui = basicPage( textInput(&amp;#34;txt&amp;#34;, &amp;#34;Enter the text to display below:&amp;#34;), verbatimTextOutput(&amp;#34;default&amp;#34;), verbatimTextOutput(&amp;#34;placeholder&amp;#34;, placeholder = TRUE) ), server = function(input, output) { output$default &amp;lt;- renderText({ input$txt }) output$placeholder &amp;lt;- renderText({ input$txt }) } ) }</description>
     </item>
     
   </channel>

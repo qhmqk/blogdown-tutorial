@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "Shiny app 開発をスタート",
   "url": "/top-page/",
-  "wordCount": "440",
+  "wordCount": "559",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -183,8 +183,7 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
 ui <span style="color:#f92672">&lt;-</span> fluidPage(
-    numericInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>,
-        <span style="color:#e6db74">&#34;Sample size&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>),
+    numericInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>, <span style="color:#e6db74">&#34;Sample size&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>),
     plotOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hist&#34;</span>)
 )
 server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output){
@@ -463,11 +462,87 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
 </tbody>
 </table>
 
-<h3 id="リアクティブ関数で-reactivity-を定義">リアクティブ関数で Reactivity を定義</h3>
+<h3 id="リアクティビティ-reactivity-を定義">リアクティビティ(Reactivity) を定義</h3>
 
-<p>入力ウィジェットでユーザが何らかの操作を行い、サーバでレンダリングして出力ウィジェットで表示するまでの処理の部分を、Shiny ではリアクティブ関数で実現します。</p>
+<p>入力ウィジェットでユーザが何らかの操作を行い、サーバでレンダリングして出力ウィジェットで表示するまでの処理の部分を、Shiny ではリアクティブプログラミングで実現します。R を用いたデータ解析ではあまり馴染みのない言葉ですが、基本的な考え方は難しくありません。</p>
+
+<h4 id="もっとも単純な実装">もっとも単純な実装</h4>
+
+<p>入力と出力を直接 server で定義した関数で結ぶ構造がもっとも単純です。最初に示した数値入力とヒストグラムは、この構造になっています。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">numericInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>, <span style="color:#e6db74">&#34;Sample size&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>),
+plotOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hist&#34;</span>)</code></pre></div>
+
+<p>ユーザが数値を入力するたびに、server では<code>input$n</code>の値が更新されます。<code>output$hist</code>の値が更新されるたびに、<code>plotOutput</code>でプロットを再描画します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">output<span style="color:#f92672">$</span>hist <span style="color:#f92672">&lt;-</span> renderPlot({
+    hist(rnorm(input<span style="color:#f92672">$</span>n))
+})</code></pre></div>
+
+<p>server では<code>renderPlot</code>により、<code>input$n</code>を引数として直接<code>output$hist</code>の値を変化させる構造になっています。入力と出力の間が関数のみなので、この形がもっとも単純な実装です。</p>
+
+<h4 id="単純な実装を拡張して-複数入力-複数出力-reactive-関数による計算過程のカプセル化">単純な実装を拡張して、複数入力、複数出力、reactive 関数による計算過程のカプセル化</h4>
+
+<p>入力をサンプルサイズと、幅の2つにします。出力は、先ほどと同様のヒストグラムです。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># ui</span>
+numericInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>, <span style="color:#e6db74">&#34;Sample size&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>),
+numericInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;Breaks&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>),
+plotOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hist&#34;</span>)</code></pre></div>
+
+<p>サーバでは、<code>input$n</code>と<code>input$b</code>の値から、ヒストグラムを作成し、<code>renderPlot</code>で出力オブジェクトを生成します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># server</span>
+output<span style="color:#f92672">$</span>hist <span style="color:#f92672">&lt;-</span> renderPlot({
+    hist(rnorm(input<span style="color:#f92672">$</span>n), breaks <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>b)
+})</code></pre></div>
+
+<p><code>renderPlot</code>は、<code>input$n</code>または<code>input$b</code>のどちらかの値が変わるたびに再度実行されて、表示が更新されます。</p>
+
+<p>次に、一つの入力に対して、複数の出力を実現します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># ui</span>
+numericInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>, <span style="color:#e6db74">&#34;Factorial of&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, min <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>)
+textOutput(<span style="color:#e6db74">&#34;factorial_n&#34;</span>)
+textOutput(<span style="color:#e6db74">&#34;factorial_n_inv&#34;</span>)</code></pre></div>
+
+<p><code>numericInput</code>で入力した値の階乗、階乗の逆数の2つの値を計算して出力します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># server</span>
+output<span style="color:#f92672">$</span>factorial_n <span style="color:#f92672">&lt;-</span> renderText({<span style="color:#66d9ef">gamma</span>(input<span style="color:#f92672">$</span>n)})
+output<span style="color:#f92672">$</span>factorial_n_inv <span style="color:#f92672">&lt;-</span> renderText({ <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">gamma</span>(input<span style="color:#f92672">$</span>n)})</code></pre></div>
+
+<p>入力 n の値が更新されるたびに、2つの出力が更新される単純なリアクティビティを定義しました。見ると明らかなように、<code>renderText</code>内で<code>gamma()</code>を実行しており、入力が変化するたびに<code>gamma()</code>を2回実行することになります。入力から計算した値を、複数の出力で使う、あるいは中間変数とする場合に使用するのが<code>reactive</code>関数です。</p>
+
+<p>Shiny のリアクティビティを定義するときに必要となるリアクティブプログラミングでは、中間変数そのものをサーバでは定義しません(できません)。そのため、<code>reactive</code>で、<code>gamma()</code>の計算を、入力変化のたびに毎回再計算される関数として定義します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># server</span>
+current_fact <span style="color:#f92672">&lt;-</span> reactive({<span style="color:#66d9ef">gamma</span>(input<span style="color:#f92672">$</span>n)})
+
+output<span style="color:#f92672">$</span>factorial_n <span style="color:#f92672">&lt;-</span> renderText(current_fact())
+output<span style="color:#f92672">$</span>factorial_n_inv <span style="color:#f92672">=</span> renderText({ <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> current_fact()})</code></pre></div>
+
+<p><code>current_fact</code>は、入力が変化するたびに実行する計算をカプセル化したものになります。このカプセル化により、<code>gamma()</code>の実行は1回で済むようになります。</p>
 
 <h3 id="レイアウト">レイアウト</h3>
+
+<p>Shiny のレイアウトは、3段階に分けて考えます。</p>
+
+<ol>
+<li><p>パネルによる要素の結合</p></li>
+
+<li><p>ページの設計</p></li>
+
+<li><p>タブメニューとナビゲーションバー</p></li>
+</ol>
+
+<h4 id="パネルによる要素の結合">パネルによる要素の結合</h4>
+
+<p>入力や出力UIを一つの要素にまとめる場合に、パネルを使用します。</p>
+
+<h4 id="ページの設計">ページの設計</h4>
+
+<h4 id="タブメニューとナビゲーションバー">タブメニューとナビゲーションバー</h4>
 
 <h3 id="まとめ">まとめ</h3>
 

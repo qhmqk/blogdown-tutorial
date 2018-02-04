@@ -17,10 +17,10 @@ renderUI(expr, env = parent.frame(), quoted = FALSE, outputArgs = list())
 
 |名前|説明|
 |:--|:--|
-|`expr`|Shinyのタグオブジェクト、HTML、またはそれらのリストを返す式|
-|`env`|中で`expr`を評価するための環境|
-|`quoted`|`expr`に引用符が付いている(`quoted()`がある)かどうかを指定します。変数内の式を保存したいときに有用です。|
-|`outputArgs`|`renderUI`を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない`uiOutput`の呼び出しに渡される引数のリスト|
+|**`expr`**|Shinyのタグオブジェクト、HTML、またはそれらのリストを返す式|
+|**`env`**|中で`expr`を評価するための環境|
+|**`quoted`**|`expr`に引用符が付いている(`quoted()`がある)かどうかを指定します。変数内の式を保存したいときに有用です。|
+|**`outputArgs`**|`renderUI`を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない`uiOutput`の呼び出しに渡される引数のリスト|
 
 ### 説明
 

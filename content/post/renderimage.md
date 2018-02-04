@@ -17,11 +17,11 @@ renderImage(expr, env = parent.frame(), quoted = FALSE, deleteFile = TRUE, outpu
 
 |名前|説明|
 |:--|:--|
-|`expr`|リストを返す式|
-|`env`|中で`expr`を評価するための環境|
-|`quoted`|`expr`に引用符が付いている(`quoted()`がある)かどうかを指定します。変数内の式を保存したいときに有用です。|
-|`deleteFile`|クライアントのブラウザに送られた`func()$src`中のファイルを削除するかどうかを指定します。一般的に、画像が$func$内で生成された一時ファイルの場合は`TRUE`、一時ファイルでないなら`FALSE`とします。|
-|`outputArgs`|`renderImage`を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない`imageOutput`の呼び出しに渡される引数のリストです。|
+|**`expr`**|リストを返す式|
+|**`env`**|中で`expr`を評価するための環境|
+|**`quoted`**|`expr`に引用符が付いている(`quoted()`がある)かどうかを指定します。変数内の式を保存したいときに有用です。|
+|**`deleteFile`**|クライアントのブラウザに送られた`func()$src`中のファイルを削除するかどうかを指定します。一般的に、画像が$func$内で生成された一時ファイルの場合は`TRUE`、一時ファイルでないなら`FALSE`とします。|
+|**`outputArgs`**|`renderImage`を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない`imageOutput`の呼び出しに渡される引数のリストです。|
 
 ### 説明
 

@@ -218,10 +218,10 @@ ga('send', 'pageview');
 
 <h3 id="使用例">使用例</h3>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Only run these examples in interactive R sessions</span>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Only run these examples in interactive R sessions</span>
 <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
 
-<span style="color:#75715e"># A basic shiny app with a plotOutput</span>
+<span style="color:#75715e"># A basic shiny app with a plotOutput</span>
 shinyApp(
   ui <span style="color:#f92672">=</span> fluidPage(
     sidebarLayout(
@@ -236,7 +236,7 @@ shinyApp(
   server <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(input, output) {
     output<span style="color:#f92672">$</span>plot <span style="color:#f92672">&lt;-</span> renderPlot({
       input<span style="color:#f92672">$</span>newplot
-      <span style="color:#75715e"># Add a little noise to the cars data</span>
+      <span style="color:#75715e"># Add a little noise to the cars data</span>
       cars2 <span style="color:#f92672">&lt;-</span> cars <span style="color:#f92672">+</span> rnorm(<span style="color:#66d9ef">nrow</span>(cars))
       plot(cars2)
     })
@@ -244,13 +244,13 @@ shinyApp(
 )
 
 
-<span style="color:#75715e"># A demonstration of clicking, hovering, and brushing</span>
+<span style="color:#75715e"># A demonstration of clicking, hovering, and brushing</span>
 shinyApp(
   ui <span style="color:#f92672">=</span> basicPage(
     fluidRow(
       column(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
         plotOutput(<span style="color:#e6db74">&#34;plot&#34;</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span>,
-          click <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plot_click&#34;</span>,  <span style="color:#75715e"># Equiv, to click=clickOpts(id=&#34;plot_click&#34;)</span>
+          click <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plot_click&#34;</span>,  <span style="color:#75715e"># Equiv, to click=clickOpts(id=&#34;plot_click&#34;)</span>
           hover <span style="color:#f92672">=</span> hoverOpts(id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plot_hover&#34;</span>, delayType <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;throttle&#34;</span>),
           brush <span style="color:#f92672">=</span> brushOpts(id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plot_brush&#34;</span>)
         ),
@@ -272,7 +272,7 @@ shinyApp(
   server <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(input, output, session) {
     data <span style="color:#f92672">&lt;-</span> reactive({
       input<span style="color:#f92672">$</span>newplot
-      <span style="color:#75715e"># Add a little noise to the cars data so the points move</span>
+      <span style="color:#75715e"># Add a little noise to the cars data so the points move</span>
       cars <span style="color:#f92672">+</span> rnorm(<span style="color:#66d9ef">nrow</span>(cars))
     })
     output<span style="color:#f92672">$</span>plot <span style="color:#f92672">&lt;-</span> renderPlot({
@@ -292,8 +292,8 @@ shinyApp(
       str(input<span style="color:#f92672">$</span>plot_brush)
     })
     output<span style="color:#f92672">$</span>plot_clickedpoints <span style="color:#f92672">&lt;-</span> renderTable({
-      <span style="color:#75715e"># For base graphics, we need to specify columns, though for ggplot2,</span>
-      <span style="color:#75715e"># it&#39;s usually not necessary.</span>
+      <span style="color:#75715e"># For base graphics, we need to specify columns, though for ggplot2,</span>
+      <span style="color:#75715e"># it&#39;s usually not necessary.</span>
       res <span style="color:#f92672">&lt;-</span> nearPoints(data(), input<span style="color:#f92672">$</span>plot_click, <span style="color:#e6db74">&#34;speed&#34;</span>, <span style="color:#e6db74">&#34;dist&#34;</span>)
       <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">nrow</span>(res) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
         <span style="color:#66d9ef">return</span>()
@@ -309,8 +309,8 @@ shinyApp(
 )
 
 
-<span style="color:#75715e"># Demo of clicking, hovering, brushing with imageOutput</span>
-<span style="color:#75715e"># Note that coordinates are in pixels</span>
+<span style="color:#75715e"># Demo of clicking, hovering, brushing with imageOutput</span>
+<span style="color:#75715e"># Note that coordinates are in pixels</span>
 shinyApp(
   ui <span style="color:#f92672">=</span> basicPage(
     fluidRow(
@@ -339,18 +339,18 @@ shinyApp(
     output<span style="color:#f92672">$</span>image <span style="color:#f92672">&lt;-</span> renderImage({
       input<span style="color:#f92672">$</span>newimage
 
-      <span style="color:#75715e"># Get width and height of image output</span>
+      <span style="color:#75715e"># Get width and height of image output</span>
       width  <span style="color:#f92672">&lt;-</span> session<span style="color:#f92672">$</span>clientData<span style="color:#f92672">$</span>output_image_width
       height <span style="color:#f92672">&lt;-</span> session<span style="color:#f92672">$</span>clientData<span style="color:#f92672">$</span>output_image_height
 
-      <span style="color:#75715e"># Write to a temporary PNG file</span>
+      <span style="color:#75715e"># Write to a temporary PNG file</span>
       outfile <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">tempfile</span>(fileext <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.png&#34;</span>)
 
       png(outfile, width<span style="color:#f92672">=</span>width, height<span style="color:#f92672">=</span>height)
       plot(rnorm(<span style="color:#ae81ff">200</span>), rnorm(<span style="color:#ae81ff">200</span>))
       dev.off()
 
-      <span style="color:#75715e"># Return a list containing information about the image</span>
+      <span style="color:#75715e"># Return a list containing information about the image</span>
       <span style="color:#66d9ef">list</span>(
         src <span style="color:#f92672">=</span> outfile,
         contentType <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;image/png&#34;</span>,

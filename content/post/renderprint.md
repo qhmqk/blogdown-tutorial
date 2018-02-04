@@ -9,7 +9,6 @@ weight: 3
 description: "文字列をレンダリング"
 ---
 
-作成中
 {{< highlight r >}}
 renderPrint(expr, env = parent.frame(), quoted = FALSE, width = getOption("width"), outputArgs = list())
 {{< /highlight >}}
@@ -18,11 +17,11 @@ renderPrint(expr, env = parent.frame(), quoted = FALSE, width = getOption("width
 
 |名前|説明|
 |:--|:--|
-|`expr`|出力を印字、または印字可能なRオブジェクトを返す式|
-|`env`|中で`expr`を評価するための環境|
-|`quoted`|`expr`に引用符が付いている(`quoted()`がある)かどうかを指定します。変数内の式を保存したいときに有用です。|
-|`width`|`options('width')`の値|
-|`outputArgs`|`renderPrint`を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない`verbatimTextOutput`の呼び出しに渡される引数のリスト|
+|**`expr`**|出力を印字、または印字可能なRオブジェクトを返す式|
+|**`env`**|中で`expr`を評価するための環境|
+|**`quoted`**|`expr`に引用符が付いている(`quoted()`がある)かどうかを指定します。変数内の式を保存したいときに有用です。|
+|**`width`**|`options('width')`の値|
+|**`outputArgs`**|`renderPrint`を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない`verbatimTextOutput`の呼び出しに渡される引数のリスト|
 
 #### 説明
 
@@ -108,6 +107,8 @@ vecFun()
 {{< /highlight >}}
 
 ### 参照
+
+RStudioのReference
 
 https://shiny.rstudio.com/reference/shiny/1.0.5/renderPrint.html
 

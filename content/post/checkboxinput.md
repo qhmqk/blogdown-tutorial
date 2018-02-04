@@ -17,10 +17,10 @@ checkboxInput(inputId, label, value = FALSE, width = NULL)
 
 |名前|説明|
 |:--|:--|
-|`inputId`|値にアクセスするために使用する`input`のスロット|
-|`label`|コントロールに表示するラベル。`NULL`ならラベル無し|
-|`value`|初期値(論理値で`TRUE`または`FALSE`)|
-|`width`|'400px'や'100%'などの形式で幅を指定。詳細はvalidateCssUnitを参照|
+|**`inputId`**|値にアクセスするために使用する`input`のスロット|
+|**`label`**|コントロールに表示するラベル。`NULL`ならラベル無し|
+|**`value`**|初期値(論理値で`TRUE`または`FALSE`)|
+|**`width`**|'400px'や'100%'などの形式で幅を指定。詳細はvalidateCssUnitを参照|
 
 ### 値
 

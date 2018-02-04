@@ -17,18 +17,18 @@ dateRangeInput(inputId, label, start = NULL, end = NULL, min = NULL, max = NULL,
 
 |名前|説明|
 |:--|:--|
-|`inputId`|値にアクセスするために使用する`input`のスロット|
-|`label`|ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。|
-|`start`|開始日の初期値。データオブジェクト、または`yyyy-mm-dd`というフォーマットの文字列。デフォルトはNULLで、現在のタイムゾーンの値が入ります。|
-|`end`|終了日の初期値。データオブジェクト、または`yyyy-mm-dd`というフォーマットの文字列。デフォルトはNULLで、現在のタイムゾーンの値が入ります。|
-|`min`|最も昔の日付。データオブジェクト、または`yyyy-mm-dd`というフォーマットの文字列。|
-|`max`|最も後の日付。データオブジェクト、または`yyyy-mm-dd`というフォーマットの文字列。|
-|`format`|ブラウザに表示する日付のフォーマット。デフォルトは`yyyy-mm-dd`。|
-|`startview`|最初の入力オブジェクトがクリックされたときに表示される日付の範囲。"month", "year", "decade"を指定します。デフォルトは"month"。|
-|`weekstart`|週の最初の日を0(日曜日)～6(土曜日)の整数で指定します。|
-|`language`|月と日の名前に使用する言語を指定します。デフォルトは"en"で英語。他に指定可能な値は、"ar", "az", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en-AU", "en-GB", "eo", "es", "et", "eu", "fa", "fi", "fo", "fr-CH", "fr", "gl", "he", "hr", "hu", "hy", "id", "is", "it-CH", "it", "ja", "ka", "kh", "kk", "ko", "kr", "lt", "lv", "me", "mk", "mn", "ms", "nb", "nl-BE", "nl", "no", "pl", "pt-BR", "pt", "ro", "rs-latin", "rs", "ru", "sk", "sl", "sq", "sr-latin", "sr", "sv", "sw", "th", "tr", "uk", "vi", "zh-CN", "zh-TW"。|
-|`separator`|startとendの入力の間に表示する文字列|
-|`width`|'400px'や'100%'などの形式で幅を指定。詳細は`validateCssUnit`を参照|
+|**`inputId`**|値にアクセスするために使用する`input`のスロット|
+|**`label`**|ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。|
+|**`start`**|開始日の初期値。データオブジェクト、または`yyyy-mm-dd`というフォーマットの文字列。デフォルトはNULLで、現在のタイムゾーンの値が入ります。|
+|**`end`**|終了日の初期値。データオブジェクト、または`yyyy-mm-dd`というフォーマットの文字列。デフォルトはNULLで、現在のタイムゾーンの値が入ります。|
+|**`min`**|最も昔の日付。データオブジェクト、または`yyyy-mm-dd`というフォーマットの文字列。|
+|**`max`**|最も後の日付。データオブジェクト、または`yyyy-mm-dd`というフォーマットの文字列。|
+|**`format`**|ブラウザに表示する日付のフォーマット。デフォルトは`yyyy-mm-dd`。|
+|**`startview`**|最初の入力オブジェクトがクリックされたときに表示される日付の範囲。"month", "year", "decade"を指定します。デフォルトは"month"。|
+|**`weekstart`**|週の最初の日を0(日曜日)～6(土曜日)の整数で指定します。|
+|**`language`**|月と日の名前に使用する言語を指定します。デフォルトは"en"で英語。他に指定可能な値は、"ar", "az", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en-AU", "en-GB", "eo", "es", "et", "eu", "fa", "fi", "fo", "fr-CH", "fr", "gl", "he", "hr", "hu", "hy", "id", "is", "it-CH", "it", "ja", "ka", "kh", "kk", "ko", "kr", "lt", "lv", "me", "mk", "mn", "ms", "nb", "nl-BE", "nl", "no", "pl", "pt-BR", "pt", "ro", "rs-latin", "rs", "ru", "sk", "sl", "sq", "sr-latin", "sr", "sv", "sw", "th", "tr", "uk", "vi", "zh-CN", "zh-TW"。|
+|**`separator`**|startとendの入力の間に表示する文字列|
+|**`width`**|'400px'や'100%'などの形式で幅を指定。詳細は`validateCssUnit`を参照|
 
 ### 説明
 

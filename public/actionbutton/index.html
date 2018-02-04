@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "actionButton",
   "url": "/actionbutton/",
-  "wordCount": "32",
+  "wordCount": "103",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -140,27 +140,27 @@ ga('send', 'pageview');
 
 <tbody>
 <tr>
-<td align="left"><code>inputId</code></td>
+<td align="left"><strong><code>inputId</code></strong></td>
 <td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
 </tr>
 
 <tr>
-<td align="left"><code>label</code></td>
+<td align="left"><strong><code>label</code></strong></td>
 <td align="left">ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。</td>
 </tr>
 
 <tr>
-<td align="left"><code>icon</code></td>
+<td align="left"><strong><code>icon</code></strong></td>
 <td align="left">(オプションで)ボタン上に現れるアイコン</td>
 </tr>
 
 <tr>
-<td align="left"><code>width</code></td>
+<td align="left"><strong><code>width</code></strong></td>
 <td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細は<code>validateCssUnit</code>を参照</td>
 </tr>
 
 <tr>
-<td align="left"><code>...</code></td>
+<td align="left"><strong><code>...</code></strong></td>
 <td align="left">ボタンに適用する名前付きの属性</td>
 </tr>
 </tbody>
@@ -171,6 +171,31 @@ ga('send', 'pageview');
 <p>初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。</p>
 
 <h3 id="使用例">使用例</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  sliderInput(<span style="color:#e6db74">&#34;obs&#34;</span>, <span style="color:#e6db74">&#34;Number of observations&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">500</span>),
+  actionButton(<span style="color:#e6db74">&#34;goButton&#34;</span>, <span style="color:#e6db74">&#34;Go!&#34;</span>),
+  plotOutput(<span style="color:#e6db74">&#34;distPlot&#34;</span>)
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>distPlot <span style="color:#f92672">&lt;-</span> renderPlot({
+    <span style="color:#75715e"># Take a dependency on input$goButton. This will run once initially,</span>
+    <span style="color:#75715e"># because the value changes from NULL to 0.</span>
+    input<span style="color:#f92672">$</span>goButton
+
+    <span style="color:#75715e"># Use isolate() to avoid dependency on input$obs</span>
+    dist <span style="color:#f92672">&lt;-</span> isolate(rnorm(input<span style="color:#f92672">$</span>obs))
+    hist(dist)
+  })
+}
+
+shinyApp(ui, server)
+
+}</code></pre></div>
 
 <ul>
 <li><p>labelに画像を指定</p></li>

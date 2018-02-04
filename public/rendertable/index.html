@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "renderTable",
   "url": "/rendertable/",
-  "wordCount": "88",
+  "wordCount": "89",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -141,67 +141,67 @@ ga('send', 'pageview');
 
 <tbody>
 <tr>
-<td align="left"><code>expr</code></td>
+<td align="left"><strong><code>expr</code></strong></td>
 <td align="left">xtableで使用可能なRのオブジェクトを返す式</td>
 </tr>
 
 <tr>
-<td align="left"><code>striped</code>, <code>hover</code>, <code>bordered</code></td>
+<td align="left"><strong><code>striped</code></strong>, <strong><code>hover</code></strong>, <strong><code>bordered</code></strong></td>
 <td align="left">論理値で、<code>TRUE</code>なら出力する表に対応するBootstrapの表フォーマットを適用します。</td>
 </tr>
 
 <tr>
-<td align="left"><code>spacing</code></td>
+<td align="left"><strong><code>spacing</code></strong></td>
 <td align="left">表の行間のスペースを指定します。<code>xs</code>は「extra small」の略で、<code>s</code>は「small」、<code>m</code>は「medum」で、<code>l</code>は「large」です。</td>
 </tr>
 
 <tr>
-<td align="left"><code>width</code></td>
+<td align="left"><strong><code>width</code></strong></td>
 <td align="left">表の幅。CSSの単位(100やauto)、またはpxを単位にした長さを指定する文字列</td>
 </tr>
 
 <tr>
-<td align="left"><code>align</code></td>
+<td align="left"><strong><code>align</code></strong></td>
 <td align="left">列のアラインメントを文字列で指定します。<code>l</code>, <code>c</code>, <code>r</code>でそれぞれ列の左、中央右にアラインメントされます。文字列の長さは、表と同じになります(<code>rawnames = TRUE</code>なら、<code>ncol()+1</code>)。i番目の文字が、i番目の列に対応します。<code>?</code>を指定することも可能で、デフォルトのアラインメントを指定することになります。<code>NULL</code>なら、数値の列はすべて右に、その他はすべて左になります(<code>?</code>を指定した場合も同様です)。</td>
 </tr>
 
 <tr>
-<td align="left"><code>rownames</code>, <code>colnames</code></td>
+<td align="left"><strong><code>rownames</code></strong>, <strong><code>colnames</code></strong></td>
 <td align="left">論理値で行名や列名を含めるかどうかを指定します。</td>
 </tr>
 
 <tr>
-<td align="left"><code>digits</code></td>
+<td align="left"><strong><code>digits</code></strong></td>
 <td align="left">数値の列の桁数を整数で指定します(整数クラスの列には適用されません)。負の数を指定すると、数値の列が絶対値で<code>digits</code>で指定した少数の精度で表示されます。</td>
 </tr>
 
 <tr>
-<td align="left"><code>na</code></td>
+<td align="left"><strong><code>na</code></strong></td>
 <td align="left">欠損値となっている表のセルに用いる文字列を指定します。NAまたは、NaNとして評価されます。</td>
 </tr>
 
 <tr>
-<td align="left"><code>...</code></td>
+<td align="left"><strong><code>...</code></strong></td>
 <td align="left"><code>xtable</code>と<code>print.xtable</code>に渡される引数</td>
 </tr>
 
 <tr>
-<td align="left"><code>env</code></td>
+<td align="left"><strong><code>env</code></strong></td>
 <td align="left">中で<code>expr</code>を評価するための環境</td>
 </tr>
 
 <tr>
-<td align="left"><code>quoted</code></td>
+<td align="left"><strong><code>quoted</code></strong></td>
 <td align="left"><code>expr</code>に引用符が付いている(<code>quoted()</code>がある)かどうかを指定します。変数内の式を保存したいときに有用です。</td>
 </tr>
 
 <tr>
-<td align="left"><code>width</code></td>
+<td align="left"><strong><code>width</code></strong></td>
 <td align="left"><code>options('width')</code>の値</td>
 </tr>
 
 <tr>
-<td align="left"><code>outputArgs</code></td>
+<td align="left"><strong><code>outputArgs</code></strong></td>
 <td align="left"><code>renderTable</code>を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない<code>tableOutput</code>の呼び出しに渡される引数のリスト</td>
 </tr>
 </tbody>
@@ -216,6 +216,8 @@ ga('send', 'pageview');
 <p><code>div</code>に対応するHTMLの出力タグで、CSSのクラス名は<code>shiny-html-output</code>です。</p>
 
 <h3 id="参照">参照</h3>
+
+<p>RStudioのReference</p>
 
 <p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/renderTable.html">https://shiny.rstudio.com/reference/shiny/1.0.5/renderTable.html</a></p>
 

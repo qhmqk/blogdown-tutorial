@@ -140,27 +140,27 @@ ga('send', 'pageview');
 
 <tbody>
 <tr>
-<td align="left"><code>expr</code></td>
+<td align="left"><strong><code>expr</code></strong></td>
 <td align="left">リストを返す式</td>
 </tr>
 
 <tr>
-<td align="left"><code>env</code></td>
+<td align="left"><strong><code>env</code></strong></td>
 <td align="left">中で<code>expr</code>を評価するための環境</td>
 </tr>
 
 <tr>
-<td align="left"><code>quoted</code></td>
+<td align="left"><strong><code>quoted</code></strong></td>
 <td align="left"><code>expr</code>に引用符が付いている(<code>quoted()</code>がある)かどうかを指定します。変数内の式を保存したいときに有用です。</td>
 </tr>
 
 <tr>
-<td align="left"><code>deleteFile</code></td>
+<td align="left"><strong><code>deleteFile</code></strong></td>
 <td align="left">クライアントのブラウザに送られた<code>func()$src</code>中のファイルを削除するかどうかを指定します。一般的に、画像が$func$内で生成された一時ファイルの場合は<code>TRUE</code>、一時ファイルでないなら<code>FALSE</code>とします。</td>
 </tr>
 
 <tr>
-<td align="left"><code>outputArgs</code></td>
+<td align="left"><strong><code>outputArgs</code></strong></td>
 <td align="left"><code>renderImage</code>を、インタラクティブなR Markdownドキュメントで使用する時に、明示しない<code>imageOutput</code>の呼び出しに渡される引数のリストです。</td>
 </tr>
 </tbody>
@@ -180,7 +180,7 @@ ga('send', 'pageview');
 
 <h3 id="使用例">使用例</h3>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
 <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
 <span style="color:#66d9ef">options</span>(device.ask.default <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
 
@@ -193,52 +193,52 @@ ui <span style="color:#f92672">&lt;-</span> fluidPage(
 
 server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
 
-  <span style="color:#75715e"># A plot of fixed size</span>
+  <span style="color:#75715e"># A plot of fixed size</span>
   output<span style="color:#f92672">$</span>plot1 <span style="color:#f92672">&lt;-</span> renderImage({
-    <span style="color:#75715e"># A temp file to save the output. It will be deleted after renderImage</span>
-    <span style="color:#75715e"># sends it, because deleteFile=TRUE.</span>
+    <span style="color:#75715e"># A temp file to save the output. It will be deleted after renderImage</span>
+    <span style="color:#75715e"># sends it, because deleteFile=TRUE.</span>
     outfile <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">tempfile</span>(fileext<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.png&#39;</span>)
 
-    <span style="color:#75715e"># Generate a png</span>
+    <span style="color:#75715e"># Generate a png</span>
     png(outfile, width<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span>)
     hist(rnorm(input<span style="color:#f92672">$</span>n))
     dev.off()
 
-    <span style="color:#75715e"># Return a list</span>
+    <span style="color:#75715e"># Return a list</span>
     <span style="color:#66d9ef">list</span>(src <span style="color:#f92672">=</span> outfile,
          alt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This is alternate text&#34;</span>)
   }, deleteFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 
-  <span style="color:#75715e"># A dynamically-sized plot</span>
+  <span style="color:#75715e"># A dynamically-sized plot</span>
   output<span style="color:#f92672">$</span>plot2 <span style="color:#f92672">&lt;-</span> renderImage({
-    <span style="color:#75715e"># Read plot2&#39;s width and height. These are reactive values, so this</span>
-    <span style="color:#75715e"># expression will re-run whenever these values change.</span>
+    <span style="color:#75715e"># Read plot2&#39;s width and height. These are reactive values, so this</span>
+    <span style="color:#75715e"># expression will re-run whenever these values change.</span>
     width  <span style="color:#f92672">&lt;-</span> session<span style="color:#f92672">$</span>clientData<span style="color:#f92672">$</span>output_plot2_width
     height <span style="color:#f92672">&lt;-</span> session<span style="color:#f92672">$</span>clientData<span style="color:#f92672">$</span>output_plot2_height
 
-    <span style="color:#75715e"># A temp file to save the output.</span>
+    <span style="color:#75715e"># A temp file to save the output.</span>
     outfile <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">tempfile</span>(fileext<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.png&#39;</span>)
 
     png(outfile, width<span style="color:#f92672">=</span>width, height<span style="color:#f92672">=</span>height)
     hist(rnorm(input<span style="color:#f92672">$</span>n))
     dev.off()
 
-    <span style="color:#75715e"># Return a list containing the filename</span>
+    <span style="color:#75715e"># Return a list containing the filename</span>
     <span style="color:#66d9ef">list</span>(src <span style="color:#f92672">=</span> outfile,
          width <span style="color:#f92672">=</span> width,
          height <span style="color:#f92672">=</span> height,
          alt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This is alternate text&#34;</span>)
   }, deleteFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 
-  <span style="color:#75715e"># Send a pre-rendered image, and don&#39;t delete the image after sending it</span>
-  <span style="color:#75715e"># NOTE: For this example to work, it would require files in a subdirectory</span>
-  <span style="color:#75715e"># named images/</span>
+  <span style="color:#75715e"># Send a pre-rendered image, and don&#39;t delete the image after sending it</span>
+  <span style="color:#75715e"># NOTE: For this example to work, it would require files in a subdirectory</span>
+  <span style="color:#75715e"># named images/</span>
   output<span style="color:#f92672">$</span>plot3 <span style="color:#f92672">&lt;-</span> renderImage({
-    <span style="color:#75715e"># When input$n is 1, filename is ./images/image1.jpeg</span>
+    <span style="color:#75715e"># When input$n is 1, filename is ./images/image1.jpeg</span>
     filename <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">normalizePath</span>(<span style="color:#66d9ef">file.path</span>(<span style="color:#e6db74">&#39;./images&#39;</span>,
                               <span style="color:#66d9ef">paste</span>(<span style="color:#e6db74">&#39;image&#39;</span>, input<span style="color:#f92672">$</span>n, <span style="color:#e6db74">&#39;.jpeg&#39;</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)))
 
-    <span style="color:#75715e"># Return a list containing the filename</span>
+    <span style="color:#75715e"># Return a list containing the filename</span>
     <span style="color:#66d9ef">list</span>(src <span style="color:#f92672">=</span> filename)
   }, deleteFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
 }

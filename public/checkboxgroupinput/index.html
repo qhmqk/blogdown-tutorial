@@ -140,37 +140,37 @@ ga('send', 'pageview');
 
 <tbody>
 <tr>
-<td align="left"><code>inputId</code></td>
+<td align="left"><strong><code>inputId</code></strong></td>
 <td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
 </tr>
 
 <tr>
-<td align="left"><code>label</code></td>
+<td align="left"><strong><code>label</code></strong></td>
 <td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無し</td>
 </tr>
 
 <tr>
-<td align="left"><code>choices</code></td>
+<td align="left"><strong><code>choices</code></strong></td>
 <td align="left">チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、<code>choiceNames</code>と<code>choiceValues</code>は指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。</td>
 </tr>
 
 <tr>
-<td align="left"><code>selected</code></td>
+<td align="left"><strong><code>selected</code></strong></td>
 <td align="left">初期状態で選択されている値</td>
 </tr>
 
 <tr>
-<td align="left"><code>inline</code></td>
+<td align="left"><strong><code>inline</code></strong></td>
 <td align="left"><code>TRUE</code>なら、選択したものがインラインで表示されます。</td>
 </tr>
 
 <tr>
-<td align="left"><code>width</code></td>
+<td align="left"><strong><code>width</code></strong></td>
 <td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
 </tr>
 
 <tr>
-<td align="left"><code>choiceNames</code>, <code>choiceValues</code></td>
+<td align="left"><strong><code>choiceNames</code></strong>, <strong><code>choiceValues</code></strong></td>
 <td align="left">名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、<code>choiceNames</code>と<code>choiceValues</code>は同じ長さである必要があります。この引数を指定すると、<code>choices</code>は指定できません。単純なテキストになる<code>choices</code>ではなく、これら両引数を用いる利点は、<code>choiceNames</code>には任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照</td>
 </tr>
 </tbody>
@@ -185,12 +185,6 @@ ga('send', 'pageview');
 <p>それぞれ独立で選択できるトグルスイッチ形式のチェックボックスの組を生成します。選択された値の文字列ベクトルが、入力としてサーバに渡されます。</p>
 
 <h3 id="使用例">使用例</h3>
-
-<ul>
-<li><p><code>choices</code></p></li>
-
-<li><p><code>inline</code>を<code>TRUE</code></p></li>
-</ul>
 
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
 <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
@@ -225,6 +219,12 @@ server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">func
 }
 shinyApp(ui, server)
 }</code></pre></div></p>
+
+<ul>
+<li><p><code>choices</code></p></li>
+
+<li><p><code>inline</code>を<code>TRUE</code></p></li>
+</ul>
 
 <h3 id="参照">参照</h3>
 

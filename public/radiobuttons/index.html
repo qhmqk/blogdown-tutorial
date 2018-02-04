@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "radioButtons",
   "url": "/radiobuttons/",
-  "wordCount": "1",
+  "wordCount": "154",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -124,7 +124,126 @@ ga('send', 'pageview');
 
 </p>
   </header>
-  <p>作成中</p>
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">radioButtons(inputId, label, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために使用する<code>input</code>のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無し</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、<code>choiceNames</code>と<code>choiceValues</code>は指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期状態で選択されている値。指定がない場合は、最初の値となります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>なら、選択したものがインラインで(すなわち横に)表示されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">&lsquo;400px&rsquo;や&rsquo;100%&lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code></strong>, <strong><code>choiceValues</code></strong></td>
+<td align="left">名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、<code>choiceNames</code>と<code>choiceValues</code>は同じ長さである必要があります。この引数を指定すると、<code>choices</code>は指定できません。単純なテキストになる<code>choices</code>ではなく、これら両引数を用いる利点は、<code>choiceNames</code>には任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="値">値</h3>
+
+<p>UI定義に追加されるラジオボタンの集合</p>
+
+<h3 id="説明">説明</h3>
+
+<p>リストから1つの項目を選択するラジオボタンの集合を生成</p>
+
+<h3 id="詳細">詳細</h3>
+
+<p>「何も選択していない」状態を表示したい場合、オプションなしを選択した<code>selected = character(0)</code>を用いたデフォルトのラジオボタンにすることが可能です。しかし、これは推奨されません。ユーザが一度選択したその状態を返す方法がユーザにないからです。代わりに、最初の選択を<code>c(&quot;None selected&quot; = &quot;&quot;)</code>とすることが考えられます。</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  radioButtons(<span style="color:#e6db74">&#34;dist&#34;</span>, <span style="color:#e6db74">&#34;Distribution type:&#34;</span>,
+               <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Normal&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;norm&#34;</span>,
+                 <span style="color:#e6db74">&#34;Uniform&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;unif&#34;</span>,
+                 <span style="color:#e6db74">&#34;Log-normal&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lnorm&#34;</span>,
+                 <span style="color:#e6db74">&#34;Exponential&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;exp&#34;</span>)),
+  plotOutput(<span style="color:#e6db74">&#34;distPlot&#34;</span>)
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>distPlot <span style="color:#f92672">&lt;-</span> renderPlot({
+    dist <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">switch</span>(input<span style="color:#f92672">$</span>dist,
+                   norm <span style="color:#f92672">=</span> rnorm,
+                   unif <span style="color:#f92672">=</span> runif,
+                   lnorm <span style="color:#f92672">=</span> rlnorm,
+                   exp <span style="color:#f92672">=</span> rexp,
+                   rnorm)
+
+    hist(dist(<span style="color:#ae81ff">500</span>))
+  })
+}
+
+shinyApp(ui, server)
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  radioButtons(<span style="color:#e6db74">&#34;rb&#34;</span>, <span style="color:#e6db74">&#34;Choose one:&#34;</span>,
+               choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(
+                 icon(<span style="color:#e6db74">&#34;calendar&#34;</span>),
+                 HTML(<span style="color:#e6db74">&#34;&lt;p style=&#39;color:red;&#39;&gt;Red Text&lt;/p&gt;&#34;</span>),
+                 <span style="color:#e6db74">&#34;Normal text&#34;</span>
+               ),
+               choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(
+                 <span style="color:#e6db74">&#34;icon&#34;</span>, <span style="color:#e6db74">&#34;html&#34;</span>, <span style="color:#e6db74">&#34;text&#34;</span>
+               )),
+  textOutput(<span style="color:#e6db74">&#34;txt&#34;</span>)
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>txt <span style="color:#f92672">&lt;-</span> renderText({
+    <span style="color:#66d9ef">paste</span>(<span style="color:#e6db74">&#34;You chose&#34;</span>, input<span style="color:#f92672">$</span>rb)
+  })
+}
+
+shinyApp(ui, server)
+}</code></pre></div></p>
+
+<h3 id="参照">参照</h3>
+
+<p>RStudioのReference</p>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/radioButtons.html">https://shiny.rstudio.com/reference/shiny/1.0.5/radioButtons.html</a></p>
 
 
   
