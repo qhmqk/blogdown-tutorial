@@ -1,28 +1,44 @@
 @media (min-width: 48em) {
-    html {
-      font-size: 16px;
-    }
+  html {
+    font-size: 16px;
   }
+}
 
 h1, .h1,
 h2, .h2,{
-  font-weight: normal;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  color: #333;
+font-weight: normal;
+margin-top: 1em;
+margin-bottom: 1em;
+color: #333;
 }
 
 h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-weight: normal;
-  border-bottom: solid 3px #cdddeb;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  color: #333;
+font-weight: normal;
+border-bottom: solid 3px #cdddeb;
+margin-top: 1em;
+margin-bottom: 1em;
+color: #333;
 }
 
 td {
-    vertical-align: top;
+  vertical-align: top;
+}
+
+#TableOfContents {
+border-left: solid 10px #428bca;
+}
+
+ul li{ 
+list-style-type: none; 
+}
+
+ul li ul li{ 
+list-style-type: none; 
+}
+
+ul li ul li ul li{ 
+list-style-type: disc;
 }

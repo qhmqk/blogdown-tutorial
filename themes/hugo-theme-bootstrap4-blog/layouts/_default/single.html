@@ -62,6 +62,11 @@
     <p class="blog-post-meta"> Last updated: <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time></p>
     <p> By: {{ .Params.author | default .Site.Params.author }}{{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</p>
   </header>
+
+  {{ if .Params.toc }}
+  {{ .TableOfContents }}
+  {{ end }}
+
   {{ .Content }}
 
   {{ if .IsTranslated }}

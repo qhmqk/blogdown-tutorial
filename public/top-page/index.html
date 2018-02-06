@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "Shiny app 開発をスタート",
   "url": "/top-page/",
-  "wordCount": "559",
+  "wordCount": "709",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -124,6 +124,60 @@ ga('send', 'pageview');
 
 </p>
   </header>
+
+  
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#shiny-って何-読み飛ばしてオーケー">Shiny って何？(読み飛ばしてオーケー)</a></li>
+<li><a href="#shiny-を始める前のインストール作業">Shiny を始める前のインストール作業</a>
+<ul>
+<li><a href="#r-をインストール">R をインストール</a></li>
+<li><a href="#rstudio-をインストール">RStudio をインストール</a></li>
+<li><a href="#shiny-パッケージをインストール">Shiny パッケージをインストール</a></li>
+</ul></li>
+<li><a href="#shiny-の基本構造とビルド">Shiny の基本構造とビルド</a></li>
+<li><a href="#入力ウィジェットを配置">入力ウィジェットを配置</a>
+<ul>
+<li><a href="#actionbutton">actionButton</a></li>
+<li><a href="#actionlink">actionLink</a></li>
+<li><a href="#checkboxinput">checkboxInput</a></li>
+<li><a href="#checkboxgroupinput">checkboxGroupInput</a></li>
+<li><a href="#dateinput">dateInput</a></li>
+<li><a href="#daterangeinput">dateRangeInput</a></li>
+<li><a href="#fileinput">fileInput</a></li>
+<li><a href="#numericinput">numericInput</a></li>
+<li><a href="#passwordinput">passwordInput</a></li>
+<li><a href="#radiobuttons">radioButtons</a></li>
+<li><a href="#selectinput">selectInput</a></li>
+<li><a href="#sliderinput">sliderInput</a></li>
+<li><a href="#submitbutton">submitButton</a></li>
+<li><a href="#textinput">textInput</a></li>
+</ul></li>
+<li><a href="#サーバでレンダリングして-出力ウィジェットで表示">サーバでレンダリングして、出力ウィジェットで表示</a></li>
+<li><a href="#リアクティビティ-reactivity-を定義">リアクティビティ(Reactivity) を定義</a>
+<ul>
+<li><a href="#もっとも単純な実装">もっとも単純な実装</a></li>
+<li><a href="#単純な実装を拡張して-複数入力-複数出力-reactive-関数による計算過程のカプセル化">単純な実装を拡張して、複数入力、複数出力、reactive 関数による計算過程のカプセル化</a></li>
+</ul></li>
+<li><a href="#レイアウト">レイアウト</a>
+<ul>
+<li><a href="#パネルによる要素の結合">パネルによる要素の結合</a></li>
+<li><a href="#ページの設計">ページの設計</a></li>
+<li><a href="#タブメニューとナビゲーションバー">タブメニューとナビゲーションバー</a></li>
+</ul></li>
+<li><a href="#shiny-アプリケーションの共有-またはサービスとしての立ち上げ">Shiny アプリケーションの共有、またはサービスとしての立ち上げ</a></li>
+<li><a href="#まとめ">まとめ</a></li>
+<li><a href="#最後に">最後に</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  
+
   
 
 <h3 id="shiny-って何-読み飛ばしてオーケー">Shiny って何？(読み飛ばしてオーケー)</h3>
@@ -538,13 +592,143 @@ output<span style="color:#f92672">$</span>factorial_n_inv <span style="color:#f9
 
 <h4 id="パネルによる要素の結合">パネルによる要素の結合</h4>
 
-<p>入力や出力UIを一つの要素にまとめる場合に、パネルを使用します。</p>
+<p>入力や出力UIを一つの要素にまとめる場合に、パネル関数を使用します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">wellPanel(
+    actionButton(<span style="color:#e6db74">&#34;actionButton&#34;</span>, <span style="color:#e6db74">&#34;Action!&#34;</span>),
+    checkboxInput(<span style="color:#e6db74">&#34;checkboxInput&#34;</span>, <span style="color:#e6db74">&#34;Check&#34;</span>)
+)</code></pre></div>
 
 <h4 id="ページの設計">ページの設計</h4>
 
+<p>パネルを含む各要素を、レイアウト関数を用いてページ内に配置します。</p>
+
+<ul>
+<li>fluidRow()</li>
+</ul>
+
+<p>幅が可変の行を設定します。行中の列要素が<code>column</code>です。Bootstrapによるデザインでは、一行の幅を12として、各列の<code>width</code>, <code>offset</code>を指定します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    fluidRow(column(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>), cokumin(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, offset <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)),
+    fluidRow(column(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>))
+)</code></pre></div>
+
+<ul>
+<li>flowLayout()</li>
+</ul>
+
+<p>要素を順に横に並べます。表示する幅に応じて、改行されて配置されます。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    flowLayout(
+        <span style="color:#75715e"># object 1,</span>
+        <span style="color:#75715e"># object 2,</span>
+        <span style="color:#75715e"># object 3</span>
+    )
+)</code></pre></div>
+
+<ul>
+<li>sidebarLayout()</li>
+</ul>
+
+<p>1つのページをサイドパネル(<code>sidebarPanel</code>)とメインパネル(<code>mainPanel</code>)に分割するレイアウトです。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    sidebarLayout(
+        sidebarPanel(),
+        mainPanel()
+    )
+)</code></pre></div>
+
+<ul>
+<li>splitLayout()</li>
+</ul>
+
+<p>一つのページを縦に分割するレイアウトです。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    splitLayout(
+        <span style="color:#75715e"># object 1,</span>
+        <span style="color:#75715e"># object 2</span>
+    )
+)</code></pre></div>
+
+<ul>
+<li>verticalLayout()</li>
+</ul>
+
+<p>要素を縦に配置していくレイアウトです。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    verticalLayout(
+        <span style="color:#75715e"># object 1,</span>
+        <span style="color:#75715e"># object 2,</span>
+        <span style="color:#75715e"># object 3</span>
+    )
+)</code></pre></div>
+
 <h4 id="タブメニューとナビゲーションバー">タブメニューとナビゲーションバー</h4>
 
+<ul>
+<li>タブ</li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    tabsetPanel(
+        tabPanel(<span style="color:#e6db74">&#34;tab 1&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>),
+        tabPanel(<span style="color:#e6db74">&#34;tab 2&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>),
+        tabPanel(<span style="color:#e6db74">&#34;tab 3&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>)
+    )
+)</code></pre></div>
+
+<ul>
+<li>ナビゲーションリスト</li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    nablistPanel(
+        tabPanel(<span style="color:#e6db74">&#34;tab 1&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>),
+        tabPanel(<span style="color:#e6db74">&#34;tab 2&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>),
+        tabPanel(<span style="color:#e6db74">&#34;tab 3&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>)
+    )
+)</code></pre></div>
+
+<ul>
+<li>ナビゲーションページ</li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+    navbarPage(
+        tabPanel(<span style="color:#e6db74">&#34;tab 1&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>),
+        tabPanel(<span style="color:#e6db74">&#34;tab 2&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>),
+        tabPanel(<span style="color:#e6db74">&#34;tab 3&#34;</span>, <span style="color:#e6db74">&#34;contents&#34;</span>)
+    )
+)</code></pre></div>
+
+<p>タブやナビゲーションバーを用いてダッシュボードを設計する場合は、<code>tabsetPanel</code>や<code>navbarPage</code>よりも、<code>shinydashboard</code>パッケージを用いるのが便利です。</p>
+
+<h3 id="shiny-アプリケーションの共有-またはサービスとしての立ち上げ">Shiny アプリケーションの共有、またはサービスとしての立ち上げ</h3>
+
+<p>RStudioから最も簡単に Shiny アプリケーションを共有する場合、shinyapps.ioがおすすめです。shinyapps.ioを利用する手順は、</p>
+
+<ol>
+<li><p><a href="http://shinyapps.ioでアカウントを作成">http://shinyapps.ioでアカウントを作成</a></p></li>
+
+<li><p>RStudioから<code>rsconnect::deployApp(&quot;path&quot;)</code>を実行(pathにはShinyアプリケーションのディレクトリが入ります)</p></li>
+</ol>
+
+<p>shinyapps.ioを使わない場合は、AWSなどのサービスを利用して、Shiny Serverを設置することで公開することとなります。</p>
+
 <h3 id="まとめ">まとめ</h3>
+
+<p>Shiny を始めるために最低限必要となる手順について説明しました。インストール作業を終えると、RStudioだけでShinyの開発に十分な機能が揃っています。</p>
+
+<p>UIに配置する入力と出力ウィジェットを決めて、サーバに計算処理を記述します。入出力の関係は、リアクティブプログラミングと呼ばれる形式でリアクティビティを定義します。</p>
+
+<p>配置した入出力ウィジェットは、レイアウト関数により任意の配置が可能です。Shiny はBootstrapで設計されているので、<code>fluidPage</code>のような可変レイアウト用の関数を用いるとブラウザの表示幅ごとにレスポンシブなデザインで表示されます。</p>
+
+<p>Shiny アプリケーションを公開するための第一選択肢が、shinyapps.ioです。2018年2月時点で5個までであれば、無料で公開することができます。AWSなどのクラウドサービスを利用する場合、Shiny Serverを設置することとなります。</p>
 
 <h3 id="最後に">最後に</h3>
 

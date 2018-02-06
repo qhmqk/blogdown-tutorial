@@ -7,6 +7,7 @@ tags: ["Shiny"]
 weight: 1
 slug: "top-page"
 description: "最短経路で Shiny の概要を理解してデプロイ"
+toc: true
 ---
 
 ### Shiny って何？(読み飛ばしてオーケー)
@@ -334,20 +335,143 @@ Shiny のレイアウトは、3段階に分けて考えます。
 
 #### パネルによる要素の結合
 
-入力や出力UIを一つの要素にまとめる場合に、パネルを使用します。
+入力や出力UIを一つの要素にまとめる場合に、パネル関数を使用します。
 
-
+{{< highlight r >}}
+wellPanel(
+    actionButton("actionButton", "Action!"),
+    checkboxInput("checkboxInput", "Check")
+)
+{{< /highlight >}}
 
 #### ページの設計
 
+パネルを含む各要素を、レイアウト関数を用いてページ内に配置します。
+
+* fluidRow()
+
+幅が可変の行を設定します。行中の列要素が`column`です。Bootstrapによるデザインでは、一行の幅を12として、各列の`width`, `offset`を指定します。
+
+{{< highlight r >}}
+ui <- fluidPage(
+    fluidRow(column(width = 4), cokumin(width = 2, offset = 3)),
+    fluidRow(column(width = 12))
+)
+{{< /highlight >}}
+
+* flowLayout()
+
+要素を順に横に並べます。表示する幅に応じて、改行されて配置されます。
+
+{{< highlight r >}}
+ui <- fluidPage(
+    flowLayout(
+        # object 1,
+        # object 2,
+        # object 3
+    )
+)
+{{< /highlight >}}
+
+* sidebarLayout()
+
+1つのページをサイドパネル(`sidebarPanel`)とメインパネル(`mainPanel`)に分割するレイアウトです。
+
+{{< highlight r >}}
+ui <- fluidPage(
+    sidebarLayout(
+        sidebarPanel(),
+        mainPanel()
+    )
+)
+{{< /highlight >}}
+
+* splitLayout()
+
+一つのページを縦に分割するレイアウトです。
+
+{{< highlight r >}}
+ui <- fluidPage(
+    splitLayout(
+        # object 1,
+        # object 2
+    )
+)
+{{< /highlight >}}
+
+* verticalLayout()
+
+要素を縦に配置していくレイアウトです。
+
+{{< highlight r >}}
+ui <- fluidPage(
+    verticalLayout(
+        # object 1,
+        # object 2,
+        # object 3
+    )
+)
+{{< /highlight >}}
 
 #### タブメニューとナビゲーションバー
 
+* タブ
 
+{{< highlight r >}}
+ui <- fluidPage(
+    tabsetPanel(
+        tabPanel("tab 1", "contents"),
+        tabPanel("tab 2", "contents"),
+        tabPanel("tab 3", "contents")
+    )
+)
+{{< /highlight >}}
+
+* ナビゲーションリスト
+
+{{< highlight r >}}
+ui <- fluidPage(
+    nablistPanel(
+        tabPanel("tab 1", "contents"),
+        tabPanel("tab 2", "contents"),
+        tabPanel("tab 3", "contents")
+    )
+)
+{{< /highlight >}}
+
+* ナビゲーションページ
+
+{{< highlight r >}}
+ui <- fluidPage(
+    navbarPage(
+        tabPanel("tab 1", "contents"),
+        tabPanel("tab 2", "contents"),
+        tabPanel("tab 3", "contents")
+    )
+)
+{{< /highlight >}}
+
+タブやナビゲーションバーを用いてダッシュボードを設計する場合は、`tabsetPanel`や`navbarPage`よりも、`shinydashboard`パッケージを用いるのが便利です。
+
+### Shiny アプリケーションの共有、またはサービスとしての立ち上げ
+
+RStudioから最も簡単に Shiny アプリケーションを共有する場合、shinyapps.ioがおすすめです。shinyapps.ioを利用する手順は、
+
+1. http://shinyapps.ioでアカウントを作成
+
+2. RStudioから`rsconnect::deployApp("path")`を実行(pathにはShinyアプリケーションのディレクトリが入ります)
+
+shinyapps.ioを使わない場合は、AWSなどのサービスを利用して、Shiny Serverを設置することで公開することとなります。
 
 ### まとめ
 
+Shiny を始めるために最低限必要となる手順について説明しました。インストール作業を終えると、RStudioだけでShinyの開発に十分な機能が揃っています。
 
+UIに配置する入力と出力ウィジェットを決めて、サーバに計算処理を記述します。入出力の関係は、リアクティブプログラミングと呼ばれる形式でリアクティビティを定義します。
+
+配置した入出力ウィジェットは、レイアウト関数により任意の配置が可能です。Shiny はBootstrapで設計されているので、`fluidPage`のような可変レイアウト用の関数を用いるとブラウザの表示幅ごとにレスポンシブなデザインで表示されます。
+
+Shiny アプリケーションを公開するための第一選択肢が、shinyapps.ioです。2018年2月時点で5個までであれば、無料で公開することができます。AWSなどのクラウドサービスを利用する場合、Shiny Serverを設置することとなります。
 
 ### 最後に
 
