@@ -18,6 +18,7 @@ h5, .h5,
 h6, .h6 {
 font-weight: normal;
 border-bottom: solid 3px #cdddeb;
+padding-bottom: 3px;
 margin-top: 1em;
 margin-bottom: 1em;
 color: #333;

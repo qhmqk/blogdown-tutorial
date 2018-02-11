@@ -7,19 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>© 2018 qhmqk</copyright>
-    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ui-inputs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>numericInput</title>
+      <link>/numericinput/</link>
+      <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/numericinput/</guid>
+      <description>numericInput(inputId, label, value, min = NA, max = NA, step = NA, width = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値   min 入力可能な最小値   max 入力可能な最大値   step 最小値と最大値の間のステップ幅   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    値 UI定義に追加する数値入力コントロール
+説明 数値を入力するためのコントロールを生成
+使用例 もっとも基本的な使い方 1から100までの数値を入力し、その数値をverbatimTextOutputで表示します。
+library(shiny) ui &amp;lt;- fluidPage( numericInput(&amp;#34;obs&amp;#34;, &amp;#34;Observations:&amp;#34;, 10, min = 1, max = 100), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$obs }) } shinyApp(ui, server) 埋め込みCSSを使ったサイズ変更 UIのfluidPageに、tagsでCSSを埋め込んでサイズを変更します。</description>
+    </item>
+    
+    <item>
       <title>actionButton</title>
       <link>/actionbutton/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/actionbutton/</guid>
       <description>actionButton(inputId, label, icon = NULL, width = NULL, ...) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。   icon (オプションで)ボタン上に現れるアイコン   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   ... ボタンに適用する名前付きの属性    説明 初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。
-使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( sliderInput(&amp;#34;obs&amp;#34;, &amp;#34;Number of observations&amp;#34;, 0, 1000, 500), actionButton(&amp;#34;goButton&amp;#34;, &amp;#34;Go!&amp;#34;), plotOutput(&amp;#34;distPlot&amp;#34;) ) server &amp;lt;- function(input, output) { output$distPlot &amp;lt;- renderPlot({ # Take a dependency on input$goButton.</description>
+使用例 ボタンにアイコンや画像を設定 iconを指定することで、ボタンのアイコンを設定できます。画像を設定する場合は、tags$imgで画像のURLを指定します。actionButtonと、tags$buttonでclass=btn action-buttonとした場合のHTMLは同じになることを利用します。
+このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。
+library(shiny) ui &amp;lt;- fluidPage( fluidRow( actionButton(&amp;#34;button1&amp;#34;, &amp;#34;&amp;#34;, icon = icon(&amp;#34;th&amp;#34;)), tags$button( id = &amp;#34;button2&amp;#34;, class=&amp;#34;btn action-button&amp;#34;, icon(&amp;#34;close&amp;#34;) ), tags$button( id = &amp;#34;button3&amp;#34;, class = &amp;#34;btn action-button&amp;#34;, tags$img(src = &amp;#34;https://www.</description>
     </item>
     
     <item>
@@ -73,17 +87,6 @@
     </item>
     
     <item>
-      <title>numericInput</title>
-      <link>/numericinput/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/numericinput/</guid>
-      <description>numericInput(inputId, label, value, min = NA, max = NA, step = NA, width = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値   min 入力可能な最小値   max 入力可能な最大値   step 最小値と最大値の間のステップ幅   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    値 UI定義に追加する数値入力コントロール
-説明 数値を入力するためのコントロールを生成
-使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( numericInput(&amp;#34;obs&amp;#34;, &amp;#34;Observations:&amp;#34;, 10, min = 1, max = 100), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$obs }) } shinyApp(ui, server) }</description>
-    </item>
-    
-    <item>
       <title>passwordInput</title>
       <link>/passwordinput/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
@@ -111,7 +114,7 @@
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/selectinput/</guid>
-      <description>selectInput(inputId, label, choices, selected = NULL, multiple = FALSE, selectize = TRUE, width = NULL, size = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   choices チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。   selected 初期状態で選択されている値   inline TRUEなら、選択したものがインラインで表示されます。   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   choiceNames, choiceValues 名前と値のリスト。それぞれアプリケーション内で表示され、それぞれの選択したものに対応します。このため、choiceNamesとchoiceValuesは同じ長さである必要があります。この引数を指定すると、choicesは指定できません。単純なテキストになるchoicesではなく、これら両引数を用いる利点は、choiceNamesには任意の型のUIオブジェクト(タグ、アイコン、HTMLなど)を指定できる点です。例を参照    inputId The input slot that will be used to access the value.</description>
+      <description>selectInput(inputId, label, choices, selected = NULL, multiple = FALSE, selectize = TRUE, width = NULL, size = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   choices チェックボックスに表示する値のリスト。リストの要素が名前付けられている場合、値ではなく名前がユーザに表示されます。この引数を指定すると、choiceNamesとchoiceValuesは指定できません。値は文字列で、論理値や数値などの他の型は強制的に文字列になります。   selected 初期状態で選択されている値   multiple 複数の選択を許すかどうかを論理値で指定   selectize selectize.jsを使うかどうかを指定   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   size 選択ボックスの中に表示する項目数を指定。大きくすると縦に長いボックスとなります。selectize = TRUEとは共存できません。通常、multiple = FALSEのときに、ドロップダウンリストとなりますが、sizeを設定すると、一つのボックスになります。   options オプションのリスト。どのようなオプションを指定可能かは、selectize.jsのドキュメントを参照してください。(I()内の文字オプションの値はリテラルのJavaScriptコードとして扱われます。詳細はrenderDataTable()を参照してください)    値 UI定義に追加されるHTML要素のリスト。</description>
     </item>
     
     <item>

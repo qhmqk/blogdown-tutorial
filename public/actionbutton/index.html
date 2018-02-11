@@ -12,9 +12,9 @@
 
 
 
-<meta property="article:published_time" content="2018-01-10T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-02-08T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-01-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-02-08T00:00:00&#43;00:00"/>
 
 
 
@@ -39,9 +39,9 @@
   "@type": "BlogPosting",
   "headline": "actionButton",
   "url": "/actionbutton/",
-  "wordCount": "103",
-  "datePublished": "2018-01-10T00:00:00&#43;00:00",
-  "dateModified": "2018-01-10T00:00:00&#43;00:00",
+  "wordCount": "275",
+  "datePublished": "2018-02-08T00:00:00&#43;00:00",
+  "dateModified": "2018-02-08T00:00:00&#43;00:00",
   "author": {
     "@type": "Person",
     "name": "qhmqk"
@@ -115,7 +115,7 @@ ga('send', 'pageview');
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title"><a href="/actionbutton/">actionButton</a></h2>
-    <p class="blog-post-meta"> Last updated: <time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time></p>
+    <p class="blog-post-meta"> Last updated: <time datetime="2018-02-08T00:00:00Z">Thu Feb 08, 2018</time></p>
     <p> By: qhmqk in 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
@@ -175,46 +175,177 @@ ga('send', 'pageview');
 
 <h3 id="使用例">使用例</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
-<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+<h4 id="ボタンにアイコンや画像を設定">ボタンにアイコンや画像を設定</h4>
+
+<p><code>icon</code>を指定することで、ボタンのアイコンを設定できます。画像を設定する場合は、<code>tags$img</code>で画像のURLを指定します。<code>actionButton</code>と、<code>tags$button</code>で<code>class=btn action-button</code>とした場合のHTMLは同じになることを利用します。</p>
+
+<p><strong>このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
 
 ui <span style="color:#f92672">&lt;-</span> fluidPage(
-  sliderInput(<span style="color:#e6db74">&#34;obs&#34;</span>, <span style="color:#e6db74">&#34;Number of observations&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">500</span>),
+  fluidRow(
+    actionButton(<span style="color:#e6db74">&#34;button1&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;th&#34;</span>)),
+    tags<span style="color:#f92672">$</span>button(
+      id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;button2&#34;</span>,
+      class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn action-button&#34;</span>,
+      icon(<span style="color:#e6db74">&#34;close&#34;</span>)
+    ),
+    tags<span style="color:#f92672">$</span>button(
+      id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;button3&#34;</span>,
+      class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;btn action-button&#34;</span>,
+      tags<span style="color:#f92672">$</span>img(src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.rstudio.com/wp-content/uploads/2014/04/shiny-400x464.png&#34;</span>,
+               height <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;50px&#34;</span>)
+    )
+  ),
+  fluidRow(
+    textOutput(<span style="color:#e6db74">&#34;text&#34;</span>)
+  )
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  out <span style="color:#f92672">&lt;-</span> reactiveVal(<span style="color:#e6db74">&#34;Nothing&#34;</span>)
+  observeEvent(input<span style="color:#f92672">$</span>button1,{
+    out(<span style="color:#e6db74">&#34;left&#34;</span>)
+  })
+  observeEvent(input<span style="color:#f92672">$</span>button2,{
+    out(<span style="color:#e6db74">&#34;center&#34;</span>)
+  })
+  observeEvent(input<span style="color:#f92672">$</span>button3,{
+    out(<span style="color:#e6db74">&#34;right&#34;</span>)
+  })
+  output<span style="color:#f92672">$</span>text <span style="color:#f92672">&lt;-</span> renderText({out()})
+}
+
+shinyApp(ui, server)</code></pre></div>
+
+<h4 id="アクションボタンの値を使った表示の切り替え">アクションボタンの値を使った表示の切り替え</h4>
+
+<p>アクションボタンが押されるたびに変化する<code>input$goButton</code>の値を用いて、確率密度関数<code>dnorm</code>の表示を切り替えます。<code>%%2</code>はmod演算子を使って2で割った余りの計算を意味しており、押されるたびに0または1の値との判定をif文で行っています。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
   actionButton(<span style="color:#e6db74">&#34;goButton&#34;</span>, <span style="color:#e6db74">&#34;Go!&#34;</span>),
   plotOutput(<span style="color:#e6db74">&#34;distPlot&#34;</span>)
 )
 
 server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
   output<span style="color:#f92672">$</span>distPlot <span style="color:#f92672">&lt;-</span> renderPlot({
-    <span style="color:#75715e"># Take a dependency on input$goButton. This will run once initially,</span>
-    <span style="color:#75715e"># because the value changes from NULL to 0.</span>
-    input<span style="color:#f92672">$</span>goButton
-
-    <span style="color:#75715e"># Use isolate() to avoid dependency on input$obs</span>
-    dist <span style="color:#f92672">&lt;-</span> isolate(rnorm(input<span style="color:#f92672">$</span>obs))
-    hist(dist)
+    hist(rnorm(<span style="color:#ae81ff">1000</span>), freq <span style="color:#f92672">=</span> F, xlim <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#ae81ff">-5</span>, <span style="color:#ae81ff">5</span>))
+    <span style="color:#66d9ef">if</span> (input<span style="color:#f92672">$</span>goButton<span style="color:#f92672">%%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+      curve(dnorm, <span style="color:#ae81ff">-5</span>, <span style="color:#ae81ff">5</span>, add <span style="color:#f92672">=</span> T)
+    }
   })
 }
 
-shinyApp(ui, server)
+shinyApp(ui, server)</code></pre></div>
 
-}</code></pre></div>
+<h4 id="埋め込みcssを使ったボタンの色の変更">埋め込みCSSを使ったボタンの色の変更</h4>
 
-<ul>
-<li><p>labelに画像を指定</p></li>
+<p><code>tags$head</code>を使って、直接<code>#button1</code>の背景色をCSSで指定することで、ボタンの色を変更できます。</p>
 
-<li><p>iconを使用</p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
 
-<li><p>inputIdに応じてlabelを変更</p></li>
-</ul>
+ui <span style="color:#f92672">&lt;-</span> shinyUI(fluidPage(
+  tags<span style="color:#f92672">$</span><span style="color:#66d9ef">head</span>(
+    tags<span style="color:#f92672">$</span>style(HTML(<span style="color:#e6db74">&#39;#button1{background-color:red}&#39;</span>))
+  ),
+  actionButton(<span style="color:#e6db74">&#34;button1&#34;</span>,<span style="color:#e6db74">&#34;red&#34;</span>),
+  tags<span style="color:#f92672">$</span><span style="color:#66d9ef">head</span>(
+    tags<span style="color:#f92672">$</span>style(HTML(<span style="color:#e6db74">&#39;#button2{background-color:green}&#39;</span>))
+  ),
+  actionButton(<span style="color:#e6db74">&#34;button2&#34;</span>,<span style="color:#e6db74">&#34;green&#34;</span>),
+  tags<span style="color:#f92672">$</span><span style="color:#66d9ef">head</span>(
+    tags<span style="color:#f92672">$</span>style(HTML(<span style="color:#e6db74">&#39;#button3{background-color:blue}&#39;</span>))
+  ),
+  actionButton(<span style="color:#e6db74">&#34;button3&#34;</span>,<span style="color:#e6db74">&#34;blue&#34;</span>)
+))
+server <span style="color:#f92672">&lt;-</span> shinyServer(<span style="color:#66d9ef">function</span>(input, output) {
+  
+})
+shinyApp(ui, server)</code></pre></div>
+
+<h4 id="shinyjsによるボタンのオンオフ切り替え">shinyjsによるボタンのオンオフ切り替え</h4>
+
+<p>shinyjsパッケージを使って、UIに<code>useShinyjs()</code>を追加すると、<code>enable</code>や<code>disable</code>、<code>toggleState</code>によりボタンのオンオフを切り替えられるようになります。Entry queryが空の場合は、ボタンをオフに、何らかの文字が入力されている場合はボタンがオンになります。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
+<span style="color:#f92672">library</span>(shinyjs)
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      useShinyjs(),
+      textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;query&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Enter query:&#34;</span>, value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>),
+      actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;search&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Search&#34;</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;search&#34;</span>))
+    ),
+    mainPanel()
+  )
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  observe({
+    <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">is.null</span>(input<span style="color:#f92672">$</span>query) <span style="color:#f92672">||</span> input<span style="color:#f92672">$</span>query <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>){
+      disable(<span style="color:#e6db74">&#34;search&#34;</span>)
+    }
+    <span style="color:#66d9ef">else</span>{
+      enable(<span style="color:#e6db74">&#34;search&#34;</span>)
+    }
+  })
+}
+
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<p><code>toggleState</code>を用いる場合、サーバの記述を<code>observe</code>または<code>observeEvent</code>を使って、引数に条件を加えます。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">observe({
+  toggleState(<span style="color:#e6db74">&#34;search&#34;</span>, input<span style="color:#f92672">$</span>query <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">is.null</span>(input<span style="color:#f92672">$</span>query))
+})</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">observeEvent(input<span style="color:#f92672">$</span>query,{
+  toggleState(<span style="color:#e6db74">&#34;search&#34;</span>, input<span style="color:#f92672">$</span>query <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">is.null</span>(input<span style="color:#f92672">$</span>query))
+})</code></pre></div>
+
+<h4 id="onclick-を指定してボタンにリンクを追加"><code>onclick</code>を指定してボタンにリンクを追加</h4>
+
+<p>引数に<code>onclick = &quot;window.open('http://google.com', '_blank')&quot;</code>を指定しています。<code>onclick</code>はJavaScriptに依存しているので、環境によっては動作しないことに注意が必要です。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  actionButton(inputId<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;button1&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;open a link&#34;</span>, onclick <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;window.open(&#39;http://google.com&#39;, &#39;_blank&#39;)&#34;</span>)
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+
+}
+
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
 
 <h3 id="参照">参照</h3>
 
-<p>RStudioのReference</p>
+<ul>
+<li>RStudioのReference</li>
+</ul>
 
 <p><a href="http://shiny.rstudio.com/articles/action-buttons.html">http://shiny.rstudio.com/articles/action-buttons.html</a></p>
 
 <p><a href="https://shiny.rstudio.com/reference/shiny/latest/actionButton.html">https://shiny.rstudio.com/reference/shiny/latest/actionButton.html</a></p>
+
+<ul>
+<li>stackoverflow</li>
+</ul>
+
+<p><a href="https://stackoverflow.com/questions/44841346/adding-an-image-to-shiny-action-button?rq=1">https://stackoverflow.com/questions/44841346/adding-an-image-to-shiny-action-button?rq=1</a></p>
+
+<p><a href="https://stackoverflow.com/questions/36511847/r-shiny-action-button-to-affect-reactive-control">https://stackoverflow.com/questions/36511847/r-shiny-action-button-to-affect-reactive-control</a></p>
+
+<p><a href="https://stackoverflow.com/questions/33620133/change-the-color-of-action-button-in-shiny/35871042">https://stackoverflow.com/questions/33620133/change-the-color-of-action-button-in-shiny/35871042</a></p>
+
+<p><a href="https://stackoverflow.com/questions/46891095/disable-action-button-when-textinput-is-empty-in-shiny-app-r?rq=1">https://stackoverflow.com/questions/46891095/disable-action-button-when-textinput-is-empty-in-shiny-app-r?rq=1</a></p>
+
+<p><a href="https://stackoverflow.com/questions/37795760/r-shiny-add-weblink-to-actionbutton/37796079">https://stackoverflow.com/questions/37795760/r-shiny-add-weblink-to-actionbutton/37796079</a></p>
 
 
   
@@ -266,9 +397,9 @@ shinyApp(ui, server)
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/htmloutput/">htmlOutput</a></li>
+<li><a href="/numericinput/">numericInput</a></li>
 
-<li><a href="/imageoutput/">imageOutput</a></li>
+<li><a href="/actionbutton/">actionButton</a></li>
 
     </ol>
   </section>

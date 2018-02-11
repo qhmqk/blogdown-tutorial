@@ -12,9 +12,9 @@
 
 
 
-<meta property="article:published_time" content="2018-01-10T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-02-09T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-01-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-02-09T00:00:00&#43;00:00"/>
 
 
 
@@ -39,9 +39,9 @@
   "@type": "BlogPosting",
   "headline": "numericInput",
   "url": "/numericinput/",
-  "wordCount": "79",
-  "datePublished": "2018-01-10T00:00:00&#43;00:00",
-  "dateModified": "2018-01-10T00:00:00&#43;00:00",
+  "wordCount": "157",
+  "datePublished": "2018-02-09T00:00:00&#43;00:00",
+  "dateModified": "2018-02-09T00:00:00&#43;00:00",
   "author": {
     "@type": "Person",
     "name": "qhmqk"
@@ -115,7 +115,7 @@ ga('send', 'pageview');
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title"><a href="/numericinput/">numericInput</a></h2>
-    <p class="blog-post-meta"> Last updated: <time datetime="2018-01-10T00:00:00Z">Wed Jan 10, 2018</time></p>
+    <p class="blog-post-meta"> Last updated: <time datetime="2018-02-09T00:00:00Z">Fri Feb 09, 2018</time></p>
     <p> By: qhmqk in 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
@@ -189,24 +189,82 @@ ga('send', 'pageview');
 
 <h3 id="使用例">使用例</h3>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
-<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+<h4 id="もっとも基本的な使い方">もっとも基本的な使い方</h4>
+
+<p>1から100までの数値を入力し、その数値を<a href="/verbatimtextoutput/"><code>verbatimTextOutput</code></a>で表示します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
 
 ui <span style="color:#f92672">&lt;-</span> fluidPage(
   numericInput(<span style="color:#e6db74">&#34;obs&#34;</span>, <span style="color:#e6db74">&#34;Observations:&#34;</span>, <span style="color:#ae81ff">10</span>, min <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>),
   verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
 )
+
 server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
   output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderText({ input<span style="color:#f92672">$</span>obs })
 }
-shinyApp(ui, server)
-}</code></pre></div></p>
+
+shinyApp(ui, server)</code></pre></div>
+
+<h4 id="埋め込みcssを使ったサイズ変更">埋め込みCSSを使ったサイズ変更</h4>
+
+<p>UIの<code>fluidPage</code>に、<code>tags</code>でCSSを埋め込んでサイズを変更します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">tags<span style="color:#f92672">$</span><span style="color:#66d9ef">head</span>(
+  tags<span style="color:#f92672">$</span>style(HTML(<span style="color:#e6db74">&#34;#obs{width: 100px;}&#34;</span>))
+),</code></pre></div>
+
+<h4 id="埋め込みcssによる複数の-numericinput-の一括サイズ変更">埋め込みCSSによる複数の<code>numericInput</code>の一括サイズ変更</h4>
+
+<p><code>#obs</code>ではなく、<code>input[type=\&quot;number\&quot;]</code>とすることで、すべての<code>numericInput</code>をまとめてCSSでサイズ変更する対象とします。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span><span style="color:#66d9ef">head</span>(
+    tags<span style="color:#f92672">$</span>style(HTML(<span style="color:#e6db74">&#34;input[type=\&#34;number\&#34;] {width: 100px;}&#34;</span>))
+  ),
+  numericInput(<span style="color:#e6db74">&#34;obs1&#34;</span>, <span style="color:#e6db74">&#34;Observations1:&#34;</span>, <span style="color:#ae81ff">10</span>, min <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>),
+  numericInput(<span style="color:#e6db74">&#34;obs2&#34;</span>, <span style="color:#e6db74">&#34;Observations2:&#34;</span>, <span style="color:#ae81ff">10</span>, min <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>),
+  h4(<span style="color:#e6db74">&#34;Obs1 + Obs2&#34;</span>),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderText({ input<span style="color:#f92672">$</span>obs1 <span style="color:#f92672">+</span> input<span style="color:#f92672">$</span>obs2 })
+}
+
+shinyApp(ui, server)</code></pre></div>
+
+<h4 id="スピンボタン-セレクタ-なしの数値入力">スピンボタン(セレクタ)なしの数値入力</h4>
+
+<p>スピンボタン(セレクタ)により、キーボードからの直接入力に加えて右側のボタンでも数値を変更できます。このボタンを取り除くオプションは<code>numericInput</code>にはありません。身も蓋もありませんが、<a href="/textinput/"><code>textInput</code></a>を代用することにより、スピンボタン(セレクタ)なしの数値入力を実現できます。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
+
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  textInput(<span style="color:#e6db74">&#34;obs&#34;</span>, <span style="color:#e6db74">&#34;Observations:&#34;</span>, <span style="color:#e6db74">&#34;10&#34;</span>),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
+)
+
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  num <span style="color:#f92672">&lt;-</span> reactive({<span style="color:#66d9ef">as.numeric</span>(input<span style="color:#f92672">$</span>obs)})
+  output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderText({ num() })
+}
+
+shinyApp(ui, server)</code></pre></div>
+
+<p><code>as.numeric</code>は、数値以外の文字列が入力されると<code>NA</code>を返します。最小や最大を指定する場合は、<code>num &lt;- reactive({as.numeric(input$obs)})</code>にif文の判定を追加します。</p>
 
 <h3 id="参照">参照</h3>
 
 <p>RStudioのReference</p>
 
 <p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/numericInput.html">https://shiny.rstudio.com/reference/shiny/1.0.5/numericInput.html</a></p>
+
+<p>Stackoverflow</p>
+
+<p><a href="https://stackoverflow.com/questions/29811301/r-shiny-resize-numericinput-box">https://stackoverflow.com/questions/29811301/r-shiny-resize-numericinput-box</a></p>
 
 
   
@@ -258,9 +316,9 @@ shinyApp(ui, server)
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/htmloutput/">htmlOutput</a></li>
+<li><a href="/numericinput/">numericInput</a></li>
 
-<li><a href="/imageoutput/">imageOutput</a></li>
+<li><a href="/actionbutton/">actionButton</a></li>
 
     </ol>
   </section>
