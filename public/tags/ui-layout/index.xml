@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ui Layout on Shiny クックブック</title>
+    <link>/tags/ui-layout/</link>
+    <description>Recent content in Ui Layout on Shiny クックブック</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <copyright>© 2018 qhmqk</copyright>
+    <lastBuildDate>Mon, 12 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ui-layout/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>flowLayout</title>
+      <link>/flowlayout/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/flowlayout/</guid>
+      <description>flowLayout(..., cellArgs = list()) 引数    名前 説明     ... 名前無しの引数はレイアウトの子の要素になります。名前ありの引数はもっとも外側のタグのHTML属性となります。   cellArgs レイアウトの各セルで用いられる追加の属性    説明 左から右へ、上から下へ要素を配置するレイアウトです。要素はそれぞれ行の上側になります。このレイアウトは、パーセンテージで指定した幅を持つ要素(例えば、plotOutputでデフォルトの設定でwidth = 100%となっている場合)ではうまく動作しません。
+使用例 Examples## Only run examples in interactive R sessions if (interactive()) {ui &amp;lt;- flowLayout(numericInput(&amp;#34;rows&amp;#34;, &amp;#34;How many rows?&amp;#34;, 5),selectInput(&amp;#34;letter&amp;#34;, &amp;#34;Which letter?&amp;#34;, LETTERS),sliderInput(&amp;#34;value&amp;#34;, &amp;#34;What value?&amp;#34;, 0, 100, 50))shinyApp(ui, server = function(input, output) { })}
+参照 RStudioのReference</description>
+    </item>
+    
+    <item>
+      <title>mainPanel</title>
+      <link>/mainpanel/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/mainpanel/</guid>
+      <description>mainPanel(..., width = 8) 引数    名前 説明     ... メインパネルに含まれるUI要素   width メインパネルの幅。可変レイアウトでは、合計で12となる広さの単位があります(例えば8を指定すると、残りの4がサイドバーの幅となり、1:2の比率で表示されます)。固定レイアウトでは、メインパネルの幅をどのように設定しても、親の列の幅となります。    値 sidebarLayoutに渡されるメインパネル
+説明 sidebarLayoutに渡される出力要素を持つメインパネルを生成
+# Show the caption and plot of the requested variable against mpg mainPanel(h3(textOutput(&amp;#34;caption&amp;#34;)),plotOutput(&amp;#34;mpgPlot&amp;#34;))
+&amp;lt;div class=&amp;#34;col-sm-8&amp;#34;&amp;gt;&amp;lt;h3&amp;gt;&amp;lt;div id=&amp;#34;caption&amp;#34; class=&amp;#34;shiny-text-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/h3&amp;gt;&amp;lt;div id=&amp;#34;mpgPlot&amp;#34; class=&amp;#34;shiny-plot-output&amp;#34; style=&amp;#34;width: 100% ; height: 400px&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 参照 RStudioのReference
+https://shiny.rstudio.com/reference/shiny/1.0.5/mainPanel.html</description>
+    </item>
+    
+    <item>
+      <title>sidebarLayout</title>
+      <link>/sidebarlayout/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/sidebarlayout/</guid>
+      <description>sidebarLayout(sidebarPanel, mainPanel, position = c(&amp;#34;left&amp;#34;, &amp;#34;right&amp;#34;), fluid = TRUE) 引数    名前 説明     sidebarPanel 入力コントロールを要素として持つサイドバーのパネル   mainPanel 出力を要素として持つメインパネル   position サイドバーとメインの位置を&amp;rdquo;left&amp;rdquo;または&amp;rdquo;right&amp;rdquo;で指定   fluid TRUEなら可変レイアウト、FALSEなら固定レイアウト    説明 サイドバーとメインの領域を持つレイアウトを生成。サイドバーは、メインとは違う背景色で表示され、入力コントロールが配置されます。メインは、水平方向で2/3の幅を持ち、出力コントロールが配置されます。
+使用例 ## Only run examples in interactive R sessions if (interactive()) {options(device.ask.default = FALSE)# Define UI ui &amp;lt;- fluidPage(# Application title titlePanel(&amp;#34;Hello Shiny!&amp;#34;),sidebarLayout(# Sidebar with a slider input sidebarPanel(sliderInput(&amp;#34;obs&amp;#34;,&amp;#34;Number of observations:&amp;#34;,min = 0,max = 1000,value = 500)),# Show a plot of the generated distribution mainPanel(plotOutput(&amp;#34;distPlot&amp;#34;))))# Server logic server &amp;lt;- function(input, output) {output$distPlot &amp;lt;- renderPlot({hist(rnorm(input$obs))})}# Complete app with UI and server components shinyApp(ui, server)}</description>
+    </item>
+    
+    <item>
+      <title>sidebarPanel</title>
+      <link>/sidebarpanel/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/sidebarpanel/</guid>
+      <description>sidebarPanel(..., width = 4) 引数    名前 説明     ... サイドバーに含まれるUI要素   width サイドバーの幅。可変レイアウトでは、合計で12となる広さの単位があります(例えば4を指定すると、残りの8がメインパネルの幅となり、1:2の比率で表示されます)。固定レイアウトでは、サイドバーの幅をどのように設定しても、親の列の幅となります。    値 sidebarLayoutに渡されるサイドバー。
+説明 sidebarLayoutに渡される入力コントロールを含むサイドバーのパネルを生成
+使用例 # Sidebar with controls to select a dataset and specify # the number of observations to view sidebarPanel(selectInput(&amp;#34;dataset&amp;#34;, &amp;#34;Choose a dataset:&amp;#34;,choices = c(&amp;#34;rock&amp;#34;, &amp;#34;pressure&amp;#34;, &amp;#34;cars&amp;#34;)),numericInput(&amp;#34;obs&amp;#34;, &amp;#34;Observations:&amp;#34;, 10))
+&amp;lt;div class=&amp;#34;col-sm-4&amp;#34;&amp;gt;&amp;lt;form class=&amp;#34;well&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;form-group shiny-input-container&amp;#34;&amp;gt;&amp;lt;label class=&amp;#34;control-label&amp;#34; for=&amp;#34;dataset&amp;#34;&amp;gt;Choose a dataset:&amp;lt;/label&amp;gt;&amp;lt;div&amp;gt;&amp;lt;select id=&amp;#34;dataset&amp;#34;&amp;gt;&amp;lt;option value=&amp;#34;rock&amp;#34; selected&amp;gt;rock&amp;lt;/option&amp;gt;&amp;lt;option value=&amp;#34;pressure&amp;#34;&amp;gt;pressure&amp;lt;/option&amp;gt;&amp;lt;option value=&amp;#34;cars&amp;#34;&amp;gt;cars&amp;lt;/option&amp;gt;&amp;lt;/select&amp;gt;&amp;lt;script type=&amp;#34;application/json&amp;#34; data-for=&amp;#34;dataset&amp;#34; data-nonempty=&amp;#34;&amp;#34;&amp;gt;{}&amp;lt;/script&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;#34;form-group shiny-input-container&amp;#34;&amp;gt;&amp;lt;label for=&amp;#34;obs&amp;#34;&amp;gt;Observations:&amp;lt;/label&amp;gt;&amp;lt;input id=&amp;#34;obs&amp;#34; type=&amp;#34;number&amp;#34; class=&amp;#34;form-control&amp;#34; value=&amp;#34;10&amp;#34;/&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/form&amp;gt;&amp;lt;/div&amp;gt; 参照 RStudioのReference</description>
+    </item>
+    
+    <item>
+      <title>splitLayout</title>
+      <link>/splitlayout/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/splitlayout/</guid>
+      <description>splitLayout(..., cellWidths = NULL, cellArgs = list()) 引数    名前 説明     ... 名前の指定されていない引数は、レイアウトの子要素になります。名前の付いた引数は最も外側のタグのHTML属性になります。   callWidths それぞれのセルの幅を指定する文字または数値のベクトル。必要に応じて、再利用がなされます。文字の値はCSSの長さとして解釈されます(validateCssUnitを参照してください)。数値の値は、ピクセルとして解釈されます。   callArgs レイアウトの隠せるで用いられる任意の追加属性    説明 要素を水平に等しく２分割に配置します。
+使用例 ## Only run examples in interactive R sessions if (interactive()) {options(device.ask.default = FALSE)# Server code used for all examples server &amp;lt;- function(input, output) {output$plot1 &amp;lt;- renderPlot(plot(cars))output$plot2 &amp;lt;- renderPlot(plot(pressure))output$plot3 &amp;lt;- renderPlot(plot(AirPassengers))}# Equal sizing ui &amp;lt;- splitLayout(plotOutput(&amp;#34;plot1&amp;#34;),plotOutput(&amp;#34;plot2&amp;#34;))shinyApp(ui, server)# Custom widths ui &amp;lt;- splitLayout(cellWidths = c(&amp;#34;25%&amp;#34;, &amp;#34;75%&amp;#34;),plotOutput(&amp;#34;plot1&amp;#34;),plotOutput(&amp;#34;plot2&amp;#34;))shinyApp(ui, server)# All cells at 300 pixels wide, with cell padding # and a border around everything ui &amp;lt;- splitLayout(style = &amp;#34;border: 1px solid silver;&amp;#34;,cellWidths = 300,cellArgs = list(style = &amp;#34;padding: 6px&amp;#34;),plotOutput(&amp;#34;plot1&amp;#34;),plotOutput(&amp;#34;plot2&amp;#34;),plotOutput(&amp;#34;plot3&amp;#34;))shinyApp(ui, server)}</description>
+    </item>
+    
+    <item>
+      <title>wellPanel</title>
+      <link>/wellpanel/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/wellpanel/</guid>
+      <description>wellPanel(...) 引数    名前 説明     ... パネル内に含まれるUI要素    値 新たに生成したパネル
+説明 ボーダが入り、背景色がグレーのパネルを生成。BootstrapのwellというCSSクラスと同じです。
+参照 RStudioのReference
+https://shiny.rstudio.com/reference/shiny/1.0.5/wellPanel.html</description>
+    </item>
+    
+  </channel>
+</rss>

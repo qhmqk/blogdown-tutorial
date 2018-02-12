@@ -55,9 +55,17 @@ description: "機能ごとのShiny関数の索引"
 ### UI Layout
 
 
+* [flowLayout]({{< ref "flowlayout.md" >}})
 
+* [mainPanel]({{< ref "mainpanel.md" >}})
 
+* [sidebarLayout]({{< ref "sidebarlayout.md" >}})
 
+* [sidebarPanel]({{< ref "sidebarpanel.md" >}})
+
+* [splitLayout]({{< ref "splitlayout.md" >}})
+
+* [wellPanel]({{< ref "wellpanel.md" >}})
 
 ### Rendering functions
 

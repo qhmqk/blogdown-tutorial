@@ -41,16 +41,16 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
  checkboxInput
   D  dateInput
  dateRangeInput
-  E F  fileInput  G H  htmlOutput  I  imageOutput  J K L M N  numericInput  O P  passwordInput
+  E F  fileInput
+ flowLayout
+  G H  htmlOutput  I  imageOutput  J K L M  mainPanel  N  numericInput  O P  passwordInput
  plotOutput
   Q R  radioButtons
  renderImage
  renderPlot
  renderPrint
  renderTable
- renderText
- renderUI
-  S  selectInput</description>
+ renderText</description>
     </item>
     
     <item>
@@ -78,13 +78,15 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
  textOutput
  uiOutput
  verbatimTextOutput
-  UI Layout Rendering functions  renderImage
+  UI Layout  flowLayout
+ mainPanel
+ sidebarLayout
+ sidebarPanel
+ splitLayout
+ wellPanel
+  Rendering functions  renderImage
  renderPlot
- renderPrint
- renderTable
- renderText
- renderUI
-  Reactive programming https://shiny.rstudio.com/reference/shiny/1.0.5/</description>
+ renderPrint</description>
     </item>
     
     <item>

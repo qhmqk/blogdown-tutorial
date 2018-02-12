@@ -41,7 +41,7 @@
     "name": "qhmqk"
   },
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
-  "keywords": "development,golang,r,shiny,ｒ,development,go,golang,hugo,plot,r-markdown,reactive-programming,regression,rendering-functions,shiny,templates,themes,ui-inputs,ui-outputs,",
+  "keywords": "development,golang,r,shiny,ｒ,development,go,golang,hugo,plot,r-markdown,reactive-programming,regression,rendering-functions,shiny,templates,themes,ui-inputs,ui-layout,ui-outputs,",
   "description": "Shiny app 開発のための日本語リファレンス"
 }
 </script>
@@ -116,7 +116,29 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/renderui/">renderUI</a></h2>
+    <h2 class="blog-post-title"><a href="/reactive/">reactive</a></h2>
+    <p class="blog-post-meta">qhmqk 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/reactive-programming" rel="tag">Reactive programming</a>
+
+</p>
+  </header>
+  
+    a
+  
+  <a href='/reactive/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/renderimage/">renderImage</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
@@ -126,9 +148,9 @@ ga('send', 'pageview');
 </p>
   </header>
   
-    HTMLで書かれたオブジェクトなどをレンダリング
+    画像をレンダリング
   
-  <a href='/renderui/'>Read more →</a>
+  <a href='/renderimage/'>Read more →</a>
 </article> 
 
 
@@ -138,19 +160,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/selectinput/">selectInput</a></h2>
+    <h2 class="blog-post-title"><a href="/renderplot/">renderPlot</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/rendering-functions" rel="tag">Rendering functions</a>
 
 </p>
   </header>
   
-    プルダウンリストやプルダウンメニュー、ドロップダウンメニューなどの名前で呼ばれるクリックすることで、下側に選択肢が広がり、その中から1つを選択します。英語では、select list controlです。
+    プロットをレンダリング
   
-  <a href='/selectinput/'>Read more →</a>
+  <a href='/renderplot/'>Read more →</a>
 </article> 
 
 
@@ -160,19 +182,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/sliderinput/">sliderInput</a></h2>
+    <h2 class="blog-post-title"><a href="/renderprint/">renderPrint</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/rendering-functions" rel="tag">Rendering functions</a>
 
 </p>
   </header>
   
-    ドラッグでバーを左右に動かして数値を指定します。
+    文字列をレンダリング
   
-  <a href='/sliderinput/'>Read more →</a>
+  <a href='/renderprint/'>Read more →</a>
 </article> 
 
 
@@ -182,41 +204,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/tableoutput/">tableOutput</a></h2>
+    <h2 class="blog-post-title"><a href="/rendertable/">renderTable</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-outputs" rel="tag">UI Outputs</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/rendering-functions" rel="tag">Rendering functions</a>
 
 </p>
   </header>
   
-    表を出力
+    DT::renderDataTableを使った方がいいでしょう。
   
-  <a href='/tableoutput/'>Read more →</a>
-</article> 
-
-
-
-
-
-
-<article class="blog-post">
-  <header>
-    <h2 class="blog-post-title"><a href="/textinput/">textInput</a></h2>
-    <p class="blog-post-meta">qhmqk 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
-
-
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
-
-</p>
-  </header>
-  
-    文字列を入力するテキストボックスです。
-  
-  <a href='/textinput/'>Read more →</a>
+  <a href='/rendertable/'>Read more →</a>
 </article> 
 
 
@@ -257,9 +257,9 @@ ga('send', 'pageview');
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/numericinput/">numericInput</a></li>
+<li><a href="/flowlayout/">flowLayout</a></li>
 
-<li><a href="/actionbutton/">actionButton</a></li>
+<li><a href="/mainpanel/">mainPanel</a></li>
 
     </ol>
   </section>

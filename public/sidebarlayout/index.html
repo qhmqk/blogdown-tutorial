@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="sidebarLayout" />
+<meta property="og:description" content="サイドバーとメインの領域を持つレイアウトを生成。サイドバーは、メインとは違う背景色で表示され、入力コントロールが配置されます。メインは、水平方向で2/3の幅を持ち、出力コントロールが配置されます。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/sidebarlayout/" />
+
+
+
+<meta property="article:published_time" content="2018-02-12T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-02-12T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="sidebarLayout"/>
+<meta name="twitter:description" content="サイドバーとメインの領域を持つレイアウトを生成。サイドバーは、メインとは違う背景色で表示され、入力コントロールが配置されます。メインは、水平方向で2/3の幅を持ち、出力コントロールが配置されます。"/>
+<meta name="twitter:site" content="@username"/>
+<meta name="generator" content="Hugo 0.31.1" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "sidebarLayout",
+  "url": "/sidebarlayout/",
+  "wordCount": "111",
+  "datePublished": "2018-02-12T00:00:00&#43;00:00",
+  "dateModified": "2018-02-12T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "qhmqk"
+  },
+  "keywords": "Shiny, UI Layout",
+  "description": "サイドバーとメインの領域を持つレイアウトを生成。サイドバーは、メインとは違う背景色で表示され、入力コントロールが配置されます。メインは、水平方向で2/3の幅を持ち、出力コントロールが配置されます。"
+}
+</script>
+
+
+
+    <link rel="canonical" href="/sidebarlayout/">
+
+    <title>sidebarLayout | Shiny クックブック</title>
+
+    <!-- combined, minified CSS -->
+    <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
+
+    <link href="/css/dark.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+
+    
+
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51807609-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link " href="/">Home</a>
+          
+          
+          <a class="nav-link" href="/contact/">Contact</a>
+          
+          
+          <a class="nav-link" href="/about/">About</a>
+          
+          
+        </nav>
+      </div>
+    </div>
+
+    <header class="blog-header">
+      <div class="container">
+        <h1 class="blog-title"><a href="/" rel="home">Shiny クックブック</a></h1>
+        <p class="lead blog-description">Shiny app 開発のための日本語リファレンス</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/sidebarlayout/">sidebarLayout</a></h2>
+    <p class="blog-post-meta"> Last updated: <time datetime="2018-02-12T00:00:00Z">Mon Feb 12, 2018</time></p>
+    <p> By: qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-layout" rel="tag">UI Layout</a>
+
+</p>
+  </header>
+
+  
+
+  
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">sidebarLayout(sidebarPanel, mainPanel, position <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;left&#34;</span>, <span style="color:#e6db74">&#34;right&#34;</span>), fluid <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)</code></pre></div>
+
+<h3 id="引数">引数</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>sidebarPanel</code></strong></td>
+<td align="left">入力コントロールを要素として持つサイドバーのパネル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>mainPanel</code></strong></td>
+<td align="left">出力を要素として持つメインパネル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>position</code></strong></td>
+<td align="left">サイドバーとメインの位置を&rdquo;left&rdquo;または&rdquo;right&rdquo;で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>fluid</code></strong></td>
+<td align="left"><code>TRUE</code>なら可変レイアウト、<code>FALSE</code>なら固定レイアウト</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="説明">説明</h3>
+
+<p>サイドバーとメインの領域を持つレイアウトを生成。サイドバーは、メインとは違う背景色で表示され、入力コントロールが配置されます。メインは、水平方向で2/3の幅を持ち、出力コントロールが配置されます。</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
+<span style="color:#66d9ef">options</span>(device.ask.default <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+
+<span style="color:#75715e"># Define UI</span>
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+
+  <span style="color:#75715e"># Application title</span>
+  titlePanel(<span style="color:#e6db74">&#34;Hello Shiny!&#34;</span>),
+
+  sidebarLayout(
+
+    <span style="color:#75715e"># Sidebar with a slider input</span>
+    sidebarPanel(
+      sliderInput(<span style="color:#e6db74">&#34;obs&#34;</span>,
+                  <span style="color:#e6db74">&#34;Number of observations:&#34;</span>,
+                  min <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+                  max <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>,
+                  value <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>)
+    ),
+
+    <span style="color:#75715e"># Show a plot of the generated distribution</span>
+    mainPanel(
+      plotOutput(<span style="color:#e6db74">&#34;distPlot&#34;</span>)
+    )
+  )
+)
+
+<span style="color:#75715e"># Server logic</span>
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>distPlot <span style="color:#f92672">&lt;-</span> renderPlot({
+    hist(rnorm(input<span style="color:#f92672">$</span>obs))
+  })
+}
+
+<span style="color:#75715e"># Complete app with UI and server components</span>
+shinyApp(ui, server)
+}</code></pre></div></p>
+
+<h3 id="参照">参照</h3>
+
+<p>RStudioのReference</p>
+
+<p><a href="https://shiny.rstudio.com/reference/shiny/1.0.5/sidebarLayout.html">https://shiny.rstudio.com/reference/shiny/1.0.5/sidebarLayout.html</a></p>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+    <section>
+    <h4>Share</h4>
+    <nav class="nav sharing-icons">
+      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=%2fsidebarlayout%2f" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://plus.google.com/share?url=%2fsidebarlayout%2f" title="Share on Google+"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsidebarlayout%2f" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://twitter.com/home?status=%2fsidebarlayout%2f" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+    </nav>
+  </section>
+
+  
+
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-3 ml-auto blog-sidebar">
+  
+  <section class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p><em>qhmqk</em>, R user, native Japanese speaker, traveller and also gambler<br><br><a href="/about">Read more →</a></p>
+  </section>
+  
+
+  
+        <section class="sidebar-module">
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+
+
+<li><a href="/top-page/">Shiny app 開発をスタート</a></li>
+
+<li><a href="/function-index/">索引(アルファベット順)</a></li>
+
+<li><a href="/reference/">索引(機能別)</a></li>
+
+<li><a href="/flowlayout/">flowLayout</a></li>
+
+<li><a href="/mainpanel/">mainPanel</a></li>
+
+    </ol>
+  </section>
+
+  
+
+  
+  <section class="sidebar-module">
+    <h4>Links</h4>
+    <ol class="list-unstyled">
+      
+      <li><a href="https://www.r-project.org/">The R Project for Statistical Computing</a></li>
+      
+      <li><a href="https://www.rstudio.com/">RStudio</a></li>
+      
+    </ol>
+  </section>
+  
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>
+      
+      © 2018 qhmqk
+      
+      </p>
+      <p>
+      <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+    <script async type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script async type="text/javascript" src="/js/clip.js"></script>
+
+  </body>
+
+</html>

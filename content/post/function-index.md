@@ -31,6 +31,8 @@ description: "アルファベット順のShiny関数の索引"
 
 * [fileInput]({{< ref "fileinput.md" >}})
 
+* [flowLayout]({{< ref "flowlayout.md" >}})
+
 ### G
 ### H
 
@@ -44,6 +46,9 @@ description: "アルファベット順のShiny関数の索引"
 ### K
 ### L
 ### M
+
+* [mainPanel]({{< ref "mainpanel.md" >}})
+
 ### N
 
 * [numericInput]({{< ref "numericinput.md" >}})
@@ -76,7 +81,13 @@ description: "アルファベット順のShiny関数の索引"
 
 * [selectInput]({{< ref "selectinput.md" >}})
 
+* [sidebarLayout]({{< ref "sidebarlayout.md" >}})
+
+* [sidebarPanel]({{< ref "sidebarpanel.md" >}})
+
 * [sliderInput]({{< ref "sliderinput.md" >}})
+
+* [splitLayout]({{< ref "splitlayout.md" >}})
 
 ### T
 
@@ -95,6 +106,9 @@ description: "アルファベット順のShiny関数の索引"
 * [verbatimTextOutput]({{< ref "verbatimtextoutput.md" >}})
 
 ### W
+
+* [wellPanel]({{< ref "wellpanel.md" >}})
+
 ### X
 ### Y
 ### Z
