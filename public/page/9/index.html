@@ -12,7 +12,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-04-02T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-01-10T00:00:00&#43;00:00"/>
 
 
 
@@ -40,7 +40,7 @@
     "@type": "Person",
     "name": "qhmqk"
   },
-  "dateModified": "2014-04-02T00:00:00&#43;00:00",
+  "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "keywords": "development,golang,r,shiny,ｒ,development,go,golang,hugo,plot,r-markdown,reactive-programming,regression,rendering-functions,shiny,templates,themes,ui-inputs,ui-layout,ui-outputs,",
   "description": "Shiny app 開発のための日本語リファレンス"
 }
@@ -116,24 +116,98 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/getting-started-with-hugo/">Getting Started with Hugo</a></h2>
+    <h2 class="blog-post-title"><a href="/tableoutput/">tableOutput</a></h2>
     <p class="blog-post-meta">qhmqk 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/development" rel="category tag">Development</a>, <a href="/categories/golang" rel="category tag">golang</a>
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/go" rel="tag">go</a>, <a href="/tags/golang" rel="tag">golang</a>, <a href="/tags/hugo" rel="tag">hugo</a>, <a href="/tags/development" rel="tag">development</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-outputs" rel="tag">UI Outputs</a>
 
 </p>
   </header>
   
-    Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:
+    表を出力
   
-  <a href='/getting-started-with-hugo/'>Read more →</a>
+  <a href='/tableoutput/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/textinput/">textInput</a></h2>
+    <p class="blog-post-meta">qhmqk 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
+
+</p>
+  </header>
+  
+    文字列を入力するテキストボックスです。
+  
+  <a href='/textinput/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/verbatimtextoutput/">verbatimTextOutput</a></h2>
+    <p class="blog-post-meta">qhmqk 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-outputs" rel="tag">UI Outputs</a>
+
+</p>
+  </header>
+  
+    テキストを出力
+  
+  <a href='/verbatimtextoutput/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/creating-a-new-theme/">Creating a New Theme</a></h2>
+    <p class="blog-post-meta">Michael Henderson</p>
+  </header>
+  
+    Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
+We&rsquo;ll start with creating a new site with a very basic template.
+  
+  <a href='/creating-a-new-theme/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/migrate-to-hugo-from-jekyll/">Migrate to Hugo from Jekyll</a></h2>
+    <p class="blog-post-meta">qhmqk</p>
+  </header>
+  
+    Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &lt;root&gt;/ ▾ images/ logo.png  should become
+▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.
+  
+  <a href='/migrate-to-hugo-from-jekyll/'>Read more →</a>
 </article> 
 
 
@@ -142,9 +216,9 @@ Follow the following steps:
 
 <nav class="blog-pagination">
   
-  
   <a class="btn btn-outline-primary" href="/page/8/" rel="prev" role="button">Previous page</a>
-  <a class="btn btn-outline-primary disabled" href="#" role="button" aria-disabled="true">Next page</a>
+  <a class="btn btn-outline-primary" href="/page/10/" rel="next" role="button">Next page</a>
+  
   
   
 </nav>
@@ -174,9 +248,9 @@ Follow the following steps:
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/flowlayout/">flowLayout</a></li>
+<li><a href="/cokumn/">column</a></li>
 
-<li><a href="/mainpanel/">mainPanel</a></li>
+<li><a href="/flowlayout/">flowLayout</a></li>
 
     </ol>
   </section>

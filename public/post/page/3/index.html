@@ -12,7 +12,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-02-08T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-02-12T00:00:00&#43;00:00"/>
 
 
 
@@ -40,7 +40,7 @@
     "@type": "Person",
     "name": "qhmqk"
   },
-  "dateModified": "2018-02-08T00:00:00&#43;00:00",
+  "dateModified": "2018-02-12T00:00:00&#43;00:00",
   "keywords": "development,golang,r,shiny,ｒ,development,go,golang,hugo,plot,r-markdown,reactive-programming,regression,rendering-functions,shiny,templates,themes,ui-inputs,ui-layout,ui-outputs,",
   "description": "Shiny app 開発のための日本語リファレンス"
 }
@@ -116,19 +116,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/actionbutton/">actionButton</a></h2>
+    <h2 class="blog-post-title"><a href="/sidebarlayout/">sidebarLayout</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-layout" rel="tag">UI Layout</a>
 
 </p>
   </header>
   
-    押すことで何らかのアクションを起こすボタンです。`inputId`で指定した値は、ボタンが押される前はNULLで、押された後に0になります。押されるたびに、値が1ずつ増加します。ボタンの押下に対応するコードは、serverで`observeEvent`や`eventReactive`内に記述します。
+    サイドバーとメインの領域を持つレイアウトを生成。サイドバーは、メインとは違う背景色で表示され、入力コントロールが配置されます。メインは、水平方向で2/3の幅を持ち、出力コントロールが配置されます。
   
-  <a href='/actionbutton/'>Read more →</a>
+  <a href='/sidebarlayout/'>Read more →</a>
 </article> 
 
 
@@ -138,19 +138,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/htmloutput/">htmlOutput</a></h2>
+    <h2 class="blog-post-title"><a href="/sidebarpanel/">sidebarPanel</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-outputs" rel="tag">UI Outputs</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-layout" rel="tag">UI Layout</a>
 
 </p>
   </header>
   
-    HTMLを出力
+    `sidebarLayout`に渡される入力コントロールを含むサイドバーのパネルを生成
   
-  <a href='/htmloutput/'>Read more →</a>
+  <a href='/sidebarpanel/'>Read more →</a>
 </article> 
 
 
@@ -160,19 +160,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/imageoutput/">imageOutput</a></h2>
+    <h2 class="blog-post-title"><a href="/splitlayout/">splitLayout</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-outputs" rel="tag">UI Outputs</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-layout" rel="tag">UI Layout</a>
 
 </p>
   </header>
   
-    画像を出力
+    `要素を水平に等しく２分割に配置します。
   
-  <a href='/imageoutput/'>Read more →</a>
+  <a href='/splitlayout/'>Read more →</a>
 </article> 
 
 
@@ -182,19 +182,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/plotoutput/">plotOutput</a></h2>
+    <h2 class="blog-post-title"><a href="/tabpanel/">tabPanel</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-outputs" rel="tag">UI Outputs</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-layout" rel="tag">UI Layout</a>
 
 </p>
   </header>
   
-    プロットを出力
+    タブパネルを生成
   
-  <a href='/plotoutput/'>Read more →</a>
+  <a href='/tabpanel/'>Read more →</a>
 </article> 
 
 
@@ -204,19 +204,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/textoutput/">textOutput</a></h2>
+    <h2 class="blog-post-title"><a href="/tabsetpanel/">tabsetPanel</a></h2>
     <p class="blog-post-meta">qhmqk 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-outputs" rel="tag">UI Outputs</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-layout" rel="tag">UI Layout</a>
 
 </p>
   </header>
   
-    テキストを出力
+    タブの集合パネルを生成
   
-  <a href='/textoutput/'>Read more →</a>
+  <a href='/tabsetpanel/'>Read more →</a>
 </article> 
 
 
@@ -257,9 +257,9 @@ ga('send', 'pageview');
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/flowlayout/">flowLayout</a></li>
+<li><a href="/cokumn/">column</a></li>
 
-<li><a href="/mainpanel/">mainPanel</a></li>
+<li><a href="/flowlayout/">flowLayout</a></li>
 
     </ol>
   </section>

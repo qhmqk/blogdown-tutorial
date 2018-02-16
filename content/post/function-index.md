@@ -20,6 +20,8 @@ description: "アルファベット順のShiny関数の索引"
 
 * [checkboxInput]({{< ref "checkboxinput.md" >}})
 
+* [column]({{< ref "column.md" >}})
+
 ### D
 
 * [dateInput]({{< ref "dateinput.md" >}})
@@ -32,6 +34,8 @@ description: "アルファベット順のShiny関数の索引"
 * [fileInput]({{< ref "fileinput.md" >}})
 
 * [flowLayout]({{< ref "flowlayout.md" >}})
+
+* [fluidPage]({{< ref "fluidpage.md" >}})
 
 ### G
 ### H
@@ -50,6 +54,10 @@ description: "アルファベット順のShiny関数の索引"
 * [mainPanel]({{< ref "mainpanel.md" >}})
 
 ### N
+
+* [navbarPage]({{< ref "navbarpage.md" >}})
+
+* [navlistPanel]({{< ref "navlistpanel.md" >}})
 
 * [numericInput]({{< ref "numericinput.md" >}})
 
@@ -93,6 +101,10 @@ description: "アルファベット順のShiny関数の索引"
 
 * [tableOutput]({{< ref "tableoutput.md" >}})
 
+* [tabPanel]({{< ref "tabpanel.md" >}})
+
+* [tabsetPanel]({{< ref "tabsetpanel.md" >}})
+
 * [textInput]({{< ref "textinput.md" >}})
 
 * [textOutput]({{< ref "textoutput.md" >}})
@@ -104,6 +116,8 @@ description: "アルファベット順のShiny関数の索引"
 ### V
 
 * [verbatimTextOutput]({{< ref "verbatimtextoutput.md" >}})
+
+* [verticalLayout]({{< ref "verticallayout.md" >}})
 
 ### W
 

@@ -12,7 +12,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-09-28T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-01-10T00:00:00&#43;00:00"/>
 
 
 
@@ -40,7 +40,7 @@
     "@type": "Person",
     "name": "qhmqk"
   },
-  "dateModified": "2014-09-28T00:00:00&#43;00:00",
+  "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "keywords": "development,golang,r,shiny,ｒ,development,go,golang,hugo,plot,r-markdown,reactive-programming,regression,rendering-functions,shiny,templates,themes,ui-inputs,ui-layout,ui-outputs,",
   "description": "Shiny app 開発のための日本語リファレンス"
 }
@@ -116,56 +116,19 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/creating-a-new-theme/">Creating a New Theme</a></h2>
-    <p class="blog-post-meta">Michael Henderson</p>
-  </header>
-  
-    Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
-We&rsquo;ll start with creating a new site with a very basic template.
-  
-  <a href='/creating-a-new-theme/'>Read more →</a>
-</article> 
-
-
-
-
-
-
-<article class="blog-post">
-  <header>
-    <h2 class="blog-post-title"><a href="/migrate-to-hugo-from-jekyll/">Migrate to Hugo from Jekyll</a></h2>
-    <p class="blog-post-meta">qhmqk</p>
-  </header>
-  
-    Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &lt;root&gt;/ ▾ images/ logo.png  should become
-▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.
-  
-  <a href='/migrate-to-hugo-from-jekyll/'>Read more →</a>
-</article> 
-
-
-
-
-
-
-<article class="blog-post">
-  <header>
-    <h2 class="blog-post-title"><a href="/rmarkdown-syntax/">R Markdown 記法</a></h2>
+    <h2 class="blog-post-title"><a href="/rendertable/">renderTable</a></h2>
     <p class="blog-post-meta">qhmqk 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/%EF%BD%92" rel="category tag">Ｒ</a>
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/r-markdown" rel="tag">R Markdown</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/rendering-functions" rel="tag">Rendering functions</a>
 
 </p>
   </header>
   
-    見出し# Header 1## Header 2Header 1Header 2図image:![caption](img/shiny-400x464.png)markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。
-&lt;img src=&#39;../../../../../../../img/shiny-400x464.png&#39; align=&#39;center&#39;&gt;リンク上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。上記の、Shinyのロゴは、RStudioのロゴで、リンク先のガイドラインに従って利用できます。
-
+    DT::renderDataTableを使った方がいいでしょう。
   
-  <a href='/rmarkdown-syntax/'>Read more →</a>
+  <a href='/rendertable/'>Read more →</a>
 </article> 
 
 
@@ -175,44 +138,85 @@ We&rsquo;ll start with creating a new site with a very basic template.
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/rmarkdown/">Hello R Markdown</a></h2>
-    <p class="blog-post-meta">Frida Gomam 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/r" rel="category tag">R</a>
-
-
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/r-markdown" rel="tag">R Markdown</a>, <a href="/tags/plot" rel="tag">plot</a>, <a href="/tags/regression" rel="tag">regression</a>
-
-</p>
-  </header>
-  
-    R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.
-  
-  <a href='/rmarkdown/'>Read more →</a>
-</article> 
-
-
-
-
-
-
-<article class="blog-post">
-  <header>
-    <h2 class="blog-post-title"><a href="/hugo-template-primer/">(Hu)go Template Primer</a></h2>
+    <h2 class="blog-post-title"><a href="/rendertext/">renderText</a></h2>
     <p class="blog-post-meta">qhmqk 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/development" rel="category tag">Development</a>, <a href="/categories/golang" rel="category tag">golang</a>
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/go" rel="tag">go</a>, <a href="/tags/golang" rel="tag">golang</a>, <a href="/tags/templates" rel="tag">templates</a>, <a href="/tags/themes" rel="tag">themes</a>, <a href="/tags/development" rel="tag">development</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/rendering-functions" rel="tag">Rendering functions</a>
 
 </p>
   </header>
   
-    Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.
+    文字列をレンダリング
   
-  <a href='/hugo-template-primer/'>Read more →</a>
+  <a href='/rendertext/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/renderui/">renderUI</a></h2>
+    <p class="blog-post-meta">qhmqk 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/rendering-functions" rel="tag">Rendering functions</a>
+
+</p>
+  </header>
+  
+    HTMLで書かれたオブジェクトなどをレンダリング
+  
+  <a href='/renderui/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/selectinput/">selectInput</a></h2>
+    <p class="blog-post-meta">qhmqk 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
+
+</p>
+  </header>
+  
+    プルダウンリストやプルダウンメニュー、ドロップダウンメニューなどの名前で呼ばれるクリックすることで、下側に選択肢が広がり、その中から1つを選択します。英語では、select list controlです。
+  
+  <a href='/selectinput/'>Read more →</a>
+</article> 
+
+
+
+
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/sliderinput/">sliderInput</a></h2>
+    <p class="blog-post-meta">qhmqk 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/ui-inputs" rel="tag">UI Inputs</a>
+
+</p>
+  </header>
+  
+    ドラッグでバーを左右に動かして数値を指定します。
+  
+  <a href='/sliderinput/'>Read more →</a>
 </article> 
 
 
@@ -253,9 +257,9 @@ This document is a brief primer on using go templates.
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/flowlayout/">flowLayout</a></li>
+<li><a href="/cokumn/">column</a></li>
 
-<li><a href="/mainpanel/">mainPanel</a></li>
+<li><a href="/flowlayout/">flowLayout</a></li>
 
     </ol>
   </section>

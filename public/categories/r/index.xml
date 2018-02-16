@@ -39,18 +39,19 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
       <guid>/function-index/</guid>
       <description>A  actionButton  B C  checkboxGroupInput
  checkboxInput
+ column
   D  dateInput
  dateRangeInput
   E F  fileInput
  flowLayout
-  G H  htmlOutput  I  imageOutput  J K L M  mainPanel  N  numericInput  O P  passwordInput
+ fluidPage
+  G H  htmlOutput  I  imageOutput  J K L M  mainPanel  N  navbarPage
+ navlistPanel
+ numericInput
+  O P  passwordInput
  plotOutput
   Q R  radioButtons
- renderImage
- renderPlot
- renderPrint
- renderTable
- renderText</description>
+ renderImage</description>
     </item>
     
     <item>
@@ -78,15 +79,17 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
  textOutput
  uiOutput
  verbatimTextOutput
-  UI Layout  flowLayout
+  UI Layout  column
+ flowLayout
+ fluidPage
  mainPanel
+ navbarPage
+ navlistPanel
  sidebarLayout
  sidebarPanel
  splitLayout
- wellPanel
-  Rendering functions  renderImage
- renderPlot
- renderPrint</description>
+ tabPanel
+ tabsetPanel</description>
     </item>
     
     <item>

@@ -39,18 +39,19 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
       <guid>/function-index/</guid>
       <description>A  actionButton  B C  checkboxGroupInput
  checkboxInput
+ column
   D  dateInput
  dateRangeInput
   E F  fileInput
  flowLayout
-  G H  htmlOutput  I  imageOutput  J K L M  mainPanel  N  numericInput  O P  passwordInput
+ fluidPage
+  G H  htmlOutput  I  imageOutput  J K L M  mainPanel  N  navbarPage
+ navlistPanel
+ numericInput
+  O P  passwordInput
  plotOutput
   Q R  radioButtons
- renderImage
- renderPlot
- renderPrint
- renderTable
- renderText</description>
+ renderImage</description>
     </item>
     
     <item>
@@ -78,15 +79,28 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
  textOutput
  uiOutput
  verbatimTextOutput
-  UI Layout  flowLayout
+  UI Layout  column
+ flowLayout
+ fluidPage
  mainPanel
+ navbarPage
+ navlistPanel
  sidebarLayout
  sidebarPanel
  splitLayout
- wellPanel
-  Rendering functions  renderImage
- renderPlot
- renderPrint</description>
+ tabPanel
+ tabsetPanel</description>
+    </item>
+    
+    <item>
+      <title>column</title>
+      <link>/cokumn/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/cokumn/</guid>
+      <description>column(width, ..., offset = 0) 引数    名前 説明     width 列のグリッド幅を1～12の値で指定   ... 列内の要素   offset 前の列の終わりからその列までのオフセットとなる列の数    値 fluidRowまたはfixedRow内に含まれる列
+詳細 fluidRowまたはfixedRow内で用いられる列を生成
+使用例 ## Only run examples in interactive R sessions if (interactive()) {ui &amp;lt;- fluidPage(fluidRow(column(4,sliderInput(&amp;#34;obs&amp;#34;, &amp;#34;Number of observations:&amp;#34;,min = 1, max = 1000, value = 500)),column(8,plotOutput(&amp;#34;distPlot&amp;#34;))))server &amp;lt;- function(input, output) {output$distPlot &amp;lt;- renderPlot({hist(rnorm(input$obs))})}shinyApp(ui, server)ui &amp;lt;- fluidPage(fluidRow(column(width = 4,&amp;#34;4&amp;#34;),column(width = 3, offset = 2,&amp;#34;3 offset 2&amp;#34;)))shinyApp(ui, server = function(input, output) { })}</description>
     </item>
     
     <item>
@@ -101,6 +115,33 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
     </item>
     
     <item>
+      <title>fluidPage</title>
+      <link>/fluidpage/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/fluidpage/</guid>
+      <description>fluidPage(..., title = NULL, responsive = NULL, theme = NULL) 引数    名前 説明     ... ページ内の要素   title ブラウザウィンドウに表示されるタイトル(デフォルトではページがホストされたURL)。titlePanel関数でも設定可能です。   responsive このオプションは推奨されません。Bootstrap 3のオプションにもう無いからです。   theme Bootstrapのスタイルシート。通常は、wwwディレクトリ内にCSSファイルで定義したものを指定します。例えば、www/bootstrap.cssで置いたテーマを用いる場合、theme = &amp;quot;bootstrap.css&amp;quot;を指定します。    値 shinyUI関数に渡されるUI定義
+説明 可変ページレイアウトを生成する関数です。可変ページレイアウトは、行と行に順番に含まれる列から構成されます。行は要素が(ブラウザに十分な幅があるなら)同じ行に現れるようにする目的で存在します。列は水平に12分割したグリッドで要素がどれだけを占めるのかを定義する目的で存在します。可変ページは利用可能なブラウザの幅すべてを埋めるためにリアルタイムで拡大縮小します。
+詳細 可変ページの生成には、fluidPage関数を用いて、fluidRowとその中のcolumnのインスタンスを同梱します。低級な行と列関数の代わりとして、sidebarLayoutのような高級レイアウト関数を使用可能です。
+注記 可変ページにレイアウトするときのさらなる詳細は、Shiny-Applicatin-Layout-Guideを参照してください。
+使用例 ## Only run examples in interactive R sessions if (interactive()) {# Example of UI with fluidPage ui &amp;lt;- fluidPage(# Application title titlePanel(&amp;#34;Hello Shiny!</description>
+    </item>
+    
+    <item>
+      <title>fluidRow</title>
+      <link>/fluidrow/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/fluidrow/</guid>
+      <description>fluidRow(...) 引数    名前 説明     ... ページ内の要素    値 shinyUI関数に渡されるUI定義
+説明 可変ページレイアウトを生成する関数です。可変ページレイアウトは、行と行に順番に含まれる列から構成されます。行は要素が(ブラウザに十分な幅があるなら)同じ行に現れるようにする目的で存在します。列は水平に12分割したグリッドで要素がどれだけを占めるのかを定義する目的で存在します。可変ページは利用可能なブラウザの幅すべてを埋めるためにリアルタイムで拡大縮小します。
+詳細 可変ページの生成には、fluidPage関数を用いて、fluidRowとその中のcolumnのインスタンスを同梱します。低級な行と列関数の代わりとして、sidebarLayoutのような高級レイアウト関数を使用可能です。
+注記 可変ページにレイアウトするときのさらなる詳細は、Shiny-Applicatin-Layout-Guideを参照してください。
+使用例 # UI demonstrating column layouts ui &amp;lt;- fluidPage(title = &amp;#34;Hello Shiny!&amp;#34;,fluidRow(column(width = 4,&amp;#34;4&amp;#34;),column(width = 3, offset = 2,&amp;#34;3 offset 2&amp;#34;)))shinyApp(ui, server = function(input, output) { })} 参照 RStudioのReference
+https://shiny.rstudio.com/reference/shiny/1.0.5/fluidPage.html</description>
+    </item>
+    
+    <item>
       <title>mainPanel</title>
       <link>/mainpanel/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
@@ -111,6 +152,27 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
 # Show the caption and plot of the requested variable against mpg mainPanel(h3(textOutput(&amp;#34;caption&amp;#34;)),plotOutput(&amp;#34;mpgPlot&amp;#34;))
 &amp;lt;div class=&amp;#34;col-sm-8&amp;#34;&amp;gt;&amp;lt;h3&amp;gt;&amp;lt;div id=&amp;#34;caption&amp;#34; class=&amp;#34;shiny-text-output&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/h3&amp;gt;&amp;lt;div id=&amp;#34;mpgPlot&amp;#34; class=&amp;#34;shiny-plot-output&amp;#34; style=&amp;#34;width: 100% ; height: 400px&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 参照 RStudioのReference
 https://shiny.rstudio.com/reference/shiny/1.0.5/mainPanel.html</description>
+    </item>
+    
+    <item>
+      <title>navbarPage</title>
+      <link>/navbarpage/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/navbarpage/</guid>
+      <description>navbarPage(title, ..., id = NULL, selected = NULL,position = c(&amp;#34;static-top&amp;#34;, &amp;#34;fixed-top&amp;#34;, &amp;#34;fixed-bottom&amp;#34;), header = NULL,footer = NULL, inverse = FALSE, collapsible = FALSE, collapsable,fluid = TRUE, responsive = NULL, theme = NULL, windowTitle = title) navbarMenu(title, ..., menuName = title, icon = NULL) 引数    名前 説明     title ナビゲーションバーの中に表示するタイトル   ... ページに含まれるtabPanel要素。navbarMenu関数はメニューセクションのヘッダとして用いられる文字列も受け付けます。文字列が&amp;quot;----&amp;quot;のようなダッシュの集合の場合、メニューに水平のセパレータが表示されます。   id 指定すると、サーバでどのタブが有効かどうかを決定するためにinput$idを使用できるようになります。tabPanelに渡される値の引数に対応します。   selected デフォルトで選択されているタブの値。指定しない場合はタイトルになります。NULLの場合は最初のタブが選択されます。   position 標準のスクロール(&amp;ldquo;static-top&amp;rdquo;)または上部に固定(&amp;ldquo;fixed-top&amp;rdquo;)、下側に固定(&amp;ldquo;fixed-bottom&amp;rdquo;)のいずれかでページの上部にナビゲーションバーが表示を決定。&amp;rdquo;fixed-top&amp;rdquo;と&amp;rdquo;fixed-bottom&amp;rdquo;は、ナビゲーションバーがコンテンツ本体に重なる場合があることに注意してください。スペースを挿入するためのpaddingを指定する場合、例えばtags$style(type=&amp;quot;text/css&amp;quot;, &amp;quot;body {padding-top: 70px;}&amp;quot;)のような記述を追加します。   header すべてのタブパネル上の共通のヘッダとして表示するタグまたはタグのリスト   footer すべてのタブパネル下の共通のフッタとして表示するタグまたはタグのリスト   inverse TRUEならナビゲーションバーに暗い背景と明るいテキストを表示します。   collapsible TRUEならブラウザの幅が940ピクセル以下のときにナビゲーション要素をメニューに畳み込みます。スマホなどのより小さいタッチスクリーンのデバイスで見るときに有用です。   collapsable 使用は推奨されません。代わりにcollapsibleを使用します。   fluid TRUEなら可変レイアウト、FALSEなら固定レイアウトとなります。   responsive このオプションは推奨されません。Bootstrap 3ではオプションにないからです。   theme Bootstrapのスタイルシートを指定します。通常CSSファイルはwwwディレクトリ内に置きます。例えば、www/bootstrap.</description>
+    </item>
+    
+    <item>
+      <title>navlistPanel</title>
+      <link>/navlistpanel/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/navlistpanel/</guid>
+      <description>navlistPanel(..., id = NULL, selected = NULL, well = TRUE, fluid = TRUE, widths = c(4, 8)) 引数    名前 説明     ... navlistに含まれるtabPanel要素   id NULL以外の値を設定すると、サーバでそのときにアクティブなナビゲーションの項目を決めるためにinput$idを使えるようになります。値はtabPanelに渡される引数に対応します。   selected デフォルトで選択されているナビゲーションリスト項目の値。値がない場合はタイトルになります。NULLの場合は、最初のナビゲーションが選択されます。   well TRUEなら、ナビゲーションリストの周囲に灰色の四角の枠を置きます。   fluid TRUEなら可変レイアウト、FALSEなら固定レイアウトとなります。   widths 2つの値をベクトルで指定。それぞれ、ナビゲーションリストの列の幅とタブの集合のコンテンツ領域に対応します。    説明 左から右へ並んだタブパネルへのリンクを表示するナビゲーションリストのパネルを生成。
+詳細 リストにプレーンテキスト要素を含めることで、navlistPanelにヘッダ記述が可能です。Shinyのバージョン0.11までは&amp;quot;------&amp;quot;のセパレータをサポートしていましたが、0.11以降はサポートしていません。これはバージョン0.11からBootstrap 3に移行して、セパレータをサポートしなくなったからです。
+使用例 fluidPage(titlePanel(&amp;#34;Application Title&amp;#34;),navlistPanel(&amp;#34;Header&amp;#34;,tabPanel(&amp;#34;First&amp;#34;),tabPanel(&amp;#34;Second&amp;#34;),tabPanel(&amp;#34;Third&amp;#34;)))
+&amp;lt;div class=&amp;#34;container-fluid&amp;#34;&amp;gt;&amp;lt;h2&amp;gt;Application Title&amp;lt;/h2&amp;gt;&amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;col-sm-4 well&amp;#34;&amp;gt;&amp;lt;ul class=&amp;#34;nav nav-pills nav-stacked&amp;#34; data-tabsetid=&amp;#34;4392&amp;#34;&amp;gt;&amp;lt;li class=&amp;#34;navbar-brand&amp;#34;&amp;gt;Header&amp;lt;/li&amp;gt;&amp;lt;li class=&amp;#34;active&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;#tab-4392-2&amp;#34; data-toggle=&amp;#34;tab&amp;#34; data-value=&amp;#34;First&amp;#34;&amp;gt;First&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;#tab-4392-3&amp;#34; data-toggle=&amp;#34;tab&amp;#34; data-value=&amp;#34;Second&amp;#34;&amp;gt;Second&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;#tab-4392-4&amp;#34; data-toggle=&amp;#34;tab&amp;#34; data-value=&amp;#34;Third&amp;#34;&amp;gt;Third&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;#34;col-sm-8&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;tab-content&amp;#34; data-tabsetid=&amp;#34;4392&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;tab-pane active&amp;#34; data-value=&amp;#34;First&amp;#34; id=&amp;#34;tab-4392-2&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;#34;tab-pane&amp;#34; data-value=&amp;#34;Second&amp;#34; id=&amp;#34;tab-4392-3&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;#34;tab-pane&amp;#34; data-value=&amp;#34;Third&amp;#34; id=&amp;#34;tab-4392-4&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 参照 RStudioのReference</description>
     </item>
     
     <item>
@@ -143,6 +205,40 @@ https://shiny.rstudio.com/reference/shiny/1.0.5/mainPanel.html</description>
       <guid>/splitlayout/</guid>
       <description>splitLayout(..., cellWidths = NULL, cellArgs = list()) 引数    名前 説明     ... 名前の指定されていない引数は、レイアウトの子要素になります。名前の付いた引数は最も外側のタグのHTML属性になります。   callWidths それぞれのセルの幅を指定する文字または数値のベクトル。必要に応じて、再利用がなされます。文字の値はCSSの長さとして解釈されます(validateCssUnitを参照してください)。数値の値は、ピクセルとして解釈されます。   callArgs レイアウトの隠せるで用いられる任意の追加属性    説明 要素を水平に等しく２分割に配置します。
 使用例 ## Only run examples in interactive R sessions if (interactive()) {options(device.ask.default = FALSE)# Server code used for all examples server &amp;lt;- function(input, output) {output$plot1 &amp;lt;- renderPlot(plot(cars))output$plot2 &amp;lt;- renderPlot(plot(pressure))output$plot3 &amp;lt;- renderPlot(plot(AirPassengers))}# Equal sizing ui &amp;lt;- splitLayout(plotOutput(&amp;#34;plot1&amp;#34;),plotOutput(&amp;#34;plot2&amp;#34;))shinyApp(ui, server)# Custom widths ui &amp;lt;- splitLayout(cellWidths = c(&amp;#34;25%&amp;#34;, &amp;#34;75%&amp;#34;),plotOutput(&amp;#34;plot1&amp;#34;),plotOutput(&amp;#34;plot2&amp;#34;))shinyApp(ui, server)# All cells at 300 pixels wide, with cell padding # and a border around everything ui &amp;lt;- splitLayout(style = &amp;#34;border: 1px solid silver;&amp;#34;,cellWidths = 300,cellArgs = list(style = &amp;#34;padding: 6px&amp;#34;),plotOutput(&amp;#34;plot1&amp;#34;),plotOutput(&amp;#34;plot2&amp;#34;),plotOutput(&amp;#34;plot3&amp;#34;))shinyApp(ui, server)}</description>
+    </item>
+    
+    <item>
+      <title>tabPanel</title>
+      <link>/tabpanel/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tabpanel/</guid>
+      <description>tabPanel(title, ..., value = title, icon = NULL) 引数    名前 説明     title タブに表示するタイトル   ... タブ内に含まれるUI要素   value tabsetPanelでこのタブが選択されたときに送られる値。valueの設定なしで、tabsetPaneがidを保つ場合、titleが使用されます。   icon タブ上にオプションで表示するアイコン。この属性は、navbarPage内でtabPanelを用いているときのみ有効です。    値 tabsetPanelに渡されるタブ。
+説明 tabsetPanel内に含まれるタブパネルを生成。
+使用例 # Show a tabset that includes a plot, summary, and # table view of the generated distribution mainPanel(tabsetPanel(tabPanel(&amp;#34;Plot&amp;#34;, plotOutput(&amp;#34;plot&amp;#34;)),tabPanel(&amp;#34;Summary&amp;#34;, verbatimTextOutput(&amp;#34;summary&amp;#34;)),tabPanel(&amp;#34;Table&amp;#34;, tableOutput(&amp;#34;table&amp;#34;))))</description>
+    </item>
+    
+    <item>
+      <title>tabsetPanel</title>
+      <link>/tabsetpanel/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tabsetpanel/</guid>
+      <description>tabsetPanel(..., id = NULL, selected = NULL, type = c(&amp;#34;tabs&amp;#34;, &amp;#34;pills&amp;#34;), position = NULL) 引数    名前 説明     ... タブの集合に含まれるtabPanel要素   id NULL以外の値を設定すると、サーバでそのときにアクティブなタブを決めるためにinput$idを使えるようになります。値はtabPanelに渡される引数に対応します。   selected デフォルトで選択されているタブの値。値がない場合はタイトルになります。NULLの場合は、最初のタブが選択されます。   type &amp;ldquo;tabs&amp;rdquo;を指定数と標準的なタブになります。&amp;rdquo;pills&amp;rdquo;を指定するとタブが背景色で塗りつぶされた見た目になります。   position この引数は推奨されません。Bootstrap 3で廃止された機能を使用しているからです。    値 mainPanelに渡されるタブの集合。
+説明 tabPanel要素を持つタブの集合を生成します。タブの集合は、複数の独立した閲覧可能なセクションに出力を分割するのに有用です。
+使用例 # Show a tabset that includes a plot, summary, and # table view of the generated distribution mainPanel(tabsetPanel(tabPanel(&amp;#34;Plot&amp;#34;, plotOutput(&amp;#34;plot&amp;#34;)),tabPanel(&amp;#34;Summary&amp;#34;, verbatimTextOutput(&amp;#34;summary&amp;#34;)),tabPanel(&amp;#34;Table&amp;#34;, tableOutput(&amp;#34;table&amp;#34;))))</description>
+    </item>
+    
+    <item>
+      <title>verticalLayout</title>
+      <link>/verticallayout/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/verticallayout/</guid>
+      <description>verticalLayout(..., fluid = TRUE) 引数    名前 説明     ... コンテナ内に含まれる要素   fluid TRUEなら可変レイアウト、FALSEなら固定レイアウトとなります。    説明 １つ以上コンテンツの行を含むコンテナを生成します。コンテナに渡されるそれぞれの要素はUI中の自身の列上に現れます。
+使用例 ## Only run examples in interactive R sessions if (interactive()) {ui &amp;lt;- fluidPage(verticalLayout(a(href=&amp;#34;http://example.com/link1&amp;#34;, &amp;#34;Link One&amp;#34;),a(href=&amp;#34;http://example.com/link2&amp;#34;, &amp;#34;Link Two&amp;#34;),a(href=&amp;#34;http://example.com/link3&amp;#34;, &amp;#34;Link Three&amp;#34;)))shinyApp(ui, server = function(input, output) { })}
+参照 RStudioのReference
+https://shiny.rstudio.com/reference/shiny/1.0.5/verticalLayout.html</description>
     </item>
     
     <item>

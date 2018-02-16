@@ -54,16 +54,29 @@ description: "機能ごとのShiny関数の索引"
 
 ### UI Layout
 
+* [column]({{< ref "column.md" >}})
 
 * [flowLayout]({{< ref "flowlayout.md" >}})
 
+* [fluidPage]({{< ref "fluidpage.md" >}})
+
 * [mainPanel]({{< ref "mainpanel.md" >}})
+
+* [navbarPage]({{< ref "navbarpage.md" >}})
+
+* [navlistPanel]({{< ref "navlistpanel.md" >}})
 
 * [sidebarLayout]({{< ref "sidebarlayout.md" >}})
 
 * [sidebarPanel]({{< ref "sidebarpanel.md" >}})
 
 * [splitLayout]({{< ref "splitlayout.md" >}})
+
+* [tabPanel]({{< ref "tabpanel.md" >}})
+
+* [tabsetPanel]({{< ref "tabsetpanel.md" >}})
+
+* [verticalLayout]({{< ref "verticallayout.md" >}})
 
 * [wellPanel]({{< ref "wellpanel.md" >}})
 
@@ -82,6 +95,11 @@ description: "機能ごとのShiny関数の索引"
 * [renderUI]({{< ref "renderui.md" >}})
 
 ### Reactive programming
+
+
+
+
+
 
 
 https://shiny.rstudio.com/reference/shiny/1.0.5/
