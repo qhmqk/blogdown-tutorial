@@ -453,5 +453,15 @@ widthやheight, class, altなどの他の要素も、リストに加えられま
 Examples ## Only run this example in interactive R sessions if (interactive()) { shinyApp( ui = basicPage( textInput(&amp;#34;txt&amp;#34;, &amp;#34;Enter the text to display below:&amp;#34;), verbatimTextOutput(&amp;#34;default&amp;#34;), verbatimTextOutput(&amp;#34;placeholder&amp;#34;, placeholder = TRUE) ), server = function(input, output) { output$default &amp;lt;- renderText({ input$txt }) output$placeholder &amp;lt;- renderText({ input$txt }) } ) }</description>
     </item>
     
+    <item>
+      <title>shinydashboard</title>
+      <link>/shinydashboard/</link>
+      <pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/shinydashboard/</guid>
+      <description>box ダッシュボード本体のボックスを生成します。ボックスはダッシュボード本体の中にコンテンツ置くために用います。
+box(..., title = NULL, footer = NULL, status = NULL,solidHeader = FALSE, background = NULL, width = 6, height = NULL,collapsible = FALSE, collapsed = FALSE) 引数    名前 説明     ... boxのコンテンツ   title オプションで指定するタイトル   footer オプションで指定するフッタのテキスト   status 項目の状態。背景色はここで設定します。有効な状態は、validStatusesのリストになります。   solidHeader ヘッダを無色で表示するかどうかを指定   background NULL(デフォルト)の場合、ボックスの背景は白色となります。それ以外は、色を文字列で指定します。有効な色は、validColorsのリストになります。   width Bootstrapのグリッドシステムにおけるボックスの幅。行ベースのレイアウトで用いられます。最大の幅は12で、デフォルトのvalueBoxの幅は4なので1/3の幅を占めます。列ベースのレイアウトでは、幅にNULLを用います。すなわち幅はボックスを持つ列によって設定されます。   height ボックスの高さをピクセルまたは他のCSSの単位で指定します。デフォルトでは、高さはコンテンツに応じて自動的に拡大縮小します。   collapsible TRUEの場合、右上にボックスを掴むためのボタンを表示します。   collapsed TRUEの場合、掴んだ状態で開始されます。collapsible = TRUEである必要があります。    使用例 ## Only run this example in interactive R sessions if (interactive()) {library(shiny)# A dashboard body with a row of infoBoxes and valueBoxes, and two rows of boxes body &amp;lt;- dashboardBody(# infoBoxes fluidRow(infoBox(&amp;#34;Orders&amp;#34;, uiOutput(&amp;#34;orderNum2&amp;#34;), &amp;#34;Subtitle&amp;#34;, icon = icon(&amp;#34;credit-card&amp;#34;)),infoBox(&amp;#34;Approval Rating&amp;#34;, &amp;#34;60%&amp;#34;, icon = icon(&amp;#34;line-chart&amp;#34;), color = &amp;#34;green&amp;#34;,fill = TRUE),infoBox(&amp;#34;Progress&amp;#34;, uiOutput(&amp;#34;progress2&amp;#34;), icon = icon(&amp;#34;users&amp;#34;), color = &amp;#34;purple&amp;#34;)),# valueBoxes fluidRow(valueBox(uiOutput(&amp;#34;orderNum&amp;#34;), &amp;#34;New Orders&amp;#34;, icon = icon(&amp;#34;credit-card&amp;#34;),href = &amp;#34;http://google.</description>
+    </item>
+    
   </channel>
 </rss>

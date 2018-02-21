@@ -103,3 +103,7 @@ description: "機能ごとのShiny関数の索引"
 
 
 https://shiny.rstudio.com/reference/shiny/1.0.5/
+
+### Packages
+
+* [shinydashboard]({{< ref "shinydashboard.md" >}})
