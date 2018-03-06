@@ -35,6 +35,8 @@ actionButton(inputId, label, icon = NULL, width = NULL, ...)
 
 **このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。**
 
+{{< figure src="/ui-input/actionbuttons-with-icon-and-img.png" alt="Action buttons with icon and img" >}}
+
 {{< highlight r >}}
 library(shiny)
 
@@ -78,6 +80,8 @@ shinyApp(ui, server)
 #### アクションボタンの値を使った表示の切り替え
 
 アクションボタンが押されるたびに変化する`input$goButton`の値を用いて、確率密度関数`dnorm`の表示を切り替えます。`%%2`はmod演算子を使って2で割った余りの計算を意味しており、押されるたびに0または1の値との判定をif文で行っています。
+
+{{< figure src="/ui-input/actionbutton-changes-a-histogram.gif" alt="Switching of display using the value of the actionbutton" >}}
 
 {{< highlight r >}}
 library(shiny)

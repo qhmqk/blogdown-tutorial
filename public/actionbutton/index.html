@@ -181,6 +181,15 @@ ga('send', 'pageview');
 
 <p><strong>このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。</strong></p>
 
+
+<figure >
+    
+        <img src="/ui-input/actionbuttons-with-icon-and-img.png" alt="Action buttons with icon and img" />
+    
+    
+</figure>
+
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
 
 ui <span style="color:#f92672">&lt;-</span> fluidPage(
@@ -222,6 +231,15 @@ shinyApp(ui, server)</code></pre></div>
 <h4 id="アクションボタンの値を使った表示の切り替え">アクションボタンの値を使った表示の切り替え</h4>
 
 <p>アクションボタンが押されるたびに変化する<code>input$goButton</code>の値を用いて、確率密度関数<code>dnorm</code>の表示を切り替えます。<code>%%2</code>はmod演算子を使って2で割った余りの計算を意味しており、押されるたびに0または1の値との判定をif文で行っています。</p>
+
+
+<figure >
+    
+        <img src="/ui-input/actionbutton-changes-a-histogram.gif" alt="Switching of display using the value of the actionbutton" />
+    
+    
+</figure>
+
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
 

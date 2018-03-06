@@ -101,57 +101,61 @@ ui.R または app.R で `shinyApp` に与える `ui` に、入力コントロ�
 
 |入力ウィジェット(図)|関数|
 |:--|:--|
-||[`actionButton(inputId, label, icon, ...)`]({{< ref "actionbutton.md" >}})|
-||[`actionLink(inputId, label, icon, ...)`]()|
-||[`checkboxInput(inputId, label, value)`]({{< ref "checkboxinput.md" >}})|
-||[`checkboxGroupInput(inputId, label, choices, selected, inline)`]({{< ref "checkboxgroupinput.md" >}})|
-||[`dateInput(inputId, label, value, min, max, format, startview, weekstart, language)`]({{< ref "dateinput.md" >}})|
-||[`dateRangeInput(inputId, label, start, end, min, max, format, startview, weekstart, language, separator)`]({{< ref "daterangeinput.md" >}})|
-||[`fileInput(inputId, label, multiple, accept)`]({{< ref "fileinput.md" >}})|
-||[`numericInput(inputId, label, )`]({{< ref "numericinput.md" >}})|
-||[`passwordInput(inputId, label, value)`]({{< ref "passwordinput.md" >}})|
-||[`radioButtons(inputId, label, choices, selected, inline)`]({{< ref "radiobuttons.md" >}})|
-||[`selectInput(inputId, label, choices, selected, multiple, selectize, width, size)`]({{< ref "selectinput.md" >}})|
-||[`sliderInput(inputId, label, min, max, value, step, round, format, locate, ticks, animate, width, sep, pre, post)`]({{< ref "sliderinput.md" >}})|
-||[`submitButton(text, icon)`]()|
-||[`textInput(inputId, label, value)`]({{< ref "textinput.md" >}})|
+|{{< figure src="/ui-input/actionbutton.png" alt="actionButton" >}}|[`actionButton(inputId, label, icon, ...)`]({{< ref "actionbutton.md" >}})|
+|{{< figure src="/ui-input/actionlink.png" alt="actionLink" >}}|[`actionLink(inputId, label, icon, ...)`]()|
+|{{< figure src="/ui-input/checkboxinput.png" alt="checkboxInput" >}}|[`checkboxInput(inputId, label, value)`]({{< ref "checkboxinput.md" >}})|
+|{{< figure src="/ui-input/checkboxgroupinput.png" alt="checkboxGroupInput" >}}|[`checkboxGroupInput(inputId, label, choices, selected, inline)`]({{< ref "checkboxgroupinput.md" >}})|
+|{{< figure src="/ui-input/dateinput.png" alt="dateInput" >}}|[`dateInput(inputId, label, value, min, max, format, startview, weekstart, language)`]({{< ref "dateinput.md" >}})|
+|{{< figure src="/ui-input/daterangeinput.png" alt="dateRangeInput" >}}|[`dateRangeInput(inputId, label, start, end, min, max, format, startview, weekstart, language, separator)`]({{< ref "daterangeinput.md" >}})|
+|{{< figure src="/ui-input/fileinput.png" alt="fileInput" >}}|[`fileInput(inputId, label, multiple, accept)`]({{< ref "fileinput.md" >}})|
+|{{< figure src="/ui-input/numericinput.png" alt="numericInput" >}}|[`numericInput(inputId, label, )`]({{< ref "numericinput.md" >}})|
+|{{< figure src="/ui-input/passwordinput.png" alt="passwordInput" >}}|[`passwordInput(inputId, label, value)`]({{< ref "passwordinput.md" >}})|
+|{{< figure src="/ui-input/radiobuttons.png" alt="radioButtons" >}}|[`radioButtons(inputId, label, choices, selected, inline)`]({{< ref "radiobuttons.md" >}})|
+|{{< figure src="/ui-input/selectinput.png" alt="selectInput" >}}|[`selectInput(inputId, label, choices, selected, multiple, selectize, width, size)`]({{< ref "selectinput.md" >}})|
+|{{< figure src="/ui-input/sliderinput.png" alt="sliderInput" >}}|[`sliderInput(inputId, label, min, max, value, step, round, format, locate, ticks, animate, width, sep, pre, post)`]({{< ref "sliderinput.md" >}})|
+|{{< figure src="/ui-input/submitbutton.png" alt="submitButton" >}}|[`submitButton(text, icon)`]()|
+|{{< figure src="/ui-input/textinput.png" alt="textInput" >}}|[`textInput(inputId, label, value)`]({{< ref "textinput.md" >}})|
+
+{{< figure src="/ui-input/input-widgets.png" alt="Major input widgets in vertical layout" >}}
 
 {{< highlight r >}}
 library(shiny)
-ui <- fixedPage(
-  p(actionButton("actionButton", "Action!")),
-  p(actionLink("actionLink", "Link")),
-  p(checkboxInput("checkboxInput", "Check")),
-  p(checkboxGroupInput("checkboxGroupInput", "Choice:",
-                              c("choice 1" = "c1",
-                                "choice 2" = "c2",
-                                "choice 3" = "c3"))),
-  p(dateInput("dateInput", "Date:", value = "2012-02-29")),
-  p(dateRangeInput("dateRangeInput", "Date range:",
-                 start = "2001-01-01",
-                 end   = "2010-12-31")),
-  p(fileInput("fileInput", "Choose file:",
-            accept = c(
-              "text/csv",
-              "text/comma-separated-values,text/plain",
-              ".csv"))),
-  p(numericInput("numericInput", "Numeric", 10, min = 1, max = 100)),
-  p(passwordInput("passwordInput", "Password:")),
-  p(radioButtons("radioButtons", "Choice:",
+
+ui <- fluidPage(verticalLayout(
+  actionButton("actionButton", "Action!"),
+  actionLink("actionLink", "Link"),
+  checkboxInput("checkboxInput", "Check"),
+  checkboxGroupInput("checkboxGroupInput", "Choice:",
+                       c("choice 1" = "c1",
+                         "choice 2" = "c2",
+                         "choice 3" = "c3")),
+  dateInput("dateInput", "Date:", value = "2012-02-29"),
+  dateRangeInput("dateRangeInput", "Date range:",
+                   start = "2001-01-01",
+                   end   = "2010-12-31"),
+  fileInput("fileInput", "Choose file:",
+              accept = c(
+                "text/csv",
+                "text/comma-separated-values,text/plain",
+                ".csv")),
+  numericInput("numericInput", "Numeric", 10, min = 1, max = 100),
+  passwordInput("passwordInput", "Password:"),
+  radioButtons("radioButtons", "Choice:",
                  c("choice 1" = "c1",
                    "choice 2" = "c2",
-                   "choice 3" = "c3"))),
-  p(selectInput("selectInput", "Choice:",
-                 c("choice 1" = "c1",
-                   "choice 2" = "c2",
-                   "choice 3" = "c3"))),
-  p(sliderInput("sliderInput", "Slide:", min = 0, max = 1000, value = 500)),
-  p(submitButton(text = "Submit", icon = NULL, width = NULL)),
-  p(textInput("textInput", "Text:", "input text"))
-)
+                   "choice 3" = "c3")),
+  selectInput("selectInput", "Choice:",
+                c("choice 1" = "c1",
+                  "choice 2" = "c2",
+                  "choice 3" = "c3")),
+  sliderInput("sliderInput", "Slide:", min = 0, max = 1000, value = 500),
+  submitButton(text = "Submit", icon = NULL, width = NULL),
+  textInput("textInput", "Text:", "input text")
+  ))
+
 server <- function(input, output){
-  
 }
+
 shinyApp(ui = ui, server = server)
 {{< /highlight >}}
 
