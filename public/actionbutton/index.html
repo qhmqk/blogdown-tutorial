@@ -12,9 +12,9 @@
 
 
 
-<meta property="article:published_time" content="2018-02-08T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-03-08T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-02-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-03-08T00:00:00&#43;00:00"/>
 
 
 
@@ -40,8 +40,8 @@
   "headline": "actionButton",
   "url": "/actionbutton/",
   "wordCount": "275",
-  "datePublished": "2018-02-08T00:00:00&#43;00:00",
-  "dateModified": "2018-02-08T00:00:00&#43;00:00",
+  "datePublished": "2018-03-08T00:00:00&#43;00:00",
+  "dateModified": "2018-03-08T00:00:00&#43;00:00",
   "author": {
     "@type": "Person",
     "name": "qhmqk"
@@ -115,7 +115,7 @@ ga('send', 'pageview');
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title"><a href="/actionbutton/">actionButton</a></h2>
-    <p class="blog-post-meta"> Last updated: <time datetime="2018-02-08T00:00:00Z">Thu Feb 08, 2018</time></p>
+    <p class="blog-post-meta"> Last updated: <time datetime="2018-03-08T00:00:00Z">Thu Mar 08, 2018</time></p>
     <p> By: qhmqk in 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
@@ -177,10 +177,6 @@ ga('send', 'pageview');
 
 <h4 id="ボタンにアイコンや画像を設定">ボタンにアイコンや画像を設定</h4>
 
-<p><code>icon</code>を指定することで、ボタンのアイコンを設定できます。画像を設定する場合は、<code>tags$img</code>で画像のURLを指定します。<code>actionButton</code>と、<code>tags$button</code>で<code>class=btn action-button</code>とした場合のHTMLは同じになることを利用します。</p>
-
-<p><strong>このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。</strong></p>
-
 
 <figure >
     
@@ -189,6 +185,10 @@ ga('send', 'pageview');
     
 </figure>
 
+
+<p><code>icon</code>を指定することで、ボタンのアイコンを設定できます。画像を設定する場合は、<code>tags$img</code>で画像のURLを指定します。<code>actionButton</code>と、<code>tags$button</code>で<code>class=btn action-button</code>とした場合のHTMLは同じになることを利用します。</p>
+
+<p><strong>このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。</strong></p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
 
@@ -230,8 +230,6 @@ shinyApp(ui, server)</code></pre></div>
 
 <h4 id="アクションボタンの値を使った表示の切り替え">アクションボタンの値を使った表示の切り替え</h4>
 
-<p>アクションボタンが押されるたびに変化する<code>input$goButton</code>の値を用いて、確率密度関数<code>dnorm</code>の表示を切り替えます。<code>%%2</code>はmod演算子を使って2で割った余りの計算を意味しており、押されるたびに0または1の値との判定をif文で行っています。</p>
-
 
 <figure >
     
@@ -240,6 +238,8 @@ shinyApp(ui, server)</code></pre></div>
     
 </figure>
 
+
+<p>アクションボタンが押されるたびに変化する<code>input$goButton</code>の値を用いて、確率密度関数<code>dnorm</code>の表示を切り替えます。<code>%%2</code>はmod演算子を使って2で割った余りの計算を意味しており、押されるたびに0または1の値との判定をif文で行っています。</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
 
@@ -260,6 +260,15 @@ server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">func
 shinyApp(ui, server)</code></pre></div>
 
 <h4 id="埋め込みcssを使ったボタンの色の変更">埋め込みCSSを使ったボタンの色の変更</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/actionbuttons-with-embedded-css.png" alt="Change colors of action buttons using embedded CSS" />
+    
+    
+</figure>
+
 
 <p><code>tags$head</code>を使って、直接<code>#button1</code>の背景色をCSSで指定することで、ボタンの色を変更できます。</p>
 
@@ -285,6 +294,15 @@ server <span style="color:#f92672">&lt;-</span> shinyServer(<span style="color:#
 shinyApp(ui, server)</code></pre></div>
 
 <h4 id="shinyjsによるボタンのオンオフ切り替え">shinyjsによるボタンのオンオフ切り替え</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/disable-action-button-when-textinput-is-empty.gif" alt="Disable action button when textInput is empty" />
+    
+    
+</figure>
+
 
 <p>shinyjsパッケージを使って、UIに<code>useShinyjs()</code>を追加すると、<code>enable</code>や<code>disable</code>、<code>toggleState</code>によりボタンのオンオフを切り替えられるようになります。Entry queryが空の場合は、ボタンをオフに、何らかの文字が入力されている場合はボタンがオンになります。</p>
 
@@ -415,9 +433,9 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/cokumn/">column</a></li>
+<li><a href="/actionbutton/">actionButton</a></li>
 
-<li><a href="/flowlayout/">flowLayout</a></li>
+<li><a href="/cokumn/">column</a></li>
 
     </ol>
   </section>

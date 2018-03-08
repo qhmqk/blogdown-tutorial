@@ -1,7 +1,7 @@
 ---
 title: "actionButton"
 author: "qhmqk"
-date: 2018-02-08
+date: 2018-03-08
 categories: ["Shiny"]
 tags: ["UI Inputs"]
 slug: "actionbutton"
@@ -31,11 +31,11 @@ actionButton(inputId, label, icon = NULL, width = NULL, ...)
 
 #### ボタンにアイコンや画像を設定
 
+{{< figure src="/ui-input/actionbuttons-with-icon-and-img.png" alt="Action buttons with icon and img" >}}
+
 `icon`を指定することで、ボタンのアイコンを設定できます。画像を設定する場合は、`tags$img`で画像のURLを指定します。`actionButton`と、`tags$button`で`class=btn action-button`とした場合のHTMLは同じになることを利用します。
 
 **このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。**
-
-{{< figure src="/ui-input/actionbuttons-with-icon-and-img.png" alt="Action buttons with icon and img" >}}
 
 {{< highlight r >}}
 library(shiny)
@@ -79,9 +79,9 @@ shinyApp(ui, server)
 
 #### アクションボタンの値を使った表示の切り替え
 
-アクションボタンが押されるたびに変化する`input$goButton`の値を用いて、確率密度関数`dnorm`の表示を切り替えます。`%%2`はmod演算子を使って2で割った余りの計算を意味しており、押されるたびに0または1の値との判定をif文で行っています。
-
 {{< figure src="/ui-input/actionbutton-changes-a-histogram.gif" alt="Switching of display using the value of the actionbutton" >}}
+
+アクションボタンが押されるたびに変化する`input$goButton`の値を用いて、確率密度関数`dnorm`の表示を切り替えます。`%%2`はmod演算子を使って2で割った余りの計算を意味しており、押されるたびに0または1の値との判定をif文で行っています。
 
 {{< highlight r >}}
 library(shiny)
@@ -104,6 +104,8 @@ shinyApp(ui, server)
 {{< /highlight >}}
 
 #### 埋め込みCSSを使ったボタンの色の変更
+
+{{< figure src="/ui-input/actionbuttons-with-embedded-css.png" alt="Change colors of action buttons using embedded CSS" >}}
 
 `tags$head`を使って、直接`#button1`の背景色をCSSで指定することで、ボタンの色を変更できます。
 
@@ -131,6 +133,8 @@ shinyApp(ui, server)
 {{< /highlight >}}
 
 #### shinyjsによるボタンのオンオフ切り替え
+
+{{< figure src="/ui-input/disable-action-button-when-textinput-is-empty.gif" alt="Disable action button when textInput is empty" >}}
 
 shinyjsパッケージを使って、UIに`useShinyjs()`を追加すると、`enable`や`disable`、`toggleState`によりボタンのオンオフを切り替えられるようになります。Entry queryが空の場合は、ボタンをオフに、何らかの文字が入力されている場合はボタンがオンになります。
 

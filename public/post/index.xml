@@ -93,6 +93,18 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
     </item>
     
     <item>
+      <title>actionButton</title>
+      <link>/actionbutton/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/actionbutton/</guid>
+      <description>actionButton(inputId, label, icon = NULL, width = NULL, ...) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。   icon (オプションで)ボタン上に現れるアイコン   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   ... ボタンに適用する名前付きの属性    説明 初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。
+使用例 ボタンにアイコンや画像を設定  iconを指定することで、ボタンのアイコンを設定できます。画像を設定する場合は、tags$imgで画像のURLを指定します。actionButtonと、tags$buttonでclass=btn action-buttonとした場合のHTMLは同じになることを利用します。
+このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。
+library(shiny) ui &amp;lt;- fluidPage( fluidRow( actionButton(&amp;#34;button1&amp;#34;, &amp;#34;&amp;#34;, icon = icon(&amp;#34;th&amp;#34;)), tags$button( id = &amp;#34;button2&amp;#34;, class=&amp;#34;btn action-button&amp;#34;, icon(&amp;#34;close&amp;#34;) ), tags$button( id = &amp;#34;button3&amp;#34;, class = &amp;#34;btn action-button&amp;#34;, tags$img(src = &amp;#34;https://www.</description>
+    </item>
+    
+    <item>
       <title>column</title>
       <link>/cokumn/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
@@ -263,18 +275,6 @@ https://shiny.rstudio.com/reference/shiny/1.0.5/wellPanel.html</description>
 説明 数値を入力するためのコントロールを生成
 使用例 もっとも基本的な使い方 1から100までの数値を入力し、その数値をverbatimTextOutputで表示します。
 library(shiny) ui &amp;lt;- fluidPage( numericInput(&amp;#34;obs&amp;#34;, &amp;#34;Observations:&amp;#34;, 10, min = 1, max = 100), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$obs }) } shinyApp(ui, server) 埋め込みCSSを使ったサイズ変更 UIのfluidPageに、tagsでCSSを埋め込んでサイズを変更します。</description>
-    </item>
-    
-    <item>
-      <title>actionButton</title>
-      <link>/actionbutton/</link>
-      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/actionbutton/</guid>
-      <description>actionButton(inputId, label, icon = NULL, width = NULL, ...) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label ボタンのコンテンツ。文字列を指定するとテキストラベルになり、HTMLを使って画像を指定することもできます。   icon (オプションで)ボタン上に現れるアイコン   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照   ... ボタンに適用する名前付きの属性    説明 初期値がゼロのアクションボタンを生成し、押されるたびに値を1ずつ増やします。
-使用例 ボタンにアイコンや画像を設定 iconを指定することで、ボタンのアイコンを設定できます。画像を設定する場合は、tags$imgで画像のURLを指定します。actionButtonと、tags$buttonでclass=btn action-buttonとした場合のHTMLは同じになることを利用します。
-このコードでは説明用に、画像への直リンクでボタン上に表示しています。ローカルで実行する限りは問題ありません。しかし、ロゴの著作権はRStudioにあり、直リンクで張り付けたアプリケーションを公開することはできないということに注意してください。
- library(shiny) ui &amp;lt;- fluidPage( fluidRow( actionButton(&amp;#34;button1&amp;#34;, &amp;#34;&amp;#34;, icon = icon(&amp;#34;th&amp;#34;)), tags$button( id = &amp;#34;button2&amp;#34;, class=&amp;#34;btn action-button&amp;#34;, icon(&amp;#34;close&amp;#34;) ), tags$button( id = &amp;#34;button3&amp;#34;, class = &amp;#34;btn action-button&amp;#34;, tags$img(src = &amp;#34;https://www.</description>
     </item>
     
     <item>
