@@ -1,7 +1,7 @@
 ---
 title: "numericInput"
 author: "qhmqk"
-date: 2018-02-09
+date: 2018-03-11
 categories: ["Shiny"]
 tags: ["UI Inputs"]
 slug: "numericinput"
@@ -37,6 +37,8 @@ UI定義に追加する数値入力コントロール
 
 #### もっとも基本的な使い方
 
+{{< figure src="/ui-input/numericinput-and-verbatimtextoutput.gif" alt="Basic usage of numericInput" >}}
+
 1から100までの数値を入力し、その数値を[`verbatimTextOutput`]({{< ref "verbatimtextoutput.md" >}})で表示します。
 
 {{< highlight r >}}
@@ -66,6 +68,8 @@ tags$head(
 
 #### 埋め込みCSSによる複数の`numericInput`の一括サイズ変更
 
+{{< figure src="/ui-input/numericinputs-with-embedded-css.png" alt="Change size of numericInputs using embedded CSS" >}}
+
 `#obs`ではなく、`input[type=\"number\"]`とすることで、すべての`numericInput`をまとめてCSSでサイズ変更する対象とします。
 
 {{< highlight r >}}
@@ -89,6 +93,8 @@ shinyApp(ui, server)
 {{< /highlight >}}
 
 #### スピンボタン(セレクタ)なしの数値入力
+
+{{< figure src="/ui-input/numericinput-without-spinbutton.png" alt="textInput like numericInput without spin button" >}}
 
 スピンボタン(セレクタ)により、キーボードからの直接入力に加えて右側のボタンでも数値を変更できます。このボタンを取り除くオプションは`numericInput`にはありません。身も蓋もありませんが、[`textInput`]({{< ref "textinput.md" >}})を代用することにより、スピンボタン(セレクタ)なしの数値入力を実現できます。
 

@@ -12,9 +12,9 @@
 
 
 
-<meta property="article:published_time" content="2018-02-09T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-03-11T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-02-09T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-03-11T00:00:00&#43;00:00"/>
 
 
 
@@ -40,8 +40,8 @@
   "headline": "numericInput",
   "url": "/numericinput/",
   "wordCount": "157",
-  "datePublished": "2018-02-09T00:00:00&#43;00:00",
-  "dateModified": "2018-02-09T00:00:00&#43;00:00",
+  "datePublished": "2018-03-11T00:00:00&#43;00:00",
+  "dateModified": "2018-03-11T00:00:00&#43;00:00",
   "author": {
     "@type": "Person",
     "name": "qhmqk"
@@ -115,7 +115,7 @@ ga('send', 'pageview');
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title"><a href="/numericinput/">numericInput</a></h2>
-    <p class="blog-post-meta"> Last updated: <time datetime="2018-02-09T00:00:00Z">Fri Feb 09, 2018</time></p>
+    <p class="blog-post-meta"> Last updated: <time datetime="2018-03-11T00:00:00Z">Sun Mar 11, 2018</time></p>
     <p> By: qhmqk in 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
 
@@ -191,6 +191,15 @@ ga('send', 'pageview');
 
 <h4 id="もっとも基本的な使い方">もっとも基本的な使い方</h4>
 
+
+<figure >
+    
+        <img src="/ui-input/numericinput-and-verbatimtextoutput.gif" alt="Basic usage of numericInput" />
+    
+    
+</figure>
+
+
 <p>1から100までの数値を入力し、その数値を<a href="/verbatimtextoutput/"><code>verbatimTextOutput</code></a>で表示します。</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
@@ -216,6 +225,15 @@ shinyApp(ui, server)</code></pre></div>
 
 <h4 id="埋め込みcssによる複数の-numericinput-の一括サイズ変更">埋め込みCSSによる複数の<code>numericInput</code>の一括サイズ変更</h4>
 
+
+<figure >
+    
+        <img src="/ui-input/numericinputs-with-embedded-css.png" alt="Change size of numericInputs using embedded CSS" />
+    
+    
+</figure>
+
+
 <p><code>#obs</code>ではなく、<code>input[type=\&quot;number\&quot;]</code>とすることで、すべての<code>numericInput</code>をまとめてCSSでサイズ変更する対象とします。</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span>(shiny)
@@ -237,6 +255,15 @@ server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">func
 shinyApp(ui, server)</code></pre></div>
 
 <h4 id="スピンボタン-セレクタ-なしの数値入力">スピンボタン(セレクタ)なしの数値入力</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/numericinput-without-spinbutton.png" alt="textInput like numericInput without spin button" />
+    
+    
+</figure>
+
 
 <p>スピンボタン(セレクタ)により、キーボードからの直接入力に加えて右側のボタンでも数値を変更できます。このボタンを取り除くオプションは<code>numericInput</code>にはありません。身も蓋もありませんが、<a href="/textinput/"><code>textInput</code></a>を代用することにより、スピンボタン(セレクタ)なしの数値入力を実現できます。</p>
 
@@ -316,9 +343,9 @@ shinyApp(ui, server)</code></pre></div>
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/actionbutton/">actionButton</a></li>
+<li><a href="/numericinput/">numericInput</a></li>
 
-<li><a href="/cokumn/">column</a></li>
+<li><a href="/actionbutton/">actionButton</a></li>
 
     </ol>
   </section>

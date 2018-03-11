@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>© 2018 qhmqk</copyright>
-    <lastBuildDate>Thu, 08 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/shiny/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>numericInput</title>
+      <link>/numericinput/</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/numericinput/</guid>
+      <description>numericInput(inputId, label, value, min = NA, max = NA, step = NA, width = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値   min 入力可能な最小値   max 入力可能な最大値   step 最小値と最大値の間のステップ幅   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    値 UI定義に追加する数値入力コントロール
+説明 数値を入力するためのコントロールを生成
+使用例 もっとも基本的な使い方  1から100までの数値を入力し、その数値をverbatimTextOutputで表示します。
+library(shiny) ui &amp;lt;- fluidPage( numericInput(&amp;#34;obs&amp;#34;, &amp;#34;Observations:&amp;#34;, 10, min = 1, max = 100), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$obs }) } shinyApp(ui, server) 埋め込みCSSを使ったサイズ変更 UIのfluidPageに、tagsでCSSを埋め込んでサイズを変更します。</description>
+    </item>
     
     <item>
       <title>actionButton</title>
@@ -183,18 +195,6 @@ https://shiny.rstudio.com/reference/shiny/1.0.5/verticalLayout.html</description
 説明 ボーダが入り、背景色がグレーのパネルを生成。BootstrapのwellというCSSクラスと同じです。
 参照 RStudioのReference
 https://shiny.rstudio.com/reference/shiny/1.0.5/wellPanel.html</description>
-    </item>
-    
-    <item>
-      <title>numericInput</title>
-      <link>/numericinput/</link>
-      <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/numericinput/</guid>
-      <description>numericInput(inputId, label, value, min = NA, max = NA, step = NA, width = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値   min 入力可能な最小値   max 入力可能な最大値   step 最小値と最大値の間のステップ幅   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    値 UI定義に追加する数値入力コントロール
-説明 数値を入力するためのコントロールを生成
-使用例 もっとも基本的な使い方 1から100までの数値を入力し、その数値をverbatimTextOutputで表示します。
-library(shiny) ui &amp;lt;- fluidPage( numericInput(&amp;#34;obs&amp;#34;, &amp;#34;Observations:&amp;#34;, 10, min = 1, max = 100), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$obs }) } shinyApp(ui, server) 埋め込みCSSを使ったサイズ変更 UIのfluidPageに、tagsでCSSを埋め込んでサイズを変更します。</description>
     </item>
     
     <item>
