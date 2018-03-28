@@ -1,7 +1,7 @@
 ---
 title: "dateInput"
 author: "qhmqk"
-date: 2018-01-10
+date: 2018-03-12
 categories: ["Shiny"]
 tags: ["UI Inputs"]
 slug: "dateinput"
@@ -51,27 +51,26 @@ dateInput(inputId, label, value = NULL, min = NULL, max = NULL, format = "yyyy-m
 
 ### 使用例
 
+{{< figure src="/ui-input/dateinput-with-various-formats.gif" alt="dataImputs with various formats" >}}
+
 {{< highlight r >}}
-## Only run examples in interactive R sessions
-if (interactive()) {
 ui <- fluidPage(
   dateInput("date1", "Date:", value = "2012-02-29"),
-  # Default value is the date in client's time zone
+  # valueを指定しない場合のデフォルトの値は、クライアントのタイムゾーンの値となります。
   dateInput("date2", "Date:"),
-  # value is always yyyy-mm-dd, even if the display format is different
+  # formatでmm/dd/yyを指定していますが、valueにはyyyy-mm-ddで値を指定します。
   dateInput("date3", "Date:", value = "2012-02-29", format = "mm/dd/yy"),
-  # Pass in a Date object
+  # valueに日付のオブジェクトを渡します。
   dateInput("date4", "Date:", value = Sys.Date()-10),
-  # Use different language and different first day of week
+  # 異なる言語で、週の初めの日を変えます。
   dateInput("date5", "Date:",
           language = "ru",
           weekstart = 1),
-  # Start with decade view instead of default month view
+  # デフォルトの月のビューではなく、10年のビューにします。
   dateInput("date6", "Date:",
             startview = "decade")
 )
 shinyApp(ui, server = function(input, output) { })
-}
 {{< /highlight >}}
 
 ### 参照

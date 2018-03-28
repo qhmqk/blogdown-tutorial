@@ -32,9 +32,11 @@ UI定義に追加されるチェックボックスのコントロール。
 
 ### 使用例
 
+{{< figure src="/ui-input/checkboxinput-example.gif" alt="Simple example using checkboxInput" >}}
+
+入力用のチェックボックスの状態を、`renderText`により文字列として出力します。
+
 {{< highlight r >}}
-## Only run examples in interactive R sessions
-if (interactive()) {
 ui <- fluidPage(
   checkboxInput("somevalue", "Some value", FALSE),
   verbatimTextOutput("value")
@@ -43,7 +45,6 @@ server <- function(input, output) {
   output$value <- renderText({ input$somevalue })
 }
 shinyApp(ui, server)
-}
 {{< /highlight >}}
 
 ### 参照

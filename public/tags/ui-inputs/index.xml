@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>© 2018 qhmqk</copyright>
-    <lastBuildDate>Sun, 11 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ui-inputs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dateInput</title>
+      <link>/dateinput/</link>
+      <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/dateinput/</guid>
+      <description>dateInput(inputId, label, value = NULL, min = NULL, max = NULL, format = &amp;#34;yyyy-mm-dd&amp;#34;, startview = &amp;#34;month&amp;#34;, weekstart = 0, language = &amp;#34;en&amp;#34;, width = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 開始日。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。デフォルトはNULLで、NULLならクライアントのタイムゾーンの現在の日付となります。   min 最も昔の日付。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。   max 最も後の日付。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。   format ブラウザに表示する日付のフォーマット。デフォルトはyyyy-mm-dd。   startview 最初の入力オブジェクトがクリックされたときに表示される日付の範囲。&amp;rdquo;month&amp;rdquo;, &amp;ldquo;year&amp;rdquo;, &amp;ldquo;decade&amp;rdquo;を指定します。デフォルトは&amp;rdquo;month&amp;rdquo;。   weekstart 週の最初の日を0(日曜日)～6(土曜日)の整数で指定します。   language 月と日の名前に使用する言語を指定します。デフォルトは&amp;rdquo;en&amp;rdquo;で英語。他に指定可能な値は、&amp;rdquo;ar&amp;rdquo;, &amp;ldquo;az&amp;rdquo;, &amp;ldquo;bg&amp;rdquo;, &amp;ldquo;bs&amp;rdquo;, &amp;ldquo;ca&amp;rdquo;, &amp;ldquo;cs&amp;rdquo;, &amp;ldquo;cy&amp;rdquo;, &amp;ldquo;da&amp;rdquo;, &amp;ldquo;de&amp;rdquo;, &amp;ldquo;el&amp;rdquo;, &amp;ldquo;en-AU&amp;rdquo;, &amp;ldquo;en-GB&amp;rdquo;, &amp;ldquo;eo&amp;rdquo;, &amp;ldquo;es&amp;rdquo;, &amp;ldquo;et&amp;rdquo;, &amp;ldquo;eu&amp;rdquo;, &amp;ldquo;fa&amp;rdquo;, &amp;ldquo;fi&amp;rdquo;, &amp;ldquo;fo&amp;rdquo;, &amp;ldquo;fr-CH&amp;rdquo;, &amp;ldquo;fr&amp;rdquo;, &amp;ldquo;gl&amp;rdquo;, &amp;ldquo;he&amp;rdquo;, &amp;ldquo;hr&amp;rdquo;, &amp;ldquo;hu&amp;rdquo;, &amp;ldquo;hy&amp;rdquo;, &amp;ldquo;id&amp;rdquo;, &amp;ldquo;is&amp;rdquo;, &amp;ldquo;it-CH&amp;rdquo;, &amp;ldquo;it&amp;rdquo;, &amp;ldquo;ja&amp;rdquo;, &amp;ldquo;ka&amp;rdquo;, &amp;ldquo;kh&amp;rdquo;, &amp;ldquo;kk&amp;rdquo;, &amp;ldquo;ko&amp;rdquo;, &amp;ldquo;kr&amp;rdquo;, &amp;ldquo;lt&amp;rdquo;, &amp;ldquo;lv&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, &amp;ldquo;mk&amp;rdquo;, &amp;ldquo;mn&amp;rdquo;, &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;nb&amp;rdquo;, &amp;ldquo;nl-BE&amp;rdquo;, &amp;ldquo;nl&amp;rdquo;, &amp;ldquo;no&amp;rdquo;, &amp;ldquo;pl&amp;rdquo;, &amp;ldquo;pt-BR&amp;rdquo;, &amp;ldquo;pt&amp;rdquo;, &amp;ldquo;ro&amp;rdquo;, &amp;ldquo;rs-latin&amp;rdquo;, &amp;ldquo;rs&amp;rdquo;, &amp;ldquo;ru&amp;rdquo;, &amp;ldquo;sk&amp;rdquo;, &amp;ldquo;sl&amp;rdquo;, &amp;ldquo;sq&amp;rdquo;, &amp;ldquo;sr-latin&amp;rdquo;, &amp;ldquo;sr&amp;rdquo;, &amp;ldquo;sv&amp;rdquo;, &amp;ldquo;sw&amp;rdquo;, &amp;ldquo;th&amp;rdquo;, &amp;ldquo;tr&amp;rdquo;, &amp;ldquo;uk&amp;rdquo;, &amp;ldquo;vi&amp;rdquo;, &amp;ldquo;zh-CN&amp;rdquo;, &amp;ldquo;zh-TW&amp;rdquo;。   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    説明 クリックすると日付選択できるカレンダーが表示されるテキスト入力を生成。</description>
+    </item>
     
     <item>
       <title>numericInput</title>
@@ -55,16 +64,9 @@ library(shiny) ui &amp;lt;- fluidPage( fluidRow( actionButton(&amp;#34;button1&a
       <guid>/checkboxinput/</guid>
       <description>checkboxInput(inputId, label, value = FALSE, width = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 初期値(論理値でTRUEまたはFALSE)   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    値 UI定義に追加されるチェックボックスのコントロール。
 説明 論理値を指定するために使用するチェックボックスを生成。
-使用例 ## Only run examples in interactive R sessions if (interactive()) { ui &amp;lt;- fluidPage( checkboxInput(&amp;#34;somevalue&amp;#34;, &amp;#34;Some value&amp;#34;, FALSE), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$somevalue }) } shinyApp(ui, server) }</description>
-    </item>
-    
-    <item>
-      <title>dateInput</title>
-      <link>/dateinput/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/dateinput/</guid>
-      <description>dateInput(inputId, label, value = NULL, min = NULL, max = NULL, format = &amp;#34;yyyy-mm-dd&amp;#34;, startview = &amp;#34;month&amp;#34;, weekstart = 0, language = &amp;#34;en&amp;#34;, width = NULL) 引数    名前 説明     inputId 値にアクセスするために使用するinputのスロット   label コントロールに表示するラベル。NULLならラベル無し   value 開始日。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。デフォルトはNULLで、NULLならクライアントのタイムゾーンの現在の日付となります。   min 最も昔の日付。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。   max 最も後の日付。データオブジェクト、またはyyyy-mm-ddというフォーマットの文字列。   format ブラウザに表示する日付のフォーマット。デフォルトはyyyy-mm-dd。   startview 最初の入力オブジェクトがクリックされたときに表示される日付の範囲。&amp;rdquo;month&amp;rdquo;, &amp;ldquo;year&amp;rdquo;, &amp;ldquo;decade&amp;rdquo;を指定します。デフォルトは&amp;rdquo;month&amp;rdquo;。   weekstart 週の最初の日を0(日曜日)～6(土曜日)の整数で指定します。   language 月と日の名前に使用する言語を指定します。デフォルトは&amp;rdquo;en&amp;rdquo;で英語。他に指定可能な値は、&amp;rdquo;ar&amp;rdquo;, &amp;ldquo;az&amp;rdquo;, &amp;ldquo;bg&amp;rdquo;, &amp;ldquo;bs&amp;rdquo;, &amp;ldquo;ca&amp;rdquo;, &amp;ldquo;cs&amp;rdquo;, &amp;ldquo;cy&amp;rdquo;, &amp;ldquo;da&amp;rdquo;, &amp;ldquo;de&amp;rdquo;, &amp;ldquo;el&amp;rdquo;, &amp;ldquo;en-AU&amp;rdquo;, &amp;ldquo;en-GB&amp;rdquo;, &amp;ldquo;eo&amp;rdquo;, &amp;ldquo;es&amp;rdquo;, &amp;ldquo;et&amp;rdquo;, &amp;ldquo;eu&amp;rdquo;, &amp;ldquo;fa&amp;rdquo;, &amp;ldquo;fi&amp;rdquo;, &amp;ldquo;fo&amp;rdquo;, &amp;ldquo;fr-CH&amp;rdquo;, &amp;ldquo;fr&amp;rdquo;, &amp;ldquo;gl&amp;rdquo;, &amp;ldquo;he&amp;rdquo;, &amp;ldquo;hr&amp;rdquo;, &amp;ldquo;hu&amp;rdquo;, &amp;ldquo;hy&amp;rdquo;, &amp;ldquo;id&amp;rdquo;, &amp;ldquo;is&amp;rdquo;, &amp;ldquo;it-CH&amp;rdquo;, &amp;ldquo;it&amp;rdquo;, &amp;ldquo;ja&amp;rdquo;, &amp;ldquo;ka&amp;rdquo;, &amp;ldquo;kh&amp;rdquo;, &amp;ldquo;kk&amp;rdquo;, &amp;ldquo;ko&amp;rdquo;, &amp;ldquo;kr&amp;rdquo;, &amp;ldquo;lt&amp;rdquo;, &amp;ldquo;lv&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, &amp;ldquo;mk&amp;rdquo;, &amp;ldquo;mn&amp;rdquo;, &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;nb&amp;rdquo;, &amp;ldquo;nl-BE&amp;rdquo;, &amp;ldquo;nl&amp;rdquo;, &amp;ldquo;no&amp;rdquo;, &amp;ldquo;pl&amp;rdquo;, &amp;ldquo;pt-BR&amp;rdquo;, &amp;ldquo;pt&amp;rdquo;, &amp;ldquo;ro&amp;rdquo;, &amp;ldquo;rs-latin&amp;rdquo;, &amp;ldquo;rs&amp;rdquo;, &amp;ldquo;ru&amp;rdquo;, &amp;ldquo;sk&amp;rdquo;, &amp;ldquo;sl&amp;rdquo;, &amp;ldquo;sq&amp;rdquo;, &amp;ldquo;sr-latin&amp;rdquo;, &amp;ldquo;sr&amp;rdquo;, &amp;ldquo;sv&amp;rdquo;, &amp;ldquo;sw&amp;rdquo;, &amp;ldquo;th&amp;rdquo;, &amp;ldquo;tr&amp;rdquo;, &amp;ldquo;uk&amp;rdquo;, &amp;ldquo;vi&amp;rdquo;, &amp;ldquo;zh-CN&amp;rdquo;, &amp;ldquo;zh-TW&amp;rdquo;。   width &amp;lsquo;400px&amp;rsquo;や&amp;rsquo;100%&amp;lsquo;などの形式で幅を指定。詳細はvalidateCssUnitを参照    説明 クリックすると日付選択できるカレンダーが表示されるテキスト入力を生成。</description>
+使用例  入力用のチェックボックスの状態を、renderTextにより文字列として出力します。
+ui &amp;lt;- fluidPage( checkboxInput(&amp;#34;somevalue&amp;#34;, &amp;#34;Some value&amp;#34;, FALSE), verbatimTextOutput(&amp;#34;value&amp;#34;) ) server &amp;lt;- function(input, output) { output$value &amp;lt;- renderText({ input$somevalue }) } shinyApp(ui, server) 参照 RStudioのReference
+https://shiny.rstudio.com/reference/shiny/latest/checkboxInput.html</description>
     </item>
     
     <item>

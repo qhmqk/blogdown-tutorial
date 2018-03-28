@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="shinywidgets" />
+<meta property="og:description" content="入出力ウィジェットを作成" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/shinywidgets/" />
+
+
+
+<meta property="article:published_time" content="2018-03-27T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-03-27T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="shinywidgets"/>
+<meta name="twitter:description" content="入出力ウィジェットを作成"/>
+<meta name="twitter:site" content="@username"/>
+<meta name="generator" content="Hugo 0.31.1" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "shinywidgets",
+  "url": "/shinywidgets/",
+  "wordCount": "246",
+  "datePublished": "2018-03-27T00:00:00&#43;00:00",
+  "dateModified": "2018-03-27T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "qhmqk"
+  },
+  "keywords": "Shiny, Packages",
+  "description": "入出力ウィジェットを作成"
+}
+</script>
+
+
+
+    <link rel="canonical" href="/shinywidgets/">
+
+    <title>shinywidgets | Shiny クックブック</title>
+
+    <!-- combined, minified CSS -->
+    <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
+
+    <link href="/css/dark.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+
+    
+
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-51807609-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link " href="/">Home</a>
+          
+          
+          <a class="nav-link" href="/contact/">Contact</a>
+          
+          
+          <a class="nav-link" href="/about/">About</a>
+          
+          
+        </nav>
+      </div>
+    </div>
+
+    <header class="blog-header">
+      <div class="container">
+        <h1 class="blog-title"><a href="/" rel="home">Shiny クックブック</a></h1>
+        <p class="lead blog-description">Shiny app 開発のための日本語リファレンス</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="/shinywidgets/">shinywidgets</a></h2>
+    <p class="blog-post-meta"> Last updated: <time datetime="2018-03-27T00:00:00Z">Tue Mar 27, 2018</time></p>
+    <p> By: qhmqk in 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
+
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/packages" rel="tag">Packages</a>
+
+</p>
+  </header>
+
+  
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#actionbttn">actionBttn</a>
+<ul>
+<li><a href="#actionbttnの説明">actionBttnの説明</a></li>
+<li><a href="#actionbttnの引数">actionBttnの引数</a></li>
+<li><a href="#actionbttnの使用例">actionBttnの使用例</a></li>
+</ul></li>
+<li><a href="#actiongroupbuttons">actionGroupButtons</a>
+<ul>
+<li><a href="#actiongroupbuttonsの説明">actionGroupButtonsの説明</a></li>
+<li><a href="#actiongroupbuttonsの引数">actionGroupButtonsの引数</a></li>
+<li><a href="#actiongroupbuttonsの値">actionGroupButtonsの値</a></li>
+<li><a href="#actiongroupbuttonsの使用例">actionGroupButtonsの使用例</a></li>
+</ul></li>
+<li><a href="#animateoptions">animateOptions</a>
+<ul>
+<li><a href="#animateoptionsの説明">animateOptionsの説明</a></li>
+<li><a href="#animateoptionsの引数">animateOptionsの引数</a></li>
+<li><a href="#animateoptionsの値">animateOptionsの値</a></li>
+<li><a href="#animateoptionsの使用例">animateOptionsの使用例</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  
+
+  
+
+<h3 id="actionbttn">actionBttn</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">actionBttn(inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, icon <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, style <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;unite&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;md&#34;</span>, block <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, no_outline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)</code></pre></div>
+
+<h4 id="actionbttnの説明">actionBttnの説明</h4>
+
+<p>Awesomeのアクションボタンです。<code>actionButton</code>に似ていますが、<a href="https://bttn.surge.sh/">https://bttn.surge.sh/</a> で提供されるリッチな表現のボタンが使用可能です。</p>
+
+<h4 id="actionbttnの引数">actionBttnの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするときに用いる入力のスロット。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">ボタンのコンテンツで、通常はテキストのラベルです。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>icon</code></strong></td>
+<td align="left">ボタンの上に現れるオプションのアイコン。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>style</code></strong></td>
+<td align="left">ボタンのスタイルを指定。<code>simple</code>, <code>bordered</code>, <code>minimal</code>, <code>stretch</code>, <code>jelly</code>, <code>gradient</code>, <code>fill</code>, <code>material-circle</code>, の中から選択します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>color</code></strong></td>
+<td align="left">ボタンの色。<code>default</code>, <code>primary</code>, <code>warning</code>, <code>danger</code>, <code>success</code>, <code>royal</code>の中から選択します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left">ボタンのサイズ。単位には<code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>のいずれかを使用します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>block</code></strong></td>
+<td align="left">ボタンの幅をいっぱいにするかどうかを論理値で指定。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>no_outline</code></strong></td>
+<td align="left">キーボード、またはマウスやタッチを用いてナビゲートするときに枠を表示するかどうかを論理値で指定。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="actionbttnの使用例">actionBttnの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-actionbttn.gif" alt="actionBttn" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  actionBttn(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Go!&#34;</span>, style <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;unite&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="actiongroupbuttons">actionGroupButtons</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">actionGroupButtons(inputIds, <span style="color:#66d9ef">labels</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;normal&#34;</span>, direction <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;horizontal&#34;</span>, fullwidth <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)</code></pre></div>
+
+<h4 id="actiongroupbuttonsの説明">actionGroupButtonsの説明</h4>
+
+<p>アクションボタンをグループ化した入力を生成します。</p>
+
+<h4 id="actiongroupbuttonsの引数">actionGroupButtonsの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputIds</code></strong></td>
+<td align="left">値にアクセスするときに用いる入力のスロット。一つ一つの値がそれぞれのボタンに対応します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>labels</code></strong></td>
+<td align="left">各ボタンのラベル。大きさは<code>inputIds</code>と同じである必要があります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">ボタンにクラスを追加します。<code>info</code>, <code>primary</code>, <code>danger</code>, <code>warning</code>, <code>success</code>などのBootstrapのステータスを使用可能です。または、<code>status = 'myClass'</code>のように任意の文字列を指定することで、ボタンにクラス<code>btn-myClass</code>を持たせます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left">ボタンのサイズ(’xs’, ’sm’, ’normal’, ’lg’)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>direction</code></strong></td>
+<td align="left"><code>horizontal</code>(水平)または<code>vertical</code>(垂直)を指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>fullwidth</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、親の<code>&lt;div&gt;</code>の幅を埋めます。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="actiongroupbuttonsの値">actionGroupButtonsの値</h4>
+
+<p>UI定義に追加するアクションボタンのグループコントロール。</p>
+
+<h4 id="actiongroupbuttonsの使用例">actionGroupButtonsの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-actiongroupbuttons.png" alt="actionGroupButtons" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  br(),
+  actionGroupButtons(
+    inputIds <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;btn1&#34;</span>, <span style="color:#e6db74">&#34;btn2&#34;</span>, <span style="color:#e6db74">&#34;btn3&#34;</span>),
+    labels <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">&#34;Action 1&#34;</span>, <span style="color:#e6db74">&#34;Action 2&#34;</span>, tags<span style="color:#f92672">$</span>span(icon(<span style="color:#e6db74">&#34;gear&#34;</span>), <span style="color:#e6db74">&#34;Action 3&#34;</span>)),
+    status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res2&#34;</span>),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res3&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>btn1)
+  output<span style="color:#f92672">$</span>res2 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>btn2)
+  output<span style="color:#f92672">$</span>res3 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>btn3)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="animateoptions">animateOptions</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">animateOptions(enter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fadeInDown&#34;</span>, exit <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fadeOutUp&#34;</span>, duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)</code></pre></div>
+
+<h4 id="animateoptionsの説明">animateOptionsの説明</h4>
+
+<p>アニメーションのオプション。</p>
+
+<h4 id="animateoptionsの引数">animateOptionsの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>enter</code></strong></td>
+<td align="left">表示するアニメーションの名前</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>exit</code></strong></td>
+<td align="left">表示が消えるアニメーションの名前</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>duration</code></strong></td>
+<td align="left">アニメーションの間隔</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="animateoptionsの値">animateOptionsの値</h4>
+
+<p>リスト</p>
+
+<h4 id="animateoptionsの使用例">animateOptionsの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dropdown(
+  <span style="color:#e6db74">&#34;Your contents goes here ! You can pass several elements&#34;</span>,
+  circle <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;gear&#34;</span>), width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;300px&#34;</span>,
+  animate <span style="color:#f92672">=</span> animateOptions(enter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fadeInDown&#34;</span>, exit <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fadeOutUp&#34;</span>, duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
+)</code></pre></div>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+    <section>
+    <h4>Share</h4>
+    <nav class="nav sharing-icons">
+      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=%2fshinywidgets%2f" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://plus.google.com/share?url=%2fshinywidgets%2f" title="Share on Google+"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fshinywidgets%2f" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://twitter.com/home?status=%2fshinywidgets%2f" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+    </nav>
+  </section>
+
+  
+
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-3 ml-auto blog-sidebar">
+  
+  <section class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p><em>qhmqk</em>, R user, native Japanese speaker, traveller and also gambler<br><br><a href="/about">Read more →</a></p>
+  </section>
+  
+
+  
+        <section class="sidebar-module">
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+
+
+<li><a href="/top-page/">Shiny app 開発をスタート</a></li>
+
+<li><a href="/function-index/">索引(アルファベット順)</a></li>
+
+<li><a href="/reference/">索引(機能別)</a></li>
+
+<li><a href="/shinywidgets/">shinywidgets</a></li>
+
+<li><a href="/dateinput/">dateInput</a></li>
+
+    </ol>
+  </section>
+
+  
+
+  
+  <section class="sidebar-module">
+    <h4>Links</h4>
+    <ol class="list-unstyled">
+      
+      <li><a href="https://www.r-project.org/">The R Project for Statistical Computing</a></li>
+      
+      <li><a href="https://www.rstudio.com/">RStudio</a></li>
+      
+    </ol>
+  </section>
+  
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>
+      
+      © 2018 qhmqk
+      
+      </p>
+      <p>
+      <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+    <script async type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script async type="text/javascript" src="/js/clip.js"></script>
+
+  </body>
+
+</html>

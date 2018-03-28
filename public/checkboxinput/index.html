@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "checkboxInput",
   "url": "/checkboxinput/",
-  "wordCount": "61",
+  "wordCount": "50",
   "datePublished": "2018-01-10T00:00:00&#43;00:00",
   "dateModified": "2018-01-10T00:00:00&#43;00:00",
   "author": {
@@ -174,17 +174,25 @@ ga('send', 'pageview');
 
 <h3 id="使用例">使用例</h3>
 
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## Only run examples in interactive R sessions</span>
-<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">interactive</span>()) {
-ui <span style="color:#f92672">&lt;-</span> fluidPage(
+
+<figure >
+    
+        <img src="/ui-input/checkboxinput-example.gif" alt="Simple example using checkboxInput" />
+    
+    
+</figure>
+
+
+<p>入力用のチェックボックスの状態を、<code>renderText</code>により文字列として出力します。</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
   checkboxInput(<span style="color:#e6db74">&#34;somevalue&#34;</span>, <span style="color:#e6db74">&#34;Some value&#34;</span>, <span style="color:#66d9ef">FALSE</span>),
   verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
 )
 server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
   output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderText({ input<span style="color:#f92672">$</span>somevalue })
 }
-shinyApp(ui, server)
-}</code></pre></div></p>
+shinyApp(ui, server)</code></pre></div>
 
 <h3 id="参照">参照</h3>
 
@@ -242,9 +250,9 @@ shinyApp(ui, server)
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/numericinput/">numericInput</a></li>
+<li><a href="/shinywidgets/">shinywidgets</a></li>
 
-<li><a href="/actionbutton/">actionButton</a></li>
+<li><a href="/dateinput/">dateInput</a></li>
 
     </ol>
   </section>

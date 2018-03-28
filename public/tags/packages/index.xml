@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>© 2018 qhmqk</copyright>
-    <lastBuildDate>Thu, 15 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/packages/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>shinywidgets</title>
+      <link>/shinywidgets/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/shinywidgets/</guid>
+      <description>actionBttn actionBttn(inputId, label = NULL, icon = NULL, style = &amp;#34;unite&amp;#34;, color = &amp;#34;default&amp;#34;, size = &amp;#34;md&amp;#34;, block = FALSE, no_outline = TRUE) actionBttnの説明 Awesomeのアクションボタンです。actionButtonに似ていますが、https://bttn.surge.sh/ で提供されるリッチな表現のボタンが使用可能です。
+actionBttnの引数    名前 説明     inputId 値にアクセスするときに用いる入力のスロット。   label ボタンのコンテンツで、通常はテキストのラベルです。   icon ボタンの上に現れるオプションのアイコン。   style ボタンのスタイルを指定。simple, bordered, minimal, stretch, jelly, gradient, fill, material-circle, の中から選択します。   color ボタンの色。default, primary, warning, danger, success, royalの中から選択します。   size ボタンのサイズ。単位にはxs, sm, md, lgのいずれかを使用します。   block ボタンの幅をいっぱいにするかどうかを論理値で指定。   no_outline キーボード、またはマウスやタッチを用いてナビゲートするときに枠を表示するかどうかを論理値で指定。    actionBttnの使用例  ui &amp;lt;- fluidPage(actionBttn(inputId = &amp;#34;id1&amp;#34;, label = &amp;#34;Go!</description>
+    </item>
     
     <item>
       <title>shinydashboard</title>

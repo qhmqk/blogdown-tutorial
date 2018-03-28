@@ -18,6 +18,16 @@
   </url>
   
   <url>
+    <loc>/shinywidgets/</loc>
+    <lastmod>2018-03-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/dateinput/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/numericinput/</loc>
     <lastmod>2018-03-11T00:00:00+00:00</lastmod>
   </url>
@@ -134,11 +144,6 @@
   
   <url>
     <loc>/checkboxinput/</loc>
-    <lastmod>2018-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/dateinput/</loc>
     <lastmod>2018-01-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -305,7 +310,7 @@
   
   <url>
     <loc>/tags/packages/</loc>
-    <lastmod>2018-02-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -359,7 +364,7 @@
   
   <url>
     <loc>/categories/shiny/</loc>
-    <lastmod>2018-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -389,7 +394,7 @@
   
   <url>
     <loc>/tags/ui-inputs/</loc>
-    <lastmod>2018-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
