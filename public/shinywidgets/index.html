@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="shinywidgets" />
+<meta property="og:title" content="shinyWidgets" />
 <meta property="og:description" content="入出力ウィジェットを作成" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/shinywidgets/" />
@@ -26,7 +26,7 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="shinywidgets"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="shinyWidgets"/>
 <meta name="twitter:description" content="入出力ウィジェットを作成"/>
 <meta name="twitter:site" content="@username"/>
 <meta name="generator" content="Hugo 0.31.1" />
@@ -37,9 +37,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "shinywidgets",
+  "headline": "shinyWidgets",
   "url": "/shinywidgets/",
-  "wordCount": "246",
+  "wordCount": "2712",
   "datePublished": "2018-03-27T00:00:00&#43;00:00",
   "dateModified": "2018-03-27T00:00:00&#43;00:00",
   "author": {
@@ -55,7 +55,7 @@
 
     <link rel="canonical" href="/shinywidgets/">
 
-    <title>shinywidgets | Shiny クックブック</title>
+    <title>shinyWidgets | Shiny クックブック</title>
 
     <!-- combined, minified CSS -->
     <link href="/css/style.css" rel="stylesheet" integrity="sha384-O8wjsnz02XiyrPxnhfF6AVOv6YLBaEGRCnVF&#43;DL3gCPBy9cieyHcpixIrVyD2JS5" crossorigin="anonymous">
@@ -114,7 +114,7 @@ ga('send', 'pageview');
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="/shinywidgets/">shinywidgets</a></h2>
+    <h2 class="blog-post-title"><a href="/shinywidgets/">shinyWidgets</a></h2>
     <p class="blog-post-meta"> Last updated: <time datetime="2018-03-27T00:00:00Z">Tue Mar 27, 2018</time></p>
     <p> By: qhmqk in 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/shiny" rel="category tag">Shiny</a>
@@ -151,6 +151,133 @@ ga('send', 'pageview');
 <li><a href="#animateoptionsの引数">animateOptionsの引数</a></li>
 <li><a href="#animateoptionsの値">animateOptionsの値</a></li>
 <li><a href="#animateoptionsの使用例">animateOptionsの使用例</a></li>
+</ul></li>
+<li><a href="#animations">animations</a>
+<ul>
+<li><a href="#animationsの説明">animationsの説明</a></li>
+<li><a href="#animationsのフォーマット">animationsのフォーマット</a></li>
+<li><a href="#animationsのソース">animationsのソース</a></li>
+</ul></li>
+<li><a href="#awesomecheckbox">awesomeCheckbox</a>
+<ul>
+<li><a href="#awesomecheckboxの説明">awesomeCheckboxの説明</a></li>
+<li><a href="#awesomecheckboxの引数">awesomeCheckboxの引数</a></li>
+<li><a href="#awesomecheckboxの値">awesomeCheckboxの値</a></li>
+<li><a href="#awesomecheckboxの使用例">awesomeCheckboxの使用例</a></li>
+</ul></li>
+<li><a href="#awesomecheckboxgroup">awesomeCheckboxGroup</a>
+<ul>
+<li><a href="#awesomecheckboxgroupの説明">awesomeCheckboxGroupの説明</a></li>
+<li><a href="#awesomecheckboxgroupの引数">awesomeCheckboxGroupの引数</a></li>
+<li><a href="#awesomecheckboxgroupの値">awesomeCheckboxGroupの値</a></li>
+<li><a href="#awesomecheckboxgroupの使用例">awesomeCheckboxGroupの使用例</a></li>
+</ul></li>
+<li><a href="#awesomeradio">awesomeRadio</a>
+<ul>
+<li><a href="#awesomeradioの説明">awesomeRadioの説明</a></li>
+<li><a href="#awesomeradioの引数">awesomeRadioの引数</a></li>
+<li><a href="#awesomeradioの値">awesomeRadioの値</a></li>
+<li><a href="#awesomeradioの使用例">awesomeRadioの使用例</a></li>
+</ul></li>
+<li><a href="#checkboxgroupbuttons">checkboxGroupButtons</a>
+<ul>
+<li><a href="#checkboxgroupbuttonsの説明">checkboxGroupButtonsの説明</a></li>
+<li><a href="#checkboxgroupbuttonsの引数">checkboxGroupButtonsの引数</a></li>
+<li><a href="#checkboxgroupbuttonsの値">checkboxGroupButtonsの値</a></li>
+<li><a href="#checkboxgroupbuttonsの使用例">checkboxGroupButtonsの使用例</a></li>
+</ul></li>
+<li><a href="#circlebutton">circleButton</a>
+<ul>
+<li><a href="#circlebuttonの説明">circleButtonの説明</a></li>
+<li><a href="#circlebuttonの引数">circleButtonの引数</a></li>
+</ul></li>
+<li><a href="#closesweetalert">closeSweetAlert</a>
+<ul>
+<li><a href="#closesweetalertの説明">closeSweetAlertの説明</a></li>
+<li><a href="#closesweetalertの引数">closeSweetAlertの引数</a></li>
+</ul></li>
+<li><a href="#colorselectorinput">colorSelectorInput</a>
+<ul>
+<li><a href="#colorselectorinputの説明">colorSelectorInputの説明</a></li>
+<li><a href="#colorselectorinputの引数">colorSelectorInputの引数</a></li>
+<li><a href="#colorselectorinputの値">colorSelectorInputの値</a></li>
+<li><a href="#colorselectorinputの関数">colorSelectorInputの関数</a></li>
+<li><a href="#colorselectorinputの使用例">colorSelectorInputの使用例</a></li>
+</ul></li>
+<li><a href="#confirmsweetalert">confirmSweetAlert</a>
+<ul>
+<li><a href="#confirmsweetalertの説明">confirmSweetAlertの説明</a></li>
+<li><a href="#confirmsweetalertの引数">confirmSweetAlertの引数</a></li>
+<li><a href="#confirmsweetalertの使用例">confirmSweetAlertの使用例</a></li>
+</ul></li>
+<li><a href="#dropdown">dropdown</a>
+<ul>
+<li><a href="#dropdownの説明">dropdownの説明</a></li>
+<li><a href="#dropdownの引数">dropdownの引数</a></li>
+<li><a href="#dropdownの詳細">dropdownの詳細</a></li>
+<li><a href="#dropdownの使用例">dropdownの使用例</a></li>
+</ul></li>
+<li><a href="#dropdownbutton">dropdownButton</a>
+<ul>
+<li><a href="#dropdownbuttonの説明">dropdownButtonの説明</a></li>
+<li><a href="#dropdownbuttonの引数">dropdownButtonの引数</a></li>
+<li><a href="#dropdownbuttonの使用例">dropdownButtonの使用例</a></li>
+</ul></li>
+<li><a href="#inputsweetalert">inputSweetAlert</a>
+<ul>
+<li><a href="#inputsweetalertの説明">inputSweetAlertの説明</a></li>
+<li><a href="#inputsweetalertの引数">inputSweetAlertの引数</a></li>
+<li><a href="#inputsweetalertの使用例">inputSweetAlertの使用例</a></li>
+</ul></li>
+<li><a href="#knobinput">knobInput</a>
+<ul>
+<li><a href="#knobinputの説明">knobInputの説明</a></li>
+<li><a href="#knobinputの引数">knobInputの引数</a></li>
+<li><a href="#knobinputの値">knobInputの値</a></li>
+<li><a href="#knobinputの使用例">knobInputの使用例</a></li>
+</ul></li>
+<li><a href="#materialswitch">materialSwitch</a>
+<ul>
+<li><a href="#materialswitchの説明">materialSwitchの説明</a></li>
+<li><a href="#materialswitchの引数">materialSwitchの引数</a></li>
+<li><a href="#materialswitchの値">materialSwitchの値</a></li>
+<li><a href="#materialswitchの使用例">materialSwitchの使用例</a></li>
+</ul></li>
+<li><a href="#multiinput">multiInput</a>
+<ul>
+<li><a href="#multiinputの説明">multiInputの説明</a></li>
+<li><a href="#multiinputの引数">multiInputの引数</a></li>
+<li><a href="#multiinputの値">multiInputの値</a></li>
+<li><a href="#multiinputの使用例">multiInputの使用例</a></li>
+</ul></li>
+<li><a href="#panel">panel</a>
+<ul>
+<li><a href="#panelの説明">panelの説明</a></li>
+<li><a href="#panelの引数">panelの引数</a></li>
+<li><a href="#panelの値">panelの値</a></li>
+<li><a href="#panelの使用例">panelの使用例</a></li>
+</ul></li>
+<li><a href="#pickerinput">pickerInput</a>
+<ul>
+<li><a href="#pickerinputの説明">pickerInputの説明</a></li>
+<li><a href="#pickerinputの引数">pickerInputの引数</a></li>
+<li><a href="#pickerinputの値">pickerInputの値</a></li>
+<li><a href="#pickerinputの使用例">pickerInputの使用例</a></li>
+</ul></li>
+<li><a href="#prettycheckbox">prettyCheckbox</a>
+<ul>
+<li><a href="#prettycheckboxの説明">prettyCheckboxの説明</a></li>
+<li><a href="#prettycheckboxの引数">prettyCheckboxの引数</a></li>
+<li><a href="#prettycheckboxの値">prettyCheckboxの値</a></li>
+<li><a href="#prettycheckboxの注記">prettyCheckboxの注記</a></li>
+<li><a href="#prettycheckboxの使用例">prettyCheckboxの使用例</a></li>
+</ul></li>
+<li><a href="#prettycheckboxgroup">prettyCheckboxGroup</a>
+<ul>
+<li><a href="#prettycheckboxgroupの説明">prettyCheckboxGroupの説明</a></li>
+<li><a href="#prettycheckboxgroupの引数">prettyCheckboxGroupの引数</a></li>
+<li><a href="#prettycheckboxgroupの値">prettyCheckboxGroupの値</a></li>
+<li><a href="#prettycheckboxgroupの使用例">prettyCheckboxGroupの使用例</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -371,6 +498,1949 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
   animate <span style="color:#f92672">=</span> animateOptions(enter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fadeInDown&#34;</span>, exit <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fadeOutUp&#34;</span>, duration <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
 )</code></pre></div>
 
+<h3 id="animations">animations</h3>
+
+<p>アニメーションの名前</p>
+
+<h4 id="animationsの説明">animationsの説明</h4>
+
+<p>カテゴリごとの全てのアニメーションのリスト</p>
+
+<h4 id="animationsのフォーマット">animationsのフォーマット</h4>
+
+<p>リストのリスト</p>
+
+<h4 id="animationsのソース">animationsのソース</h4>
+
+<p><a href="https://github.com/daneden/animate.css/blob/master/animate-config.json">https://github.com/daneden/animate.css/blob/master/animate-config.json</a></p>
+
+<h3 id="awesomecheckbox">awesomeCheckbox</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">awesomeCheckbox(inputId, label, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="awesomecheckboxの説明">awesomeCheckboxの説明</h4>
+
+<p>Awesomeのチェックボックス入力のコントロールで、論理値を指定するためのAwesome Bootstrapのチェックボックスを生成します。</p>
+
+<h4 id="awesomecheckboxの引数">awesomeCheckboxの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力のラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">初期値を論理値(<code>TRUE</code>または<code>FALSE</code>)で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">ボタンの色をBootstrapのステータス(<code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>, <code>warning</code>, <code>danger</code>)で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="awesomecheckboxの値">awesomeCheckboxの値</h4>
+
+<p>UI定義に追加するチェックボックスのコントロール</p>
+
+<h4 id="awesomecheckboxの使用例">awesomeCheckboxの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-awesomecheckbox.png" alt="awesomeCheckbox" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  awesomeCheckbox(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+                  label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A single checkbox&#34;</span>,
+                  value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+                  status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderText({ input<span style="color:#f92672">$</span>somevalue })
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="awesomecheckboxgroup">awesomeCheckboxGroup</h3>
+
+<p>awesomecheckboxのグループの入力コントロール</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">awesomeCheckboxGroup(inputId, label, choices, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="awesomecheckboxgroupの説明">awesomeCheckboxGroupの説明</h4>
+
+<p>論理値を指定するために用いられるFont AwesomeのBootstrapチェックボックスを生成</p>
+
+<h4 id="awesomecheckboxgroupの引数">awesomeCheckboxGroupの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力のラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">チェックボックスに表示する値のリスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値として選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、選択肢をインライン(すなわち水平)にレンダリングします。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">ボタンの色</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="awesomecheckboxgroupの値">awesomeCheckboxGroupの値</h4>
+
+<p>UI定義に追加するチェックボックスのコントロール</p>
+
+<h4 id="awesomecheckboxgroupの使用例">awesomeCheckboxGroupの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-awesomecheckboxgroup.png" alt="awesomeCheckboxGroup" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  br(),
+  awesomeCheckboxGroup(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Make a choice:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;graphics&#34;</span>, <span style="color:#e6db74">&#34;ggplot2&#34;</span>)
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+  br(),
+  awesomeCheckboxGroup(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id2&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Make a choice:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;base&#34;</span>, <span style="color:#e6db74">&#34;dplyr&#34;</span>, <span style="color:#e6db74">&#34;data.table&#34;</span>),
+    inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res2&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>id1
+  })
+  output<span style="color:#f92672">$</span>res2 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>id2
+  })
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="awesomeradio">awesomeRadio</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">awesomeRadio(inputId, label, choices, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>, checkbox <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="awesomeradioの説明">awesomeRadioの説明</h4>
+
+<p>Awesomeのラジオボタン入力のコントロールで、リストから項目を選択するために用いられるラジオボタンの集合を生成します。</p>
+
+<h4 id="awesomeradioの引数">awesomeRadioの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無しとなります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値で選択されている値(指定がない場合は最初の値)。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、選択肢をインライン(すなわち水平)にレンダリングします。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">ボタンの色をBootstrapのステータス(<code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>, <code>warning</code>, <code>danger</code>)で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>checkbox</code></strong></td>
+<td align="left">論理値でチェックボックスのような四角い形のラジオボタンを描画するかどうかを指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。例えば<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="awesomeradioの値">awesomeRadioの値</h4>
+
+<p>UI定義に追加するラジオボタンの集合</p>
+
+<h4 id="awesomeradioの使用例">awesomeRadioの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-awesomeradio.png" alt="awesomeRadio" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  br(),
+  awesomeRadio(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Make a choice:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;graphics&#34;</span>, <span style="color:#e6db74">&#34;ggplot2&#34;</span>)
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+  br(),
+  awesomeRadio(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id2&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Make a choice:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;base&#34;</span>, <span style="color:#e6db74">&#34;dplyr&#34;</span>, <span style="color:#e6db74">&#34;data.table&#34;</span>),
+    inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res2&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>id1
+  })
+  output<span style="color:#f92672">$</span>res2 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>id2
+  })
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="checkboxgroupbuttons">checkboxGroupButtons</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">checkboxGroupButtons(inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;normal&#34;</span>, direction <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;horizontal&#34;</span>, justified <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, individual <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, checkIcon <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(), width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="checkboxgroupbuttonsの説明">checkboxGroupButtonsの説明</h4>
+
+<p>チェックボックスのように動作するグループ化されたボタンを生成します。</p>
+
+<h4 id="checkboxgroupbuttonsの引数">checkboxGroupButtonsの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力のラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値で選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">ボタンにクラスを追加します。<code>info</code>, <code>primary</code>, <code>danger</code>, <code>warning</code>, <code>success</code>などのBootstrapのステータスを使用可能です。または、<code>status = 'myClass'</code>のように任意の文字列を指定することで、ボタンにクラス<code>btn-myClass</code>を持たせます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left">ボタンのサイズ(’xs’, ’sm’, ’normal’, ’lg’)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>direction</code></strong></td>
+<td align="left"><code>horizontal</code>(水平)または<code>vertical</code>(垂直)を指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>justified</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、親の<code>&lt;div&gt;</code>の幅を埋めます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>individual</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、ボタンが分かれます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>checkIcon</code></strong></td>
+<td align="left">少なくとも１つは空でない要素が含まれるリスト。ボタンがチェックされた場合に表示するアイコンを指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。例えば、<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code>, <code>choiceValues</code></strong></td>
+<td align="left">名前と値のリスト。それぞれアプリケーション内でユーザに各選択肢に対応するものが表示されます。このため、<code>choiceNames</code>と<code>choiceValues</code>は長さが同じである必要があります。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="checkboxgroupbuttonsの値">checkboxGroupButtonsの値</h4>
+
+<p>UI定義に追加するボタンのグループコントロール</p>
+
+<h4 id="checkboxgroupbuttonsの使用例">checkboxGroupButtonsの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-checkboxgroupbuttons.gif" alt="checkboxGroupButtons" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  checkboxGroupButtons(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+                       label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Make a choice: &#34;</span>,
+                       choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>)),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderText({ input<span style="color:#f92672">$</span>somevalue })
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="circlebutton">circleButton</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">circleButton(inputId, icon <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, <span style="color:#66d9ef">...</span>)</code></pre></div>
+
+<h4 id="circlebuttonの説明">circleButtonの説明</h4>
+
+<p>丸いアクションボタンを生成します。</p>
+
+<h4 id="circlebuttonの引数">circleButtonの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>icon</code></strong></td>
+<td align="left">ボタン上に現れるアイコン</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">ボタンの色</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left">ボタンのサイズ(’default’, ’xs’, ’sm’, ’lg’)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>...</code></strong></td>
+<td align="left">ボタンに適用される名前付きの属性</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="closesweetalert">closeSweetAlert</h3>
+
+<p>closeSweetAlert(session)</p>
+
+<h4 id="closesweetalertの説明">closeSweetAlertの説明</h4>
+
+<p>Close Sweet Alertを生成します。</p>
+
+<h4 id="closesweetalertの引数">closeSweetAlertの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="colorselectorinput">colorSelectorInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">colorSelectorInput(inputId, label, choices, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, mode <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;radio&#34;</span>, <span style="color:#e6db74">&#34;checkbox&#34;</span>), display_label <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>)</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">colorSelectorExample()</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">colorSelectorDrop(inputId, label, choices, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, display_label <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, circle <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sm&#34;</span>, up <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="colorselectorinputの説明">colorSelectorInputの説明</h4>
+
+<p>限定色の集合から色を選択します。</p>
+
+<h4 id="colorselectorinputの引数">colorSelectorInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無しとなります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">色のリスト。名前付きのリストも可能です、例を参照してください。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">デフォルトで選択されている色。<code>NULL</code>の場合、<code>mode = 'radio</code>では最初の色となり、<code>mode = 'checkbox'</code>では無しとなります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>mode</code></strong></td>
+<td align="left"><code>radio</code>だとラジオボタンのように一つの値を選択し、<code>checkbox</code>だと複数の値を選択します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>display_label</code></strong></td>
+<td align="left">色のパレットの後にリストの名前を表示します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>ncol</code></strong></td>
+<td align="left">選択肢がリストでなくベクトルの場合に、n個の要素の後でラインに移動します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>circle</code></strong></td>
+<td align="left">論理値で丸または四角のボタンの使用を指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left">ボタンのサイズ(’default’, ’xs’, ’sm’, ’lg’)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>up</code></strong></td>
+<td align="left">論理値で上部にドロップダウンメニューを表示するかどうかを指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">ドロップダウンメニューコンテンツの幅</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="colorselectorinputの値">colorSelectorInputの値</h4>
+
+<p>色を選択する入力コントロール</p>
+
+<h4 id="colorselectorinputの関数">colorSelectorInputの関数</h4>
+
+<ul>
+<li><p>colorSelectorExample: <code>colorSelectorInput</code>の使用例</p></li>
+
+<li><p>colorSelectorDrop: ドロップダウンボタンで色の選択を表示</p></li>
+</ul>
+
+<h4 id="colorselectorinputの使用例">colorSelectorInputの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-colorselectorinput.gif" alt="colorSelectorInput" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">colorSelectorExample()
+<span style="color:#75715e"># Simple example</span>
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  colorSelectorInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mycolor1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Pick a color :&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;steelblue&#34;</span>, <span style="color:#e6db74">&#34;cornflowerblue&#34;</span>,
+                <span style="color:#e6db74">&#34;firebrick&#34;</span>, <span style="color:#e6db74">&#34;palegoldenrod&#34;</span>,
+                <span style="color:#e6db74">&#34;forestgreen&#34;</span>)
+  ),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;result1&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>result1 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>mycolor1
+  })
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="confirmsweetalert">confirmSweetAlert</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">confirmSweetAlert(session, inputId, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Are you sure ?&#34;</span>, text <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, type <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, danger_mode <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, btn_labels <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Cancel&#34;</span>, <span style="color:#e6db74">&#34;Confirm&#34;</span>))</code></pre></div>
+
+<h4 id="confirmsweetalertの説明">confirmSweetAlertの説明</h4>
+
+<p>ユーザへの確認を行うポップアップを起動</p>
+
+<h4 id="confirmsweetalertの引数">confirmSweetAlertの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>title</code></strong></td>
+<td align="left">アラートのタイトル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>text</code></strong></td>
+<td align="left">アラートのテキスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>type</code></strong></td>
+<td align="left">アラートの型(<code>info</code>, <code>success</code>, <code>warning</code>, <code>error</code>)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>danger_mode</code></strong></td>
+<td align="left">論理値で危険モードをアクティベートするかどうかを指定(キャンセルボタンに焦点を当てます)。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>btn_labels</code></strong></td>
+<td align="left">ボタンのラベル</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="confirmsweetalertの使用例">confirmSweetAlertの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-confirmsweetalert.gif" alt="confirmSweetAlert" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Confirm sweet alert&#34;</span>),
+  actionButton(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;go&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Launch confirmation dialog&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  observeEvent(input<span style="color:#f92672">$</span>go, {
+    confirmSweetAlert(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myconfirmation&#34;</span>, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;warning&#34;</span>,
+      title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Want to confirm ?&#34;</span>, danger_mode <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>
+    )
+  })
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>myconfirmation)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="dropdown">dropdown</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dropdown(<span style="color:#66d9ef">...</span>, style <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;md&#34;</span>, icon <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, tooltip <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, right <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, up <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, animate <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)</code></pre></div>
+
+<h4 id="dropdownの説明">dropdownの説明</h4>
+
+<p>ドロップダウンメニューを生成</p>
+
+<h4 id="dropdownの引数">dropdownの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>...</code></strong></td>
+<td align="left">ドロップダウンメニューに表示されるタグのリスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>style</code></strong></td>
+<td align="left"><code>default</code>の場合、(<code>actionButton</code>のような)Bootstrapのボタンを使用します。他に<code>acutionBttn</code>を使用するなら、可能な値で引数の型を参照してください。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">色を有効なBootstrapのステータス(<code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>, <code>warning</code>, <code>danger</code>)で指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left">ボタンのサイズ(’default’, ’xs’, ’sm’, ’lg’)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>icon</code></strong></td>
+<td align="left">ボタン上に現れるアイコン</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">ボタン上に現れるラベル。<code>circle = TRUE</code>かつ<code>tooltip = TRUE</code>の場合、ラベルはツールチップ内で使用されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>tooltip</code></strong></td>
+<td align="left">ボタン上にツールチップを配置します。<code>tooltipOptions</code>でツールチップのカスタマイズが可能です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>right</code></strong></td>
+<td align="left">論理値でドロップダウンメニューが右側に開くかどうかを指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>up</code></strong></td>
+<td align="left">論理値で上部にドロップダウンメニューを表示するかどうかを指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">ドロップダウンメニューコンテンツの幅</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>animate</code></strong></td>
+<td align="left">ドロップダウン上にアニメーションを追加します。論理値または<code>animateOptions</code>の結果を指定可能です。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="dropdownの詳細">dropdownの詳細</h4>
+
+<p>この関数は<code>dropdownButton</code>に似ていますがBootstrapを使わないので、<code>pickerInput</code>を中に配置できます。さらにanimate.cssでドロップダウンの表示 / 非表示でのアニメーションを追加できます。</p>
+
+<h4 id="dropdownの使用例">dropdownの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-dropdown.gif" alt="dropdown" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h2(<span style="color:#e6db74">&#34;pickerInput in dropdown&#34;</span>),
+  br(),
+  dropdown(
+    tags<span style="color:#f92672">$</span>h3(<span style="color:#e6db74">&#34;List of Input&#34;</span>),
+    pickerInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xcol2&#39;</span>,
+                label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;X Variable&#39;</span>,
+                choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">names</span>(iris),
+                options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">`style`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;btn-info&#34;</span>)),
+    pickerInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ycol2&#39;</span>,
+                label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Y Variable&#39;</span>,
+                choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">names</span>(iris),
+                selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">names</span>(iris)[[<span style="color:#ae81ff">2</span>]],
+                options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">`style`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;btn-warning&#34;</span>)),
+    sliderInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;clusters2&#39;</span>,
+                label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Cluster count&#39;</span>,
+                value <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,
+                min <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>),
+    style <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;unite&#34;</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;gear&#34;</span>),
+    status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;300px&#34;</span>,
+    animate <span style="color:#f92672">=</span> animateOptions(
+      enter <span style="color:#f92672">=</span> animations<span style="color:#f92672">$</span>fading_entrances<span style="color:#f92672">$</span>fadeInLeftBig,
+      exit <span style="color:#f92672">=</span> animations<span style="color:#f92672">$</span>fading_exits<span style="color:#f92672">$</span>fadeOutRightBig
+    )
+  ),
+  plotOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;plot2&#39;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  selectedData2 <span style="color:#f92672">&lt;-</span> reactive({
+    iris[, <span style="color:#66d9ef">c</span>(input<span style="color:#f92672">$</span>xcol2, input<span style="color:#f92672">$</span>ycol2)]
+  })
+  clusters2 <span style="color:#f92672">&lt;-</span> reactive({
+    kmeans(selectedData2(), input<span style="color:#f92672">$</span>clusters2)
+  })
+  output<span style="color:#f92672">$</span>plot2 <span style="color:#f92672">&lt;-</span> renderPlot({
+    palette(<span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;#E41A1C&#34;</span>, <span style="color:#e6db74">&#34;#377EB8&#34;</span>, <span style="color:#e6db74">&#34;#4DAF4A&#34;</span>,
+              <span style="color:#e6db74">&#34;#984EA3&#34;</span>, <span style="color:#e6db74">&#34;#FF7F00&#34;</span>, <span style="color:#e6db74">&#34;#FFFF33&#34;</span>,
+              <span style="color:#e6db74">&#34;#A65628&#34;</span>, <span style="color:#e6db74">&#34;#F781BF&#34;</span>, <span style="color:#e6db74">&#34;#999999&#34;</span>))
+    par(mar <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#ae81ff">5.1</span>, <span style="color:#ae81ff">4.1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>))
+    plot(selectedData2(),
+         col <span style="color:#f92672">=</span> clusters2()<span style="color:#f92672">$</span>cluster,
+         pch <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, cex <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
+    points(clusters2()<span style="color:#f92672">$</span>centers, pch <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>, cex <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>, lwd <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>)
+  })
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="dropdownbutton">dropdownButton</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dropdownButton(<span style="color:#66d9ef">...</span>, circle <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, icon <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, tooltip <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, right <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, up <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inputId <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="dropdownbuttonの説明">dropdownButtonの説明</h4>
+
+<p>Bootstrapのドロップダウンメニューを生成</p>
+
+<h4 id="dropdownbuttonの引数">dropdownButtonの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>...</code></strong></td>
+<td align="left">ドロップダウンメニューに表示されるタグのリスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>circle</code></strong></td>
+<td align="left">丸ボタンを使用するかどうかを論理値で指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">ボタンにクラスを追加します。<code>info</code>, <code>primary</code>, <code>danger</code>, <code>warning</code>, <code>success</code>などのBootstrapのステータスを使用可能です。または、<code>status = 'myClass'</code>のように任意の文字列を指定することで、ボタンにクラス<code>btn-myClass</code>を持たせます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left">ボタンのサイズ(’default’, ’xs’, ’sm’, ’lg’)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>icon</code></strong></td>
+<td align="left">ボタン上に現れるアイコン</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">ボタン上に現れるラベル。<code>circle = TRUE</code>かつ<code>tooltip = TRUE</code>の場合、ラベルはツールチップ内で使用されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>tooltip</code></strong></td>
+<td align="left">ボタン上にツールチップを配置します。<code>tooltipOptions</code>でツールチップのカスタマイズが可能です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>right</code></strong></td>
+<td align="left">論理値でドロップダウンメニューが右側に開くかどうかを指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>up</code></strong></td>
+<td align="left">論理値で上部にドロップダウンメニューを表示するかどうかを指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">ドロップダウンメニューコンテンツの幅</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">オプションでボタンのidを指定します。ボタンは<code>actionButton</code>のように動作し、idをサーバ側でドロップダウンメニューの切り替えに使用できます。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="dropdownbuttonの使用例">dropdownButtonの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dropdownButton(
+  <span style="color:#e6db74">&#34;Your contents goes here ! You can pass several elements&#34;</span>,
+  circle <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;gear&#34;</span>), width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;300px&#34;</span>,
+  tooltip <span style="color:#f92672">=</span> tooltipOptions(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click to see inputs !&#34;</span>)
+)</code></pre></div>
+
+<h3 id="inputsweetalert">inputSweetAlert</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">inputSweetAlert(session, inputId, title <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, text <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, type <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, btn_labels <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ok&#34;</span>, placeholder <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="inputsweetalertの説明">inputSweetAlertの説明</h4>
+
+<p>テキスト入力のポップアップを起動します。</p>
+
+<h4 id="inputsweetalertの引数">inputSweetAlertの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>title</code></strong></td>
+<td align="left">アラートのタイトル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>text</code></strong></td>
+<td align="left">アラートのテキスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>type</code></strong></td>
+<td align="left">アラートの型(<code>info</code>, <code>success</code>, <code>warning</code>, <code>error</code>)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>btn_labels</code></strong></td>
+<td align="left">ボタンのラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>placeholder</code></strong></td>
+<td align="left">コントロールに何を入力すべきかユーザにヒントとして与える文字列</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="inputsweetalertの使用例">inputSweetAlertの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-inputsweetalert.gif" alt="inputSweetAlert" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Confirm sweet alert&#34;</span>),
+  actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;go&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Launch input text dialog&#34;</span>),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  observeEvent(input<span style="color:#f92672">$</span>go, {
+    inputSweetAlert(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mytext&#34;</span>,
+      title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;What&#39;s your name ?&#34;</span>
+    )
+  })
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>mytext)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="knobinput">knobInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">knobInput(inputId, label, value, min <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>, step <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, angleOffset <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, angleArc <span style="color:#f92672">=</span> <span style="color:#ae81ff">360</span>, cursor <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, thickness <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, lineCap <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;default&#34;</span>, <span style="color:#e6db74">&#34;round&#34;</span>), displayInput <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">displayPrevious <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, rotation <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;clockwise&#34;</span>, <span style="color:#e6db74">&#34;anticlockwise&#34;</span>), fgColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inputColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, bgColor <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, readOnly <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, skin <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, height <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="knobinputの説明">knobInputの説明</h4>
+
+<p>つまみの入力を生成します。</p>
+
+<h4 id="knobinputの引数">knobInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無しとなります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">初期値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>min</code></strong></td>
+<td align="left">指定可能な最小値。デフォルトは0。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>max</code></strong></td>
+<td align="left">指定可能な最大値。デフォルトは100。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>step</code></strong></td>
+<td align="left">選択可能なそれぞれの値の間隔を指定します。デフォルトは1です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>angleOffset</code></strong></td>
+<td align="left">初期状態の角度を指定します。デフォルトは0です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>angleArc</code></strong></td>
+<td align="left">弧の大きさを角度で指定します。デフォルトは360(度)です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>cursor</code></strong></td>
+<td align="left"><code>TRUE</code>を指定すると表示モード&rdquo;cursor&rdquo;になります。<code>width</code>がピクセルで設定されていないと正しく動作しません。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>thickness</code></strong></td>
+<td align="left">ゲージの厚さを数値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>lineCap</code></strong></td>
+<td align="left">ゲージのストロークの終端を<code>'default'</code>または<code>'round'</code>で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>displayInput</code></strong></td>
+<td align="left">つまみの中の入力を隠すかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>displayPrevious</code></strong></td>
+<td align="left">前の値を透明で表示するかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>rotation</code></strong></td>
+<td align="left">数列の方向を<code>'clockwise'</code>(時計回り)または<code>'anticlockwise'</code>(反時計回り)で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>fgColor</code></strong></td>
+<td align="left">前面の色</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputColor</code></strong></td>
+<td align="left">入力した値(数値)の色</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>bgColor</code></strong></td>
+<td align="left">背景の色</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>readOnly</code></strong></td>
+<td align="left">つまみを無効にするかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>skin</code></strong></td>
+<td align="left">つまみのスキンを変えます。唯一指定可能なオプションは<code>'tron'</code>です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。例えば、<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>height</code></strong></td>
+<td align="left">入力の高さ。例えば、<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="knobinputの値">knobInputの値</h4>
+
+<p>サーバ側での数値。</p>
+
+<h4 id="knobinputの使用例">knobInputの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-knobinput.gif" alt="knobInputs" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  knobInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myKnob&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Display previous:&#34;</span>,
+    value <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>,
+    min <span style="color:#f92672">=</span> <span style="color:#ae81ff">-100</span>,
+    displayPrevious <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    fgColor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#428BCA&#34;</span>,
+    inputColor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#428BCA&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>myKnob)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="materialswitch">materialSwitch</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">materialSwitch(inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, right <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="materialswitchの説明">materialSwitchの説明</h4>
+
+<p>マテリアルデザインのスイッチ入力で、オンとオフを切り替えるトグルスイッチを生成します。</p>
+
+<h4 id="materialswitchの引数">materialSwitchの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力のラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left"><code>TRUE</code>または<code>FALSE</code></td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">色を有効なBootstrapのステータス(<code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>, <code>warning</code>, <code>danger</code>)で指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>right</code></strong></td>
+<td align="left">ラベルを右側に表示するかどうかを論理値で指定します。デフォルトは<code>FALSE</code>です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left">ボタンをお互いに隣り合って配置したい場合に、入力をインラインに配置するかどうかを論理値で指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。例えば、<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="materialswitchの値">materialSwitchの値</h4>
+
+<p>UI定義に追加するスイッチコントロール</p>
+
+<h4 id="materialswitchの使用例">materialSwitchの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-materialswitch.png" alt="materialSwitch" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  br(),
+  materialSwitch(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderText({ input<span style="color:#f92672">$</span>somevalue })
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="multiinput">multiInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">multiInput(inputId, label, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, options <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="multiinputの説明">multiInputの説明</h4>
+
+<p>ユーザフレンドリな複数の属性付きのセレクトボックスの置き換えを生成します。</p>
+
+<h4 id="multiinputの引数">multiInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無しとなります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">選択する値のリスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値で選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>options</code></strong></td>
+<td align="left">multiに渡すオプションのリスト。例えば、<code>enable_search = FALSE</code>で検索バーを無効にします</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。例えば、<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code></strong></td>
+<td align="left">表示する名前のリスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceValues</code></strong></td>
+<td align="left">サーバで扱う値のリスト</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="multiinputの値">multiInputの値</h4>
+
+<p>複数選択のコントロール</p>
+
+<h4 id="multiinputの使用例">multiInputの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-multiinput1.gif" alt="multiInput" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  multiInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Fruits :&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Banana&#34;</span>, <span style="color:#e6db74">&#34;Blueberry&#34;</span>, <span style="color:#e6db74">&#34;Cherry&#34;</span>,
+                <span style="color:#e6db74">&#34;Coconut&#34;</span>, <span style="color:#e6db74">&#34;Grapefruit&#34;</span>, <span style="color:#e6db74">&#34;Kiwi&#34;</span>,
+                <span style="color:#e6db74">&#34;Lemon&#34;</span>, <span style="color:#e6db74">&#34;Lime&#34;</span>, <span style="color:#e6db74">&#34;Mango&#34;</span>, <span style="color:#e6db74">&#34;Orange&#34;</span>,
+                <span style="color:#e6db74">&#34;Papaya&#34;</span>),
+    selected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Banana&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;350px&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>id
+  })
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-multiinput2.png" alt="multiInput with options" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># with options</span>
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  multiInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Fruits :&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Banana&#34;</span>, <span style="color:#e6db74">&#34;Blueberry&#34;</span>, <span style="color:#e6db74">&#34;Cherry&#34;</span>,
+                <span style="color:#e6db74">&#34;Coconut&#34;</span>, <span style="color:#e6db74">&#34;Grapefruit&#34;</span>, <span style="color:#e6db74">&#34;Kiwi&#34;</span>,
+                <span style="color:#e6db74">&#34;Lemon&#34;</span>, <span style="color:#e6db74">&#34;Lime&#34;</span>, <span style="color:#e6db74">&#34;Mango&#34;</span>, <span style="color:#e6db74">&#34;Orange&#34;</span>,
+                <span style="color:#e6db74">&#34;Papaya&#34;</span>),
+    selected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Banana&#34;</span>, width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;400px&#34;</span>,
+    options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(
+      enable_search <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>,
+      non_selected_header <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Choose between:&#34;</span>,
+      selected_header <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;You have selected:&#34;</span>
+    )
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>id
+  })
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="panel">panel</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">panel(<span style="color:#66d9ef">...</span>, heading <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, footer <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>)</code></pre></div>
+
+<h4 id="panelの説明">panelの説明</h4>
+
+<p>基本的なボーダとパディングのあるパネル(ボックス)を生成します。。パネルのスタイルにはBootstrapのステータスを使用可能です。<a href="http://getbootstrap.com/components/#panels">http://getbootstrap.com/components/#panels</a> を参照してください。</p>
+
+<h4 id="panelの引数">panelの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>...</code></strong></td>
+<td align="left">パネル内に含まれるUI要素</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>heading</code></strong></td>
+<td align="left">プレーンなヘッダ内のパネルタイトル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>footer</code></strong></td>
+<td align="left">パネルのフッタ</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">文脈上の選択肢としてのBootstrapのステータス</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="panelの値">panelの値</h4>
+
+<p>UI定義</p>
+
+<h4 id="panelの使用例">panelの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-panel.png" alt="panel" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  <span style="color:#75715e"># Default</span>
+  panel(
+    <span style="color:#e6db74">&#34;Content goes here&#34;</span>,
+    checkboxInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Label&#34;</span>)
+  ),
+  <span style="color:#75715e"># With header and footer</span>
+  panel(
+    <span style="color:#e6db74">&#34;Content goes here&#34;</span>,
+    checkboxInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id2&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Label&#34;</span>),
+    heading <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My title&#34;</span>,
+    footer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Something&#34;</span>
+  ),
+  <span style="color:#75715e"># With status</span>
+  panel(
+    <span style="color:#e6db74">&#34;Content goes here&#34;</span>,
+    checkboxInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id3&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Label&#34;</span>),
+    heading <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My title&#34;</span>,
+    status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="pickerinput">pickerInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">pickerInput(inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, options <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choicesOpt <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)</code></pre></div>
+
+<h4 id="pickerinputの説明">pickerInputの説明</h4>
+
+<p>セレクトピッカ(<a href="https://silviomoreto.github.io/bootstrap-select/)を生成">https://silviomoreto.github.io/bootstrap-select/)を生成</a></p>
+
+<h4 id="pickerinputの引数">pickerInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">スイッチに中央に表示するテキスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値で選択されている値(<code>multiple = TRUE</code>の場合は、複数の値)。指定がない場合は、デフォルトで単独のリストの最初の値となり、複数のセレクトリストでは値がありません。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>multiple</code></strong></td>
+<td align="left">複数の項目を選択可能かどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>options</code></strong></td>
+<td align="left">セレクトピッカをカスタマイズするオプション。<a href="https://silviomoreto.github.io/bootstrap-select/options/">https://silviomoreto.github.io/bootstrap-select/options/</a> を参照してください</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choicesOpt</code></strong></td>
+<td align="left">ドロップダウンメニュー内の選択肢のオプション</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。<code>auto</code>, <code>fit</code>, <code>100px</code>, <code>75%%</code>で指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left">ラベルとピッカを同じライン上に配置するかどうかを論理値で指定</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="pickerinputの値">pickerInputの値</h4>
+
+<p>UI定義に追加する選択コントロール</p>
+
+<h4 id="pickerinputの使用例">pickerInputの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-pickerinput1.gif" alt="pickerInput" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Simple example</span>
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  pickerInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A label&#34;</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>)),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderPrint({ input<span style="color:#f92672">$</span>somevalue })
+}
+shinyApp(ui, server)</code></pre></div>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-pickerinput2.gif" alt="pickerInput with actions box for selecting and deselecting all options" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Add actions box for selecting</span>
+<span style="color:#75715e"># deselecting all options</span>
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  br(),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p1&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Select all option&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars),
+    multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">`actions-box`</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  ),
+  br(),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p2&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Select all option / custom text&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars),
+    multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(
+      <span style="color:#e6db74">`actions-box`</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+      <span style="color:#e6db74">`deselect-all-text`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;None...&#34;</span>,
+      <span style="color:#e6db74">`select-all-text`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Yeah, all !&#34;</span>,
+      <span style="color:#e6db74">`none-selected-text`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;zero&#34;</span>
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-pickerinput3.gif" alt="pickerInput with customized values displayed in the box" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Customize the values displayed in the box</span>
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  br(),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p1&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Default&#34;</span>,
+    multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars),
+    selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars)[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+  ),
+  br(),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p1b&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Default with | separator&#34;</span>,
+    multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars),
+    selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars)[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>],
+    options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">`multiple-separator`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; | &#34;</span>)
+  ),
+  br(),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p2&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Static&#34;</span>,
+    multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars),
+    selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars)[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>],
+    options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">`selected-text-format`</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;static&#34;</span>,
+                   title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Won&#39;t change&#34;</span>)
+  ),
+  br(),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p3&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Count&#34;</span>,
+    multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars),
+    selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars)[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>],
+    options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">`selected-text-format`</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;count&#34;</span>)
+  ),
+  br(),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p3&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Customize count&#34;</span>,
+    multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars),
+    selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars)[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>],
+    options <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(
+      <span style="color:#e6db74">`selected-text-format`</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;count&#34;</span>,
+      <span style="color:#e6db74">`count-selected-text`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{0} models choosed (on a total of {1})&#34;</span>
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="prettycheckbox">prettyCheckbox</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">prettyCheckbox(inputId, label, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, shape <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;square&#34;</span>, <span style="color:#e6db74">&#34;curve&#34;</span>, <span style="color:#e6db74">&#34;round&#34;</span>), outline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, fill <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, thick <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, animation <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, icon <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, plain <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, bigger <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="prettycheckboxの説明">prettyCheckboxの説明</h4>
+
+<p>論理値を指定するためのチェックボックスを生成</p>
+
+<h4 id="prettycheckboxの引数">prettyCheckboxの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">初期値を論理値(<code>TRUE</code>または<code>FALSE</code>)で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">チェックボックスにクラスを追加します。<code>’info’</code>, <code>’primary’</code>, <code>’danger’</code>, <code>’warning’</code>, <code>’success’</code>のようなBootstrapのステータスが使用可能です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>shape</code></strong></td>
+<td align="left"><code>square</code>, <code>curve</code>, <code>round</code>の間で指定するチェックボックスの形状</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>outline</code></strong></td>
+<td align="left">チェックボックスの境界の色の有無を論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>fill</code></strong></td>
+<td align="left">チェックボックスに色を塗るかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>thick</code></strong></td>
+<td align="left">チェックボックス内のコンテンツをより小さくするかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>animation</code></strong></td>
+<td align="left">チェックボックスがチェックされたときのアニメーションを追加します。値は<code>smooth</code>, <code>jelly</code>, <code>tada</code>, <code>rotate</code>, <code>pulse</code>から選択します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>icon</code></strong></td>
+<td align="left">オプションでチェックボックス上に表示するアイコンを指定します。<code>icon</code>で生成されたアイコンである必要があります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>plain</code></strong></td>
+<td align="left">チェックボックスがチェックされるときに境界を消すかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>bigger</code></strong></td>
+<td align="left">チェックボックスを拡大するかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。例えば、<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="prettycheckboxの値">prettyCheckboxの値</h4>
+
+<p>サーバ側で<code>TRUE</code>または<code>FALSE</code></p>
+
+<h4 id="prettycheckboxの注記">prettyCheckboxの注記</h4>
+
+<p>異なるチェックボックスのデザインが自然なため、あるアニメーションでは、いくつかの引数の組み合わせが適用不可能です。pretty-checkboxの公式ページ(https:
+//lokesh-coder.github.io/pretty-checkbox/)で例を見ることができます。</p>
+
+<h4 id="prettycheckboxの使用例">prettyCheckboxの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-prettycheckbox.gif" alt="prettyCheckbox" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Pretty checkbox&#34;</span>),
+  br(),
+  fluidRow(
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      prettyCheckbox(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkbox1&#34;</span>,
+                     label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+      br(),
+      prettyCheckbox(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkbox4&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>,
+                     outline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+                     plain <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;thumbs-up&#34;</span>)),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res4&#34;</span>)
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      prettyCheckbox(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkbox2&#34;</span>,
+                     label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>, thick <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+                     animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pulse&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;info&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res2&#34;</span>),
+      br(),
+      prettyCheckbox(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkbox5&#34;</span>,
+                     label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;check&#34;</span>),
+                     animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tada&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res5&#34;</span>)
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      prettyCheckbox(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkbox3&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>,
+                     shape <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;round&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>,
+                     fill <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res3&#34;</span>)
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkbox1)
+  output<span style="color:#f92672">$</span>res2 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkbox2)
+  output<span style="color:#f92672">$</span>res3 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkbox3)
+  output<span style="color:#f92672">$</span>res4 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkbox4)
+  output<span style="color:#f92672">$</span>res5 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkbox5)
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="prettycheckboxgroup">prettyCheckboxGroup</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">prettyCheckboxGroup(inputId, label, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, shape <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;square&#34;</span>, <span style="color:#e6db74">&#34;curve&#34;</span>, <span style="color:#e6db74">&#34;round&#34;</span>), outline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, fill <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, thick <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, animation <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, icon <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, plain <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, bigger <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="prettycheckboxgroupの説明">prettyCheckboxGroupの説明</h4>
+
+<p>複数の選択を独立にトグルで指定するpretty checkboxのグループを生成します。サーバでは、選択した値の文字ベクトルとして入力を受信します。</p>
+
+<h4 id="prettycheckboxgroupの引数">prettyCheckboxGroupの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">チェックボックスに表示する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。この引数が指定されると、<code>choiceNames</code>と<code>choiceValues</code>は指定できません。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値として選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">チェックボックスにクラスを追加します。<code>’info’</code>, <code>’primary’</code>, <code>’danger’</code>, <code>’warning’</code>, <code>’success’</code>のようなBootstrapのステータスが使用可能です。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>shape</code></strong></td>
+<td align="left"><code>square</code>, <code>curve</code>, <code>round</code>の間で指定するチェックボックスの形状</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>outline</code></strong></td>
+<td align="left">チェックボックスの境界の色の有無を論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>fill</code></strong></td>
+<td align="left">チェックボックスに色を塗るかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>thick</code></strong></td>
+<td align="left">チェックボックス内のコンテンツをより小さくするかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>animation</code></strong></td>
+<td align="left">チェックボックスがチェックされたときのアニメーションを追加します。値は<code>smooth</code>, <code>jelly</code>, <code>tada</code>, <code>rotate</code>, <code>pulse</code>から選択します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>icon</code></strong></td>
+<td align="left">オプションでチェックボックス上に表示するアイコンを指定します。<code>icon</code>で生成されたアイコンである必要があります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>plain</code></strong></td>
+<td align="left">チェックボックスがチェックされるときに境界を消すかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>bigger</code></strong></td>
+<td align="left">チェックボックスを拡大するかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、選択肢をインライン(すなわち水平)にレンダリングします。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。例えば、<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code></strong></td>
+<td align="left">ユーザに表示する名前のリスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceValues</code></strong></td>
+<td align="left"><code>choiceNames</code>に対応する値のリスト</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="prettycheckboxgroupの値">prettyCheckboxGroupの値</h4>
+
+<p>サーバ側で文字ベクトルまたは<code>NULL</code>。</p>
+
+<h4 id="prettycheckboxgroupの使用例">prettyCheckboxGroupの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-prettycheckboxgroup.gif" alt="prettyCheckboxGroup" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Pretty checkbox group&#34;</span>),
+  br(),
+  fluidRow(
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      prettyCheckboxGroup(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup1&#34;</span>,
+                          label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>,
+                          choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Click me !&#34;</span>, <span style="color:#e6db74">&#34;Me !&#34;</span>, <span style="color:#e6db74">&#34;Or me !&#34;</span>)),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+      br(),
+      prettyCheckboxGroup(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup4&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>,
+                          choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Click me !&#34;</span>, <span style="color:#e6db74">&#34;Me !&#34;</span>, <span style="color:#e6db74">&#34;Or me !&#34;</span>),
+                          outline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+                          plain <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;thumbs-up&#34;</span>)),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res4&#34;</span>)
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      prettyCheckboxGroup(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup2&#34;</span>,
+                          label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>, thick <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+                          choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Click me !&#34;</span>, <span style="color:#e6db74">&#34;Me !&#34;</span>, <span style="color:#e6db74">&#34;Or me !&#34;</span>),
+                          animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pulse&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;info&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res2&#34;</span>),
+      br(),
+      prettyCheckboxGroup(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup5&#34;</span>,
+                          label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>, icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;check&#34;</span>),
+                          choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Click me !&#34;</span>, <span style="color:#e6db74">&#34;Me !&#34;</span>, <span style="color:#e6db74">&#34;Or me !&#34;</span>),
+                          animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tada&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res5&#34;</span>)
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      prettyCheckboxGroup(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup3&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Click me!&#34;</span>,
+                          choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Click me !&#34;</span>, <span style="color:#e6db74">&#34;Me !&#34;</span>, <span style="color:#e6db74">&#34;Or me !&#34;</span>),
+                          shape <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;round&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>,
+                          fill <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res3&#34;</span>)
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkgroup1)
+  output<span style="color:#f92672">$</span>res2 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkgroup2)
+  output<span style="color:#f92672">$</span>res3 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkgroup3)
+  output<span style="color:#f92672">$</span>res4 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkgroup4)
+  output<span style="color:#f92672">$</span>res5 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkgroup5)
+}
+shinyApp(ui, server)</code></pre></div>
+
 
   
 
@@ -421,7 +2491,7 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
 
 <li><a href="/reference/">索引(機能別)</a></li>
 
-<li><a href="/shinywidgets/">shinywidgets</a></li>
+<li><a href="/shinywidgets/">shinyWidgets</a></li>
 
 <li><a href="/dateinput/">dateInput</a></li>
 
