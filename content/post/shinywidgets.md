@@ -1247,3 +1247,660 @@ shinyApp(ui, server)
 {{< /highlight >}}
 
 
+
+### prettyRadioButtons
+
+{{< highlight r >}}
+prettyRadioButtons(inputId, label, choices = NULL, selected = NULL, status = "primary", shape = c("round", "square", "curve"), outline = FALSE, fill = FALSE, thick = FALSE, animation = NULL, icon = NULL, plain = FALSE, bigger = FALSE, inline = FALSE, width = NULL, choiceNames = NULL, choiceValues = NULL)
+{{< /highlight >}}
+
+#### prettyRadioButtonsの説明
+
+リストから項目を選択するpretty radio buttonの集合を生成します。
+
+#### prettyRadioButtonsの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label`**|コントロールに表示するラベル|
+|**`choices`**|選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。この引数が指定されると、`choiceNames`と`choiceValues`は指定できません。|
+|**`seleted`**|初期値として選択されている値。指定されない場合はデフォルトで最初の値となります。|
+|**`status`**|ラジオボタンにクラスを追加します。`’info’`, `’primary’`, `’danger’`, `’warning’`, `’success’`のようなBootstrapのステータスが使用可能です。|
+|**`shape`**|`square`, `curve`, `round`の間で指定するラジオボタンの形状|
+|**`outline`**|チェックボックスの境界の色の有無を論理値で指定|
+|**`fill`**|ラジオボタンに色を塗るかどうかを論理値で指定|
+|**`thick`**|ラジオボタン内のコンテンツをより小さくするかどうかを論理値で指定|
+|**`animation`**|ラジオボタンがチェックされたときのアニメーションを追加します。値は`smooth`, `jelly`, `tada`, `rotate`, `pulse`から選択します。|
+|**`icon`**|オプションでラジオボタン上に表示するアイコンを指定します。`icon`で生成されたアイコンである必要があります。|
+|**`plain`**|チェックボックスがチェックされるときに境界を消すかどうかを論理値で指定|
+|**`bigger`**|ラジオボタンを拡大するかどうかを論理値で指定|
+|**`inline`**|`TRUE`の場合、選択肢をインライン(すなわち水平)にレンダリングします。|
+|**`width`**|入力の幅。例えば、`400px`や`100%`のように指定します。|
+|**`choiceNames`**|ユーザに表示する名前のリスト|
+|**`choiceValues`**|`choiceNames`に対応する値のリスト|
+
+#### prettyRadioButtonsの値
+
+サーバ側で文字ベクトルまたは`NULL`。
+
+#### prettyRadioButtonsの使用例
+
+{{< figure src="/ui-input/shinywidgets-prettyradiobuttons.png" alt="prettyRadioButtons" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Pretty radio buttons"),
+  br(),
+  fluidRow(
+    column(
+      width = 4,
+      prettyRadioButtons(inputId = "radio1",
+                         label = "Click me!",
+                         choices = c("Click me !", "Me !", "Or me !")),
+      verbatimTextOutput(outputId = "res1"),
+      br(),
+      prettyRadioButtons(inputId = "radio4", label = "Click me!",
+                         choices = c("Click me !", "Me !", "Or me !"),
+                         outline = TRUE,
+                         plain = TRUE, icon = icon("thumbs-up")),
+      verbatimTextOutput(outputId = "res4")
+    ),
+    column(
+      width = 4,
+      prettyRadioButtons(inputId = "radio2",
+                         label = "Click me!", thick = TRUE,
+                         choices = c("Click me !", "Me !", "Or me !"),
+                         animation = "pulse", status = "info"),
+      verbatimTextOutput(outputId = "res2"),
+      br(),
+      prettyRadioButtons(inputId = "radio5",
+                         label = "Click me!", icon = icon("check"),
+                         choices = c("Click me !", "Me !", "Or me !"),
+                         animation = "tada", status = "default"),
+      verbatimTextOutput(outputId = "res5")
+    ),
+    column(
+      width = 4,
+      prettyRadioButtons(inputId = "radio3", label = "Click me!",
+                         choices = c("Click me !", "Me !", "Or me !"),
+                         shape = "round", status = "danger",
+                         fill = TRUE, inline = TRUE),
+      verbatimTextOutput(outputId = "res3")
+    )
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$radio1)
+  output$res2 <- renderPrint(input$radio2)
+  output$res3 <- renderPrint(input$radio3)
+  output$res4 <- renderPrint(input$radio4)
+  output$res5 <- renderPrint(input$radio5)
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### prettySwitch
+
+{{< highlight r >}}
+prettySwitch(inputId, label, value = FALSE, status = "default", slim = FALSE, fill = FALSE, bigger = FALSE, width = NULL)
+{{< /highlight >}}
+
+#### prettySwitchの説明
+
+チェックボックスを置き換えるトグル形式のpretty switchの入力を生成します。
+
+#### prettySwitchの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label`**|コントロールに表示するラベル。`NULL`ならラベル無しとなります。|
+|**`value`**|初期値を論理値(`TRUE`または`FALSE`)で指定|
+|**`status`**|チェックボックスにクラスを追加します。`’info’`, `’primary’`, `’danger’`, `’warning’`, `’success’`のようなBootstrapのステータスが使用可能です。|
+|**`slim`**|スイッチのスタイルを変えるかどうかを論理値で指定します。例を参照してください。|
+|**`fill`**|スイッチのスタイルを変えるかどうかを論理値で指定します。例を参照してください。|
+|**`bigger`**|チェックボックスを拡大するかどうかを論理値で指定|
+|**`width`**|入力の幅。例えば、`400px`や`100%`のように指定します。|
+
+#### prettySwitchの値
+
+サーバ側で`TRUE`または`FALSE`
+
+#### prettySwitchの注記
+
+RStudioのビューワよりも、Chromeのようなブラウザの方がうまく表示できます。
+
+#### prettySwitchの使用例
+
+{{< figure src="/ui-input/shinywidgets-prettyswitch.gif" alt="prettySwitch" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Pretty switches"),
+  br(),
+  fluidRow(
+    column(
+      width = 4,
+      prettySwitch(inputId = "switch1", label = "Default:"),
+      verbatimTextOutput(outputId = "res1"),
+      br(),
+      prettySwitch(inputId = "switch4",
+                   label = "Fill switch with status:",
+                   fill = TRUE, status = "primary"),
+      verbatimTextOutput(outputId = "res4")
+    ),
+    column(
+      width = 4,
+      prettySwitch(inputId = "switch2",
+                   label = "Danger status:",
+                   status = "danger"),
+      verbatimTextOutput(outputId = "res2")
+    ),
+    column(
+      width = 4,
+      prettySwitch(inputId = "switch3",
+                   label = "Slim switch:",
+                   slim = TRUE),
+      verbatimTextOutput(outputId = "res3")
+    )
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$switch1)
+  output$res2 <- renderPrint(input$switch2)
+  output$res3 <- renderPrint(input$switch3)
+  output$res4 <- renderPrint(input$switch4)
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### prettyToggle
+
+{{< highlight r >}}
+prettyToggle(inputId, label_on, label_off, icon_on = NULL, icon_off = NULL, value = FALSE, status_on = "success", status_off = "danger", shape = c("square", "curve", "round"), outline = FALSE, fill = FALSE, thick = FALSE, plain = FALSE, bigger = FALSE, width = NULL)
+{{< /highlight >}}
+
+#### prettyToggleの説明
+
+チェックしたかどうかで表示を変えるpretty toggle入力を生成します。
+
+#### prettyToggleの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label_on`**|値が`TRUE`のときにコントロールに表示するラベル|
+|**`label_off`**|値が`FALSE`のときにコントロールに表示するラベル|
+|**`icon_on`**|オプションで値が`TRUE`のときにチェックボックス上に表示するアイコンを指定します。`icon`で生成されたアイコンである必要があります。|
+|**`icon_off`**|オプションで値が`FALSE`のときにチェックボックス上に表示するアイコンを指定します。`icon`で生成されたアイコンである必要があります。|
+|**`value`**|初期値を論理値(`TRUE`または`FALSE`)で指定|
+|**`status_on`**|値が`TRUE`のときのチェックボックスにクラスを追加します。`’info’`, `’primary’`, `’danger’`, `’warning’`, `’success’`のようなBootstrapのステータスが使用可能です。|
+|**`status_off`**|値が`FALSE`のときのチェックボックスにクラスを追加します。`’info’`, `’primary’`, `’danger’`, `’warning’`, `’success’`のようなBootstrapのステータスが使用可能です。|
+|**`shape`**|`square`, `curve`, `round`の間で指定するチェックボックスの形状|
+|**`outline`**|チェックボックスの境界の色の有無を論理値で指定|
+|**`fill`**|チェックボックスに色を塗るかどうかを論理値で指定|
+|**`thick`**|チェックボックス内のコンテンツをより小さくするかどうかを論理値で指定|
+|**`plain`**|チェックボックスがチェックされるときに境界を消すかどうかを論理値で指定|
+|**`bigger`**|チェックボックスを拡大するかどうかを論理値で指定|
+|**`width`**|入力の幅。例えば、`400px`や`100%`のように指定します。|
+
+#### prettyToggleの値
+
+サーバ側で`TRUE`または`FALSE`。
+
+#### prettyToggleの使用例
+
+{{< figure src="/ui-input/shinywidgets-prettytoggle.png" alt="prettyToggle" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Pretty toggles"),
+  br(),
+  fluidRow(
+    column(
+      width = 4,
+      prettyToggle(inputId = "toggle1",
+                   label_on = "Checked!",
+                   label_off = "Unchecked..."),
+      verbatimTextOutput(outputId = "res1"),
+      br(),
+      prettyToggle(inputId = "toggle4", label_on = "Yes!",
+                   label_off = "No..", outline = TRUE,
+                   plain = TRUE,
+                   icon_on = icon("thumbs-up"),
+                   icon_off = icon("thumbs-down")),
+      verbatimTextOutput(outputId = "res4")
+    ),
+    column(
+      width = 4,
+      prettyToggle(inputId = "toggle2",
+                   label_on = "Yes!", icon_on = icon("check"),
+                   status_on = "info", status_off = "warning",
+                   label_off = "No..", icon_off = icon("remove")),
+      verbatimTextOutput(outputId = "res2")
+    ),
+    column(
+      width = 4,
+      prettyToggle(inputId = "toggle3", label_on = "Yes!",
+                   label_off = "No..", shape = "round",
+                   fill = TRUE, value = TRUE),
+      verbatimTextOutput(outputId = "res3")
+    )
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$toggle1)
+  output$res2 <- renderPrint(input$toggle2)
+  output$res3 <- renderPrint(input$toggle3)
+  output$res4 <- renderPrint(input$toggle4)
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### progressBar
+
+{{< highlight r >}}
+progressBar(id, value, total = NULL, display_pct = FALSE, size = NULL, status = NULL, striped = FALSE, title = NULL)
+{{< /highlight >}}
+
+#### progressBarの説明
+
+計算をフィードバックするために提供するプログレスバーを生成します。
+
+#### progressBarの引数
+
+|名前|説明|
+|:--|:--|
+|**`id`**|プログレスバーをアップデートするために用いられるid|
+|**`value`**|0から100までの間のプログレスバーの値。100よりも大きくする場合は`total`を指定します。|
+|**`total`**|`value`が100よりも大きい場合にパーセンテージを計算するために用いられる値。インジケータをプログレスバーの右上に表示させます。|
+|**`display_pct`**|論理値でプログレスバー上にパーセンテージを表示するかどうかを指定|
+|**`size`**|サイズを指定します。デフォルトは`NULL`で、値には` ’xxs’`, `’xs’`, `’sm’`を指定可能で、shinydashboardパッケージと一緒のときのみ有効です。|
+|**`status`**|色を有効なBootstrapのステータス(`default`, `primary`, `info`, `success`, `warning`, `danger`)で指定します。|
+|**`striped`**|論理値でストライプのエフェクトを追加するかどうかを指定|
+|**`title`**|オプションで指定するタイトル文字列|
+
+#### progressBarの値
+
+UI定義に追加するプログレスバー。
+
+#### progressBarの使用例
+
+{{< figure src="/ui-input/shinywidgets-progressbar.gif" alt="progressBar" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$b("Default"), br(),
+  progressBar(id = "pb1", value = 50),
+  sliderInput(inputId = "up1", label = "Update", min = 0, max = 100, value = 50)
+)
+server <- function(input, output, session) {
+  observeEvent(input$up1, {
+    updateProgressBar(session = session, id = "pb1", value = input$up1)
+  })
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### progressSweetAlert
+
+{{< highlight r >}}
+progressSweetAlert(session, id, value, total = NULL, display_pct = FALSE, size = NULL, status = NULL, striped = FALSE, title = NULL)
+{{< /highlight >}}
+
+#### progressSweetAlertの説明
+
+sweet aleart内のプログレスバー。
+
+#### progressSweetAlertの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`id`**|プログレスバーをアップデートするために用いられるid|
+|**`value`**|0から100までの間のプログレスバーの値。100よりも大きくする場合は`total`を指定します。|
+|**`total`**|`value`が100よりも大きい場合にパーセンテージを計算するために用いられる値。インジケータをプログレスバーの右上に表示させます。|
+|**`display_pct`**|論理値でプログレスバー上にパーセンテージを表示するかどうかを指定|
+|**`size`**|サイズを指定します。デフォルトは`NULL`で、値には` ’xxs’`, `’xs’`, `’sm’`を指定可能で、shinydashboardパッケージと一緒のときのみ有効です。|
+|**`status`**|色を有効なBootstrapのステータス(`default`, `primary`, `info`, `success`, `warning`, `danger`)で指定します。|
+|**`striped`**|論理値でストライプのエフェクトを追加するかどうかを指定|
+|**`title`**||
+
+#### progressSweetAlertの使用例
+
+{{< figure src="/ui-input/shinywidgets-progresssweetalert.gif" alt="progressSweetAlert" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Progress bar in Sweet Alert"),
+  useSweetAlert(), # /!\ needed with 'progressSweetAlert'
+  actionButton(
+    inputId = "go",
+    label = "Launch long calculation !"
+  )
+)
+server <- function(input, output, session) {
+  observeEvent(input$go, {
+    progressSweetAlert(
+      session = session, id = "myprogress",
+      title = "Work in progress",
+      display_pct = TRUE, value = 0
+    )
+    for (i in seq_len(50)) {
+      Sys.sleep(0.1)
+      updateProgressBar(
+        session = session,
+        id = "myprogress",
+        value = i*2
+      )
+    }
+    closeSweetAlert(session = session)
+    sendSweetAlert(
+      session = session,
+      title =" Calculation completed !",
+      type = "success"
+    )
+  })
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### radioGroupButtons
+
+{{< highlight r >}}
+radioGroupButtons(inputId, label = NULL, choices = NULL, selected = NULL, status = "default", size = "normal", direction = "horizontal", justified = FALSE, individual = FALSE, checkIcon = list(), width = NULL, choiceNames = NULL, choiceValues = NULL)
+{{< /highlight >}}
+
+#### radioGroupButtonsの説明
+
+ラジオボタンのように動作するグループ化されたボタンを生成します。
+
+#### radioGroupButtonsの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label`**|入力のラベル|
+|**`choices`**|選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。|
+|**`selected`**|初期値で選択されている値|
+|**`status`**|ボタンにクラスを追加します。`info`, `primary`, `danger`, `warning`, `success`などのBootstrapのステータスを使用可能です。または、`status = 'myClass'`のように任意の文字列を指定することで、ボタンにクラス`btn-myClass`を持たせます。|
+|**`size`**|ボタンのサイズ(’default’, ’xs’, ’sm’, ’lg’)|
+|**`direction`**|`horizontal`(水平)または`vertical`(垂直)を指定します。|
+|**`justified`**|`TRUE`の場合、親の`<div>`の幅を埋めます。|
+|**`individual`**|`TRUE`の場合、ボタンが分かれます。|
+|**`checkIcon`**|少なくとも１つは空でない要素が含まれるリスト。ボタンがチェックされた場合に表示するアイコンを指定します。|
+|**`width`**|入力の幅。例えば、`400px`や`100%`のように指定します。|
+|**`choceNames`, `choiceValues`**|名前と値のリスト。それぞれアプリケーション内でユーザに各選択肢に対応するものが表示されます。このため、`choiceNames`と`choiceValues`は長さが同じである必要があります。|
+
+#### radioGroupButtonsの値
+
+UI定義に追加するボタングループコントロール。
+
+#### radioGroupButtonsの使用例
+
+{{< figure src="/ui-input/shinywidgets-radiogroupbuttons.png" alt="radioGroupButtons" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  radioGroupButtons(inputId = "somevalue", choices = c("A", "B", "C")),
+  verbatimTextOutput("value")
+)
+server <- function(input, output) {
+  output$value <- renderText({ input$somevalue })
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### searchInput
+
+{{< highlight r >}}
+searchInput(inputId, label = NULL, value = "", placeholder = NULL, btnSearch = NULL, btnReset = NULL, width = NULL)
+{{< /highlight >}}
+
+#### searchInputの説明
+
+エンターキーが押される、またはsearchボタンがクリックされたときがトリガーとなるテキスト入力。
+
+#### searchInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label`**|コントロールに表示するラベル。`NULL`ならラベル無しとなります。|
+|**`value`**|初期値|
+|**`placeholder`**|コントロールに何を入力すべきかユーザにヒントとして与える文字列|
+|**`btnSearch`**||
+|**`btnReset`**||
+|**`width`**|入力の幅。例えば、`400px`や`100%`のように指定します。|
+
+#### searchInputの注記
+
+’search’と’reset’の2つのボタンは、`actionButton`のように動作します。それらの値をサーバ側で、`input$<INPUTID>_search`, `input$<INPUTID>_reset`として扱えます。
+
+#### searchInputの使用例
+
+{{< figure src="/ui-input/shinywidgets-searchinput.png" alt="searchInput" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Search Input"),
+  br(),
+  searchInput(
+    inputId = "search", label = "Enter your text",
+    placeholder = "A placeholder",
+    btnSearch = icon("search"),
+    btnReset = icon("remove"),
+    width = "450px"
+  ),
+  br(),
+  verbatimTextOutput(outputId = "res")
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint({
+    input$search
+  })
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### sendSweetAlert
+
+{{< highlight r >}}
+sendSweetAlert(session, title = "Title", text = NULL, type = NULL, btn_labels = "Ok")
+{{< /highlight >}}
+
+#### sendSweetAlertの説明
+
+サーバからメッセージを送信し、UIでsweet aleartを起動します。
+
+#### sendSweetAlertの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`title`**|アラートのタイトル|
+|**`tet`**|アラートのテキスト|
+|**`type`**|アラートの型(`info`, `success`, `warning`, `error`)|
+|**`btn_labels`**||
+
+#### sendSweetAlertの使用例
+
+{{< figure src="/ui-input/shinywidgets-sendsweetalert.gif" alt="sendSweetAlert" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Click the button"),
+  actionButton(
+    inputId = "success",
+    label = "Launch a success sweet alert"
+  ),
+  actionButton(
+    inputId = "error",
+    label = "Launch an error sweet alert"
+  )
+)
+server <- function(input, output, session) {
+  observeEvent(input$success, {
+    sendSweetAlert(
+      session = session,
+      title = "Success !!",
+      text = "All in order",
+      type = "success"
+    )
+  })
+  observeEvent(input$error, {
+    sendSweetAlert(
+      session = session,
+      title = "Error !!",
+      text = "It's broken...",
+      type = "error"
+    )
+  })
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### shinyWidgetsGallery
+
+{{< highlight r >}}
+shinyWidgetsGallery()
+{{< /highlight >}}
+
+#### shinyWidgetsGalleryの説明
+
+shinyWidgetsで利用可能なウィジェットのギャラリーを起動します。
+
+
+
+### sliderTextInput
+
+{{< highlight r >}}
+sliderTextInput(inputId, label, choices, selected = NULL, animate = FALSE, grid = FALSE, hide_min_max = FALSE, from_fixed = FALSE, to_fixed = FALSE, from_min = NULL, from_max = NULL, to_min = NULL, to_max = NULL, force_edges = FALSE, width = NULL, pre = NULL, post = NULL, dragRange = TRUE)
+{{< /highlight >}}
+
+#### sliderTextInputの説明
+
+数値の代わりに文字列があるスライダーのウィジェットを生成します。
+
+#### sliderTextInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label`**|コントロールに表示するラベル。`NULL`ならラベル無しとなります。|
+|**`choices`**|値を選択するための文字ベクトル|
+|**`selected`**|初期値で選択されている値。`length > 1`の場合、幅のスライダーを生成します。|
+|**`animate`**|`TRUE`の場合、デフォルトの設定でシンプルなアニメーションコントロールを表示。詳細は`sliderImput`を参照してください。|
+|**`grid`**|論理値で針のマークを表示するかどうかを指定します。|
+|**`hide_min_max`**|論理値で最大と最小のラベル表示を指定|
+|**`from_fixed`**|論理値で左側のハンドルの位置固定を指定|
+|**`to_fixed`**|論理値で右側のハンドルの位置固定を指定|
+|**`from_min`**|左側のハンドルに最小値を設定|
+|**`from_max`**|左側のハンドルに最大値を設定|
+|**`to_min`**|右側のハンドルに最小値を設定|
+|**`to_max`**|右側のハンドルに最大値を設定|
+|**`force_edges`**|論理値でスライダーが常にコンテナ内に置くかどうかを指定|
+|**`width`**|入力の幅。例えば、`400px`や`100%`のように指定します。|
+|**`pre`**|値の前に置くprefixの文字列|
+|**`post`**|値の後に置くsuffixの文字列|
+|**`dragRange`**|`sliderInput`の同じ引数を参照してください。|
+
+#### sliderTextInputの値
+
+サーバ側で扱う値は文字ベクトルです。
+
+#### sliderTextInputの使用例
+
+{{< figure src="/ui-input/shinywidgets-slidertextinput.png" alt="sliderTextInput" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  br(),
+  sliderTextInput(
+    inputId = "mySliderText",
+    label = "Month range slider:",
+    choices = month.name,
+    selected = month.name[c(4, 7)]
+  ),
+  verbatimTextOutput(outputId = "result")
+)
+server <- function(input, output, session) {
+  output$result <- renderPrint(str(input$mySliderText))
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### spectrumInput
+
+{{< highlight r >}}
+spectrumInput(inputId, label, choices = NULL, selected = NULL, flat = FALSE, options = list(), width = NULL)
+{{< /highlight >}}
+
+#### spectrumInputの説明
+
+パレット内で色を選択するウィジェットを生成します。必要に応じてオプションを追加することができます。
+
+#### spectrumInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label`**|コントロールに表示するラベル。`NULL`ならラベル無しとなります。|
+|**`choices`**|メニューに表示する色のリスト|
+|**`selected`**|初期値で選択されている値|
+|**`flat`**|メニューをインラインで表示するかどうかを論理値で指定|
+|**`options`**|スペクトルに渡す追加のオプション。指定可能な値は https://bgrins.github.io/spectrum/#options を参照してください。|
+|**`width`**|入力の幅。例えば、`400px`や`100%`のように指定します。|
+
+#### spectrumInputの値
+
+サーバ側で16進フォーマットの選択された色。
+
+#### spectrumInputの使用例
+
+{{< figure src="/ui-input/shinywidgets-spectruminput.png" alt="spectrumInput" >}}
+
+{{< highlight r >}}
+library("RColorBrewer")
+ui <- fluidPage(
+  tags$h1("Spectrum color picker"),
+  br(),
+  spectrumInput(
+    inputId = "myColor",
+    label = "Pick a color:",
+    choices = list(
+      list('black', 'white', 'blanchedalmond', 'steelblue', 'forestgreen'),
+      as.list(brewer.pal(n = 9, name = "Blues")),
+      as.list(brewer.pal(n = 9, name = "Greens")),
+      as.list(brewer.pal(n = 11, name = "Spectral")),
+      as.list(brewer.pal(n = 8, name = "Dark2"))
+    ),
+    options = list(`toggle-palette-more-text` = "Show more")
+  ),
+  verbatimTextOutput(outputId = "res")
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint(input$myColor)
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
