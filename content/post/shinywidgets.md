@@ -6,7 +6,7 @@ categories: ["Shiny"]
 tags: ["Packages"]
 slug: "shinywidgets"
 weight: 3
-description: "入出力ウィジェットを作成"
+description: "RStudioによって開発されたパッケージshinyWidgetsの関数リファレンス。shinyWidgetsを用いることにより、さまざまなデザインのボタンやチェックボックス、ラジオボタンなどのUIを実装したスタイルシートを Shiny アプリケーションに適用することができます。"
 toc: true
 ---
 
@@ -1877,7 +1877,7 @@ spectrumInput(inputId, label, choices = NULL, selected = NULL, flat = FALSE, opt
 
 #### spectrumInputの使用例
 
-{{< figure src="/ui-input/shinywidgets-spectruminput.png" alt="spectrumInput" >}}
+{{< figure src="/ui-input/shinywidgets-spectruminput.gif" alt="spectrumInput" >}}
 
 {{< highlight r >}}
 library("RColorBrewer")
@@ -1904,3 +1904,1308 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 {{< /highlight >}}
 
+
+
+### switchInput
+
+{{< highlight r >}}
+switchInput(inputId, label = NULL, value = FALSE, onLabel = "ON", offLabel = "OFF", onStatus = NULL, offStatus = NULL, size = "default", labelWidth = "auto", handleWidth = "auto", disabled = FALSE, inline = FALSE, width = NULL)
+{{< /highlight >}}
+
+#### switchInputの説明
+
+Bootstrapのトグルスイッチ入力を生成します。
+
+#### switchInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label`**|スイッチに中央に表示するテキスト|
+|**`value`**|初期値を論理値(`TRUE`または`FALSE`)で指定|
+|**`onLabel`**|スイッチの左側(`TRUE`)のテキスト|
+|**`offLabel`**|スイッチの右側(`FALSE`)のテキスト|
+|**`onStatus`**|スイッチの左側(`TRUE`)の色のBootstrapステータス|
+|**`offStatus`**|スイッチの右側(`FALSE`)の色のBootstrapステータス|
+|**`size`**|ボタンのサイズ(’default’, ’mini’, ’small’, ’normal’, ’large’)|
+|**`labelWidth`**|中央のハンドルの幅をピクセルで指定|
+|**`handleWidth`**|左側と右側の幅をピクセルで指定|
+|**`disabled`**|トグルスイッチを無効にした状態で表示するかどうかを論理値で指定|
+|**`inline`**|トグルスイッチをインラインで表示するかどうかを論理値で指定|
+|**`width`**|入力の幅。例えば、`400px`や`100%`のように指定します。|
+
+#### switchInputの値
+
+UI定義に追加するスイッチコントロール。
+
+#### switchInputの注記
+
+すべてのオプションは http://bootstrapswitch.com/options.html で記述されています。
+
+#### switchInputの使用例
+
+{{< figure src="/ui-input/shinywidgets-switchinput.gif" alt="switchInput" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  switchInput(inputId = "somevalue"),
+  verbatimTextOutput("value")
+)
+server <- function(input, output) {
+  output$value <- renderPrint({ input$somevalue })
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### textInputAddon
+
+{{< highlight r >}}
+textInputAddon(inputId, label, value = "", placeholder = NULL, addon, width = NULL)
+{{< /highlight >}}
+
+#### textInputAddonの説明
+
+add-on付きのテキスト入力領域を生成します。
+
+#### textInputAddonの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|値にアクセスするために用いられる入力のスロット|
+|**`label`**|コントロールに表示するラベル。`NULL`ならラベル無しとなります。|
+|**`value`**|初期値|
+|**`placeholder`**|コントロールに何を入力すべきかユーザにヒントとして与える文字列|
+|**`addon`**|`icon`で生成するアイコンタグ|
+|**`width`**|入力の幅。`auto`, `fit`, `100px`, `750%`で指定します。|
+
+#### textInputAddonの値
+
+UI定義に追加するテキスト入力コントロール。
+
+#### textInputAddonの使用例
+
+{{< figure src="/ui-input/shinywidgets-textinputaddon.png" alt="textInputAddon" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  textInputAddon(inputId = "id", label = "Label", placeholder = "Username", addon = icon("at")),
+  verbatimTextOutput(outputId = "out")
+)
+server <- function(input, output) {
+  output$out <- renderPrint({
+    input$id
+  })
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### toggleDropdownButton 
+
+{{< highlight r >}}
+toggleDropdownButton(inputId)
+{{< /highlight >}}
+
+#### toggleDropdownButtonの説明
+
+サーバ側でドロップダウンメニューを開く、または閉じます。
+
+#### toggleDropdownButtonの引数
+
+|名前|説明|
+|:--|:--|
+|**`inputId`**|トグルへのドロップダウンのID|
+
+
+### tooltipOptions
+
+{{< highlight r >}}
+tooltipOptions(placement = "right", title = "Params", html = FALSE)
+{{< /highlight >}}
+
+#### tooltipOptionsの説明
+
+ドロップダウンメニューボタンのツールチップオプションのリスト。
+
+#### tooltipOptionsの引数
+
+|名前|説明|
+|:--|:--|
+|**`placement`**|ツールチップの配置(`right`, `top`, `bottom`, `left`)を指定|
+|**`title`**|ツールチップのテキスト|
+|**`html`**|ツールチップ内でHTMLタグを使用できるようにするかどうかを論理値で指定|
+
+
+
+### updateAwesomeCheckbox
+
+{{< highlight r >}}
+updateAwesomeCheckbox(session, inputId, label = NULL, value = NULL)
+{{< /highlight >}}
+
+#### updateAwesomeCheckboxの説明
+
+クライアント上でasesome checkbox入力の値を変更します。
+
+#### updateAwesomeCheckboxの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|標準的なShinyのsession|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力オブジェクトに設定するラベル|
+|**`value`**|入力オブジェクトに設定する値|
+
+#### updateAwesomeCheckboxの使用例
+
+{{< figure src="/ui-input/shinywidgets-updateawesomecheckbox.gif" alt="updateAwesomeCheckbox" >}}
+
+{{< highlight r >}}
+ui <- fluidPage(
+  awesomeCheckbox(
+    inputId = "somevalue",
+    label = "My label",
+    value = FALSE
+  ),
+  verbatimTextOutput(outputId = "res"),
+  actionButton(inputId = "updatevalue", label = "Toggle value"),
+  textInput(inputId = "updatelabel", label = "Update label")
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint({
+    input$somevalue
+  })
+  observeEvent(input$updatevalue, {
+    updateAwesomeCheckbox(
+      session = session, inputId = "somevalue",
+      value = as.logical(input$updatevalue %%2)
+    )
+  })
+  observeEvent(input$updatelabel, {
+    updateAwesomeCheckbox(
+      session = session, inputId = "somevalue",
+      label = input$updatelabel
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### updateAwesomeCheckboxGroup
+
+{{< highlight r >}}
+updateAwesomeCheckboxGroup(session, inputId, label = NULL, choices = NULL, selected = NULL, inline = FALSE, status = "primary")
+{{< /highlight >}}
+
+#### updateAwesomeCheckboxGroupの説明
+
+クライアント上で`awesomeCheckboxGroup`の値を変更します。
+
+#### updateAwesomeCheckboxGroupの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力のラベル|
+|**`choices`**|チェックボックスに表示する値のリスト|
+|**`selected`**|初期値として選択されている値|
+|**`inline`**|`TRUE`の場合、選択肢をインライン(すなわち水平)にレンダリングします。|
+|**`stats`**|ボタンの色|
+
+#### updateAwesomeCheckboxGroupの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  awesomeCheckboxGroup(
+    inputId = "somevalue",
+    choices = c("A", "B", "C"),
+    label = "My label"
+  ),
+  verbatimTextOutput(outputId = "res"),
+  actionButton(inputId = "updatechoices", label = "Random choices"),
+  textInput(inputId = "updatelabel", label = "Update label")
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint({
+    input$somevalue
+  })
+  observeEvent(input$updatechoices, {
+    updateAwesomeCheckboxGroup(
+      session = session, inputId = "somevalue",
+      choices = sample(letters, sample(2:6))
+    )
+  })
+  observeEvent(input$updatelabel, {
+    updateAwesomeCheckboxGroup(
+      session = session, inputId = "somevalue",
+      label = input$updatelabel
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### updateAwesomeRadio
+
+{{< highlight r >}}
+updateAwesomeRadio(session, inputId, label = NULL, choices = NULL, selected = NULL, inline = FALSE, status = "primary", checkbox = FALSE)
+{{< /highlight >}}
+
+#### updateAwesomeRadioの説明
+
+クライアント上で`awesomeRadio`のラジオボタン入力の値を変更します。
+
+#### updateAwesomeRadioの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力のラベル|
+|**`choices`**|選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。|
+|**`selected`**|初期値で選択されている値|
+|**`inline`**|`TRUE`の場合、選択肢をインライン(すなわち水平)にレンダリングします。|
+|**`status`**|ボタンの色|
+|**`checkbox`**|チェックボックスのスタイル|
+
+#### updateAwesomeRadioの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  awesomeRadio(
+    inputId = "somevalue",
+    choices = c("A", "B", "C"),
+    label = "My label"
+  ),
+  verbatimTextOutput(outputId = "res"),
+  actionButton(inputId = "updatechoices", label = "Random choices"),
+  textInput(inputId = "updatelabel", label = "Update label")
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint({
+    input$somevalue
+  })
+  observeEvent(input$updatechoices, {
+    updateAwesomeRadio(
+      session = session, inputId = "somevalue",
+      choices = sample(letters, sample(2:6))
+    )
+  })
+  observeEvent(input$updatelabel, {
+    updateAwesomeRadio(
+      session = session, inputId = "somevalue",
+      label = input$updatelabel
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### updateCheckboxGroupButtons
+
+{{< highlight r >}}
+updateCheckboxGroupButtons(session, inputId, label = NULL, choices = NULL, selected = NULL, status = "default", size = "normal", checkIcon = list(), choiceNames = NULL, choiceValues = NULL)
+{{< /highlight >}}
+
+#### updateCheckboxGroupButtonsの説明
+
+クライアント上で`checkboxGroupButtons`入力の値を変更します。
+
+#### updateCheckboxGroupButtonsの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|設定するラベル|
+|**`choices`**|入力の新しい選択肢|
+|**`selected`**|選択されている値|
+|**`status`**|`choices`が`NULL`でない場合にのみ用いられるステータス|
+|**`size`**|`choices`が`NULL`でない場合にのみ用いられるサイズ|
+|**`choeckIcon`**|`choices`が`NULL`でない場合にのみ用いられるアイコン|
+|**`choiceNames`, `choiceValues`**|名前と値のリスト。`choices`の代わりに用います。|
+
+#### updateCheckboxGroupButtonsの使用例
+
+{{< highlight r >}}
+# Example 1 ----
+ui <- fluidPage(
+  radioButtons(inputId = "up", label = "Update button :", choices = c("All", "None")),
+  checkboxGroupButtons(
+    inputId = "btn", label = "Power :",
+    choices = c("Nuclear", "Hydro", "Solar", "Wind"),
+    selected = "Hydro"
+  ),
+  verbatimTextOutput(outputId = "res")
+)
+server <- function(input,output, session){
+  observeEvent(input$up, {
+    if (input$up == "All"){
+      updateCheckboxGroupButtons(session, "btn", selected = c("Nuclear", "Hydro", "Solar", "Wind"))
+    } else {
+      updateCheckboxGroupButtons(session, "btn", selected = character(0))
+    }
+  }, ignoreInit = TRUE)
+  output$res <- renderPrint({
+    input$btn
+  })
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+{{< highlight r >}}
+# Example 2 ----
+ui <- fluidPage(
+  checkboxGroupButtons(
+    inputId = "somevalue",
+    choices = c("A", "B", "C"),
+    label = "My label"
+  ),
+  verbatimTextOutput(outputId = "res"),
+  actionButton(inputId = "updatechoices", label = "Random choices"),
+  pickerInput(
+    inputId = "updateselected", label = "Update selected:",
+    choices = c("A", "B", "C"), multiple = TRUE
+  ),
+  textInput(inputId = "updatelabel", label = "Update label")
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint({
+    input$somevalue
+  })
+  observeEvent(input$updatechoices, {
+    newchoices <- sample(letters, sample(2:6))
+    updateCheckboxGroupButtons(
+      session = session, inputId = "somevalue",
+      choices = newchoices
+    )
+    updatePickerInput(
+      session = session, inputId = "updateselected",
+      choices = newchoices
+    )
+  })
+  observeEvent(input$updateselected, {
+    updateCheckboxGroupButtons(
+      session = session, inputId = "somevalue",
+      selected = input$updateselected
+    )
+  }, ignoreNULL = TRUE, ignoreInit = TRUE)
+  observeEvent(input$updatelabel, {
+    updateCheckboxGroupButtons(
+      session = session, inputId = "somevalue",
+      label = input$updatelabel
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+### updateKnobInput
+
+{{< highlight r >}}
+updateKnobInput(session, inputId, label = NULL, value = NULL)
+{{< /highlight >}}
+
+#### updateKnobInputの説明
+
+クライアント上でつまみの入力`knobInput`の値を変更します。
+
+#### updateKnobInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|標準的なShinyのsession|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力オブジェクトに設定するラベル|
+|**`value`**|入力オブジェクトに設定する値|
+
+#### updateKnobInputの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("knob update examples"),
+  br(),
+  fluidRow(
+    column(
+      width = 6,
+      knobInput(
+        inputId = "knob1", label = "Update value:",
+        value = 75, angleOffset = 90, lineCap = "round"
+      ),
+      verbatimTextOutput(outputId = "res1"),
+      sliderInput(
+        inputId = "upknob1", label = "Update knob:",
+        min = 0, max = 100, value = 75
+      )
+    ),
+    column(
+      width = 6,
+      knobInput(
+        inputId = "knob2", label = "Update label:",
+        value = 50, angleOffset = -125, angleArc = 250
+      ),
+      verbatimTextOutput(outputId = "res2"),
+      textInput(inputId = "upknob2", label = "Update label:")
+    )
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$knob1)
+  observeEvent(input$upknob1, {
+    updateKnobInput(
+      session = session,
+      inputId = "knob1",
+      value = input$upknob1
+    )
+  }, ignoreInit = TRUE)
+  output$res2 <- renderPrint(input$knob2)
+  observeEvent(input$upknob2, {
+    updateKnobInput(
+      session = session,
+      inputId = "knob2",
+      label = input$upknob2
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### updateMaterialSwitch
+
+{{< highlight r >}}
+updateMaterialSwitch(session, inputId, value = NULL)
+{{< /highlight >}}
+
+#### updateMaterialSwitchの説明
+
+クライアント上で`materialSwitch`入力の値を変更します。
+
+#### updateMaterialSwitchの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`value`**|入力オブジェクトに設定する値|
+
+
+### updatePickerInput
+
+{{< highlight r >}}
+updatePickerInput(session, inputId, label = NULL, selected = NULL, choices = NULL, choicesOpt = NULL)
+{{< /highlight >}}
+
+#### updatePickerInputの説明
+
+クライアント上で`pickerInput`入力の値を変更します。
+
+#### updatePickerInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|スイッチに中央に表示するテキスト|
+|**`selected`**|初期値で選択されている値(`multiple = TRUE`の場合は、複数の値)。指定がない場合は、デフォルトで単独のリストの最初の値となり、複数のセレクトリストでは値がありません。|
+|**`choices`**|選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。|
+|**`choicesOpt`**|ドロップダウンメニュー内の選択肢のオプション|
+
+#### updatePickerInputの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h2("Update pickerInput"),
+  fluidRow(
+    column(
+      width = 5, offset = 1,
+      pickerInput(
+        inputId = "p1",
+        label = "classic update",
+        choices = rownames(mtcars)
+      )
+    ),
+    column(
+      width = 5,
+      pickerInput(
+        inputId = "p2",
+        label = "disabled update",
+        choices = rownames(mtcars)
+      )
+    )
+  ),
+  fluidRow(
+    column(
+      width = 10, offset = 1,
+      sliderInput(
+        inputId = "up",
+        label = "Select between models with mpg greater than :",
+        width = "50%",
+        min = min(mtcars$mpg),
+        max = max(mtcars$mpg),
+        value = min(mtcars$mpg),
+        step = 0.1
+      )
+    )
+  )
+)
+server <- function(input, output, session) {
+  observeEvent(input$up, {
+    mtcars2 <- mtcars[mtcars$mpg >= input$up, ]
+    # Method 1
+    updatePickerInput(session = session, inputId = "p1",
+                      choices = rownames(mtcars2))
+    # Method 2
+    disabled_choices <- !rownames(mtcars) %in% rownames(mtcars2)
+    updatePickerInput(
+      session = session, inputId = "p2",
+      choices = rownames(mtcars),
+      choicesOpt = list(
+        disabled = disabled_choices,
+        style = ifelse(disabled_choices,
+                       yes = "color: rgba(119, 119, 119, 0.5);",
+                       no = "")
+      )
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### updatePrettyCheckbox
+
+{{< highlight r >}}
+updatePrettyCheckbox(session, inputId, label = NULL, value = NULL)
+{{< /highlight >}}
+
+#### updatePrettyCheckboxの説明
+
+クライアント上で`prettyCheckbox`の値を変更します。
+
+#### updatePrettyCheckboxの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力オブジェクトに設定するラベル|
+|**`value`**|入力オブジェクトに設定する値|
+
+#### updatePrettyCheckboxの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Pretty checkbox update value"),
+  br(),
+  prettyCheckbox(inputId = "checkbox1",
+                 label = "Update me!",
+                 shape = "curve", thick = TRUE, outline = TRUE),
+  verbatimTextOutput(outputId = "res1"),
+  radioButtons(
+    inputId = "update", label = "Value to set:",
+    choices = c("FALSE", "TRUE")
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$checkbox1)
+  observeEvent(input$update, {
+    updatePrettyToggle(session = session,
+                       inputId = "checkbox1",
+                       value = as.logical(input$update))
+  })
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### updatePrettyCheckboxGroup
+
+{{< highlight r >}}
+updatePrettyCheckboxGroup(session, inputId, label = NULL, choices = NULL, selected = NULL, inline = FALSE, choiceNames = NULL, choiceValues = NULL, prettyOptions = list())
+{{< /highlight >}}
+
+#### updatePrettyCheckboxGroupの説明
+
+クライアント上で`prettyCheckboxGroup`の値を変更します。
+
+#### updatePrettyCheckboxGroupの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力オブジェクトに設定するラベル|
+|**`choices`**|入力オブジェクトに設定する選択肢。アップデートによりパラメータはリセットされます。|
+|**`selected`**|入力オブジェクトに設定する値|
+|**`inline`**|`TRUE`の場合、選択肢をインライン(すなわち水平)にレンダリングします。|
+|**`choiceNames`**|入力オブジェクトに設定する選択肢の名前|
+|**`choiceValues`**|入力オブジェクトに設定する選択肢の値|
+|**`prettyOptions`**|チェックボックスのスタイルを変更するために`prettyCheckboxGroup`に渡される引数|
+
+#### updatePrettyCheckboxGroupの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Update pretty checkbox group"),
+  br(),
+  fluidRow(
+    column(
+      width = 6,
+      prettyCheckboxGroup(inputId = "checkgroup1",
+                          label = "Update my value!",
+                          choices = month.name[1:4],
+                          status = "danger",
+                          icon = icon("remove")),
+      verbatimTextOutput(outputId = "res1"),
+      br(),
+      checkboxGroupInput(
+        inputId = "update1", label = "Update value :",
+        choices = month.name[1:4], inline = TRUE
+      )
+    ),
+    column(
+      width = 6,
+      prettyCheckboxGroup(inputId = "checkgroup2",
+                          label = "Update my choices!", thick = TRUE,
+                          choices = month.name[1:4],
+                          animation = "pulse", status = "info"),
+      verbatimTextOutput(outputId = "res2"),
+      br(),
+      actionButton(inputId = "update2", label = "Update choices !")
+    )
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$checkgroup1)
+  observeEvent(input$update1, {
+    if (is.null(input$update1)) {
+      selected_ <- character(0) # no choice selected
+    } else {
+      selected_ <- input$update1
+    }
+    updatePrettyCheckboxGroup(session = session, inputId = "checkgroup1", selected = selected_)
+  }, ignoreNULL = FALSE)
+  output$res2 <- renderPrint(input$checkgroup2)
+  observeEvent(input$update2, {
+    updatePrettyCheckboxGroup(
+      session = session, inputId = "checkgroup2",
+      choices = sample(month.name, 4), prettyOptions = list(animation = "pulse", status = "info")
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### updatePrettyRadioButtons
+
+{{< highlight r >}}
+updatePrettyRadioButtons(session, inputId, label = NULL, choices = NULL, selected = NULL, inline = FALSE, choiceNames = NULL, choiceValues = NULL, prettyOptions = list())
+{{< /highlight >}}
+
+#### updatePrettyRadioButtonsの説明
+
+クライアント上で`prettyRadioButtons`の値を変更します。
+
+#### updatePrettyRadioButtonsの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力オブジェクトに設定するラベル|
+|**`choices`**入力オブジェクトに設定する選択肢。アップデートによりパラメータはリセットされます。|
+|**`selected`**|入力オブジェクトに設定する値|
+|**`inline`**|`TRUE`の場合、選択肢をインライン(すなわち水平)にレンダリングします。|
+|**`choiceNames`**|入力オブジェクトに設定する選択肢の名前|
+|**`choiceValues`**|入力オブジェクトに設定する選択肢の値|
+|**`prettyOptions`**|ラジオボタンのスタイルを変更するために`prettyRadioButtons`に渡される引数|
+
+#### updatePrettyRadioButtonsの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Update pretty radio buttons"),
+  br(),
+  fluidRow(
+    column(
+      width = 6,
+      prettyRadioButtons(inputId = "radio1",
+                         label = "Update my value!",
+                         choices = month.name[1:4],
+                         status = "danger",
+                         icon = icon("remove")),
+      verbatimTextOutput(outputId = "res1"),
+      br(),
+      radioButtons(
+        inputId = "update1", label = "Update value :",
+        choices = month.name[1:4], inline = TRUE
+      )
+    ),
+    column(
+      width = 6,
+      prettyRadioButtons(inputId = "radio2",
+                         label = "Update my choices!", thick = TRUE,
+                         choices = month.name[1:4],
+                         animation = "pulse", status = "info"),
+      verbatimTextOutput(outputId = "res2"),
+      br(),
+      actionButton(inputId = "update2", label = "Update choices !")
+    )
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$radio1)
+  observeEvent(input$update1, {
+    updatePrettyRadioButtons(
+      session = session,
+      inputId = "radio1",
+      selected = input$update1
+    )
+  }, ignoreNULL = FALSE)
+  output$res2 <- renderPrint(input$radio2)
+  observeEvent(input$update2, {
+    updatePrettyRadioButtons(
+      session = session, inputId = "radio2",
+      choices = sample(month.name, 4),
+      prettyOptions = list(animation = "pulse",
+                           status = "info",
+                           shape = "round")
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### updatePrettySwitch
+
+{{< highlight r >}}
+updatePrettySwitch(session, inputId, label = NULL, value = NULL)
+{{< /highlight >}}
+
+#### updatePrettySwitchの説明
+
+クライアント上で`prettySwitch`の値を変更します。
+
+#### updatePrettySwitchの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力オブジェクトに設定するラベル|
+|**`value`**|入力オブジェクトに設定する値|
+
+#### updatePrettySwitchの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Pretty switch update value"),
+  br(),
+  prettySwitch(inputId = "switch1", label = "Update me !"),
+  verbatimTextOutput(outputId = "res1"),
+  radioButtons(
+    inputId = "update", label = "Value to set:",
+    choices = c("FALSE", "TRUE")
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$switch1)
+  observeEvent(input$update, {
+    updatePrettySwitch(session = session, inputId = "switch1",
+                       value = as.logical(input$update))
+  })
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### updatePrettyToggle
+
+{{< highlight r >}}
+updatePrettyToggle(session, inputId, label = NULL, value = NULL)
+{{< /highlight >}}
+
+#### updatePrettyToggleの説明
+
+クライアント上で`prettyToggle`の値を変更します。
+
+#### updatePrettyToggleの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|入力オブジェクトに設定するラベル|
+|**`value`**|入力オブジェクトに設定する値|
+
+#### updatePrettyToggleの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Pretty toggle update value"),
+  br(),
+  prettyToggle(inputId = "toggle1",
+               label_on = "Checked!",
+               label_off = "Unchecked..."),
+  verbatimTextOutput(outputId = "res1"),
+  radioButtons(
+    inputId = "update", label = "Value to set:",
+    choices = c("FALSE", "TRUE")
+  )
+)
+server <- function(input, output, session) {
+  output$res1 <- renderPrint(input$toggle1)
+  observeEvent(input$update, {
+    updatePrettyToggle(session = session,
+                       inputId = "toggle1",
+                       value = as.logical(input$update))
+  })
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### updateProgressBar
+
+{{< highlight r >}}
+updateProgressBar(session, id, value, total = NULL, status = NULL)
+{{< /highlight >}}
+
+#### updateProgressBarの説明
+
+クライアント上でプログレスバーの値を変更します。
+
+#### updateProgressBarの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**`shinyServer`に与えられた関数に渡されるセッションオブジェクト||
+|**`id`**|プログレスバーを更新するためのid|
+|**`value`**|0から100までの間のプログレスバーの値。100よりも大きくする場合は`total`を指定します。|
+|**`total`**|`value`が100よりも大きい場合にパーセンテージを計算するために用いられる値|
+|**`status`**|色|
+
+
+
+### updateRadioGroupButtons
+
+{{< highlight r >}}
+updateRadioGroupButtons(session, inputId, label = NULL, choices = NULL, selected = NULL, status = "default", size = "normal", checkIcon = list(), choiceNames = NULL, choiceValues = NULL)
+{{< /highlight >}}
+
+#### updateRadioGroupButtonsの説明
+
+クライアント上で`radioGroupButtons`の値を変更します。
+
+#### updateRadioGroupButtonsの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|設定するラベル|
+|**`choices`**|入力の新しい選択肢|
+|**`selected`**|選択されている値|
+|**`status`**|`choices`が`NULL`でない場合にのみ用いられるステータス|
+|**`size`**|`choices`が`NULL`でない場合にのみ用いられるサイズ|
+|**`checkIcon`**|`choices`が`NULL`でない場合にのみ用いられるアイコン|
+|**`choiceNames`, `choiceValues`**|名前と値のリスト。`choices`の代わりに用います。|
+
+#### updateRadioGroupButtonsの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  radioGroupButtons(
+    inputId = "somevalue",
+    choices = c("A", "B", "C"),
+    label = "My label"
+  ),
+  verbatimTextOutput(outputId = "res"),
+  actionButton(inputId = "updatechoices", label = "Random choices"),
+  pickerInput(
+    inputId = "updateselected", label = "Update selected:",
+    choices = c("A", "B", "C"), multiple = FALSE
+  ),
+  textInput(inputId = "updatelabel", label = "Update label")
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint({
+    input$somevalue
+  })
+  observeEvent(input$updatechoices, {
+    newchoices <- sample(letters, sample(2:6))
+    updateRadioGroupButtons(
+      session = session, inputId = "somevalue",
+      choices = newchoices
+    )
+    updatePickerInput(
+      session = session, inputId = "updateselected",
+      choices = newchoices
+    )
+  })
+  observeEvent(input$updateselected, {
+    updateRadioGroupButtons(
+      session = session, inputId = "somevalue",
+      selected = input$updateselected
+    )
+  }, ignoreNULL = TRUE, ignoreInit = TRUE)
+  observeEvent(input$updatelabel, {
+    updateRadioGroupButtons(
+      session = session, inputId = "somevalue",
+      label = input$updatelabel
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### updateSliderTextInput
+
+{{< highlight r >}}
+updateSliderTextInput(session, inputId, label = NULL, selected = NULL, choices = NULL, from_fixed = NULL, to_fixed = NULL)
+{{< /highlight >}}
+
+#### updateSliderTextInputの説明
+
+クライアント上で`sliderTextInput`の値を変更します。
+
+#### updateSliderTextInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`label`**|設定するラベル|
+|**`selected`**|選択されている値|
+|**`choices`**|入力の新しい選択肢|
+|**`from_fixed`**|左側のハンドル(または一つのハンドル)を固定|
+|**`to_fixed`**|右側のハンドルを固定|
+
+#### updateSliderTextInputの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  br(),
+  sliderTextInput(
+    inputId = "mySlider",
+    label = "Pick a month :",
+    choices = month.abb,
+    selected = "Jan"
+  ),
+  verbatimTextOutput(outputId = "res"),
+  radioButtons(
+    inputId = "up",
+    label = "Update choices:",
+    choices = c("Abbreviations", "Full names")
+  )
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint(str(input$mySlider))
+  observeEvent(input$up, {
+    choices <- switch(
+      input$up,
+      "Abbreviations" = month.abb,
+      "Full names" = month.name
+    )
+    updateSliderTextInput(
+      session = session,
+      inputId = "mySlider",
+      choices = choices
+    )
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+
+### updateSpectrumInput
+
+{{< highlight r >}}
+updateSpectrumInput(session, inputId, selected)
+{{< /highlight >}}
+
+#### updateSpectrumInputの説明
+
+クライアント上で`spectrumInput`の値を変更します。
+
+#### updateSpectrumInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`selected`**|選択する値|
+
+#### updateSpectrumInputの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Spectrum color picker"),
+  br(),
+  spectrumInput(
+    inputId = "myColor",
+    label = "Pick a color:",
+    choices = list(
+      list('black', 'white', 'blanchedalmond', 'steelblue', 'forestgreen')
+    )
+  ),
+  verbatimTextOutput(outputId = "res"),
+  radioButtons(
+    inputId = "update", label = "Update:",
+    choices = c(
+      'black', 'white', 'blanchedalmond', 'steelblue', 'forestgreen'
+    )
+  )
+)
+server <- function(input, output, session) {
+  output$res <- renderPrint(input$myColor)
+  observeEvent(input$update, {
+    updateSpectrumInput(session = session, inputId = "myColor", selected = input$update)
+  }, ignoreInit = TRUE)
+}
+shinyApp(ui, server)
+{{< /highlight >}}
+
+
+
+### updateSwitchInput
+
+{{< highlight r >}}
+updateSwitchInput(session, inputId, value = NULL, label = NULL, onLabel = NULL, offLabel = NULL, onStatus = NULL, offStatus = NULL, disabled = NULL)
+{{< /highlight >}}
+
+#### updateSwitchInputの説明
+
+クライアント上で`switchInput`の値を変更します。
+
+#### updateSwitchInputの引数
+
+|名前|説明|
+|:--|:--|
+|**`session`**|`shinyServer`に与えられた関数に渡されるセッションオブジェクト|
+|**`inputId`**|入力オブジェクトのid|
+|**`value`**|入力オブジェクトに設定する値|
+|**`label`**|入力オブジェクトに設定するラベル|
+|**`onLabel`**|入力オブジェクトに設定するオンのときのラベル|
+|**`offLabel`**|入力オブジェクトに設定するオフのときのラベル|
+|**`onStatus`**|入力オブジェクトに設定するオンのときのステータス|
+|**`offStatus`**|入力オブジェクトに設定するオフのときのステータス|
+|**`disabled`**|オフの状態を論理値で指定|
+
+#### updateSwitchInputの使用例
+
+{{< highlight r >}}
+ui <- fluidPage(
+  tags$h1("Update", tags$code("switchInput")),
+  br(),
+  fluidRow(
+    column(
+      width = 4,
+      panel(
+        switchInput(inputId = "switch1"),
+        verbatimTextOutput(outputId = "resup1"),
+        tags$div(
+          class = "btn-group",
+          actionButton(
+            inputId = "updatevaluetrue",
+            label = "Set to TRUE"
+          ),
+          actionButton(
+            inputId = "updatevaluefalse",
+            label = "Set to FALSE"
+          )
+        ),
+        heading = "Update value"
+      )
+    ),
+    column(
+      width = 4,
+      panel(
+        switchInput(inputId = "switch2",
+                    label = "My label"),
+        verbatimTextOutput(outputId = "resup2"),
+        textInput(inputId = "updatelabeltext",
+                  label = "Update label:"),
+        heading = "Update label"
+      )
+    ),
+    column(
+      width = 4,
+      panel(
+        switchInput(
+          inputId = "switch3",
+          onLabel = "Yeaah",
+          offLabel = "Noooo"
+        ),
+        verbatimTextOutput(outputId = "resup3"),
+        fluidRow(column(
+          width = 6,
+          textInput(inputId = "updateonLabel",
+                    label = "Update onLabel:")
+        ),
+        column(
+          width = 6,
+          textInput(inputId = "updateoffLabel",
+                    label = "Update offLabel:")
+        )),
+        heading = "Update onLabel & offLabel"
+      )
+    )
+  ),
+  fluidRow(column(
+    width = 4,
+    panel(
+      switchInput(inputId = "switch4"),
+      verbatimTextOutput(outputId = "resup4"),
+      fluidRow(
+        column(
+          width = 6,
+          pickerInput(
+            inputId = "updateonStatus",
+            label = "Update onStatus:",
+            choices = c("default", "primary", "success",
+                        "info", "warning", "danger")
+          )
+        ),
+        column(
+          width = 6,
+          pickerInput(
+            inputId = "updateoffStatus",
+            label = "Update offStatus:",
+            choices = c("default", "primary", "success",
+                        "info", "warning", "danger")
+          )
+        )
+      ),
+      heading = "Update onStatus & offStatusr"
+    )
+  ),
+  column(
+    width = 4,
+    panel(
+      switchInput(inputId = "switch5"),
+      verbatimTextOutput(outputId = "resup5"),
+      checkboxInput(
+        inputId = "disabled",
+        label = "Disabled",
+        value = FALSE
+      ),
+      heading = "Disabled"
+    )
+  ))
+)
+server <- function(input, output, session) {
+  # Update value
+  observeEvent(input$updatevaluetrue, {
+    updateSwitchInput(session = session,
+                      inputId = "switch1",
+                      value = TRUE)
+  })
+  observeEvent(input$updatevaluefalse, {
+    updateSwitchInput(session = session,
+                      inputId = "switch1",
+                      value = FALSE)
+  })
+  output$resup1 <- renderPrint({
+    input$switch1
+  })
+  # Update label
+  observeEvent(input$updatelabeltext, {
+    updateSwitchInput(
+      session = session,
+      inputId = "switch2",
+      label = input$updatelabeltext
+    )
+  }, ignoreInit = TRUE)
+  output$resup2 <- renderPrint({
+    input$switch2
+  })
+  # Update onLabel & offLabel
+  observeEvent(input$updateonLabel, {
+    updateSwitchInput(
+      session = session,
+      inputId = "switch3",
+      onLabel = input$updateonLabel
+    )
+  }, ignoreInit = TRUE)
+  observeEvent(input$updateoffLabel, {
+    updateSwitchInput(
+      session = session,
+      inputId = "switch3",
+      offLabel = input$updateoffLabel
+    )
+  }, ignoreInit = TRUE)
+  output$resup3 <- renderPrint({
+    input$switch3
+  })
+  # Update onStatus & offStatus
+  observeEvent(input$updateonStatus, {
+    updateSwitchInput(
+      session = session,
+      inputId = "switch4",
+      onStatus = input$updateonStatus
+    )
+  }, ignoreInit = TRUE)
+  observeEvent(input$updateoffStatus, {
+    updateSwitchInput(
+      session = session,
+      inputId = "switch4",
+      offStatus = input$updateoffStatus
+    )
+  }, ignoreInit = TRUE)
+  output$resup4 <- renderPrint({
+    input$switch4
+  })
+  # Disabled
+  observeEvent(input$disabled, {
+    updateSwitchInput(
+      session = session,
+      inputId = "switch5",
+      disabled = input$disabled
+    )
+  }, ignoreInit = TRUE)
+  output$resup5 <- renderPrint({
+    input$switch5
+  })
+}
+shinyApp(ui = ui, server = server)
+{{< /highlight >}}
+
+
+### useSweetAlert
+
+{{< highlight r >}}
+useSweetAlert()
+{{< /highlight >}}
+
+#### useSweetAlertの説明
+
+sweet aleartの依存性をロードします。この関数は`sendSweetAlert`, `confirmSweetAlert`, `inputSweetAlert`では不要ですが、`progressSweetAleart`ではまだ必要とされています。
+
+#### useSweetAlertの注記
+
+UI側で`receiveSweetAleart()`を、サーバ側で`sendSweetAlert()`を使用します。

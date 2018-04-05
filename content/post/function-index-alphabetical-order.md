@@ -5,7 +5,7 @@ date: 2018-01-10
 categories: ["R"]
 tags: ["Shiny"]
 weight: 2
-slug: "function-index"
+slug: "function-index-alphabetical-order"
 description: "アルファベット順のShiny関数の索引"
 ---
 

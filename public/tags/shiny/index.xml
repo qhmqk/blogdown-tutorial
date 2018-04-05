@@ -33,10 +33,10 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
     
     <item>
       <title>索引(アルファベット順)</title>
-      <link>/function-index/</link>
+      <link>/function-index-alphabetical-order/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/function-index/</guid>
+      <guid>/function-index-alphabetical-order/</guid>
       <description>A  actionButton  B C  checkboxGroupInput
  checkboxInput
  column
@@ -56,10 +56,10 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
     
     <item>
       <title>索引(機能別)</title>
-      <link>/reference/</link>
+      <link>/function-index-functional-order/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/reference/</guid>
+      <guid>/function-index-functional-order/</guid>
       <description>UI Inputs  actionButton
  checkboxGroupInput
  checkboxInput

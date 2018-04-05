@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <copyright>© 2018 qhmqk</copyright>
-    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tutorials</title>
+      <link>/tutorials/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/</guid>
+      <description>作成中。</description>
+    </item>
     
     <item>
       <title>Shiny app 開発をスタート</title>
@@ -32,11 +41,24 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
     </item>
     
     <item>
+      <title>Reference</title>
+      <link>/reference/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/reference/</guid>
+      <description> Shiny アルファベット順の関数リファレンス
+機能別の関数リファレンス
+Packages shinyWidgetsの関数リファレンス
+shinydashboard
+Example </description>
+    </item>
+    
+    <item>
       <title>索引(アルファベット順)</title>
-      <link>/function-index/</link>
+      <link>/function-index-alphabetical-order/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/function-index/</guid>
+      <guid>/function-index-alphabetical-order/</guid>
       <description>A  actionButton  B C  checkboxGroupInput
  checkboxInput
  column
@@ -56,10 +78,10 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
     
     <item>
       <title>索引(機能別)</title>
-      <link>/reference/</link>
+      <link>/function-index-functional-order/</link>
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/reference/</guid>
+      <guid>/function-index-functional-order/</guid>
       <description>UI Inputs  actionButton
  checkboxGroupInput
  checkboxInput
@@ -571,8 +593,9 @@ box(..., title = NULL, footer = NULL, status = NULL,solidHeader = FALSE, backgr
       <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>作成中。
-You can contact me.</description>
+      <description>このブログについて Shiny アプリケーションを開発するための日本語リファレンスです。個人が作成したブログであり、R コミュニティや RStudio とは何の関係もありません。
+このブログの作成方法 blogdown パッケージを用いて、Hugoのテーマをカスタマイズして作成しました。blogdown(Hugo)で作成したmarkdownをgithubにホスト、ブログはNetlifyでホスティングしています。
+コンタクトフォーム このブログへの要望などは こちら からお願いします。</description>
     </item>
     
     <item>

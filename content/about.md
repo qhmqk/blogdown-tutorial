@@ -5,6 +5,14 @@ sharingicons = false
 weight = 4
 +++
 
-作成中。
+### このブログについて
 
-You can [contact me]({{< relref "contact.md" >}}).
+Shiny アプリケーションを開発するための日本語リファレンスです。個人が作成したブログであり、R コミュニティや RStudio とは何の関係もありません。
+
+### このブログの作成方法
+
+blogdown パッケージを用いて、Hugoのテーマをカスタマイズして作成しました。blogdown(Hugo)で作成したmarkdownをgithubにホスト、ブログはNetlifyでホスティングしています。
+
+### コンタクトフォーム
+
+このブログへの要望などは [こちら]({{< relref "contact.md" >}}) からお願いします。

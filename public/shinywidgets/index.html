@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="shinyWidgets" />
-<meta property="og:description" content="入出力ウィジェットを作成" />
+<meta property="og:description" content="RStudioによって開発されたパッケージshinyWidgetsの関数リファレンス。shinyWidgetsを用いることにより、さまざまなデザインのボタンやチェックボックス、ラジオボタンなどのUIを実装したスタイルシートを Shiny アプリケーションに適用することができます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/shinywidgets/" />
 
@@ -27,7 +27,7 @@
 
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="shinyWidgets"/>
-<meta name="twitter:description" content="入出力ウィジェットを作成"/>
+<meta name="twitter:description" content="RStudioによって開発されたパッケージshinyWidgetsの関数リファレンス。shinyWidgetsを用いることにより、さまざまなデザインのボタンやチェックボックス、ラジオボタンなどのUIを実装したスタイルシートを Shiny アプリケーションに適用することができます。"/>
 <meta name="twitter:site" content="@username"/>
 <meta name="generator" content="Hugo 0.31.1" />
 
@@ -39,7 +39,7 @@
   "@type": "BlogPosting",
   "headline": "shinyWidgets",
   "url": "/shinywidgets/",
-  "wordCount": "4197",
+  "wordCount": "6955",
   "datePublished": "2018-03-27T00:00:00&#43;00:00",
   "dateModified": "2018-03-27T00:00:00&#43;00:00",
   "author": {
@@ -47,7 +47,7 @@
     "name": "qhmqk"
   },
   "keywords": "Shiny, Packages",
-  "description": "入出力ウィジェットを作成"
+  "description": "RStudioによって開発されたパッケージshinyWidgetsの関数リファレンス。shinyWidgetsを用いることにより、さまざまなデザインのボタンやチェックボックス、ラジオボタンなどのUIを実装したスタイルシートを Shiny アプリケーションに適用することができます。"
 }
 </script>
 
@@ -86,6 +86,12 @@ ga('send', 'pageview');
       <div class="container">
         <nav class="nav blog-nav">
           <a class="nav-link " href="/">Home</a>
+          
+          
+          <a class="nav-link" href="/tutorials/">Tutorials</a>
+          
+          
+          <a class="nav-link" href="/reference/">Reference</a>
           
           
           <a class="nav-link" href="/contact/">Contact</a>
@@ -351,6 +357,136 @@ ga('send', 'pageview');
 <li><a href="#spectruminputの引数">spectrumInputの引数</a></li>
 <li><a href="#spectruminputの値">spectrumInputの値</a></li>
 <li><a href="#spectruminputの使用例">spectrumInputの使用例</a></li>
+</ul></li>
+<li><a href="#switchinput">switchInput</a>
+<ul>
+<li><a href="#switchinputの説明">switchInputの説明</a></li>
+<li><a href="#switchinputの引数">switchInputの引数</a></li>
+<li><a href="#switchinputの値">switchInputの値</a></li>
+<li><a href="#switchinputの注記">switchInputの注記</a></li>
+<li><a href="#switchinputの使用例">switchInputの使用例</a></li>
+</ul></li>
+<li><a href="#textinputaddon">textInputAddon</a>
+<ul>
+<li><a href="#textinputaddonの説明">textInputAddonの説明</a></li>
+<li><a href="#textinputaddonの引数">textInputAddonの引数</a></li>
+<li><a href="#textinputaddonの値">textInputAddonの値</a></li>
+<li><a href="#textinputaddonの使用例">textInputAddonの使用例</a></li>
+</ul></li>
+<li><a href="#toggledropdownbutton">toggleDropdownButton</a>
+<ul>
+<li><a href="#toggledropdownbuttonの説明">toggleDropdownButtonの説明</a></li>
+<li><a href="#toggledropdownbuttonの引数">toggleDropdownButtonの引数</a></li>
+</ul></li>
+<li><a href="#tooltipoptions">tooltipOptions</a>
+<ul>
+<li><a href="#tooltipoptionsの説明">tooltipOptionsの説明</a></li>
+<li><a href="#tooltipoptionsの引数">tooltipOptionsの引数</a></li>
+</ul></li>
+<li><a href="#updateawesomecheckbox">updateAwesomeCheckbox</a>
+<ul>
+<li><a href="#updateawesomecheckboxの説明">updateAwesomeCheckboxの説明</a></li>
+<li><a href="#updateawesomecheckboxの引数">updateAwesomeCheckboxの引数</a></li>
+<li><a href="#updateawesomecheckboxの使用例">updateAwesomeCheckboxの使用例</a></li>
+</ul></li>
+<li><a href="#updateawesomecheckboxgroup">updateAwesomeCheckboxGroup</a>
+<ul>
+<li><a href="#updateawesomecheckboxgroupの説明">updateAwesomeCheckboxGroupの説明</a></li>
+<li><a href="#updateawesomecheckboxgroupの引数">updateAwesomeCheckboxGroupの引数</a></li>
+<li><a href="#updateawesomecheckboxgroupの使用例">updateAwesomeCheckboxGroupの使用例</a></li>
+</ul></li>
+<li><a href="#updateawesomeradio">updateAwesomeRadio</a>
+<ul>
+<li><a href="#updateawesomeradioの説明">updateAwesomeRadioの説明</a></li>
+<li><a href="#updateawesomeradioの引数">updateAwesomeRadioの引数</a></li>
+<li><a href="#updateawesomeradioの使用例">updateAwesomeRadioの使用例</a></li>
+</ul></li>
+<li><a href="#updatecheckboxgroupbuttons">updateCheckboxGroupButtons</a>
+<ul>
+<li><a href="#updatecheckboxgroupbuttonsの説明">updateCheckboxGroupButtonsの説明</a></li>
+<li><a href="#updatecheckboxgroupbuttonsの引数">updateCheckboxGroupButtonsの引数</a></li>
+<li><a href="#updatecheckboxgroupbuttonsの使用例">updateCheckboxGroupButtonsの使用例</a></li>
+</ul></li>
+<li><a href="#updateknobinput">updateKnobInput</a>
+<ul>
+<li><a href="#updateknobinputの説明">updateKnobInputの説明</a></li>
+<li><a href="#updateknobinputの引数">updateKnobInputの引数</a></li>
+<li><a href="#updateknobinputの使用例">updateKnobInputの使用例</a></li>
+</ul></li>
+<li><a href="#updatematerialswitch">updateMaterialSwitch</a>
+<ul>
+<li><a href="#updatematerialswitchの説明">updateMaterialSwitchの説明</a></li>
+<li><a href="#updatematerialswitchの引数">updateMaterialSwitchの引数</a></li>
+</ul></li>
+<li><a href="#updatepickerinput">updatePickerInput</a>
+<ul>
+<li><a href="#updatepickerinputの説明">updatePickerInputの説明</a></li>
+<li><a href="#updatepickerinputの引数">updatePickerInputの引数</a></li>
+<li><a href="#updatepickerinputの使用例">updatePickerInputの使用例</a></li>
+</ul></li>
+<li><a href="#updateprettycheckbox">updatePrettyCheckbox</a>
+<ul>
+<li><a href="#updateprettycheckboxの説明">updatePrettyCheckboxの説明</a></li>
+<li><a href="#updateprettycheckboxの引数">updatePrettyCheckboxの引数</a></li>
+<li><a href="#updateprettycheckboxの使用例">updatePrettyCheckboxの使用例</a></li>
+</ul></li>
+<li><a href="#updateprettycheckboxgroup">updatePrettyCheckboxGroup</a>
+<ul>
+<li><a href="#updateprettycheckboxgroupの説明">updatePrettyCheckboxGroupの説明</a></li>
+<li><a href="#updateprettycheckboxgroupの引数">updatePrettyCheckboxGroupの引数</a></li>
+<li><a href="#updateprettycheckboxgroupの使用例">updatePrettyCheckboxGroupの使用例</a></li>
+</ul></li>
+<li><a href="#updateprettyradiobuttons">updatePrettyRadioButtons</a>
+<ul>
+<li><a href="#updateprettyradiobuttonsの説明">updatePrettyRadioButtonsの説明</a></li>
+<li><a href="#updateprettyradiobuttonsの引数">updatePrettyRadioButtonsの引数</a></li>
+<li><a href="#updateprettyradiobuttonsの使用例">updatePrettyRadioButtonsの使用例</a></li>
+</ul></li>
+<li><a href="#updateprettyswitch">updatePrettySwitch</a>
+<ul>
+<li><a href="#updateprettyswitchの説明">updatePrettySwitchの説明</a></li>
+<li><a href="#updateprettyswitchの引数">updatePrettySwitchの引数</a></li>
+<li><a href="#updateprettyswitchの使用例">updatePrettySwitchの使用例</a></li>
+</ul></li>
+<li><a href="#updateprettytoggle">updatePrettyToggle</a>
+<ul>
+<li><a href="#updateprettytoggleの説明">updatePrettyToggleの説明</a></li>
+<li><a href="#updateprettytoggleの引数">updatePrettyToggleの引数</a></li>
+<li><a href="#updateprettytoggleの使用例">updatePrettyToggleの使用例</a></li>
+</ul></li>
+<li><a href="#updateprogressbar">updateProgressBar</a>
+<ul>
+<li><a href="#updateprogressbarの説明">updateProgressBarの説明</a></li>
+<li><a href="#updateprogressbarの引数">updateProgressBarの引数</a></li>
+</ul></li>
+<li><a href="#updateradiogroupbuttons">updateRadioGroupButtons</a>
+<ul>
+<li><a href="#updateradiogroupbuttonsの説明">updateRadioGroupButtonsの説明</a></li>
+<li><a href="#updateradiogroupbuttonsの引数">updateRadioGroupButtonsの引数</a></li>
+<li><a href="#updateradiogroupbuttonsの使用例">updateRadioGroupButtonsの使用例</a></li>
+</ul></li>
+<li><a href="#updateslidertextinput">updateSliderTextInput</a>
+<ul>
+<li><a href="#updateslidertextinputの説明">updateSliderTextInputの説明</a></li>
+<li><a href="#updateslidertextinputの引数">updateSliderTextInputの引数</a></li>
+<li><a href="#updateslidertextinputの使用例">updateSliderTextInputの使用例</a></li>
+</ul></li>
+<li><a href="#updatespectruminput">updateSpectrumInput</a>
+<ul>
+<li><a href="#updatespectruminputの説明">updateSpectrumInputの説明</a></li>
+<li><a href="#updatespectruminputの引数">updateSpectrumInputの引数</a></li>
+<li><a href="#updatespectruminputの使用例">updateSpectrumInputの使用例</a></li>
+</ul></li>
+<li><a href="#updateswitchinput">updateSwitchInput</a>
+<ul>
+<li><a href="#updateswitchinputの説明">updateSwitchInputの説明</a></li>
+<li><a href="#updateswitchinputの引数">updateSwitchInputの引数</a></li>
+<li><a href="#updateswitchinputの使用例">updateSwitchInputの使用例</a></li>
+</ul></li>
+<li><a href="#usesweetalert">useSweetAlert</a>
+<ul>
+<li><a href="#usesweetalertの説明">useSweetAlertの説明</a></li>
+<li><a href="#usesweetalertの注記">useSweetAlertの注記</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -3653,7 +3789,7 @@ shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#
 
 <figure >
     
-        <img src="/ui-input/shinywidgets-spectruminput.png" alt="spectrumInput" />
+        <img src="/ui-input/shinywidgets-spectruminput.gif" alt="spectrumInput" />
     
     
 </figure>
@@ -3681,6 +3817,1889 @@ server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">func
   output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>myColor)
 }
 shinyApp(ui, server)</code></pre></div>
+
+<h3 id="switchinput">switchInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">switchInput(inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, onLabel <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ON&#34;</span>, offLabel <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;OFF&#34;</span>, onStatus <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, offStatus <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, labelWidth <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;auto&#34;</span>, handleWidth <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;auto&#34;</span>, disabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="switchinputの説明">switchInputの説明</h4>
+
+<p>Bootstrapのトグルスイッチ入力を生成します。</p>
+
+<h4 id="switchinputの引数">switchInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">スイッチに中央に表示するテキスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">初期値を論理値(<code>TRUE</code>または<code>FALSE</code>)で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>onLabel</code></strong></td>
+<td align="left">スイッチの左側(<code>TRUE</code>)のテキスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>offLabel</code></strong></td>
+<td align="left">スイッチの右側(<code>FALSE</code>)のテキスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>onStatus</code></strong></td>
+<td align="left">スイッチの左側(<code>TRUE</code>)の色のBootstrapステータス</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>offStatus</code></strong></td>
+<td align="left">スイッチの右側(<code>FALSE</code>)の色のBootstrapステータス</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left">ボタンのサイズ(’default’, ’mini’, ’small’, ’normal’, ’large’)</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>labelWidth</code></strong></td>
+<td align="left">中央のハンドルの幅をピクセルで指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>handleWidth</code></strong></td>
+<td align="left">左側と右側の幅をピクセルで指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>disabled</code></strong></td>
+<td align="left">トグルスイッチを無効にした状態で表示するかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left">トグルスイッチをインラインで表示するかどうかを論理値で指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。例えば、<code>400px</code>や<code>100%</code>のように指定します。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="switchinputの値">switchInputの値</h4>
+
+<p>UI定義に追加するスイッチコントロール。</p>
+
+<h4 id="switchinputの注記">switchInputの注記</h4>
+
+<p>すべてのオプションは <a href="http://bootstrapswitch.com/options.html">http://bootstrapswitch.com/options.html</a> で記述されています。</p>
+
+<h4 id="switchinputの使用例">switchInputの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-switchinput.gif" alt="switchInput" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  switchInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>),
+  verbatimTextOutput(<span style="color:#e6db74">&#34;value&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>value <span style="color:#f92672">&lt;-</span> renderPrint({ input<span style="color:#f92672">$</span>somevalue })
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="textinputaddon">textInputAddon</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">textInputAddon(inputId, label, value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>, placeholder <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, addon, width <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="textinputaddonの説明">textInputAddonの説明</h4>
+
+<p>add-on付きのテキスト入力領域を生成します。</p>
+
+<h4 id="textinputaddonの引数">textInputAddonの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">値にアクセスするために用いられる入力のスロット</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">コントロールに表示するラベル。<code>NULL</code>ならラベル無しとなります。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">初期値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>placeholder</code></strong></td>
+<td align="left">コントロールに何を入力すべきかユーザにヒントとして与える文字列</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>addon</code></strong></td>
+<td align="left"><code>icon</code>で生成するアイコンタグ</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>width</code></strong></td>
+<td align="left">入力の幅。<code>auto</code>, <code>fit</code>, <code>100px</code>, <code>750%</code>で指定します。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="textinputaddonの値">textInputAddonの値</h4>
+
+<p>UI定義に追加するテキスト入力コントロール。</p>
+
+<h4 id="textinputaddonの使用例">textInputAddonの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-textinputaddon.png" alt="textInputAddon" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  textInputAddon(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;id&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Label&#34;</span>, placeholder <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Username&#34;</span>, addon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;at&#34;</span>)),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;out&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output) {
+  output<span style="color:#f92672">$</span>out <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>id
+  })
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="toggledropdownbutton">toggleDropdownButton</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">toggleDropdownButton(inputId)</code></pre></div>
+
+<h4 id="toggledropdownbuttonの説明">toggleDropdownButtonの説明</h4>
+
+<p>サーバ側でドロップダウンメニューを開く、または閉じます。</p>
+
+<h4 id="toggledropdownbuttonの引数">toggleDropdownButtonの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">トグルへのドロップダウンのID</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="tooltipoptions">tooltipOptions</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">tooltipOptions(placement <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;right&#34;</span>, title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Params&#34;</span>, html <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)</code></pre></div>
+
+<h4 id="tooltipoptionsの説明">tooltipOptionsの説明</h4>
+
+<p>ドロップダウンメニューボタンのツールチップオプションのリスト。</p>
+
+<h4 id="tooltipoptionsの引数">tooltipOptionsの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>placement</code></strong></td>
+<td align="left">ツールチップの配置(<code>right</code>, <code>top</code>, <code>bottom</code>, <code>left</code>)を指定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>title</code></strong></td>
+<td align="left">ツールチップのテキスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>html</code></strong></td>
+<td align="left">ツールチップ内でHTMLタグを使用できるようにするかどうかを論理値で指定</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="updateawesomecheckbox">updateAwesomeCheckbox</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateAwesomeCheckbox(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateawesomecheckboxの説明">updateAwesomeCheckboxの説明</h4>
+
+<p>クライアント上でasesome checkbox入力の値を変更します。</p>
+
+<h4 id="updateawesomecheckboxの引数">updateAwesomeCheckboxの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left">標準的なShinyのsession</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力オブジェクトに設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateawesomecheckboxの使用例">updateAwesomeCheckboxの使用例</h4>
+
+
+<figure >
+    
+        <img src="/ui-input/shinywidgets-updateawesomecheckbox.gif" alt="updateAwesomeCheckbox" />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  awesomeCheckbox(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My label&#34;</span>,
+    value <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>),
+  actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatevalue&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Toggle value&#34;</span>),
+  textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatelabel&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>somevalue
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatevalue, {
+    updateAwesomeCheckbox(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      value <span style="color:#f92672">=</span> <span style="color:#66d9ef">as.logical</span>(input<span style="color:#f92672">$</span>updatevalue <span style="color:#f92672">%%</span><span style="color:#ae81ff">2</span>)
+    )
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatelabel, {
+    updateAwesomeCheckbox(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      label <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updatelabel
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="updateawesomecheckboxgroup">updateAwesomeCheckboxGroup</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateAwesomeCheckboxGroup(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>)</code></pre></div>
+
+<h4 id="updateawesomecheckboxgroupの説明">updateAwesomeCheckboxGroupの説明</h4>
+
+<p>クライアント上で<code>awesomeCheckboxGroup</code>の値を変更します。</p>
+
+<h4 id="updateawesomecheckboxgroupの引数">updateAwesomeCheckboxGroupの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力のラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">チェックボックスに表示する値のリスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値として選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、選択肢をインライン(すなわち水平)にレンダリングします。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>stats</code></strong></td>
+<td align="left">ボタンの色</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateawesomecheckboxgroupの使用例">updateAwesomeCheckboxGroupの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  awesomeCheckboxGroup(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>),
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My label&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>),
+  actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatechoices&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Random choices&#34;</span>),
+  textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatelabel&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>somevalue
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatechoices, {
+    updateAwesomeCheckboxGroup(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">sample</span>(<span style="color:#66d9ef">letters</span>, <span style="color:#66d9ef">sample</span>(<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>))
+    )
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatelabel, {
+    updateAwesomeCheckboxGroup(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      label <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updatelabel
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="updateawesomeradio">updateAwesomeRadio</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateAwesomeRadio(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;primary&#34;</span>, checkbox <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)</code></pre></div>
+
+<h4 id="updateawesomeradioの説明">updateAwesomeRadioの説明</h4>
+
+<p>クライアント上で<code>awesomeRadio</code>のラジオボタン入力の値を変更します。</p>
+
+<h4 id="updateawesomeradioの引数">updateAwesomeRadioの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力のラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値で選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、選択肢をインライン(すなわち水平)にレンダリングします。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">ボタンの色</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>checkbox</code></strong></td>
+<td align="left">チェックボックスのスタイル</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateawesomeradioの使用例">updateAwesomeRadioの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  awesomeRadio(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>),
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My label&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>),
+  actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatechoices&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Random choices&#34;</span>),
+  textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatelabel&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>somevalue
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatechoices, {
+    updateAwesomeRadio(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">sample</span>(<span style="color:#66d9ef">letters</span>, <span style="color:#66d9ef">sample</span>(<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>))
+    )
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatelabel, {
+    updateAwesomeRadio(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      label <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updatelabel
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="updatecheckboxgroupbuttons">updateCheckboxGroupButtons</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateCheckboxGroupButtons(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;normal&#34;</span>, checkIcon <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(), choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updatecheckboxgroupbuttonsの説明">updateCheckboxGroupButtonsの説明</h4>
+
+<p>クライアント上で<code>checkboxGroupButtons</code>入力の値を変更します。</p>
+
+<h4 id="updatecheckboxgroupbuttonsの引数">updateCheckboxGroupButtonsの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">入力の新しい選択肢</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left"><code>choices</code>が<code>NULL</code>でない場合にのみ用いられるステータス</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left"><code>choices</code>が<code>NULL</code>でない場合にのみ用いられるサイズ</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choeckIcon</code></strong></td>
+<td align="left"><code>choices</code>が<code>NULL</code>でない場合にのみ用いられるアイコン</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code>, <code>choiceValues</code></strong></td>
+<td align="left">名前と値のリスト。<code>choices</code>の代わりに用います。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updatecheckboxgroupbuttonsの使用例">updateCheckboxGroupButtonsの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Example 1 ----</span>
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  radioButtons(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;up&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update button :&#34;</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;All&#34;</span>, <span style="color:#e6db74">&#34;None&#34;</span>)),
+  checkboxGroupButtons(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;btn&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Power :&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Nuclear&#34;</span>, <span style="color:#e6db74">&#34;Hydro&#34;</span>, <span style="color:#e6db74">&#34;Solar&#34;</span>, <span style="color:#e6db74">&#34;Wind&#34;</span>),
+    selected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hydro&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input,output, session){
+  observeEvent(input<span style="color:#f92672">$</span>up, {
+    <span style="color:#66d9ef">if</span> (input<span style="color:#f92672">$</span>up <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;All&#34;</span>){
+      updateCheckboxGroupButtons(session, <span style="color:#e6db74">&#34;btn&#34;</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Nuclear&#34;</span>, <span style="color:#e6db74">&#34;Hydro&#34;</span>, <span style="color:#e6db74">&#34;Solar&#34;</span>, <span style="color:#e6db74">&#34;Wind&#34;</span>))
+    } <span style="color:#66d9ef">else</span> {
+      updateCheckboxGroupButtons(session, <span style="color:#e6db74">&#34;btn&#34;</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">character</span>(<span style="color:#ae81ff">0</span>))
+    }
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>btn
+  })
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Example 2 ----</span>
+ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  checkboxGroupButtons(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>),
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My label&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>),
+  actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatechoices&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Random choices&#34;</span>),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updateselected&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update selected:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>), multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>
+  ),
+  textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatelabel&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>somevalue
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatechoices, {
+    newchoices <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">sample</span>(<span style="color:#66d9ef">letters</span>, <span style="color:#66d9ef">sample</span>(<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>))
+    updateCheckboxGroupButtons(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      choices <span style="color:#f92672">=</span> newchoices
+    )
+    updatePickerInput(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updateselected&#34;</span>,
+      choices <span style="color:#f92672">=</span> newchoices
+    )
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updateselected, {
+    updateCheckboxGroupButtons(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      selected <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updateselected
+    )
+  }, ignoreNULL <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  observeEvent(input<span style="color:#f92672">$</span>updatelabel, {
+    updateCheckboxGroupButtons(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      label <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updatelabel
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="updateknobinput">updateKnobInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateKnobInput(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateknobinputの説明">updateKnobInputの説明</h4>
+
+<p>クライアント上でつまみの入力<code>knobInput</code>の値を変更します。</p>
+
+<h4 id="updateknobinputの引数">updateKnobInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left">標準的なShinyのsession</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力オブジェクトに設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateknobinputの使用例">updateKnobInputの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;knob update examples&#34;</span>),
+  br(),
+  fluidRow(
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+      knobInput(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;knob1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update value:&#34;</span>,
+        value <span style="color:#f92672">=</span> <span style="color:#ae81ff">75</span>, angleOffset <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span>, lineCap <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;round&#34;</span>
+      ),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+      sliderInput(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;upknob1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update knob:&#34;</span>,
+        min <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">75</span>
+      )
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+      knobInput(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;knob2&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label:&#34;</span>,
+        value <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>, angleOffset <span style="color:#f92672">=</span> <span style="color:#ae81ff">-125</span>, angleArc <span style="color:#f92672">=</span> <span style="color:#ae81ff">250</span>
+      ),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res2&#34;</span>),
+      textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;upknob2&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label:&#34;</span>)
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>knob1)
+  observeEvent(input<span style="color:#f92672">$</span>upknob1, {
+    updateKnobInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;knob1&#34;</span>,
+      value <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>upknob1
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  output<span style="color:#f92672">$</span>res2 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>knob2)
+  observeEvent(input<span style="color:#f92672">$</span>upknob2, {
+    updateKnobInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;knob2&#34;</span>,
+      label <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>upknob2
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="updatematerialswitch">updateMaterialSwitch</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateMaterialSwitch(session, inputId, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updatematerialswitchの説明">updateMaterialSwitchの説明</h4>
+
+<p>クライアント上で<code>materialSwitch</code>入力の値を変更します。</p>
+
+<h4 id="updatematerialswitchの引数">updateMaterialSwitchの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="updatepickerinput">updatePickerInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updatePickerInput(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choicesOpt <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updatepickerinputの説明">updatePickerInputの説明</h4>
+
+<p>クライアント上で<code>pickerInput</code>入力の値を変更します。</p>
+
+<h4 id="updatepickerinputの引数">updatePickerInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">スイッチに中央に表示するテキスト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">初期値で選択されている値(<code>multiple = TRUE</code>の場合は、複数の値)。指定がない場合は、デフォルトで単独のリストの最初の値となり、複数のセレクトリストでは値がありません。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">選択する値のリスト。リストの要素に名前がある場合、値ではなく名前がユーザに表示されます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choicesOpt</code></strong></td>
+<td align="left">ドロップダウンメニュー内の選択肢のオプション</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updatepickerinputの使用例">updatePickerInputの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h2(<span style="color:#e6db74">&#34;Update pickerInput&#34;</span>),
+  fluidRow(
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, offset <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+      pickerInput(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p1&#34;</span>,
+        label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;classic update&#34;</span>,
+        choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars)
+      )
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>,
+      pickerInput(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p2&#34;</span>,
+        label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;disabled update&#34;</span>,
+        choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars)
+      )
+    )
+  ),
+  fluidRow(
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, offset <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+      sliderInput(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;up&#34;</span>,
+        label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Select between models with mpg greater than :&#34;</span>,
+        width <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;50%&#34;</span>,
+        min <span style="color:#f92672">=</span> <span style="color:#66d9ef">min</span>(mtcars<span style="color:#f92672">$</span>mpg),
+        max <span style="color:#f92672">=</span> <span style="color:#66d9ef">max</span>(mtcars<span style="color:#f92672">$</span>mpg),
+        value <span style="color:#f92672">=</span> <span style="color:#66d9ef">min</span>(mtcars<span style="color:#f92672">$</span>mpg),
+        step <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>
+      )
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  observeEvent(input<span style="color:#f92672">$</span>up, {
+    mtcars2 <span style="color:#f92672">&lt;-</span> mtcars[mtcars<span style="color:#f92672">$</span>mpg <span style="color:#f92672">&gt;=</span> input<span style="color:#f92672">$</span>up, ]
+    <span style="color:#75715e"># Method 1</span>
+    updatePickerInput(session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p1&#34;</span>,
+                      choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars2))
+    <span style="color:#75715e"># Method 2</span>
+    disabled_choices <span style="color:#f92672">&lt;-</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">rownames</span>(mtcars) <span style="color:#f92672">%in%</span> <span style="color:#66d9ef">rownames</span>(mtcars2)
+    updatePickerInput(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p2&#34;</span>,
+      choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">rownames</span>(mtcars),
+      choicesOpt <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(
+        disabled <span style="color:#f92672">=</span> disabled_choices,
+        style <span style="color:#f92672">=</span> <span style="color:#66d9ef">ifelse</span>(disabled_choices,
+                       yes <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;color: rgba(119, 119, 119, 0.5);&#34;</span>,
+                       no <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>)
+      )
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="updateprettycheckbox">updatePrettyCheckbox</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updatePrettyCheckbox(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateprettycheckboxの説明">updatePrettyCheckboxの説明</h4>
+
+<p>クライアント上で<code>prettyCheckbox</code>の値を変更します。</p>
+
+<h4 id="updateprettycheckboxの引数">updatePrettyCheckboxの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力オブジェクトに設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateprettycheckboxの使用例">updatePrettyCheckboxの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Pretty checkbox update value&#34;</span>),
+  br(),
+  prettyCheckbox(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkbox1&#34;</span>,
+                 label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update me!&#34;</span>,
+                 shape <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;curve&#34;</span>, thick <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, outline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+  radioButtons(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;update&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Value to set:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;FALSE&#34;</span>, <span style="color:#e6db74">&#34;TRUE&#34;</span>)
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkbox1)
+  observeEvent(input<span style="color:#f92672">$</span>update, {
+    updatePrettyToggle(session <span style="color:#f92672">=</span> session,
+                       inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkbox1&#34;</span>,
+                       value <span style="color:#f92672">=</span> <span style="color:#66d9ef">as.logical</span>(input<span style="color:#f92672">$</span>update))
+  })
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="updateprettycheckboxgroup">updatePrettyCheckboxGroup</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updatePrettyCheckboxGroup(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, prettyOptions <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>())</code></pre></div>
+
+<h4 id="updateprettycheckboxgroupの説明">updatePrettyCheckboxGroupの説明</h4>
+
+<p>クライアント上で<code>prettyCheckboxGroup</code>の値を変更します。</p>
+
+<h4 id="updateprettycheckboxgroupの引数">updatePrettyCheckboxGroupの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力オブジェクトに設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">入力オブジェクトに設定する選択肢。アップデートによりパラメータはリセットされます。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、選択肢をインライン(すなわち水平)にレンダリングします。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code></strong></td>
+<td align="left">入力オブジェクトに設定する選択肢の名前</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceValues</code></strong></td>
+<td align="left">入力オブジェクトに設定する選択肢の値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>prettyOptions</code></strong></td>
+<td align="left">チェックボックスのスタイルを変更するために<code>prettyCheckboxGroup</code>に渡される引数</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateprettycheckboxgroupの使用例">updatePrettyCheckboxGroupの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Update pretty checkbox group&#34;</span>),
+  br(),
+  fluidRow(
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+      prettyCheckboxGroup(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup1&#34;</span>,
+                          label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update my value!&#34;</span>,
+                          choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.name</span>[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>],
+                          status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>,
+                          icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;remove&#34;</span>)),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+      br(),
+      checkboxGroupInput(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;update1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update value :&#34;</span>,
+        choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.name</span>[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>], inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>
+      )
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+      prettyCheckboxGroup(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup2&#34;</span>,
+                          label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update my choices!&#34;</span>, thick <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+                          choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.name</span>[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>],
+                          animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pulse&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;info&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res2&#34;</span>),
+      br(),
+      actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;update2&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update choices !&#34;</span>)
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkgroup1)
+  observeEvent(input<span style="color:#f92672">$</span>update1, {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">is.null</span>(input<span style="color:#f92672">$</span>update1)) {
+      selected_ <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">character</span>(<span style="color:#ae81ff">0</span>) <span style="color:#75715e"># no choice selected</span>
+    } <span style="color:#66d9ef">else</span> {
+      selected_ <span style="color:#f92672">&lt;-</span> input<span style="color:#f92672">$</span>update1
+    }
+    updatePrettyCheckboxGroup(session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup1&#34;</span>, selected <span style="color:#f92672">=</span> selected_)
+  }, ignoreNULL <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+  output<span style="color:#f92672">$</span>res2 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>checkgroup2)
+  observeEvent(input<span style="color:#f92672">$</span>update2, {
+    updatePrettyCheckboxGroup(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;checkgroup2&#34;</span>,
+      choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">sample</span>(<span style="color:#66d9ef">month.name</span>, <span style="color:#ae81ff">4</span>), prettyOptions <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pulse&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;info&#34;</span>)
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="updateprettyradiobuttons">updatePrettyRadioButtons</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updatePrettyRadioButtons(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, prettyOptions <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>())</code></pre></div>
+
+<h4 id="updateprettyradiobuttonsの説明">updatePrettyRadioButtonsの説明</h4>
+
+<p>クライアント上で<code>prettyRadioButtons</code>の値を変更します。</p>
+
+<h4 id="updateprettyradiobuttonsの引数">updatePrettyRadioButtonsの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力オブジェクトに設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong>入力オブジェクトに設定する選択肢。アップデートによりパラメータはリセットされます。</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inline</code></strong></td>
+<td align="left"><code>TRUE</code>の場合、選択肢をインライン(すなわち水平)にレンダリングします。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code></strong></td>
+<td align="left">入力オブジェクトに設定する選択肢の名前</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceValues</code></strong></td>
+<td align="left">入力オブジェクトに設定する選択肢の値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>prettyOptions</code></strong></td>
+<td align="left">ラジオボタンのスタイルを変更するために<code>prettyRadioButtons</code>に渡される引数</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateprettyradiobuttonsの使用例">updatePrettyRadioButtonsの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Update pretty radio buttons&#34;</span>),
+  br(),
+  fluidRow(
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+      prettyRadioButtons(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;radio1&#34;</span>,
+                         label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update my value!&#34;</span>,
+                         choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.name</span>[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>],
+                         status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;danger&#34;</span>,
+                         icon <span style="color:#f92672">=</span> icon(<span style="color:#e6db74">&#34;remove&#34;</span>)),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+      br(),
+      radioButtons(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;update1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update value :&#34;</span>,
+        choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.name</span>[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>], inline <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>
+      )
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+      prettyRadioButtons(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;radio2&#34;</span>,
+                         label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update my choices!&#34;</span>, thick <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+                         choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.name</span>[<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>],
+                         animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pulse&#34;</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;info&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res2&#34;</span>),
+      br(),
+      actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;update2&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update choices !&#34;</span>)
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>radio1)
+  observeEvent(input<span style="color:#f92672">$</span>update1, {
+    updatePrettyRadioButtons(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;radio1&#34;</span>,
+      selected <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>update1
+    )
+  }, ignoreNULL <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+  output<span style="color:#f92672">$</span>res2 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>radio2)
+  observeEvent(input<span style="color:#f92672">$</span>update2, {
+    updatePrettyRadioButtons(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;radio2&#34;</span>,
+      choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">sample</span>(<span style="color:#66d9ef">month.name</span>, <span style="color:#ae81ff">4</span>),
+      prettyOptions <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(animation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pulse&#34;</span>,
+                           status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;info&#34;</span>,
+                           shape <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;round&#34;</span>)
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="updateprettyswitch">updatePrettySwitch</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updatePrettySwitch(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateprettyswitchの説明">updatePrettySwitchの説明</h4>
+
+<p>クライアント上で<code>prettySwitch</code>の値を変更します。</p>
+
+<h4 id="updateprettyswitchの引数">updatePrettySwitchの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力オブジェクトに設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateprettyswitchの使用例">updatePrettySwitchの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Pretty switch update value&#34;</span>),
+  br(),
+  prettySwitch(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch1&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update me !&#34;</span>),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+  radioButtons(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;update&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Value to set:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;FALSE&#34;</span>, <span style="color:#e6db74">&#34;TRUE&#34;</span>)
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>switch1)
+  observeEvent(input<span style="color:#f92672">$</span>update, {
+    updatePrettySwitch(session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch1&#34;</span>,
+                       value <span style="color:#f92672">=</span> <span style="color:#66d9ef">as.logical</span>(input<span style="color:#f92672">$</span>update))
+  })
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="updateprettytoggle">updatePrettyToggle</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updatePrettyToggle(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateprettytoggleの説明">updatePrettyToggleの説明</h4>
+
+<p>クライアント上で<code>prettyToggle</code>の値を変更します。</p>
+
+<h4 id="updateprettytoggleの引数">updatePrettyToggleの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力オブジェクトに設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateprettytoggleの使用例">updatePrettyToggleの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Pretty toggle update value&#34;</span>),
+  br(),
+  prettyToggle(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;toggle1&#34;</span>,
+               label_on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Checked!&#34;</span>,
+               label_off <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Unchecked...&#34;</span>),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res1&#34;</span>),
+  radioButtons(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;update&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Value to set:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;FALSE&#34;</span>, <span style="color:#e6db74">&#34;TRUE&#34;</span>)
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res1 <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>toggle1)
+  observeEvent(input<span style="color:#f92672">$</span>update, {
+    updatePrettyToggle(session <span style="color:#f92672">=</span> session,
+                       inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;toggle1&#34;</span>,
+                       value <span style="color:#f92672">=</span> <span style="color:#66d9ef">as.logical</span>(input<span style="color:#f92672">$</span>update))
+  })
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="updateprogressbar">updateProgressBar</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateProgressBar(session, id, value, total <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateprogressbarの説明">updateProgressBarの説明</h4>
+
+<p>クライアント上でプログレスバーの値を変更します。</p>
+
+<h4 id="updateprogressbarの引数">updateProgressBarの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>id</code></strong></td>
+<td align="left">プログレスバーを更新するためのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">0から100までの間のプログレスバーの値。100よりも大きくする場合は<code>total</code>を指定します。</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>total</code></strong></td>
+<td align="left"><code>value</code>が100よりも大きい場合にパーセンテージを計算するために用いられる値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left">色</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="updateradiogroupbuttons">updateRadioGroupButtons</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateRadioGroupButtons(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;default&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;normal&#34;</span>, checkIcon <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(), choiceNames <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choiceValues <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateradiogroupbuttonsの説明">updateRadioGroupButtonsの説明</h4>
+
+<p>クライアント上で<code>radioGroupButtons</code>の値を変更します。</p>
+
+<h4 id="updateradiogroupbuttonsの引数">updateRadioGroupButtonsの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">入力の新しい選択肢</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>status</code></strong></td>
+<td align="left"><code>choices</code>が<code>NULL</code>でない場合にのみ用いられるステータス</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>size</code></strong></td>
+<td align="left"><code>choices</code>が<code>NULL</code>でない場合にのみ用いられるサイズ</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>checkIcon</code></strong></td>
+<td align="left"><code>choices</code>が<code>NULL</code>でない場合にのみ用いられるアイコン</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choiceNames</code>, <code>choiceValues</code></strong></td>
+<td align="left">名前と値のリスト。<code>choices</code>の代わりに用います。</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateradiogroupbuttonsの使用例">updateRadioGroupButtonsの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  radioGroupButtons(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>),
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My label&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>),
+  actionButton(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatechoices&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Random choices&#34;</span>),
+  pickerInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updateselected&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update selected:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>), multiple <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>
+  ),
+  textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatelabel&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label&#34;</span>)
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>somevalue
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatechoices, {
+    newchoices <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">sample</span>(<span style="color:#66d9ef">letters</span>, <span style="color:#66d9ef">sample</span>(<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>))
+    updateRadioGroupButtons(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      choices <span style="color:#f92672">=</span> newchoices
+    )
+    updatePickerInput(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updateselected&#34;</span>,
+      choices <span style="color:#f92672">=</span> newchoices
+    )
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updateselected, {
+    updateRadioGroupButtons(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      selected <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updateselected
+    )
+  }, ignoreNULL <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  observeEvent(input<span style="color:#f92672">$</span>updatelabel, {
+    updateRadioGroupButtons(
+      session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;somevalue&#34;</span>,
+      label <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updatelabel
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="updateslidertextinput">updateSliderTextInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateSliderTextInput(session, inputId, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, selected <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, from_fixed <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, to_fixed <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateslidertextinputの説明">updateSliderTextInputの説明</h4>
+
+<p>クライアント上で<code>sliderTextInput</code>の値を変更します。</p>
+
+<h4 id="updateslidertextinputの引数">updateSliderTextInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">選択されている値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>choices</code></strong></td>
+<td align="left">入力の新しい選択肢</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>from_fixed</code></strong></td>
+<td align="left">左側のハンドル(または一つのハンドル)を固定</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>to_fixed</code></strong></td>
+<td align="left">右側のハンドルを固定</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateslidertextinputの使用例">updateSliderTextInputの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  br(),
+  sliderTextInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mySlider&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Pick a month :&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.abb</span>,
+    selected <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Jan&#34;</span>
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>),
+  radioButtons(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;up&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update choices:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Abbreviations&#34;</span>, <span style="color:#e6db74">&#34;Full names&#34;</span>)
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint(str(input<span style="color:#f92672">$</span>mySlider))
+  observeEvent(input<span style="color:#f92672">$</span>up, {
+    choices <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">switch</span>(
+      input<span style="color:#f92672">$</span>up,
+      <span style="color:#e6db74">&#34;Abbreviations&#34;</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.abb</span>,
+      <span style="color:#e6db74">&#34;Full names&#34;</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">month.name</span>
+    )
+    updateSliderTextInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mySlider&#34;</span>,
+      choices <span style="color:#f92672">=</span> choices
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="updatespectruminput">updateSpectrumInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateSpectrumInput(session, inputId, selected)</code></pre></div>
+
+<h4 id="updatespectruminputの説明">updateSpectrumInputの説明</h4>
+
+<p>クライアント上で<code>spectrumInput</code>の値を変更します。</p>
+
+<h4 id="updatespectruminputの引数">updateSpectrumInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>selected</code></strong></td>
+<td align="left">選択する値</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updatespectruminputの使用例">updateSpectrumInputの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Spectrum color picker&#34;</span>),
+  br(),
+  spectrumInput(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myColor&#34;</span>,
+    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Pick a color:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">list</span>(
+      <span style="color:#66d9ef">list</span>(<span style="color:#e6db74">&#39;black&#39;</span>, <span style="color:#e6db74">&#39;white&#39;</span>, <span style="color:#e6db74">&#39;blanchedalmond&#39;</span>, <span style="color:#e6db74">&#39;steelblue&#39;</span>, <span style="color:#e6db74">&#39;forestgreen&#39;</span>)
+    )
+  ),
+  verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;res&#34;</span>),
+  radioButtons(
+    inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;update&#34;</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update:&#34;</span>,
+    choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(
+      <span style="color:#e6db74">&#39;black&#39;</span>, <span style="color:#e6db74">&#39;white&#39;</span>, <span style="color:#e6db74">&#39;blanchedalmond&#39;</span>, <span style="color:#e6db74">&#39;steelblue&#39;</span>, <span style="color:#e6db74">&#39;forestgreen&#39;</span>
+    )
+  )
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  output<span style="color:#f92672">$</span>res <span style="color:#f92672">&lt;-</span> renderPrint(input<span style="color:#f92672">$</span>myColor)
+  observeEvent(input<span style="color:#f92672">$</span>update, {
+    updateSpectrumInput(session <span style="color:#f92672">=</span> session, inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myColor&#34;</span>, selected <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>update)
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+}
+shinyApp(ui, server)</code></pre></div>
+
+<h3 id="updateswitchinput">updateSwitchInput</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">updateSwitchInput(session, inputId, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, label <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, onLabel <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, offLabel <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, onStatus <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, offStatus <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>, disabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>)</code></pre></div>
+
+<h4 id="updateswitchinputの説明">updateSwitchInputの説明</h4>
+
+<p>クライアント上で<code>switchInput</code>の値を変更します。</p>
+
+<h4 id="updateswitchinputの引数">updateSwitchInputの引数</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">名前</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong><code>session</code></strong></td>
+<td align="left"><code>shinyServer</code>に与えられた関数に渡されるセッションオブジェクト</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>inputId</code></strong></td>
+<td align="left">入力オブジェクトのid</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>value</code></strong></td>
+<td align="left">入力オブジェクトに設定する値</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>label</code></strong></td>
+<td align="left">入力オブジェクトに設定するラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>onLabel</code></strong></td>
+<td align="left">入力オブジェクトに設定するオンのときのラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>offLabel</code></strong></td>
+<td align="left">入力オブジェクトに設定するオフのときのラベル</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>onStatus</code></strong></td>
+<td align="left">入力オブジェクトに設定するオンのときのステータス</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>offStatus</code></strong></td>
+<td align="left">入力オブジェクトに設定するオフのときのステータス</td>
+</tr>
+
+<tr>
+<td align="left"><strong><code>disabled</code></strong></td>
+<td align="left">オフの状態を論理値で指定</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="updateswitchinputの使用例">updateSwitchInputの使用例</h4>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">ui <span style="color:#f92672">&lt;-</span> fluidPage(
+  tags<span style="color:#f92672">$</span>h1(<span style="color:#e6db74">&#34;Update&#34;</span>, tags<span style="color:#f92672">$</span>code(<span style="color:#e6db74">&#34;switchInput&#34;</span>)),
+  br(),
+  fluidRow(
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      panel(
+        switchInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch1&#34;</span>),
+        verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;resup1&#34;</span>),
+        tags<span style="color:#f92672">$</span>div(
+          class <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;btn-group&#34;</span>,
+          actionButton(
+            inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatevaluetrue&#34;</span>,
+            label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set to TRUE&#34;</span>
+          ),
+          actionButton(
+            inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatevaluefalse&#34;</span>,
+            label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set to FALSE&#34;</span>
+          )
+        ),
+        heading <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update value&#34;</span>
+      )
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      panel(
+        switchInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch2&#34;</span>,
+                    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My label&#34;</span>),
+        verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;resup2&#34;</span>),
+        textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updatelabeltext&#34;</span>,
+                  label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label:&#34;</span>),
+        heading <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update label&#34;</span>
+      )
+    ),
+    column(
+      width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+      panel(
+        switchInput(
+          inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch3&#34;</span>,
+          onLabel <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Yeaah&#34;</span>,
+          offLabel <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Noooo&#34;</span>
+        ),
+        verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;resup3&#34;</span>),
+        fluidRow(column(
+          width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+          textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updateonLabel&#34;</span>,
+                    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update onLabel:&#34;</span>)
+        ),
+        column(
+          width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+          textInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updateoffLabel&#34;</span>,
+                    label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update offLabel:&#34;</span>)
+        )),
+        heading <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update onLabel &amp; offLabel&#34;</span>
+      )
+    )
+  ),
+  fluidRow(column(
+    width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+    panel(
+      switchInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch4&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;resup4&#34;</span>),
+      fluidRow(
+        column(
+          width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+          pickerInput(
+            inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updateonStatus&#34;</span>,
+            label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update onStatus:&#34;</span>,
+            choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;default&#34;</span>, <span style="color:#e6db74">&#34;primary&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>,
+                        <span style="color:#e6db74">&#34;info&#34;</span>, <span style="color:#e6db74">&#34;warning&#34;</span>, <span style="color:#e6db74">&#34;danger&#34;</span>)
+          )
+        ),
+        column(
+          width <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,
+          pickerInput(
+            inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updateoffStatus&#34;</span>,
+            label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update offStatus:&#34;</span>,
+            choices <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;default&#34;</span>, <span style="color:#e6db74">&#34;primary&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>,
+                        <span style="color:#e6db74">&#34;info&#34;</span>, <span style="color:#e6db74">&#34;warning&#34;</span>, <span style="color:#e6db74">&#34;danger&#34;</span>)
+          )
+        )
+      ),
+      heading <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Update onStatus &amp; offStatusr&#34;</span>
+    )
+  ),
+  column(
+    width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+    panel(
+      switchInput(inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch5&#34;</span>),
+      verbatimTextOutput(outputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;resup5&#34;</span>),
+      checkboxInput(
+        inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;disabled&#34;</span>,
+        label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Disabled&#34;</span>,
+        value <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>
+      ),
+      heading <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Disabled&#34;</span>
+    )
+  ))
+)
+server <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(input, output, session) {
+  <span style="color:#75715e"># Update value</span>
+  observeEvent(input<span style="color:#f92672">$</span>updatevaluetrue, {
+    updateSwitchInput(session <span style="color:#f92672">=</span> session,
+                      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch1&#34;</span>,
+                      value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  })
+  observeEvent(input<span style="color:#f92672">$</span>updatevaluefalse, {
+    updateSwitchInput(session <span style="color:#f92672">=</span> session,
+                      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch1&#34;</span>,
+                      value <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+  })
+  output<span style="color:#f92672">$</span>resup1 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>switch1
+  })
+  <span style="color:#75715e"># Update label</span>
+  observeEvent(input<span style="color:#f92672">$</span>updatelabeltext, {
+    updateSwitchInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch2&#34;</span>,
+      label <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updatelabeltext
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  output<span style="color:#f92672">$</span>resup2 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>switch2
+  })
+  <span style="color:#75715e"># Update onLabel &amp; offLabel</span>
+  observeEvent(input<span style="color:#f92672">$</span>updateonLabel, {
+    updateSwitchInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch3&#34;</span>,
+      onLabel <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updateonLabel
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  observeEvent(input<span style="color:#f92672">$</span>updateoffLabel, {
+    updateSwitchInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch3&#34;</span>,
+      offLabel <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updateoffLabel
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  output<span style="color:#f92672">$</span>resup3 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>switch3
+  })
+  <span style="color:#75715e"># Update onStatus &amp; offStatus</span>
+  observeEvent(input<span style="color:#f92672">$</span>updateonStatus, {
+    updateSwitchInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch4&#34;</span>,
+      onStatus <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updateonStatus
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  observeEvent(input<span style="color:#f92672">$</span>updateoffStatus, {
+    updateSwitchInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch4&#34;</span>,
+      offStatus <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>updateoffStatus
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  output<span style="color:#f92672">$</span>resup4 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>switch4
+  })
+  <span style="color:#75715e"># Disabled</span>
+  observeEvent(input<span style="color:#f92672">$</span>disabled, {
+    updateSwitchInput(
+      session <span style="color:#f92672">=</span> session,
+      inputId <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;switch5&#34;</span>,
+      disabled <span style="color:#f92672">=</span> input<span style="color:#f92672">$</span>disabled
+    )
+  }, ignoreInit <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  output<span style="color:#f92672">$</span>resup5 <span style="color:#f92672">&lt;-</span> renderPrint({
+    input<span style="color:#f92672">$</span>switch5
+  })
+}
+shinyApp(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)</code></pre></div>
+
+<h3 id="usesweetalert">useSweetAlert</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">useSweetAlert()</code></pre></div>
+
+<h4 id="usesweetalertの説明">useSweetAlertの説明</h4>
+
+<p>sweet aleartの依存性をロードします。この関数は<code>sendSweetAlert</code>, <code>confirmSweetAlert</code>, <code>inputSweetAlert</code>では不要ですが、<code>progressSweetAleart</code>ではまだ必要とされています。</p>
+
+<h4 id="usesweetalertの注記">useSweetAlertの注記</h4>
+
+<p>UI側で<code>receiveSweetAleart()</code>を、サーバ側で<code>sendSweetAlert()</code>を使用します。</p>
 
 
   
@@ -3728,9 +5747,9 @@ shinyApp(ui, server)</code></pre></div>
 
 <li><a href="/top-page/">Shiny app 開発をスタート</a></li>
 
-<li><a href="/function-index/">索引(アルファベット順)</a></li>
+<li><a href="/function-index-alphabetical-order/">索引(アルファベット順)</a></li>
 
-<li><a href="/reference/">索引(機能別)</a></li>
+<li><a href="/function-index-functional-order/">索引(機能別)</a></li>
 
 <li><a href="/shinywidgets/">shinyWidgets</a></li>
 

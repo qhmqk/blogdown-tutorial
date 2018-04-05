@@ -5,7 +5,7 @@ date: 2018-01-10
 categories: ["R"]
 tags: ["Shiny"]
 weight: 2
-slug: "reference"
+slug: "function-index-functional-order"
 description: "機能ごとのShiny関数の索引"
 ---
 
@@ -99,11 +99,6 @@ description: "機能ごとのShiny関数の索引"
 
 
 
-
-
+### 参照
 
 https://shiny.rstudio.com/reference/shiny/1.0.5/
-
-### Packages
-
-* [shinydashboard]({{< ref "shinydashboard.md" >}})
