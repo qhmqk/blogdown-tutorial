@@ -18,9 +18,7 @@
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/rmarkdown-syntax/</guid>
-      <description>見出し# Header 1## Header 2Header 1Header 2図image:![caption](img/shiny-400x464.png)markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。
-&amp;lt;img src=&amp;#39;../../../../../../../img/shiny-400x464.png&amp;#39; align=&amp;#39;center&amp;#39;&amp;gt;リンク上記の、Shinyのロゴは、RStudioのロゴで、[リンク先のガイドライン](https://www.rstudio.com/about/logos/)に従って利用できます。上記の、Shinyのロゴは、RStudioのロゴで、リンク先のガイドラインに従って利用できます。
-</description>
+      <description>見出し # Header 1 ## Header 2 Header 1 Header 2 図 image: ![caption](img/shiny-400x464.png) markdown記法では埋め込めませんでした。HTMLのタグで埋め込みます。 &amp;lt;img src=&amp;#39;../../../../../../../img/shiny-400x464.png&amp;#39; align=&amp;#39;center&amp;#39;&amp;gt; リンク 上記の、Shinyの</description>
     </item>
     
   </channel>

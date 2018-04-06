@@ -18,17 +18,7 @@
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/top-page/</guid>
-      <description>Shiny って何？(読み飛ばしてオーケー) R は世界中で広く使用されているプログラミング言語です。Shiny は R のパッケージの一つで、R による分析結果を動的な web アプリケーションとして公開することができます。
-R も Shiny もフリーかつオープンソースのソフトウェアとして、開発が進められています。 Rは、多くのプログラミング言語と同様に、Windows、Mac OS、Linuxなどさまざまなプラットフォーム上で動作します。そのため、Shiny による web アプリケーション開発もプラットフォームは問いません。
-Shiny を開発しているのは RStudio Inc. で、メインの開発者は RStudio の CTO であるJoe Cheng氏です。
-R での分析結果を動的に web アプリケーションにしたい、web アプリケーションに統計や機械学習を組み合わせたい、そんなニーズにこたえる最高の環境が Shiny です。Shiny のインストールから、アプリケーションの作成までを紹介します。
-Shiny を始める前のインストール作業 Shiny で web アプリケーション開発を始める人の大半はすでに R のユーザかもしれませんが、Shiny が気になって開発環境を整えたい人もいるかもしれません。R はダウンロードしてインストールすればすぐにプログラミングを始めることができます。さらに、統合開発環境として、これ以上ないくらい便利なRStudioをインストールすれば、エディタから Shiny の動作確認までボタン一つでできるようになります。インストール作業は、3つだけで初期設定の煩雑さはありません。
- R をインストール
- RStudio をインストール
- Shiny パッケージをインストール
-  R をインストール CRAN(The Comprehensive R Archive Network)からインストーラをダウンロードします。Linux、Mac、Windowsなどのプラットフォームに合わせてバイナリを選択します。
-ダウンロードしたR-***.exeを実行し、ウィザードを進めていけば、インストールが完了します。
-RStudio をインストール RStudioの公式サイトからインストーラをダウンロードします。フリーのRStudio Desctop Open Source Licenseを選択し、Windwos、Mac、Linux (Ubuntu, Fedora)などのプラットフォームに合わせたバイナリを選択します。</description>
+      <description>Shiny って何？(読み飛ばしてオーケー) R は世界中で広く使用されているプログラミング言語です。Shiny は R のパッケージの一つで、R による分析結果</description>
     </item>
     
     <item>
@@ -60,36 +50,7 @@ RStudio をインストール RStudioの公式サイトからインストーラ�
       <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/function-index-functional-order/</guid>
-      <description>UI Inputs  actionButton
- checkboxGroupInput
- checkboxInput
- dateInput
- dateRangeInput
- fileInput
- numericInput
- passwordInput
- radioButtons
- selectInput
- sliderInput
- textInput
-  UI Outputs  imageOutput
- htmlOutput
- plotOutput
- tableOutput
- textOutput
- uiOutput
- verbatimTextOutput
-  UI Layout  column
- flowLayout
- fluidPage
- mainPanel
- navbarPage
- navlistPanel
- sidebarLayout
- sidebarPanel
- splitLayout
- tabPanel
- tabsetPanel</description>
+      <description>UI Inputs actionButton checkboxGroupInput checkboxInput dateInput dateRangeInput fileInput numericInput passwordInput radioButtons selectInput sliderInput textInput UI Outputs imageOutput htmlOutput plotOutput tableOutput textOutput uiOutput verbatimTextOutput UI Layout column flowLayout fluidPage mainPanel navbarPage navlistPanel sidebarLayout sidebarPanel splitLayout tabPanel tabsetPanel verticalLayout wellPanel Rendering functions renderImage renderPlot renderPrint renderTable renderText renderUI Reactive programming 参照 https://shiny.rstudio.com/reference/shiny/1.0.5/</description>
     </item>
     
     <item>
